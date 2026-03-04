@@ -1,0 +1,92 @@
+transpose.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x10,%esp
+movl $0x0,-0x4(%ebp)
+movl $0x0,-0x8(%ebp)
+mov -0x8(%ebp),%edx
+mov %edx,%eax
+%eax,%eax
+%edx,%eax
+shl $0x2,%eax
+mov %eax,%edx
+mov 0xc(%ebp),%eax
+lea (%edx,%eax,1),%ecx
+mov -0x4(%ebp),%edx
+mov %edx,%eax
+%eax,%eax
+%edx,%eax
+shl $0x2,%eax
+mov %eax,%edx
+mov 0x8(%ebp),%eax
+%eax,%edx
+mov -0x8(%ebp),%eax
+mov (%edx,%eax,4),%edx
+mov -0x4(%ebp),%eax
+mov %edx,(%ecx,%eax,4)
+addl $0x1,-0x8(%ebp)
+cmpl $0x2,-0x8(%ebp)
+addl $0x1,-0x4(%ebp)
+cmpl $0x2,-0x4(%ebp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+mov 0x8(%ebp),%eax
+flds (%eax)
+mov 0x8(%ebp),%eax
+$0x8,%eax
+flds 0x4(%eax)
+fmulp %st,%st(1)
+mov 0x8(%ebp),%eax
+flds 0x4(%eax)
+mov 0x8(%ebp),%eax
+$0x8,%eax
+flds (%eax)
+fmulp %st,%st(1)
+fsubrp %st,%st(1)
+fstps -0xc(%ebp)
+flds -0xc(%ebp)
+fldz
+fucompp
+fnstsw %ax
+sahf
+flds -0xc(%ebp)
+fldz
+fucompp
+fnstsw %ax
+sahf
+movl $0x0,(%esp)
+mov 0x8(%ebp),%eax
+$0x8,%eax
+flds 0x4(%eax)
+fdivs -0xc(%ebp)
+mov 0xc(%ebp),%eax
+fstps (%eax)
+mov 0x8(%ebp),%eax
+flds 0x4(%eax)
+fchs
+fdivs -0xc(%ebp)
+mov 0xc(%ebp),%eax
+fstps 0x4(%eax)
+mov 0xc(%ebp),%eax
+$0x8,%eax
+mov 0x8(%ebp),%edx
+$0x8,%edx
+flds (%edx)
+fchs
+fdivs -0xc(%ebp)
+fstps (%eax)
+mov 0xc(%ebp),%eax
+lea 0x8(%eax),%edx
+mov 0x8(%ebp),%eax
+flds (%eax)
+fdivs -0xc(%ebp)
+fstps 0x4(%edx)
+leave
+ret
+nop
+nop
+nop

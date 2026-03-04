@@ -1,0 +1,125 @@
+
+poetry.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_random_line>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	57                   	push   %edi
+   4:	56                   	push   %esi
+   5:	53                   	push   %ebx
+   6:	83 ec 2c             	sub    $0x2c,%esp
+   9:	e8 00 00 00 00       	call   e <_random_line+0xe>
+   e:	89 c1                	mov    %eax,%ecx
+  10:	ba 67 66 66 66       	mov    $0x66666667,%edx
+  15:	89 c8                	mov    %ecx,%eax
+  17:	f7 ea                	imul   %edx
+  19:	c1 fa 02             	sar    $0x2,%edx
+  1c:	89 c8                	mov    %ecx,%eax
+  1e:	c1 f8 1f             	sar    $0x1f,%eax
+  21:	29 c2                	sub    %eax,%edx
+  23:	89 d0                	mov    %edx,%eax
+  25:	c1 e0 02             	shl    $0x2,%eax
+  28:	01 d0                	add    %edx,%eax
+  2a:	01 c0                	add    %eax,%eax
+  2c:	29 c1                	sub    %eax,%ecx
+  2e:	89 ca                	mov    %ecx,%edx
+  30:	8b 3c 95 40 00 00 00 	mov    0x40(,%edx,4),%edi
+  37:	e8 00 00 00 00       	call   3c <_random_line+0x3c>
+  3c:	89 c1                	mov    %eax,%ecx
+  3e:	ba 67 66 66 66       	mov    $0x66666667,%edx
+  43:	89 c8                	mov    %ecx,%eax
+  45:	f7 ea                	imul   %edx
+  47:	c1 fa 02             	sar    $0x2,%edx
+  4a:	89 c8                	mov    %ecx,%eax
+  4c:	c1 f8 1f             	sar    $0x1f,%eax
+  4f:	29 c2                	sub    %eax,%edx
+  51:	89 d0                	mov    %edx,%eax
+  53:	c1 e0 02             	shl    $0x2,%eax
+  56:	01 d0                	add    %edx,%eax
+  58:	01 c0                	add    %eax,%eax
+  5a:	29 c1                	sub    %eax,%ecx
+  5c:	89 ca                	mov    %ecx,%edx
+  5e:	8b 34 95 00 00 00 00 	mov    0x0(,%edx,4),%esi
+  65:	e8 00 00 00 00       	call   6a <_random_line+0x6a>
+  6a:	89 c1                	mov    %eax,%ecx
+  6c:	ba 67 66 66 66       	mov    $0x66666667,%edx
+  71:	89 c8                	mov    %ecx,%eax
+  73:	f7 ea                	imul   %edx
+  75:	c1 fa 02             	sar    $0x2,%edx
+  78:	89 c8                	mov    %ecx,%eax
+  7a:	c1 f8 1f             	sar    $0x1f,%eax
+  7d:	29 c2                	sub    %eax,%edx
+  7f:	89 d0                	mov    %edx,%eax
+  81:	c1 e0 02             	shl    $0x2,%eax
+  84:	01 d0                	add    %edx,%eax
+  86:	01 c0                	add    %eax,%eax
+  88:	29 c1                	sub    %eax,%ecx
+  8a:	89 ca                	mov    %ecx,%edx
+  8c:	8b 1c 95 80 00 00 00 	mov    0x80(,%edx,4),%ebx
+  93:	e8 00 00 00 00       	call   98 <_random_line+0x98>
+  98:	89 c1                	mov    %eax,%ecx
+  9a:	ba 67 66 66 66       	mov    $0x66666667,%edx
+  9f:	89 c8                	mov    %ecx,%eax
+  a1:	f7 ea                	imul   %edx
+  a3:	c1 fa 02             	sar    $0x2,%edx
+  a6:	89 c8                	mov    %ecx,%eax
+  a8:	c1 f8 1f             	sar    $0x1f,%eax
+  ab:	29 c2                	sub    %eax,%edx
+  ad:	89 d0                	mov    %edx,%eax
+  af:	c1 e0 02             	shl    $0x2,%eax
+  b2:	01 d0                	add    %edx,%eax
+  b4:	01 c0                	add    %eax,%eax
+  b6:	29 c1                	sub    %eax,%ecx
+  b8:	89 ca                	mov    %ecx,%edx
+  ba:	8b 04 95 c0 00 00 00 	mov    0xc0(,%edx,4),%eax
+  c1:	89 7c 24 14          	mov    %edi,0x14(%esp)
+  c5:	89 74 24 10          	mov    %esi,0x10(%esp)
+  c9:	89 5c 24 0c          	mov    %ebx,0xc(%esp)
+  cd:	89 44 24 08          	mov    %eax,0x8(%esp)
+  d1:	c7 44 24 04 f1 00 00 	movl   $0xf1,0x4(%esp)
+  d8:	00 
+  d9:	8b 45 08             	mov    0x8(%ebp),%eax
+  dc:	89 04 24             	mov    %eax,(%esp)
+  df:	e8 00 00 00 00       	call   e4 <_random_line+0xe4>
+  e4:	90                   	nop
+  e5:	83 c4 2c             	add    $0x2c,%esp
+  e8:	5b                   	pop    %ebx
+  e9:	5e                   	pop    %esi
+  ea:	5f                   	pop    %edi
+  eb:	5d                   	pop    %ebp
+  ec:	c3                   	ret    
+
+000000ed <_main>:
+  ed:	55                   	push   %ebp
+  ee:	89 e5                	mov    %esp,%ebp
+  f0:	83 e4 f0             	and    $0xfffffff0,%esp
+  f3:	83 c4 80             	add    $0xffffff80,%esp
+  f6:	e8 00 00 00 00       	call   fb <_main+0xe>
+  fb:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 102:	e8 00 00 00 00       	call   107 <_main+0x1a>
+ 107:	89 04 24             	mov    %eax,(%esp)
+ 10a:	e8 00 00 00 00       	call   10f <_main+0x22>
+ 10f:	c7 44 24 78 05 00 00 	movl   $0x5,0x78(%esp)
+ 116:	00 
+ 117:	c7 04 24 fd 00 00 00 	movl   $0xfd,(%esp)
+ 11e:	e8 00 00 00 00       	call   123 <_main+0x36>
+ 123:	c7 44 24 7c 00 00 00 	movl   $0x0,0x7c(%esp)
+ 12a:	00 
+ 12b:	eb 1d                	jmp    14a <_main+0x5d>
+ 12d:	8d 44 24 14          	lea    0x14(%esp),%eax
+ 131:	89 04 24             	mov    %eax,(%esp)
+ 134:	e8 c7 fe ff ff       	call   0 <_random_line>
+ 139:	8d 44 24 14          	lea    0x14(%esp),%eax
+ 13d:	89 04 24             	mov    %eax,(%esp)
+ 140:	e8 00 00 00 00       	call   145 <_main+0x58>
+ 145:	83 44 24 7c 01       	addl   $0x1,0x7c(%esp)
+ 14a:	8b 44 24 7c          	mov    0x7c(%esp),%eax
+ 14e:	3b 44 24 78          	cmp    0x78(%esp),%eax
+ 152:	7c d9                	jl     12d <_main+0x40>
+ 154:	b8 00 00 00 00       	mov    $0x0,%eax
+ 159:	c9                   	leave  
+ 15a:	c3                   	ret    
+ 15b:	90                   	nop

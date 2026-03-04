@@ -1,0 +1,42 @@
+bitmanipulation.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+mov 0xc(%ebp),%eax
+mov $0x1,%edx
+mov %eax,%ecx
+shl %cl,%edx
+mov %edx,%eax
+or 0x8(%ebp),%eax
+pop %ebp
+ret
+push %ebp
+mov %esp,%ebp
+mov 0xc(%ebp),%eax
+mov $0x1,%edx
+mov %eax,%ecx
+shl %cl,%edx
+mov %edx,%eax
+not %eax
+and 0x8(%ebp),%eax
+pop %ebp
+ret
+push %ebp
+mov %esp,%ebp
+mov 0xc(%ebp),%eax
+mov $0x1,%edx
+mov %eax,%ecx
+shl %cl,%edx
+mov %edx,%eax
+xor 0x8(%ebp),%eax
+pop %ebp
+ret
+push %ebp
+mov %esp,%ebp
+mov 0xc(%ebp),%eax
+mov 0x8(%ebp),%edx
+mov %eax,%ecx
+sar %cl,%edx
+mov %edx,%eax
+and $0x1,%eax
+pop %ebp
+ret

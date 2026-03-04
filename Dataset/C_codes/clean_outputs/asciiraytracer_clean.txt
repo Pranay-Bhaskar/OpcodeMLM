@@ -1,0 +1,79 @@
+asciiraytracer.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x40,%esp
+movl $0x0,0x3c(%esp)
+movl $0x0,0x38(%esp)
+fildl 0x38(%esp)
+fldl 0x0
+fsubrp %st,%st(1)
+fldl 0x0
+fdivrp %st,%st(1)
+fstpl 0x30(%esp)
+fildl 0x3c(%esp)
+fldl 0x8
+fsubrp %st,%st(1)
+fldl 0x8
+fdivrp %st,%st(1)
+fstpl 0x28(%esp)
+fldl 0x30(%esp)
+fmull 0x30(%esp)
+fldl 0x28(%esp)
+fmull 0x28(%esp)
+faddp %st,%st(1)
+fstpl (%esp)
+fstpl 0x20(%esp)
+fldl 0x10
+fldl 0x20(%esp)
+fxch %st(1)
+fucompp
+fnstsw %ax
+sahf
+fldl 0x20(%esp)
+fldl 0x10
+fdivrp %st,%st(1)
+fld1
+fsubp %st,%st(1)
+fstpl 0x18(%esp)
+fldl 0x18(%esp)
+fldl 0x18
+fxch %st(1)
+fucompp
+fnstsw %ax
+sahf
+mov $0x40,%eax
+fldl 0x18(%esp)
+fldl 0x20
+fxch %st(1)
+fucompp
+fnstsw %ax
+sahf
+mov $0x23,%eax
+fldl 0x18(%esp)
+fldl 0x28
+fxch %st(1)
+fucompp
+fnstsw %ax
+sahf
+mov $0x2a,%eax
+fldl 0x18(%esp)
+fldl 0x30
+fxch %st(1)
+fucompp
+fnstsw %ax
+sahf
+mov $0x3a,%eax
+mov $0x2e,%eax
+mov %al,0x17(%esp)
+movsbl 0x17(%esp),%eax
+mov %eax,(%esp)
+movl $0x20,(%esp)
+addl $0x1,0x38(%esp)
+cmpl $0x4f,0x38(%esp)
+movl $0xa,(%esp)
+addl $0x1,0x3c(%esp)
+cmpl $0x27,0x3c(%esp)
+mov $0x0,%eax
+leave
+ret

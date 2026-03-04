@@ -1,0 +1,88 @@
+trie.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+movl $0x6c,(%esp)
+mov %eax,-0x10(%ebp)
+mov -0x10(%ebp),%eax
+movb $0x0,0x68(%eax)
+movl $0x0,-0xc(%ebp)
+mov -0x10(%ebp),%eax
+mov -0xc(%ebp),%edx
+movl $0x0,(%eax,%edx,4)
+addl $0x1,-0xc(%ebp)
+cmpl $0x19,-0xc(%ebp)
+mov -0x10(%ebp),%eax
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x18,%esp
+mov 0x8(%ebp),%eax
+mov %eax,-0xc(%ebp)
+movl $0x0,-0x10(%ebp)
+mov -0x10(%ebp),%edx
+mov 0xc(%ebp),%eax
+%edx,%eax
+movzbl (%eax),%eax
+movsbl %al,%eax
+sub $0x61,%eax
+mov %eax,-0x14(%ebp)
+mov -0xc(%ebp),%eax
+mov -0x14(%ebp),%edx
+mov (%eax,%edx,4),%eax
+test %eax,%eax
+mov %eax,%ecx
+mov -0xc(%ebp),%eax
+mov -0x14(%ebp),%edx
+mov %ecx,(%eax,%edx,4)
+mov -0xc(%ebp),%eax
+mov -0x14(%ebp),%edx
+mov (%eax,%edx,4),%eax
+mov %eax,-0xc(%ebp)
+addl $0x1,-0x10(%ebp)
+mov -0x10(%ebp),%edx
+mov 0xc(%ebp),%eax
+%edx,%eax
+movzbl (%eax),%eax
+test %al,%al
+mov -0xc(%ebp),%eax
+movb $0x1,0x68(%eax)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x10,%esp
+mov 0x8(%ebp),%eax
+mov %eax,-0x4(%ebp)
+movl $0x0,-0x8(%ebp)
+mov -0x8(%ebp),%edx
+mov 0xc(%ebp),%eax
+%edx,%eax
+movzbl (%eax),%eax
+movsbl %al,%eax
+sub $0x61,%eax
+mov %eax,-0xc(%ebp)
+mov -0x4(%ebp),%eax
+mov -0xc(%ebp),%edx
+mov (%eax,%edx,4),%eax
+test %eax,%eax
+mov $0x0,%eax
+mov -0x4(%ebp),%eax
+mov -0xc(%ebp),%edx
+mov (%eax,%edx,4),%eax
+mov %eax,-0x4(%ebp)
+addl $0x1,-0x8(%ebp)
+mov -0x8(%ebp),%edx
+mov 0xc(%ebp),%eax
+%edx,%eax
+movzbl (%eax),%eax
+test %al,%al
+mov -0x4(%ebp),%eax
+movzbl 0x68(%eax),%eax
+leave
+ret
+nop
+nop
+nop

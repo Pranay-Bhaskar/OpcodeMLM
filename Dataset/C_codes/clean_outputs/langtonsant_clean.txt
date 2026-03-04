@@ -1,0 +1,124 @@
+langtonsant.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+movl $0x0,(%esp)
+movl $0x0,-0xc(%ebp)
+movl $0x0,-0x10(%ebp)
+mov 0x4,%eax
+cmp %eax,-0xc(%ebp)
+mov 0x0,%eax
+cmp %eax,-0x10(%ebp)
+movl $0x41,(%esp)
+mov -0xc(%ebp),%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+shl $0x3,%eax
+mov -0x10(%ebp),%edx
+%edx,%eax
+mov 0x0(,%eax,4),%eax
+test %eax,%eax
+mov $0x6,%eax
+mov $0x8,%eax
+mov %eax,(%esp)
+addl $0x1,-0x10(%ebp)
+cmpl $0x27,-0x10(%ebp)
+movl $0xa,(%esp)
+addl $0x1,-0xc(%ebp)
+cmpl $0x27,-0xc(%ebp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x10,%esp
+mov 0x4,%edx
+mov 0x0,%ecx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+shl $0x3,%eax
+%ecx,%eax
+mov 0x0(,%eax,4),%eax
+test %eax,%eax
+mov 0x1900,%eax
+mov %eax,-0x4(%ebp)
+mov 0x8,%eax
+neg %eax
+mov %eax,0x1900
+mov -0x4(%ebp),%eax
+mov %eax,0x8
+mov 0x4,%edx
+mov 0x0,%ecx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+shl $0x3,%eax
+%ecx,%eax
+movl $0x1,0x0(,%eax,4)
+mov 0x1900,%eax
+mov %eax,-0x8(%ebp)
+mov 0x8,%eax
+mov %eax,0x1900
+mov -0x8(%ebp),%eax
+neg %eax
+mov %eax,0x8
+mov 0x4,%edx
+mov 0x0,%ecx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+shl $0x3,%eax
+%ecx,%eax
+movl $0x0,0x0(,%eax,4)
+mov 0x0,%edx
+mov 0x1900,%eax
+%edx,%eax
+lea 0x28(%eax),%ecx
+mov $0x66666667,%edx
+mov %ecx,%eax
+imul %edx
+sar $0x4,%edx
+mov %ecx,%eax
+sar $0x1f,%eax
+sub %eax,%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+shl $0x3,%eax
+sub %eax,%ecx
+mov %ecx,%edx
+mov %edx,0x0
+mov 0x4,%edx
+mov 0x8,%eax
+%edx,%eax
+lea 0x28(%eax),%ecx
+mov $0x66666667,%edx
+mov %ecx,%eax
+imul %edx
+sar $0x4,%edx
+mov %ecx,%eax
+sar $0x1f,%eax
+sub %eax,%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+shl $0x3,%eax
+sub %eax,%ecx
+mov %ecx,%edx
+mov %edx,0x4
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x20,%esp
+movl $0x0,0x1c(%esp)
+movl $0x186a0,(%esp)
+addl $0x1,0x1c(%esp)
+cmpl $0xc7,0x1c(%esp)
+mov $0x0,%eax
+leave
+ret

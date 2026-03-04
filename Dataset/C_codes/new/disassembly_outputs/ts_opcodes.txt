@@ -1,0 +1,477 @@
+
+ts.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_save_tasks>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	53                   	push   %ebx
+   4:	83 ec 34             	sub    $0x34,%esp
+   7:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+   e:	00 
+   f:	8b 45 08             	mov    0x8(%ebp),%eax
+  12:	89 04 24             	mov    %eax,(%esp)
+  15:	e8 00 00 00 00       	call   1a <_save_tasks+0x1a>
+  1a:	89 45 f0             	mov    %eax,-0x10(%ebp)
+  1d:	83 7d f0 00          	cmpl   $0x0,-0x10(%ebp)
+  21:	75 11                	jne    34 <_save_tasks+0x34>
+  23:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
+  2a:	e8 00 00 00 00       	call   2f <_save_tasks+0x2f>
+  2f:	e9 8d 00 00 00       	jmp    c1 <_save_tasks+0xc1>
+  34:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  3b:	eb 5c                	jmp    99 <_save_tasks+0x99>
+  3d:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  40:	6b c0 70             	imul   $0x70,%eax,%eax
+  43:	05 6c 00 00 00       	add    $0x6c,%eax
+  48:	8b 08                	mov    (%eax),%ecx
+  4a:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  4d:	6b c0 70             	imul   $0x70,%eax,%eax
+  50:	05 68 00 00 00       	add    $0x68,%eax
+  55:	8b 10                	mov    (%eax),%edx
+  57:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  5a:	6b c0 70             	imul   $0x70,%eax,%eax
+  5d:	05 00 00 00 00       	add    $0x0,%eax
+  62:	8d 58 04             	lea    0x4(%eax),%ebx
+  65:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  68:	6b c0 70             	imul   $0x70,%eax,%eax
+  6b:	05 00 00 00 00       	add    $0x0,%eax
+  70:	8b 00                	mov    (%eax),%eax
+  72:	89 4c 24 14          	mov    %ecx,0x14(%esp)
+  76:	89 54 24 10          	mov    %edx,0x10(%esp)
+  7a:	89 5c 24 0c          	mov    %ebx,0xc(%esp)
+  7e:	89 44 24 08          	mov    %eax,0x8(%esp)
+  82:	c7 44 24 04 08 00 00 	movl   $0x8,0x4(%esp)
+  89:	00 
+  8a:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  8d:	89 04 24             	mov    %eax,(%esp)
+  90:	e8 00 00 00 00       	call   95 <_save_tasks+0x95>
+  95:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  99:	a1 00 00 00 00       	mov    0x0,%eax
+  9e:	39 45 f4             	cmp    %eax,-0xc(%ebp)
+  a1:	7c 9a                	jl     3d <_save_tasks+0x3d>
+  a3:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  a6:	89 04 24             	mov    %eax,(%esp)
+  a9:	e8 00 00 00 00       	call   ae <_save_tasks+0xae>
+  ae:	8b 45 08             	mov    0x8(%ebp),%eax
+  b1:	89 44 24 04          	mov    %eax,0x4(%esp)
+  b5:	c7 04 24 15 00 00 00 	movl   $0x15,(%esp)
+  bc:	e8 00 00 00 00       	call   c1 <_save_tasks+0xc1>
+  c1:	83 c4 34             	add    $0x34,%esp
+  c4:	5b                   	pop    %ebx
+  c5:	5d                   	pop    %ebp
+  c6:	c3                   	ret    
+
+000000c7 <_load_tasks>:
+  c7:	55                   	push   %ebp
+  c8:	89 e5                	mov    %esp,%ebp
+  ca:	53                   	push   %ebx
+  cb:	83 ec 34             	sub    $0x34,%esp
+  ce:	c7 44 24 04 28 00 00 	movl   $0x28,0x4(%esp)
+  d5:	00 
+  d6:	8b 45 08             	mov    0x8(%ebp),%eax
+  d9:	89 04 24             	mov    %eax,(%esp)
+  dc:	e8 00 00 00 00       	call   e1 <_load_tasks+0x1a>
+  e1:	89 45 f4             	mov    %eax,-0xc(%ebp)
+  e4:	83 7d f4 00          	cmpl   $0x0,-0xc(%ebp)
+  e8:	0f 84 a4 00 00 00    	je     192 <_load_tasks+0xcb>
+  ee:	c7 05 00 00 00 00 00 	movl   $0x0,0x0
+  f5:	00 00 00 
+  f8:	eb 0d                	jmp    107 <_load_tasks+0x40>
+  fa:	a1 00 00 00 00       	mov    0x0,%eax
+  ff:	83 c0 01             	add    $0x1,%eax
+ 102:	a3 00 00 00 00       	mov    %eax,0x0
+ 107:	a1 00 00 00 00       	mov    0x0,%eax
+ 10c:	6b c0 70             	imul   $0x70,%eax,%eax
+ 10f:	83 c0 60             	add    $0x60,%eax
+ 112:	05 00 00 00 00       	add    $0x0,%eax
+ 117:	8d 58 0c             	lea    0xc(%eax),%ebx
+ 11a:	a1 00 00 00 00       	mov    0x0,%eax
+ 11f:	6b c0 70             	imul   $0x70,%eax,%eax
+ 122:	83 c0 60             	add    $0x60,%eax
+ 125:	05 00 00 00 00       	add    $0x0,%eax
+ 12a:	8d 48 08             	lea    0x8(%eax),%ecx
+ 12d:	a1 00 00 00 00       	mov    0x0,%eax
+ 132:	6b c0 70             	imul   $0x70,%eax,%eax
+ 135:	05 00 00 00 00       	add    $0x0,%eax
+ 13a:	8d 50 04             	lea    0x4(%eax),%edx
+ 13d:	a1 00 00 00 00       	mov    0x0,%eax
+ 142:	6b c0 70             	imul   $0x70,%eax,%eax
+ 145:	05 00 00 00 00       	add    $0x0,%eax
+ 14a:	89 5c 24 14          	mov    %ebx,0x14(%esp)
+ 14e:	89 4c 24 10          	mov    %ecx,0x10(%esp)
+ 152:	89 54 24 0c          	mov    %edx,0xc(%esp)
+ 156:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 15a:	c7 44 24 04 2a 00 00 	movl   $0x2a,0x4(%esp)
+ 161:	00 
+ 162:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 165:	89 04 24             	mov    %eax,(%esp)
+ 168:	e8 00 00 00 00       	call   16d <_load_tasks+0xa6>
+ 16d:	83 f8 04             	cmp    $0x4,%eax
+ 170:	74 88                	je     fa <_load_tasks+0x33>
+ 172:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 175:	89 04 24             	mov    %eax,(%esp)
+ 178:	e8 00 00 00 00       	call   17d <_load_tasks+0xb6>
+ 17d:	8b 45 08             	mov    0x8(%ebp),%eax
+ 180:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 184:	c7 04 24 3c 00 00 00 	movl   $0x3c,(%esp)
+ 18b:	e8 00 00 00 00       	call   190 <_load_tasks+0xc9>
+ 190:	eb 01                	jmp    193 <_load_tasks+0xcc>
+ 192:	90                   	nop
+ 193:	83 c4 34             	add    $0x34,%esp
+ 196:	5b                   	pop    %ebx
+ 197:	5d                   	pop    %ebp
+ 198:	c3                   	ret    
+
+00000199 <_add_task>:
+ 199:	55                   	push   %ebp
+ 19a:	89 e5                	mov    %esp,%ebp
+ 19c:	57                   	push   %edi
+ 19d:	56                   	push   %esi
+ 19e:	53                   	push   %ebx
+ 19f:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+ 1a5:	a1 00 00 00 00       	mov    0x0,%eax
+ 1aa:	83 f8 63             	cmp    $0x63,%eax
+ 1ad:	7e 11                	jle    1c0 <_add_task+0x27>
+ 1af:	c7 04 24 52 00 00 00 	movl   $0x52,(%esp)
+ 1b6:	e8 00 00 00 00       	call   1bb <_add_task+0x22>
+ 1bb:	e9 c5 00 00 00       	jmp    285 <_add_task+0xec>
+ 1c0:	a1 00 00 00 00       	mov    0x0,%eax
+ 1c5:	83 c0 01             	add    $0x1,%eax
+ 1c8:	89 85 78 ff ff ff    	mov    %eax,-0x88(%ebp)
+ 1ce:	c7 04 24 62 00 00 00 	movl   $0x62,(%esp)
+ 1d5:	e8 00 00 00 00       	call   1da <_add_task+0x41>
+ 1da:	a1 00 00 00 00       	mov    0x0,%eax
+ 1df:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 1e3:	c7 44 24 04 64 00 00 	movl   $0x64,0x4(%esp)
+ 1ea:	00 
+ 1eb:	8d 85 78 ff ff ff    	lea    -0x88(%ebp),%eax
+ 1f1:	83 c0 04             	add    $0x4,%eax
+ 1f4:	89 04 24             	mov    %eax,(%esp)
+ 1f7:	e8 00 00 00 00       	call   1fc <_add_task+0x63>
+ 1fc:	c7 44 24 04 74 00 00 	movl   $0x74,0x4(%esp)
+ 203:	00 
+ 204:	8d 85 78 ff ff ff    	lea    -0x88(%ebp),%eax
+ 20a:	83 c0 04             	add    $0x4,%eax
+ 20d:	89 04 24             	mov    %eax,(%esp)
+ 210:	e8 00 00 00 00       	call   215 <_add_task+0x7c>
+ 215:	c6 84 05 7c ff ff ff 	movb   $0x0,-0x84(%ebp,%eax,1)
+ 21c:	00 
+ 21d:	c7 04 24 78 00 00 00 	movl   $0x78,(%esp)
+ 224:	e8 00 00 00 00       	call   229 <_add_task+0x90>
+ 229:	8d 85 78 ff ff ff    	lea    -0x88(%ebp),%eax
+ 22f:	83 c0 68             	add    $0x68,%eax
+ 232:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 236:	c7 04 24 99 00 00 00 	movl   $0x99,(%esp)
+ 23d:	e8 00 00 00 00       	call   242 <_add_task+0xa9>
+ 242:	e8 00 00 00 00       	call   247 <_add_task+0xae>
+ 247:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%ebp)
+ 24e:	a1 00 00 00 00       	mov    0x0,%eax
+ 253:	8d 50 01             	lea    0x1(%eax),%edx
+ 256:	89 15 00 00 00 00    	mov    %edx,0x0
+ 25c:	6b c0 70             	imul   $0x70,%eax,%eax
+ 25f:	05 00 00 00 00       	add    $0x0,%eax
+ 264:	89 c3                	mov    %eax,%ebx
+ 266:	8d 85 78 ff ff ff    	lea    -0x88(%ebp),%eax
+ 26c:	ba 1c 00 00 00       	mov    $0x1c,%edx
+ 271:	89 df                	mov    %ebx,%edi
+ 273:	89 c6                	mov    %eax,%esi
+ 275:	89 d1                	mov    %edx,%ecx
+ 277:	f3 a5                	rep movsl %ds:(%esi),%es:(%edi)
+ 279:	c7 04 24 9c 00 00 00 	movl   $0x9c,(%esp)
+ 280:	e8 00 00 00 00       	call   285 <_add_task+0xec>
+ 285:	81 c4 8c 00 00 00    	add    $0x8c,%esp
+ 28b:	5b                   	pop    %ebx
+ 28c:	5e                   	pop    %esi
+ 28d:	5f                   	pop    %edi
+ 28e:	5d                   	pop    %ebp
+ 28f:	c3                   	ret    
+
+00000290 <_list_tasks>:
+ 290:	55                   	push   %ebp
+ 291:	89 e5                	mov    %esp,%ebp
+ 293:	53                   	push   %ebx
+ 294:	83 ec 34             	sub    $0x34,%esp
+ 297:	c7 04 24 a8 00 00 00 	movl   $0xa8,(%esp)
+ 29e:	e8 00 00 00 00       	call   2a3 <_list_tasks+0x13>
+ 2a3:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 2aa:	eb 65                	jmp    311 <_list_tasks+0x81>
+ 2ac:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 2af:	6b c0 70             	imul   $0x70,%eax,%eax
+ 2b2:	05 6c 00 00 00       	add    $0x6c,%eax
+ 2b7:	8b 00                	mov    (%eax),%eax
+ 2b9:	85 c0                	test   %eax,%eax
+ 2bb:	74 07                	je     2c4 <_list_tasks+0x34>
+ 2bd:	bb c2 00 00 00       	mov    $0xc2,%ebx
+ 2c2:	eb 05                	jmp    2c9 <_list_tasks+0x39>
+ 2c4:	bb c7 00 00 00       	mov    $0xc7,%ebx
+ 2c9:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 2cc:	6b c0 70             	imul   $0x70,%eax,%eax
+ 2cf:	05 68 00 00 00       	add    $0x68,%eax
+ 2d4:	8b 10                	mov    (%eax),%edx
+ 2d6:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 2d9:	6b c0 70             	imul   $0x70,%eax,%eax
+ 2dc:	05 00 00 00 00       	add    $0x0,%eax
+ 2e1:	8d 48 04             	lea    0x4(%eax),%ecx
+ 2e4:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 2e7:	6b c0 70             	imul   $0x70,%eax,%eax
+ 2ea:	05 00 00 00 00       	add    $0x0,%eax
+ 2ef:	8b 00                	mov    (%eax),%eax
+ 2f1:	89 5c 24 10          	mov    %ebx,0x10(%esp)
+ 2f5:	89 54 24 0c          	mov    %edx,0xc(%esp)
+ 2f9:	89 4c 24 08          	mov    %ecx,0x8(%esp)
+ 2fd:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 301:	c7 04 24 cf 00 00 00 	movl   $0xcf,(%esp)
+ 308:	e8 00 00 00 00       	call   30d <_list_tasks+0x7d>
+ 30d:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 311:	a1 00 00 00 00       	mov    0x0,%eax
+ 316:	39 45 f4             	cmp    %eax,-0xc(%ebp)
+ 319:	7c 91                	jl     2ac <_list_tasks+0x1c>
+ 31b:	90                   	nop
+ 31c:	83 c4 34             	add    $0x34,%esp
+ 31f:	5b                   	pop    %ebx
+ 320:	5d                   	pop    %ebp
+ 321:	c3                   	ret    
+
+00000322 <_complete_task>:
+ 322:	55                   	push   %ebp
+ 323:	89 e5                	mov    %esp,%ebp
+ 325:	83 ec 28             	sub    $0x28,%esp
+ 328:	c7 04 24 e0 00 00 00 	movl   $0xe0,(%esp)
+ 32f:	e8 00 00 00 00       	call   334 <_complete_task+0x12>
+ 334:	8d 45 f0             	lea    -0x10(%ebp),%eax
+ 337:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 33b:	c7 04 24 99 00 00 00 	movl   $0x99,(%esp)
+ 342:	e8 00 00 00 00       	call   347 <_complete_task+0x25>
+ 347:	e8 00 00 00 00       	call   34c <_complete_task+0x2a>
+ 34c:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 353:	eb 3e                	jmp    393 <_complete_task+0x71>
+ 355:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 358:	6b c0 70             	imul   $0x70,%eax,%eax
+ 35b:	05 00 00 00 00       	add    $0x0,%eax
+ 360:	8b 10                	mov    (%eax),%edx
+ 362:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 365:	39 c2                	cmp    %eax,%edx
+ 367:	75 26                	jne    38f <_complete_task+0x6d>
+ 369:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 36c:	6b c0 70             	imul   $0x70,%eax,%eax
+ 36f:	05 6c 00 00 00       	add    $0x6c,%eax
+ 374:	c7 00 01 00 00 00    	movl   $0x1,(%eax)
+ 37a:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 37d:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 381:	c7 04 24 01 01 00 00 	movl   $0x101,(%esp)
+ 388:	e8 00 00 00 00       	call   38d <_complete_task+0x6b>
+ 38d:	eb 1a                	jmp    3a9 <_complete_task+0x87>
+ 38f:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 393:	a1 00 00 00 00       	mov    0x0,%eax
+ 398:	39 45 f4             	cmp    %eax,-0xc(%ebp)
+ 39b:	7c b8                	jl     355 <_complete_task+0x33>
+ 39d:	c7 04 24 1b 01 00 00 	movl   $0x11b,(%esp)
+ 3a4:	e8 00 00 00 00       	call   3a9 <_complete_task+0x87>
+ 3a9:	c9                   	leave  
+ 3aa:	c3                   	ret    
+
+000003ab <_delete_task>:
+ 3ab:	55                   	push   %ebp
+ 3ac:	89 e5                	mov    %esp,%ebp
+ 3ae:	57                   	push   %edi
+ 3af:	56                   	push   %esi
+ 3b0:	53                   	push   %ebx
+ 3b1:	83 ec 2c             	sub    $0x2c,%esp
+ 3b4:	c7 04 24 2b 01 00 00 	movl   $0x12b,(%esp)
+ 3bb:	e8 00 00 00 00       	call   3c0 <_delete_task+0x15>
+ 3c0:	8d 45 dc             	lea    -0x24(%ebp),%eax
+ 3c3:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 3c7:	c7 04 24 99 00 00 00 	movl   $0x99,(%esp)
+ 3ce:	e8 00 00 00 00       	call   3d3 <_delete_task+0x28>
+ 3d3:	e8 00 00 00 00       	call   3d8 <_delete_task+0x2d>
+ 3d8:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%ebp)
+ 3df:	eb 7c                	jmp    45d <_delete_task+0xb2>
+ 3e1:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 3e4:	6b c0 70             	imul   $0x70,%eax,%eax
+ 3e7:	05 00 00 00 00       	add    $0x0,%eax
+ 3ec:	8b 10                	mov    (%eax),%edx
+ 3ee:	8b 45 dc             	mov    -0x24(%ebp),%eax
+ 3f1:	39 c2                	cmp    %eax,%edx
+ 3f3:	75 64                	jne    459 <_delete_task+0xae>
+ 3f5:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 3f8:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 3fb:	eb 2d                	jmp    42a <_delete_task+0x7f>
+ 3fd:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 400:	8d 48 01             	lea    0x1(%eax),%ecx
+ 403:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 406:	6b c0 70             	imul   $0x70,%eax,%eax
+ 409:	8d 90 00 00 00 00    	lea    0x0(%eax),%edx
+ 40f:	6b c1 70             	imul   $0x70,%ecx,%eax
+ 412:	05 00 00 00 00       	add    $0x0,%eax
+ 417:	89 c3                	mov    %eax,%ebx
+ 419:	b8 1c 00 00 00       	mov    $0x1c,%eax
+ 41e:	89 d7                	mov    %edx,%edi
+ 420:	89 de                	mov    %ebx,%esi
+ 422:	89 c1                	mov    %eax,%ecx
+ 424:	f3 a5                	rep movsl %ds:(%esi),%es:(%edi)
+ 426:	83 45 e0 01          	addl   $0x1,-0x20(%ebp)
+ 42a:	a1 00 00 00 00       	mov    0x0,%eax
+ 42f:	83 e8 01             	sub    $0x1,%eax
+ 432:	3b 45 e0             	cmp    -0x20(%ebp),%eax
+ 435:	7f c6                	jg     3fd <_delete_task+0x52>
+ 437:	a1 00 00 00 00       	mov    0x0,%eax
+ 43c:	83 e8 01             	sub    $0x1,%eax
+ 43f:	a3 00 00 00 00       	mov    %eax,0x0
+ 444:	8b 45 dc             	mov    -0x24(%ebp),%eax
+ 447:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 44b:	c7 04 24 45 01 00 00 	movl   $0x145,(%esp)
+ 452:	e8 00 00 00 00       	call   457 <_delete_task+0xac>
+ 457:	eb 1e                	jmp    477 <_delete_task+0xcc>
+ 459:	83 45 e4 01          	addl   $0x1,-0x1c(%ebp)
+ 45d:	a1 00 00 00 00       	mov    0x0,%eax
+ 462:	39 45 e4             	cmp    %eax,-0x1c(%ebp)
+ 465:	0f 8c 76 ff ff ff    	jl     3e1 <_delete_task+0x36>
+ 46b:	c7 04 24 1b 01 00 00 	movl   $0x11b,(%esp)
+ 472:	e8 00 00 00 00       	call   477 <_delete_task+0xcc>
+ 477:	83 c4 2c             	add    $0x2c,%esp
+ 47a:	5b                   	pop    %ebx
+ 47b:	5e                   	pop    %esi
+ 47c:	5f                   	pop    %edi
+ 47d:	5d                   	pop    %ebp
+ 47e:	c3                   	ret    
+
+0000047f <_sort_tasks>:
+ 47f:	55                   	push   %ebp
+ 480:	89 e5                	mov    %esp,%ebp
+ 482:	57                   	push   %edi
+ 483:	56                   	push   %esi
+ 484:	53                   	push   %ebx
+ 485:	81 ec 9c 00 00 00    	sub    $0x9c,%esp
+ 48b:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%ebp)
+ 492:	e9 a9 00 00 00       	jmp    540 <_sort_tasks+0xc1>
+ 497:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 49a:	83 c0 01             	add    $0x1,%eax
+ 49d:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 4a0:	e9 89 00 00 00       	jmp    52e <_sort_tasks+0xaf>
+ 4a5:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 4a8:	6b c0 70             	imul   $0x70,%eax,%eax
+ 4ab:	05 68 00 00 00       	add    $0x68,%eax
+ 4b0:	8b 10                	mov    (%eax),%edx
+ 4b2:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 4b5:	6b c0 70             	imul   $0x70,%eax,%eax
+ 4b8:	05 68 00 00 00       	add    $0x68,%eax
+ 4bd:	8b 00                	mov    (%eax),%eax
+ 4bf:	39 c2                	cmp    %eax,%edx
+ 4c1:	7e 67                	jle    52a <_sort_tasks+0xab>
+ 4c3:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 4c6:	6b c0 70             	imul   $0x70,%eax,%eax
+ 4c9:	8d 90 00 00 00 00    	lea    0x0(%eax),%edx
+ 4cf:	8d 85 70 ff ff ff    	lea    -0x90(%ebp),%eax
+ 4d5:	89 d3                	mov    %edx,%ebx
+ 4d7:	ba 1c 00 00 00       	mov    $0x1c,%edx
+ 4dc:	89 c7                	mov    %eax,%edi
+ 4de:	89 de                	mov    %ebx,%esi
+ 4e0:	89 d1                	mov    %edx,%ecx
+ 4e2:	f3 a5                	rep movsl %ds:(%esi),%es:(%edi)
+ 4e4:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 4e7:	6b c0 70             	imul   $0x70,%eax,%eax
+ 4ea:	8d 90 00 00 00 00    	lea    0x0(%eax),%edx
+ 4f0:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 4f3:	6b c0 70             	imul   $0x70,%eax,%eax
+ 4f6:	05 00 00 00 00       	add    $0x0,%eax
+ 4fb:	89 c3                	mov    %eax,%ebx
+ 4fd:	b8 1c 00 00 00       	mov    $0x1c,%eax
+ 502:	89 d7                	mov    %edx,%edi
+ 504:	89 de                	mov    %ebx,%esi
+ 506:	89 c1                	mov    %eax,%ecx
+ 508:	f3 a5                	rep movsl %ds:(%esi),%es:(%edi)
+ 50a:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 50d:	6b c0 70             	imul   $0x70,%eax,%eax
+ 510:	05 00 00 00 00       	add    $0x0,%eax
+ 515:	89 c3                	mov    %eax,%ebx
+ 517:	8d 85 70 ff ff ff    	lea    -0x90(%ebp),%eax
+ 51d:	ba 1c 00 00 00       	mov    $0x1c,%edx
+ 522:	89 df                	mov    %ebx,%edi
+ 524:	89 c6                	mov    %eax,%esi
+ 526:	89 d1                	mov    %edx,%ecx
+ 528:	f3 a5                	rep movsl %ds:(%esi),%es:(%edi)
+ 52a:	83 45 e0 01          	addl   $0x1,-0x20(%ebp)
+ 52e:	a1 00 00 00 00       	mov    0x0,%eax
+ 533:	39 45 e0             	cmp    %eax,-0x20(%ebp)
+ 536:	0f 8c 69 ff ff ff    	jl     4a5 <_sort_tasks+0x26>
+ 53c:	83 45 e4 01          	addl   $0x1,-0x1c(%ebp)
+ 540:	a1 00 00 00 00       	mov    0x0,%eax
+ 545:	83 e8 01             	sub    $0x1,%eax
+ 548:	3b 45 e4             	cmp    -0x1c(%ebp),%eax
+ 54b:	0f 8f 46 ff ff ff    	jg     497 <_sort_tasks+0x18>
+ 551:	c7 04 24 57 01 00 00 	movl   $0x157,(%esp)
+ 558:	e8 00 00 00 00       	call   55d <_sort_tasks+0xde>
+ 55d:	90                   	nop
+ 55e:	81 c4 9c 00 00 00    	add    $0x9c,%esp
+ 564:	5b                   	pop    %ebx
+ 565:	5e                   	pop    %esi
+ 566:	5f                   	pop    %edi
+ 567:	5d                   	pop    %ebp
+ 568:	c3                   	ret    
+
+00000569 <_main>:
+ 569:	55                   	push   %ebp
+ 56a:	89 e5                	mov    %esp,%ebp
+ 56c:	83 e4 f0             	and    $0xfffffff0,%esp
+ 56f:	83 ec 20             	sub    $0x20,%esp
+ 572:	e8 00 00 00 00       	call   577 <_main+0xe>
+ 577:	c7 44 24 16 74 61 73 	movl   $0x6b736174,0x16(%esp)
+ 57e:	6b 
+ 57f:	c7 44 24 1a 73 2e 74 	movl   $0x78742e73,0x1a(%esp)
+ 586:	78 
+ 587:	66 c7 44 24 1e 74 00 	movw   $0x74,0x1e(%esp)
+ 58e:	8d 44 24 16          	lea    0x16(%esp),%eax
+ 592:	89 04 24             	mov    %eax,(%esp)
+ 595:	e8 2d fb ff ff       	call   c7 <_load_tasks>
+ 59a:	c7 04 24 71 01 00 00 	movl   $0x171,(%esp)
+ 5a1:	e8 00 00 00 00       	call   5a6 <_main+0x3d>
+ 5a6:	c7 04 24 8e 01 00 00 	movl   $0x18e,(%esp)
+ 5ad:	e8 00 00 00 00       	call   5b2 <_main+0x49>
+ 5b2:	c7 04 24 9a 01 00 00 	movl   $0x19a,(%esp)
+ 5b9:	e8 00 00 00 00       	call   5be <_main+0x55>
+ 5be:	c7 04 24 a8 01 00 00 	movl   $0x1a8,(%esp)
+ 5c5:	e8 00 00 00 00       	call   5ca <_main+0x61>
+ 5ca:	c7 04 24 b9 01 00 00 	movl   $0x1b9,(%esp)
+ 5d1:	e8 00 00 00 00       	call   5d6 <_main+0x6d>
+ 5d6:	c7 04 24 c8 01 00 00 	movl   $0x1c8,(%esp)
+ 5dd:	e8 00 00 00 00       	call   5e2 <_main+0x79>
+ 5e2:	c7 04 24 e2 01 00 00 	movl   $0x1e2,(%esp)
+ 5e9:	e8 00 00 00 00       	call   5ee <_main+0x85>
+ 5ee:	c7 04 24 f1 01 00 00 	movl   $0x1f1,(%esp)
+ 5f5:	e8 00 00 00 00       	call   5fa <_main+0x91>
+ 5fa:	8d 44 24 10          	lea    0x10(%esp),%eax
+ 5fe:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 602:	c7 04 24 99 00 00 00 	movl   $0x99,(%esp)
+ 609:	e8 00 00 00 00       	call   60e <_main+0xa5>
+ 60e:	e8 00 00 00 00       	call   613 <_main+0xaa>
+ 613:	8b 44 24 10          	mov    0x10(%esp),%eax
+ 617:	83 f8 06             	cmp    $0x6,%eax
+ 61a:	77 4b                	ja     667 <_main+0xfe>
+ 61c:	8b 04 85 14 02 00 00 	mov    0x214(,%eax,4),%eax
+ 623:	ff e0                	jmp    *%eax
+ 625:	e8 6f fb ff ff       	call   199 <_add_task>
+ 62a:	eb 47                	jmp    673 <_main+0x10a>
+ 62c:	e8 5f fc ff ff       	call   290 <_list_tasks>
+ 631:	eb 40                	jmp    673 <_main+0x10a>
+ 633:	e8 ea fc ff ff       	call   322 <_complete_task>
+ 638:	eb 39                	jmp    673 <_main+0x10a>
+ 63a:	e8 6c fd ff ff       	call   3ab <_delete_task>
+ 63f:	eb 32                	jmp    673 <_main+0x10a>
+ 641:	e8 39 fe ff ff       	call   47f <_sort_tasks>
+ 646:	eb 2b                	jmp    673 <_main+0x10a>
+ 648:	8d 44 24 16          	lea    0x16(%esp),%eax
+ 64c:	89 04 24             	mov    %eax,(%esp)
+ 64f:	e8 ac f9 ff ff       	call   0 <_save_tasks>
+ 654:	c7 04 24 fa 01 00 00 	movl   $0x1fa,(%esp)
+ 65b:	e8 00 00 00 00       	call   660 <_main+0xf7>
+ 660:	b8 00 00 00 00       	mov    $0x0,%eax
+ 665:	eb 11                	jmp    678 <_main+0x10f>
+ 667:	c7 04 24 03 02 00 00 	movl   $0x203,(%esp)
+ 66e:	e8 00 00 00 00       	call   673 <_main+0x10a>
+ 673:	e9 22 ff ff ff       	jmp    59a <_main+0x31>
+ 678:	c9                   	leave  
+ 679:	c3                   	ret    
+ 67a:	90                   	nop
+ 67b:	90                   	nop

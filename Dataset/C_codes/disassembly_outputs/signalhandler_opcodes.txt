@@ -1,0 +1,33 @@
+
+signalhandler.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_handler>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	8b 45 08             	mov    0x8(%ebp),%eax
+   9:	89 44 24 04          	mov    %eax,0x4(%esp)
+   d:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  14:	e8 00 00 00 00       	call   19 <_handler+0x19>
+  19:	90                   	nop
+  1a:	c9                   	leave  
+  1b:	c3                   	ret    
+
+0000001c <_main>:
+  1c:	55                   	push   %ebp
+  1d:	89 e5                	mov    %esp,%ebp
+  1f:	83 e4 f0             	and    $0xfffffff0,%esp
+  22:	83 ec 10             	sub    $0x10,%esp
+  25:	e8 00 00 00 00       	call   2a <_main+0xe>
+  2a:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  31:	00 
+  32:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
+  39:	e8 00 00 00 00       	call   3e <_main+0x22>
+  3e:	c7 04 24 12 00 00 00 	movl   $0x12,(%esp)
+  45:	e8 00 00 00 00       	call   4a <_main+0x2e>
+  4a:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
+  51:	e8 00 00 00 00       	call   56 <_main+0x3a>
+  56:	eb e6                	jmp    3e <_main+0x22>

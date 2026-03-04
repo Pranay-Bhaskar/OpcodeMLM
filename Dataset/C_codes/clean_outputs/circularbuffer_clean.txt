@@ -1,0 +1,64 @@
+circularbuffer.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x18,%esp
+mov 0x8,%eax
+cmp $0x5,%eax
+movl $0x0,(%esp)
+mov 0x4,%eax
+mov 0x8(%ebp),%edx
+mov %edx,0x0(,%eax,4)
+mov 0x4,%eax
+lea 0x1(%eax),%ecx
+mov $0x66666667,%edx
+mov %ecx,%eax
+imul %edx
+sar %edx
+mov %ecx,%eax
+sar $0x1f,%eax
+sub %eax,%edx
+mov %edx,%eax
+mov %eax,%edx
+shl $0x2,%edx
+%eax,%edx
+mov %ecx,%eax
+sub %edx,%eax
+mov %eax,0x4
+mov 0x8,%eax
+$0x1,%eax
+mov %eax,0x8
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+mov 0x8,%eax
+test %eax,%eax
+movl $0xc,(%esp)
+mov $0xffffffff,%eax
+mov 0x0,%eax
+mov 0x0(,%eax,4),%eax
+mov %eax,-0xc(%ebp)
+mov 0x0,%eax
+lea 0x1(%eax),%ecx
+mov $0x66666667,%edx
+mov %ecx,%eax
+imul %edx
+sar %edx
+mov %ecx,%eax
+sar $0x1f,%eax
+sub %eax,%edx
+mov %edx,%eax
+mov %eax,%edx
+shl $0x2,%edx
+%eax,%edx
+mov %ecx,%eax
+sub %edx,%eax
+mov %eax,0x0
+mov 0x8,%eax
+sub $0x1,%eax
+mov %eax,0x8
+mov -0xc(%ebp),%eax
+leave
+ret
+nop

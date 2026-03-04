@@ -1,0 +1,68 @@
+graph.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+movl $0x8,(%esp)
+mov %eax,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+mov 0x8(%ebp),%edx
+mov %edx,(%eax)
+mov -0xc(%ebp),%eax
+movl $0x0,0x4(%eax)
+mov -0xc(%ebp),%eax
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+movl $0x8,(%esp)
+mov %eax,-0x10(%ebp)
+mov -0x10(%ebp),%eax
+mov 0x8(%ebp),%edx
+mov %edx,(%eax)
+mov 0x8(%ebp),%eax
+shl $0x2,%eax
+mov %eax,(%esp)
+mov %eax,%edx
+mov -0x10(%ebp),%eax
+mov %edx,0x4(%eax)
+movl $0x0,-0xc(%ebp)
+mov -0x10(%ebp),%eax
+mov 0x4(%eax),%eax
+mov -0xc(%ebp),%edx
+shl $0x2,%edx
+%edx,%eax
+movl $0x0,(%eax)
+addl $0x1,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+cmp 0x8(%ebp),%eax
+mov -0x10(%ebp),%eax
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+mov 0x10(%ebp),%eax
+mov %eax,(%esp)
+mov %eax,-0xc(%ebp)
+mov 0x8(%ebp),%eax
+mov 0x4(%eax),%eax
+mov 0xc(%ebp),%edx
+shl $0x2,%edx
+%edx,%eax
+mov (%eax),%edx
+mov -0xc(%ebp),%eax
+mov %edx,0x4(%eax)
+mov 0x8(%ebp),%eax
+mov 0x4(%eax),%eax
+mov 0xc(%ebp),%edx
+shl $0x2,%edx
+%eax,%edx
+mov -0xc(%ebp),%eax
+mov %eax,(%edx)
+nop
+leave
+ret
+nop
+nop
+nop

@@ -1,0 +1,77 @@
+
+ad.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_assemble>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 28             	sub    $0x28,%esp
+   6:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+   d:	eb 42                	jmp    51 <_assemble+0x51>
+   f:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  12:	c1 e0 04             	shl    $0x4,%eax
+  15:	8d 90 00 00 00 00    	lea    0x0(%eax),%edx
+  1b:	8b 45 08             	mov    0x8(%ebp),%eax
+  1e:	89 44 24 04          	mov    %eax,0x4(%esp)
+  22:	89 14 24             	mov    %edx,(%esp)
+  25:	e8 00 00 00 00       	call   2a <_assemble+0x2a>
+  2a:	85 c0                	test   %eax,%eax
+  2c:	75 1f                	jne    4d <_assemble+0x4d>
+  2e:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  31:	c1 e0 04             	shl    $0x4,%eax
+  34:	05 0c 00 00 00       	add    $0xc,%eax
+  39:	8b 00                	mov    (%eax),%eax
+  3b:	89 44 24 04          	mov    %eax,0x4(%esp)
+  3f:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  46:	e8 00 00 00 00       	call   4b <_assemble+0x4b>
+  4b:	eb 16                	jmp    63 <_assemble+0x63>
+  4d:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  51:	83 7d f4 04          	cmpl   $0x4,-0xc(%ebp)
+  55:	7e b8                	jle    f <_assemble+0xf>
+  57:	c7 04 24 0c 00 00 00 	movl   $0xc,(%esp)
+  5e:	e8 00 00 00 00       	call   63 <_assemble+0x63>
+  63:	c9                   	leave  
+  64:	c3                   	ret    
+
+00000065 <_disassemble>:
+  65:	55                   	push   %ebp
+  66:	89 e5                	mov    %esp,%ebp
+  68:	83 ec 28             	sub    $0x28,%esp
+  6b:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  72:	eb 33                	jmp    a7 <_disassemble+0x42>
+  74:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  77:	c1 e0 04             	shl    $0x4,%eax
+  7a:	05 0c 00 00 00       	add    $0xc,%eax
+  7f:	8b 00                	mov    (%eax),%eax
+  81:	3b 45 08             	cmp    0x8(%ebp),%eax
+  84:	75 1d                	jne    a3 <_disassemble+0x3e>
+  86:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  89:	c1 e0 04             	shl    $0x4,%eax
+  8c:	05 00 00 00 00       	add    $0x0,%eax
+  91:	89 44 24 04          	mov    %eax,0x4(%esp)
+  95:	c7 04 24 20 00 00 00 	movl   $0x20,(%esp)
+  9c:	e8 00 00 00 00       	call   a1 <_disassemble+0x3c>
+  a1:	eb 16                	jmp    b9 <_disassemble+0x54>
+  a3:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  a7:	83 7d f4 04          	cmpl   $0x4,-0xc(%ebp)
+  ab:	7e c7                	jle    74 <_disassemble+0xf>
+  ad:	c7 04 24 2e 00 00 00 	movl   $0x2e,(%esp)
+  b4:	e8 00 00 00 00       	call   b9 <_disassemble+0x54>
+  b9:	c9                   	leave  
+  ba:	c3                   	ret    
+
+000000bb <_main>:
+  bb:	55                   	push   %ebp
+  bc:	89 e5                	mov    %esp,%ebp
+  be:	83 e4 f0             	and    $0xfffffff0,%esp
+  c1:	83 ec 10             	sub    $0x10,%esp
+  c4:	e8 00 00 00 00       	call   c9 <_main+0xe>
+  c9:	c7 04 24 3d 00 00 00 	movl   $0x3d,(%esp)
+  d0:	e8 2b ff ff ff       	call   0 <_assemble>
+  d5:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
+  dc:	e8 84 ff ff ff       	call   65 <_disassemble>
+  e1:	b8 00 00 00 00       	mov    $0x0,%eax
+  e6:	c9                   	leave  
+  e7:	c3                   	ret    

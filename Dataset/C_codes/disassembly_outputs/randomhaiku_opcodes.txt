@@ -1,0 +1,65 @@
+
+randomhaiku.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_main>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 e4 f0             	and    $0xfffffff0,%esp
+   6:	83 ec 10             	sub    $0x10,%esp
+   9:	e8 00 00 00 00       	call   e <_main+0xe>
+   e:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  15:	e8 00 00 00 00       	call   1a <_main+0x1a>
+  1a:	89 04 24             	mov    %eax,(%esp)
+  1d:	e8 00 00 00 00       	call   22 <_main+0x22>
+  22:	e8 00 00 00 00       	call   27 <_main+0x27>
+  27:	89 c1                	mov    %eax,%ecx
+  29:	ba 56 55 55 55       	mov    $0x55555556,%edx
+  2e:	89 c8                	mov    %ecx,%eax
+  30:	f7 ea                	imul   %edx
+  32:	89 c8                	mov    %ecx,%eax
+  34:	c1 f8 1f             	sar    $0x1f,%eax
+  37:	29 c2                	sub    %eax,%edx
+  39:	89 d0                	mov    %edx,%eax
+  3b:	89 c2                	mov    %eax,%edx
+  3d:	01 d2                	add    %edx,%edx
+  3f:	01 c2                	add    %eax,%edx
+  41:	89 c8                	mov    %ecx,%eax
+  43:	29 d0                	sub    %edx,%eax
+  45:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  4c:	89 04 24             	mov    %eax,(%esp)
+  4f:	e8 00 00 00 00       	call   54 <_main+0x54>
+  54:	e8 00 00 00 00       	call   59 <_main+0x59>
+  59:	89 c2                	mov    %eax,%edx
+  5b:	89 d0                	mov    %edx,%eax
+  5d:	c1 f8 1f             	sar    $0x1f,%eax
+  60:	c1 e8 1f             	shr    $0x1f,%eax
+  63:	01 c2                	add    %eax,%edx
+  65:	83 e2 01             	and    $0x1,%edx
+  68:	29 c2                	sub    %eax,%edx
+  6a:	89 d0                	mov    %edx,%eax
+  6c:	8b 04 85 0c 00 00 00 	mov    0xc(,%eax,4),%eax
+  73:	89 04 24             	mov    %eax,(%esp)
+  76:	e8 00 00 00 00       	call   7b <_main+0x7b>
+  7b:	e8 00 00 00 00       	call   80 <_main+0x80>
+  80:	89 c1                	mov    %eax,%ecx
+  82:	ba 56 55 55 55       	mov    $0x55555556,%edx
+  87:	89 c8                	mov    %ecx,%eax
+  89:	f7 ea                	imul   %edx
+  8b:	89 c8                	mov    %ecx,%eax
+  8d:	c1 f8 1f             	sar    $0x1f,%eax
+  90:	29 c2                	sub    %eax,%edx
+  92:	89 d0                	mov    %edx,%eax
+  94:	89 c2                	mov    %eax,%edx
+  96:	01 d2                	add    %edx,%edx
+  98:	01 c2                	add    %eax,%edx
+  9a:	89 c8                	mov    %ecx,%eax
+  9c:	29 d0                	sub    %edx,%eax
+  9e:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  a5:	89 04 24             	mov    %eax,(%esp)
+  a8:	e8 00 00 00 00       	call   ad <_main+0xad>
+  ad:	b8 00 00 00 00       	mov    $0x0,%eax
+  b2:	c9                   	leave  
+  b3:	c3                   	ret    

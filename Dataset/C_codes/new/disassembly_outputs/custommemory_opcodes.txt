@@ -1,0 +1,103 @@
+
+custommemory.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_my_malloc>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 10             	sub    $0x10,%esp
+   6:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+   d:	eb 74                	jmp    83 <_my_malloc+0x83>
+   f:	c7 45 f8 01 00 00 00 	movl   $0x1,-0x8(%ebp)
+  16:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  1d:	eb 20                	jmp    3f <_my_malloc+0x3f>
+  1f:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  22:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  25:	01 d0                	add    %edx,%eax
+  27:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  2e:	85 c0                	test   %eax,%eax
+  30:	74 09                	je     3b <_my_malloc+0x3b>
+  32:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+  39:	eb 0c                	jmp    47 <_my_malloc+0x47>
+  3b:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  3f:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  42:	3b 45 08             	cmp    0x8(%ebp),%eax
+  45:	7c d8                	jl     1f <_my_malloc+0x1f>
+  47:	83 7d f8 00          	cmpl   $0x0,-0x8(%ebp)
+  4b:	74 32                	je     7f <_my_malloc+0x7f>
+  4d:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+  54:	eb 17                	jmp    6d <_my_malloc+0x6d>
+  56:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  59:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  5c:	01 d0                	add    %edx,%eax
+  5e:	c7 04 85 00 00 00 00 	movl   $0x1,0x0(,%eax,4)
+  65:	01 00 00 00 
+  69:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+  6d:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  70:	3b 45 08             	cmp    0x8(%ebp),%eax
+  73:	7c e1                	jl     56 <_my_malloc+0x56>
+  75:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  78:	05 00 00 00 00       	add    $0x0,%eax
+  7d:	eb 1a                	jmp    99 <_my_malloc+0x99>
+  7f:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  83:	b8 00 04 00 00       	mov    $0x400,%eax
+  88:	2b 45 08             	sub    0x8(%ebp),%eax
+  8b:	3b 45 fc             	cmp    -0x4(%ebp),%eax
+  8e:	0f 8f 7b ff ff ff    	jg     f <_my_malloc+0xf>
+  94:	b8 00 00 00 00       	mov    $0x0,%eax
+  99:	c9                   	leave  
+  9a:	c3                   	ret    
+
+0000009b <_my_free>:
+  9b:	55                   	push   %ebp
+  9c:	89 e5                	mov    %esp,%ebp
+  9e:	83 ec 10             	sub    $0x10,%esp
+  a1:	8b 45 08             	mov    0x8(%ebp),%eax
+  a4:	ba 00 00 00 00       	mov    $0x0,%edx
+  a9:	29 d0                	sub    %edx,%eax
+  ab:	89 45 f8             	mov    %eax,-0x8(%ebp)
+  ae:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+  b5:	eb 17                	jmp    ce <_my_free+0x33>
+  b7:	8b 55 f8             	mov    -0x8(%ebp),%edx
+  ba:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  bd:	01 d0                	add    %edx,%eax
+  bf:	c7 04 85 00 00 00 00 	movl   $0x0,0x0(,%eax,4)
+  c6:	00 00 00 00 
+  ca:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  ce:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  d1:	3b 45 0c             	cmp    0xc(%ebp),%eax
+  d4:	7c e1                	jl     b7 <_my_free+0x1c>
+  d6:	90                   	nop
+  d7:	c9                   	leave  
+  d8:	c3                   	ret    
+
+000000d9 <_main>:
+  d9:	55                   	push   %ebp
+  da:	89 e5                	mov    %esp,%ebp
+  dc:	83 e4 f0             	and    $0xfffffff0,%esp
+  df:	83 ec 20             	sub    $0x20,%esp
+  e2:	e8 00 00 00 00       	call   e7 <_main+0xe>
+  e7:	c7 04 24 64 00 00 00 	movl   $0x64,(%esp)
+  ee:	e8 0d ff ff ff       	call   0 <_my_malloc>
+  f3:	89 44 24 1c          	mov    %eax,0x1c(%esp)
+  f7:	c7 04 24 c8 00 00 00 	movl   $0xc8,(%esp)
+  fe:	e8 fd fe ff ff       	call   0 <_my_malloc>
+ 103:	89 44 24 18          	mov    %eax,0x18(%esp)
+ 107:	83 7c 24 1c 00       	cmpl   $0x0,0x1c(%esp)
+ 10c:	74 13                	je     121 <_main+0x48>
+ 10e:	83 7c 24 18 00       	cmpl   $0x0,0x18(%esp)
+ 113:	74 0c                	je     121 <_main+0x48>
+ 115:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 11c:	e8 00 00 00 00       	call   121 <_main+0x48>
+ 121:	c7 44 24 04 64 00 00 	movl   $0x64,0x4(%esp)
+ 128:	00 
+ 129:	8b 44 24 1c          	mov    0x1c(%esp),%eax
+ 12d:	89 04 24             	mov    %eax,(%esp)
+ 130:	e8 66 ff ff ff       	call   9b <_my_free>
+ 135:	c7 04 24 12 00 00 00 	movl   $0x12,(%esp)
+ 13c:	e8 00 00 00 00       	call   141 <_main+0x68>
+ 141:	b8 00 00 00 00       	mov    $0x0,%eax
+ 146:	c9                   	leave  
+ 147:	c3                   	ret    

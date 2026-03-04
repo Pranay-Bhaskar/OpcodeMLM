@@ -1,0 +1,138 @@
+tinycomplierarithmetic.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x10,%esp
+movl $0x0,-0x4(%ebp)
+mov -0x4(%ebp),%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+%eax,%eax
+mov %eax,%edx
+mov 0x8(%ebp),%eax
+mov (%eax),%eax
+movzbl (%eax),%eax
+movsbl %al,%eax
+sub $0x30,%eax
+%edx,%eax
+mov %eax,-0x4(%ebp)
+mov 0x8(%ebp),%eax
+mov (%eax),%eax
+lea 0x1(%eax),%edx
+mov 0x8(%ebp),%eax
+mov %edx,(%eax)
+mov 0x8(%ebp),%eax
+mov (%eax),%eax
+movzbl (%eax),%eax
+movsbl %al,%eax
+sub $0x30,%eax
+cmp $0x9,%eax
+mov -0x4(%ebp),%eax
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+mov 0x8(%ebp),%eax
+mov (%eax),%eax
+movzbl (%eax),%eax
+cmp $0x28,%al
+mov 0x8(%ebp),%eax
+mov (%eax),%eax
+lea 0x1(%eax),%edx
+mov 0x8(%ebp),%eax
+mov %edx,(%eax)
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+mov %eax,-0xc(%ebp)
+mov 0x8(%ebp),%eax
+mov (%eax),%eax
+lea 0x1(%eax),%edx
+mov 0x8(%ebp),%eax
+mov %edx,(%eax)
+mov -0xc(%ebp),%eax
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+mov %eax,-0xc(%ebp)
+mov 0x8(%ebp),%eax
+mov (%eax),%eax
+lea 0x1(%eax),%ecx
+mov 0x8(%ebp),%edx
+mov %ecx,(%edx)
+movzbl (%eax),%eax
+mov %al,-0xd(%ebp)
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+mov %eax,-0x14(%ebp)
+cmpb $0x2a,-0xd(%ebp)
+mov -0xc(%ebp),%eax
+imul -0x14(%ebp),%eax
+mov %eax,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+cltd
+idivl -0x14(%ebp)
+mov %eax,-0xc(%ebp)
+mov 0x8(%ebp),%eax
+mov (%eax),%eax
+movzbl (%eax),%eax
+cmp $0x2a,%al
+mov 0x8(%ebp),%eax
+mov (%eax),%eax
+movzbl (%eax),%eax
+cmp $0x2f,%al
+mov -0xc(%ebp),%eax
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+mov %eax,-0xc(%ebp)
+mov 0x8(%ebp),%eax
+mov (%eax),%eax
+lea 0x1(%eax),%ecx
+mov 0x8(%ebp),%edx
+mov %ecx,(%edx)
+movzbl (%eax),%eax
+mov %al,-0xd(%ebp)
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+mov %eax,-0x14(%ebp)
+cmpb $0x2b,-0xd(%ebp)
+mov -0x14(%ebp),%eax
+%eax,-0xc(%ebp)
+mov -0x14(%ebp),%eax
+sub %eax,-0xc(%ebp)
+mov 0x8(%ebp),%eax
+mov (%eax),%eax
+movzbl (%eax),%eax
+cmp $0x2b,%al
+mov 0x8(%ebp),%eax
+mov (%eax),%eax
+movzbl (%eax),%eax
+cmp $0x2d,%al
+mov -0xc(%ebp),%eax
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x20,%esp
+movl $0x0,0x1c(%esp)
+lea 0x1c(%esp),%eax
+mov %eax,(%esp)
+mov %eax,0x4(%esp)
+movl $0xa,(%esp)
+mov $0x0,%eax
+leave
+ret
+nop
+nop

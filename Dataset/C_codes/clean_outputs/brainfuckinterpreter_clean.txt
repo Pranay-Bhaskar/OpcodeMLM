@@ -1,0 +1,99 @@
+brainfuckinterpreter.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+mov $0x7558,%eax
+sub %eax,%esp
+lea -0x7548(%ebp),%eax
+mov $0x7530,%edx
+mov %edx,0x8(%esp)
+movl $0x0,0x4(%esp)
+mov %eax,(%esp)
+lea -0x7548(%ebp),%eax
+mov %eax,-0xc(%ebp)
+mov 0x8(%ebp),%eax
+mov %eax,-0x10(%ebp)
+mov -0x10(%ebp),%eax
+movzbl (%eax),%eax
+movsbl %al,%eax
+sub $0x2b,%eax
+cmp $0x32,%eax
+mov 0x0(,%eax,4),%eax
+jmp *%eax
+addl $0x1,-0xc(%ebp)
+subl $0x1,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+movzbl (%eax),%eax
+lea 0x1(%eax),%edx
+mov -0xc(%ebp),%eax
+mov %dl,(%eax)
+mov -0xc(%ebp),%eax
+movzbl (%eax),%eax
+lea -0x1(%eax),%edx
+mov -0xc(%ebp),%eax
+mov %dl,(%eax)
+mov -0xc(%ebp),%eax
+movzbl (%eax),%eax
+movzbl %al,%eax
+mov %eax,(%esp)
+mov %eax,%edx
+mov -0xc(%ebp),%eax
+mov %dl,(%eax)
+mov -0xc(%ebp),%eax
+movzbl (%eax),%eax
+test %al,%al
+movl $0x1,-0x14(%ebp)
+addl $0x1,-0x10(%ebp)
+mov -0x10(%ebp),%eax
+movzbl (%eax),%eax
+cmp $0x5b,%al
+addl $0x1,-0x14(%ebp)
+mov -0x10(%ebp),%eax
+movzbl (%eax),%eax
+cmp $0x5d,%al
+subl $0x1,-0x14(%ebp)
+cmpl $0x0,-0x14(%ebp)
+mov -0xc(%ebp),%eax
+movzbl (%eax),%eax
+test %al,%al
+movl $0x1,-0x18(%ebp)
+subl $0x1,-0x10(%ebp)
+mov -0x10(%ebp),%eax
+movzbl (%eax),%eax
+cmp $0x5d,%al
+addl $0x1,-0x18(%ebp)
+mov -0x10(%ebp),%eax
+movzbl (%eax),%eax
+cmp $0x5b,%al
+subl $0x1,-0x18(%ebp)
+cmpl $0x0,-0x18(%ebp)
+nop
+nop
+addl $0x1,-0x10(%ebp)
+mov -0x10(%ebp),%eax
+movzbl (%eax),%eax
+test %al,%al
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x10,%esp
+cmpl $0x1,0x8(%ebp)
+mov 0xc(%ebp),%eax
+mov (%eax),%eax
+mov %eax,0x8(%esp)
+movl $0xcc,0x4(%esp)
+mov 0x0,%eax
+$0x40,%eax
+mov %eax,(%esp)
+mov $0x1,%eax
+mov 0xc(%ebp),%eax
+$0x4,%eax
+mov (%eax),%eax
+mov %eax,(%esp)
+mov $0x0,%eax
+leave
+ret
+nop
+nop

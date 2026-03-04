@@ -1,0 +1,288 @@
+
+elevatorcs.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_initElevators>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 10             	sub    $0x10,%esp
+   6:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+   d:	eb 49                	jmp    58 <_initElevators+0x58>
+   f:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  12:	89 d0                	mov    %edx,%eax
+  14:	01 c0                	add    %eax,%eax
+  16:	01 d0                	add    %edx,%eax
+  18:	c1 e0 02             	shl    $0x2,%eax
+  1b:	05 00 00 00 00       	add    $0x0,%eax
+  20:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+  26:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  29:	89 d0                	mov    %edx,%eax
+  2b:	01 c0                	add    %eax,%eax
+  2d:	01 d0                	add    %edx,%eax
+  2f:	c1 e0 02             	shl    $0x2,%eax
+  32:	05 04 00 00 00       	add    $0x4,%eax
+  37:	c7 00 ff ff ff ff    	movl   $0xffffffff,(%eax)
+  3d:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  40:	89 d0                	mov    %edx,%eax
+  42:	01 c0                	add    %eax,%eax
+  44:	01 d0                	add    %edx,%eax
+  46:	c1 e0 02             	shl    $0x2,%eax
+  49:	05 08 00 00 00       	add    $0x8,%eax
+  4e:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+  54:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  58:	83 7d fc 01          	cmpl   $0x1,-0x4(%ebp)
+  5c:	7e b1                	jle    f <_initElevators+0xf>
+  5e:	90                   	nop
+  5f:	c9                   	leave  
+  60:	c3                   	ret    
+
+00000061 <_assignRequest>:
+  61:	55                   	push   %ebp
+  62:	89 e5                	mov    %esp,%ebp
+  64:	83 ec 28             	sub    $0x28,%esp
+  67:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  6e:	a1 00 00 00 00       	mov    0x0,%eax
+  73:	2b 45 08             	sub    0x8(%ebp),%eax
+  76:	89 c2                	mov    %eax,%edx
+  78:	89 d0                	mov    %edx,%eax
+  7a:	c1 f8 1f             	sar    $0x1f,%eax
+  7d:	31 c2                	xor    %eax,%edx
+  7f:	89 55 f0             	mov    %edx,-0x10(%ebp)
+  82:	29 45 f0             	sub    %eax,-0x10(%ebp)
+  85:	c7 45 ec 01 00 00 00 	movl   $0x1,-0x14(%ebp)
+  8c:	eb 3d                	jmp    cb <_assignRequest+0x6a>
+  8e:	8b 55 ec             	mov    -0x14(%ebp),%edx
+  91:	89 d0                	mov    %edx,%eax
+  93:	01 c0                	add    %eax,%eax
+  95:	01 d0                	add    %edx,%eax
+  97:	c1 e0 02             	shl    $0x2,%eax
+  9a:	05 00 00 00 00       	add    $0x0,%eax
+  9f:	8b 00                	mov    (%eax),%eax
+  a1:	2b 45 08             	sub    0x8(%ebp),%eax
+  a4:	89 c2                	mov    %eax,%edx
+  a6:	89 d0                	mov    %edx,%eax
+  a8:	c1 f8 1f             	sar    $0x1f,%eax
+  ab:	31 c2                	xor    %eax,%edx
+  ad:	89 55 e8             	mov    %edx,-0x18(%ebp)
+  b0:	29 45 e8             	sub    %eax,-0x18(%ebp)
+  b3:	8b 45 e8             	mov    -0x18(%ebp),%eax
+  b6:	3b 45 f0             	cmp    -0x10(%ebp),%eax
+  b9:	7d 0c                	jge    c7 <_assignRequest+0x66>
+  bb:	8b 45 e8             	mov    -0x18(%ebp),%eax
+  be:	89 45 f0             	mov    %eax,-0x10(%ebp)
+  c1:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  c4:	89 45 f4             	mov    %eax,-0xc(%ebp)
+  c7:	83 45 ec 01          	addl   $0x1,-0x14(%ebp)
+  cb:	83 7d ec 01          	cmpl   $0x1,-0x14(%ebp)
+  cf:	7e bd                	jle    8e <_assignRequest+0x2d>
+  d1:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  d4:	89 d0                	mov    %edx,%eax
+  d6:	01 c0                	add    %eax,%eax
+  d8:	01 d0                	add    %edx,%eax
+  da:	c1 e0 02             	shl    $0x2,%eax
+  dd:	8d 90 04 00 00 00    	lea    0x4(%eax),%edx
+  e3:	8b 45 08             	mov    0x8(%ebp),%eax
+  e6:	89 02                	mov    %eax,(%edx)
+  e8:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  eb:	89 d0                	mov    %edx,%eax
+  ed:	01 c0                	add    %eax,%eax
+  ef:	01 d0                	add    %edx,%eax
+  f1:	c1 e0 02             	shl    $0x2,%eax
+  f4:	05 08 00 00 00       	add    $0x8,%eax
+  f9:	c7 00 01 00 00 00    	movl   $0x1,(%eax)
+  ff:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 102:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 106:	8b 45 08             	mov    0x8(%ebp),%eax
+ 109:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 10d:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 114:	e8 00 00 00 00       	call   119 <_assignRequest+0xb8>
+ 119:	90                   	nop
+ 11a:	c9                   	leave  
+ 11b:	c3                   	ret    
+
+0000011c <_moveElevators>:
+ 11c:	55                   	push   %ebp
+ 11d:	89 e5                	mov    %esp,%ebp
+ 11f:	83 ec 28             	sub    $0x28,%esp
+ 122:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 129:	e9 0d 01 00 00       	jmp    23b <_moveElevators+0x11f>
+ 12e:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 131:	89 d0                	mov    %edx,%eax
+ 133:	01 c0                	add    %eax,%eax
+ 135:	01 d0                	add    %edx,%eax
+ 137:	c1 e0 02             	shl    $0x2,%eax
+ 13a:	05 08 00 00 00       	add    $0x8,%eax
+ 13f:	8b 00                	mov    (%eax),%eax
+ 141:	85 c0                	test   %eax,%eax
+ 143:	0f 84 ee 00 00 00    	je     237 <_moveElevators+0x11b>
+ 149:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 14c:	89 d0                	mov    %edx,%eax
+ 14e:	01 c0                	add    %eax,%eax
+ 150:	01 d0                	add    %edx,%eax
+ 152:	c1 e0 02             	shl    $0x2,%eax
+ 155:	05 00 00 00 00       	add    $0x0,%eax
+ 15a:	8b 08                	mov    (%eax),%ecx
+ 15c:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 15f:	89 d0                	mov    %edx,%eax
+ 161:	01 c0                	add    %eax,%eax
+ 163:	01 d0                	add    %edx,%eax
+ 165:	c1 e0 02             	shl    $0x2,%eax
+ 168:	05 04 00 00 00       	add    $0x4,%eax
+ 16d:	8b 00                	mov    (%eax),%eax
+ 16f:	39 c1                	cmp    %eax,%ecx
+ 171:	7d 2e                	jge    1a1 <_moveElevators+0x85>
+ 173:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 176:	89 d0                	mov    %edx,%eax
+ 178:	01 c0                	add    %eax,%eax
+ 17a:	01 d0                	add    %edx,%eax
+ 17c:	c1 e0 02             	shl    $0x2,%eax
+ 17f:	05 00 00 00 00       	add    $0x0,%eax
+ 184:	8b 00                	mov    (%eax),%eax
+ 186:	8d 48 01             	lea    0x1(%eax),%ecx
+ 189:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 18c:	89 d0                	mov    %edx,%eax
+ 18e:	01 c0                	add    %eax,%eax
+ 190:	01 d0                	add    %edx,%eax
+ 192:	c1 e0 02             	shl    $0x2,%eax
+ 195:	05 00 00 00 00       	add    $0x0,%eax
+ 19a:	89 08                	mov    %ecx,(%eax)
+ 19c:	e9 96 00 00 00       	jmp    237 <_moveElevators+0x11b>
+ 1a1:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 1a4:	89 d0                	mov    %edx,%eax
+ 1a6:	01 c0                	add    %eax,%eax
+ 1a8:	01 d0                	add    %edx,%eax
+ 1aa:	c1 e0 02             	shl    $0x2,%eax
+ 1ad:	05 00 00 00 00       	add    $0x0,%eax
+ 1b2:	8b 08                	mov    (%eax),%ecx
+ 1b4:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 1b7:	89 d0                	mov    %edx,%eax
+ 1b9:	01 c0                	add    %eax,%eax
+ 1bb:	01 d0                	add    %edx,%eax
+ 1bd:	c1 e0 02             	shl    $0x2,%eax
+ 1c0:	05 04 00 00 00       	add    $0x4,%eax
+ 1c5:	8b 00                	mov    (%eax),%eax
+ 1c7:	39 c1                	cmp    %eax,%ecx
+ 1c9:	7e 2b                	jle    1f6 <_moveElevators+0xda>
+ 1cb:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 1ce:	89 d0                	mov    %edx,%eax
+ 1d0:	01 c0                	add    %eax,%eax
+ 1d2:	01 d0                	add    %edx,%eax
+ 1d4:	c1 e0 02             	shl    $0x2,%eax
+ 1d7:	05 00 00 00 00       	add    $0x0,%eax
+ 1dc:	8b 00                	mov    (%eax),%eax
+ 1de:	8d 48 ff             	lea    -0x1(%eax),%ecx
+ 1e1:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 1e4:	89 d0                	mov    %edx,%eax
+ 1e6:	01 c0                	add    %eax,%eax
+ 1e8:	01 d0                	add    %edx,%eax
+ 1ea:	c1 e0 02             	shl    $0x2,%eax
+ 1ed:	05 00 00 00 00       	add    $0x0,%eax
+ 1f2:	89 08                	mov    %ecx,(%eax)
+ 1f4:	eb 41                	jmp    237 <_moveElevators+0x11b>
+ 1f6:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 1f9:	89 d0                	mov    %edx,%eax
+ 1fb:	01 c0                	add    %eax,%eax
+ 1fd:	01 d0                	add    %edx,%eax
+ 1ff:	c1 e0 02             	shl    $0x2,%eax
+ 202:	05 08 00 00 00       	add    $0x8,%eax
+ 207:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+ 20d:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 210:	89 d0                	mov    %edx,%eax
+ 212:	01 c0                	add    %eax,%eax
+ 214:	01 d0                	add    %edx,%eax
+ 216:	c1 e0 02             	shl    $0x2,%eax
+ 219:	05 00 00 00 00       	add    $0x0,%eax
+ 21e:	8b 00                	mov    (%eax),%eax
+ 220:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 224:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 227:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 22b:	c7 04 24 30 00 00 00 	movl   $0x30,(%esp)
+ 232:	e8 00 00 00 00       	call   237 <_moveElevators+0x11b>
+ 237:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 23b:	83 7d f4 01          	cmpl   $0x1,-0xc(%ebp)
+ 23f:	0f 8e e9 fe ff ff    	jle    12e <_moveElevators+0x12>
+ 245:	90                   	nop
+ 246:	c9                   	leave  
+ 247:	c3                   	ret    
+
+00000248 <_showStatus>:
+ 248:	55                   	push   %ebp
+ 249:	89 e5                	mov    %esp,%ebp
+ 24b:	83 ec 28             	sub    $0x28,%esp
+ 24e:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 255:	eb 55                	jmp    2ac <_showStatus+0x64>
+ 257:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 25a:	89 d0                	mov    %edx,%eax
+ 25c:	01 c0                	add    %eax,%eax
+ 25e:	01 d0                	add    %edx,%eax
+ 260:	c1 e0 02             	shl    $0x2,%eax
+ 263:	05 08 00 00 00       	add    $0x8,%eax
+ 268:	8b 00                	mov    (%eax),%eax
+ 26a:	85 c0                	test   %eax,%eax
+ 26c:	74 07                	je     275 <_showStatus+0x2d>
+ 26e:	b9 51 00 00 00       	mov    $0x51,%ecx
+ 273:	eb 05                	jmp    27a <_showStatus+0x32>
+ 275:	b9 58 00 00 00       	mov    $0x58,%ecx
+ 27a:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 27d:	89 d0                	mov    %edx,%eax
+ 27f:	01 c0                	add    %eax,%eax
+ 281:	01 d0                	add    %edx,%eax
+ 283:	c1 e0 02             	shl    $0x2,%eax
+ 286:	05 00 00 00 00       	add    $0x0,%eax
+ 28b:	8b 00                	mov    (%eax),%eax
+ 28d:	89 4c 24 0c          	mov    %ecx,0xc(%esp)
+ 291:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 295:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 298:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 29c:	c7 04 24 5d 00 00 00 	movl   $0x5d,(%esp)
+ 2a3:	e8 00 00 00 00       	call   2a8 <_showStatus+0x60>
+ 2a8:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 2ac:	83 7d f4 01          	cmpl   $0x1,-0xc(%ebp)
+ 2b0:	7e a5                	jle    257 <_showStatus+0xf>
+ 2b2:	90                   	nop
+ 2b3:	c9                   	leave  
+ 2b4:	c3                   	ret    
+
+000002b5 <_main>:
+ 2b5:	55                   	push   %ebp
+ 2b6:	89 e5                	mov    %esp,%ebp
+ 2b8:	83 e4 f0             	and    $0xfffffff0,%esp
+ 2bb:	83 ec 30             	sub    $0x30,%esp
+ 2be:	e8 00 00 00 00       	call   2c3 <_main+0xe>
+ 2c3:	e8 38 fd ff ff       	call   0 <_initElevators>
+ 2c8:	c7 44 24 14 03 00 00 	movl   $0x3,0x14(%esp)
+ 2cf:	00 
+ 2d0:	c7 44 24 18 07 00 00 	movl   $0x7,0x18(%esp)
+ 2d7:	00 
+ 2d8:	c7 44 24 1c 02 00 00 	movl   $0x2,0x1c(%esp)
+ 2df:	00 
+ 2e0:	c7 44 24 20 09 00 00 	movl   $0x9,0x20(%esp)
+ 2e7:	00 
+ 2e8:	c7 44 24 24 05 00 00 	movl   $0x5,0x24(%esp)
+ 2ef:	00 
+ 2f0:	c7 44 24 2c 00 00 00 	movl   $0x0,0x2c(%esp)
+ 2f7:	00 
+ 2f8:	eb 35                	jmp    32f <_main+0x7a>
+ 2fa:	8b 44 24 2c          	mov    0x2c(%esp),%eax
+ 2fe:	8b 44 84 14          	mov    0x14(%esp,%eax,4),%eax
+ 302:	89 04 24             	mov    %eax,(%esp)
+ 305:	e8 57 fd ff ff       	call   61 <_assignRequest>
+ 30a:	c7 44 24 28 00 00 00 	movl   $0x0,0x28(%esp)
+ 311:	00 
+ 312:	eb 0f                	jmp    323 <_main+0x6e>
+ 314:	e8 03 fe ff ff       	call   11c <_moveElevators>
+ 319:	e8 2a ff ff ff       	call   248 <_showStatus>
+ 31e:	83 44 24 28 01       	addl   $0x1,0x28(%esp)
+ 323:	83 7c 24 28 09       	cmpl   $0x9,0x28(%esp)
+ 328:	7e ea                	jle    314 <_main+0x5f>
+ 32a:	83 44 24 2c 01       	addl   $0x1,0x2c(%esp)
+ 32f:	83 7c 24 2c 04       	cmpl   $0x4,0x2c(%esp)
+ 334:	7e c4                	jle    2fa <_main+0x45>
+ 336:	b8 00 00 00 00       	mov    $0x0,%eax
+ 33b:	c9                   	leave  
+ 33c:	c3                   	ret    
+ 33d:	90                   	nop
+ 33e:	90                   	nop
+ 33f:	90                   	nop

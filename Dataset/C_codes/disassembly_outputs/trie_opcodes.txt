@@ -1,0 +1,109 @@
+
+trie.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_newNode>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 28             	sub    $0x28,%esp
+   6:	c7 04 24 6c 00 00 00 	movl   $0x6c,(%esp)
+   d:	e8 00 00 00 00       	call   12 <_newNode+0x12>
+  12:	89 45 f0             	mov    %eax,-0x10(%ebp)
+  15:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  18:	c6 40 68 00          	movb   $0x0,0x68(%eax)
+  1c:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  23:	eb 11                	jmp    36 <_newNode+0x36>
+  25:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  28:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  2b:	c7 04 90 00 00 00 00 	movl   $0x0,(%eax,%edx,4)
+  32:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  36:	83 7d f4 19          	cmpl   $0x19,-0xc(%ebp)
+  3a:	7e e9                	jle    25 <_newNode+0x25>
+  3c:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  3f:	c9                   	leave  
+  40:	c3                   	ret    
+
+00000041 <_insert>:
+  41:	55                   	push   %ebp
+  42:	89 e5                	mov    %esp,%ebp
+  44:	83 ec 18             	sub    $0x18,%esp
+  47:	8b 45 08             	mov    0x8(%ebp),%eax
+  4a:	89 45 f4             	mov    %eax,-0xc(%ebp)
+  4d:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+  54:	eb 41                	jmp    97 <_insert+0x56>
+  56:	8b 55 f0             	mov    -0x10(%ebp),%edx
+  59:	8b 45 0c             	mov    0xc(%ebp),%eax
+  5c:	01 d0                	add    %edx,%eax
+  5e:	0f b6 00             	movzbl (%eax),%eax
+  61:	0f be c0             	movsbl %al,%eax
+  64:	83 e8 61             	sub    $0x61,%eax
+  67:	89 45 ec             	mov    %eax,-0x14(%ebp)
+  6a:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  6d:	8b 55 ec             	mov    -0x14(%ebp),%edx
+  70:	8b 04 90             	mov    (%eax,%edx,4),%eax
+  73:	85 c0                	test   %eax,%eax
+  75:	75 10                	jne    87 <_insert+0x46>
+  77:	e8 84 ff ff ff       	call   0 <_newNode>
+  7c:	89 c1                	mov    %eax,%ecx
+  7e:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  81:	8b 55 ec             	mov    -0x14(%ebp),%edx
+  84:	89 0c 90             	mov    %ecx,(%eax,%edx,4)
+  87:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  8a:	8b 55 ec             	mov    -0x14(%ebp),%edx
+  8d:	8b 04 90             	mov    (%eax,%edx,4),%eax
+  90:	89 45 f4             	mov    %eax,-0xc(%ebp)
+  93:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+  97:	8b 55 f0             	mov    -0x10(%ebp),%edx
+  9a:	8b 45 0c             	mov    0xc(%ebp),%eax
+  9d:	01 d0                	add    %edx,%eax
+  9f:	0f b6 00             	movzbl (%eax),%eax
+  a2:	84 c0                	test   %al,%al
+  a4:	75 b0                	jne    56 <_insert+0x15>
+  a6:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  a9:	c6 40 68 01          	movb   $0x1,0x68(%eax)
+  ad:	90                   	nop
+  ae:	c9                   	leave  
+  af:	c3                   	ret    
+
+000000b0 <_search>:
+  b0:	55                   	push   %ebp
+  b1:	89 e5                	mov    %esp,%ebp
+  b3:	83 ec 10             	sub    $0x10,%esp
+  b6:	8b 45 08             	mov    0x8(%ebp),%eax
+  b9:	89 45 fc             	mov    %eax,-0x4(%ebp)
+  bc:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+  c3:	eb 38                	jmp    fd <_search+0x4d>
+  c5:	8b 55 f8             	mov    -0x8(%ebp),%edx
+  c8:	8b 45 0c             	mov    0xc(%ebp),%eax
+  cb:	01 d0                	add    %edx,%eax
+  cd:	0f b6 00             	movzbl (%eax),%eax
+  d0:	0f be c0             	movsbl %al,%eax
+  d3:	83 e8 61             	sub    $0x61,%eax
+  d6:	89 45 f4             	mov    %eax,-0xc(%ebp)
+  d9:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  dc:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  df:	8b 04 90             	mov    (%eax,%edx,4),%eax
+  e2:	85 c0                	test   %eax,%eax
+  e4:	75 07                	jne    ed <_search+0x3d>
+  e6:	b8 00 00 00 00       	mov    $0x0,%eax
+  eb:	eb 26                	jmp    113 <_search+0x63>
+  ed:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  f0:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  f3:	8b 04 90             	mov    (%eax,%edx,4),%eax
+  f6:	89 45 fc             	mov    %eax,-0x4(%ebp)
+  f9:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+  fd:	8b 55 f8             	mov    -0x8(%ebp),%edx
+ 100:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 103:	01 d0                	add    %edx,%eax
+ 105:	0f b6 00             	movzbl (%eax),%eax
+ 108:	84 c0                	test   %al,%al
+ 10a:	75 b9                	jne    c5 <_search+0x15>
+ 10c:	8b 45 fc             	mov    -0x4(%ebp),%eax
+ 10f:	0f b6 40 68          	movzbl 0x68(%eax),%eax
+ 113:	c9                   	leave  
+ 114:	c3                   	ret    
+ 115:	90                   	nop
+ 116:	90                   	nop
+ 117:	90                   	nop

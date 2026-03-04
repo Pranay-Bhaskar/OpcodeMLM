@@ -1,0 +1,33 @@
+crc32.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x10,%esp
+movl $0xffffffff,-0x4(%ebp)
+movl $0x0,-0x8(%ebp)
+mov 0x8(%ebp),%edx
+mov -0x8(%ebp),%eax
+%edx,%eax
+movzbl (%eax),%eax
+movzbl %al,%eax
+xor %eax,-0x4(%ebp)
+movl $0x0,-0xc(%ebp)
+mov -0x4(%ebp),%eax
+shr %eax
+mov %eax,%edx
+mov -0x4(%ebp),%eax
+and $0x1,%eax
+neg %eax
+and $0xedb88320,%eax
+xor %edx,%eax
+mov %eax,-0x4(%ebp)
+addl $0x1,-0xc(%ebp)
+cmpl $0x7,-0xc(%ebp)
+addl $0x1,-0x8(%ebp)
+mov -0x8(%ebp),%eax
+cmp 0xc(%ebp),%eax
+mov -0x4(%ebp),%eax
+not %eax
+leave
+ret
+nop
+nop

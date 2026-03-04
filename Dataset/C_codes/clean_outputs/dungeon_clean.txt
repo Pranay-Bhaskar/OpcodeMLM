@@ -1,0 +1,127 @@
+dungeon.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x10,%esp
+movl $0x0,-0x4(%ebp)
+movl $0x0,-0x8(%ebp)
+mov -0x4(%ebp),%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+%eax,%eax
+mov -0x8(%ebp),%edx
+%edx,%eax
+$0x0,%eax
+movb $0x2e,(%eax)
+addl $0x1,-0x8(%ebp)
+cmpl $0x9,-0x8(%ebp)
+addl $0x1,-0x4(%ebp)
+cmpl $0x9,-0x4(%ebp)
+mov 0x0,%edx
+mov 0x4,%ecx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+%eax,%eax
+%ecx,%eax
+$0x0,%eax
+movb $0x50,(%eax)
+movb $0x45,0x63
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+movl $0x0,-0xc(%ebp)
+movl $0x0,-0x10(%ebp)
+mov -0xc(%ebp),%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+%eax,%eax
+mov -0x10(%ebp),%edx
+%edx,%eax
+$0x0,%eax
+movzbl (%eax),%eax
+movsbl %al,%eax
+mov %eax,0x4(%esp)
+movl $0x0,(%esp)
+addl $0x1,-0x10(%ebp)
+cmpl $0x9,-0x10(%ebp)
+movl $0xa,(%esp)
+addl $0x1,-0xc(%ebp)
+cmpl $0x9,-0xc(%ebp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x4,%esp
+mov 0x8(%ebp),%eax
+mov %al,-0x4(%ebp)
+mov 0x0,%edx
+mov 0x4,%ecx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+%eax,%eax
+%ecx,%eax
+$0x0,%eax
+movb $0x2e,(%eax)
+cmpb $0x77,-0x4(%ebp)
+mov 0x0,%eax
+test %eax,%eax
+mov 0x0,%eax
+sub $0x1,%eax
+mov %eax,0x0
+cmpb $0x73,-0x4(%ebp)
+mov 0x0,%eax
+cmp $0x8,%eax
+mov 0x0,%eax
+$0x1,%eax
+mov %eax,0x0
+cmpb $0x61,-0x4(%ebp)
+mov 0x4,%eax
+test %eax,%eax
+mov 0x4,%eax
+sub $0x1,%eax
+mov %eax,0x4
+cmpb $0x64,-0x4(%ebp)
+mov 0x4,%eax
+cmp $0x8,%eax
+mov 0x4,%eax
+$0x1,%eax
+mov %eax,0x4
+mov 0x0,%edx
+mov 0x4,%ecx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+%eax,%eax
+%ecx,%eax
+$0x0,%eax
+movb $0x50,(%eax)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x20,%esp
+movl $0x4,(%esp)
+lea 0x1f(%esp),%eax
+mov %eax,0x4(%esp)
+movl $0x15,(%esp)
+movzbl 0x1f(%esp),%eax
+movsbl %al,%eax
+mov %eax,(%esp)
+mov 0x0,%eax
+cmp $0x9,%eax
+mov 0x4,%eax
+cmp $0x9,%eax
+movl $0x19,(%esp)
+nop
+mov $0x0,%eax
+leave
+ret

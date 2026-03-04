@@ -1,0 +1,52 @@
+voicecmdint.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x18,%esp
+movl $0x0,0x4(%esp)
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+test %eax,%eax
+movl $0xa,(%esp)
+movl $0x1f,0x4(%esp)
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+test %eax,%eax
+movl $0x2a,(%esp)
+movl $0x40,0x4(%esp)
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+test %eax,%eax
+movl $0x4b,(%esp)
+mov 0x8(%ebp),%eax
+mov %eax,0x4(%esp)
+movl $0x5c,(%esp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+$0xffffff80,%esp
+movl $0x74,(%esp)
+mov 0x0,%eax
+mov %eax,0x8(%esp)
+movl $0x64,0x4(%esp)
+lea 0x1c(%esp),%eax
+mov %eax,(%esp)
+movl $0x94,0x4(%esp)
+lea 0x1c(%esp),%eax
+mov %eax,(%esp)
+movb $0x0,0x1c(%esp,%eax,1)
+movl $0x96,0x4(%esp)
+lea 0x1c(%esp),%eax
+mov %eax,(%esp)
+test %eax,%eax
+lea 0x1c(%esp),%eax
+mov %eax,(%esp)
+nop
+mov $0x0,%eax
+leave
+ret
+nop
+nop
+nop

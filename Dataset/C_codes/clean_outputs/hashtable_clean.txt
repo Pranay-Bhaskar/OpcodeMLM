@@ -1,0 +1,44 @@
+hashtable.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+mov 0x8(%ebp),%ecx
+mov $0x66666667,%edx
+mov %ecx,%eax
+imul %edx
+sar $0x2,%edx
+mov %ecx,%eax
+sar $0x1f,%eax
+sub %eax,%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+%eax,%eax
+sub %eax,%ecx
+mov %ecx,%edx
+mov %edx,%eax
+pop %ebp
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+mov %eax,-0xc(%ebp)
+movl $0x8,(%esp)
+mov %eax,-0x10(%ebp)
+mov -0x10(%ebp),%eax
+mov 0x8(%ebp),%edx
+mov %edx,(%eax)
+mov -0xc(%ebp),%eax
+mov 0x0(,%eax,4),%edx
+mov -0x10(%ebp),%eax
+mov %edx,0x4(%eax)
+mov -0xc(%ebp),%eax
+mov -0x10(%ebp),%edx
+mov %edx,0x0(,%eax,4)
+nop
+leave
+ret
+nop
+nop
+nop

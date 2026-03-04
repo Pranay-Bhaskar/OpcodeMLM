@@ -1,0 +1,29 @@
+
+jsonparser.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_parseJSON>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	81 ec 88 00 00 00    	sub    $0x88,%esp
+   9:	8d 45 94             	lea    -0x6c(%ebp),%eax
+   c:	89 44 24 0c          	mov    %eax,0xc(%esp)
+  10:	8d 45 c6             	lea    -0x3a(%ebp),%eax
+  13:	89 44 24 08          	mov    %eax,0x8(%esp)
+  17:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  1e:	00 
+  1f:	8b 45 08             	mov    0x8(%ebp),%eax
+  22:	89 04 24             	mov    %eax,(%esp)
+  25:	e8 00 00 00 00       	call   2a <_parseJSON+0x2a>
+  2a:	8d 45 94             	lea    -0x6c(%ebp),%eax
+  2d:	89 44 24 08          	mov    %eax,0x8(%esp)
+  31:	8d 45 c6             	lea    -0x3a(%ebp),%eax
+  34:	89 44 24 04          	mov    %eax,0x4(%esp)
+  38:	c7 04 24 12 00 00 00 	movl   $0x12,(%esp)
+  3f:	e8 00 00 00 00       	call   44 <_parseJSON+0x44>
+  44:	90                   	nop
+  45:	c9                   	leave  
+  46:	c3                   	ret    
+  47:	90                   	nop

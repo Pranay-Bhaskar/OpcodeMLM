@@ -1,0 +1,127 @@
+
+physicsbasedpong.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_initGame>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	c7 05 00 00 00 00 14 	movl   $0x14,0x0
+   a:	00 00 00 
+   d:	c7 05 00 00 00 00 0a 	movl   $0xa,0x0
+  14:	00 00 00 
+  17:	c7 05 00 00 00 00 01 	movl   $0x1,0x0
+  1e:	00 00 00 
+  21:	c7 05 00 00 00 00 01 	movl   $0x1,0x0
+  28:	00 00 00 
+  2b:	c7 05 00 00 00 00 0a 	movl   $0xa,0x0
+  32:	00 00 00 
+  35:	90                   	nop
+  36:	5d                   	pop    %ebp
+  37:	c3                   	ret    
+
+00000038 <_drawGame>:
+  38:	55                   	push   %ebp
+  39:	89 e5                	mov    %esp,%ebp
+  3b:	83 ec 28             	sub    $0x28,%esp
+  3e:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  45:	e8 00 00 00 00       	call   4a <_drawGame+0x12>
+  4a:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  51:	eb 7f                	jmp    d2 <_drawGame+0x9a>
+  53:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+  5a:	eb 60                	jmp    bc <_drawGame+0x84>
+  5c:	a1 00 00 00 00       	mov    0x0,%eax
+  61:	39 45 f0             	cmp    %eax,-0x10(%ebp)
+  64:	75 18                	jne    7e <_drawGame+0x46>
+  66:	a1 00 00 00 00       	mov    0x0,%eax
+  6b:	39 45 f4             	cmp    %eax,-0xc(%ebp)
+  6e:	75 0e                	jne    7e <_drawGame+0x46>
+  70:	c7 04 24 4f 00 00 00 	movl   $0x4f,(%esp)
+  77:	e8 00 00 00 00       	call   7c <_drawGame+0x44>
+  7c:	eb 3a                	jmp    b8 <_drawGame+0x80>
+  7e:	83 7d f0 27          	cmpl   $0x27,-0x10(%ebp)
+  82:	75 28                	jne    ac <_drawGame+0x74>
+  84:	a1 00 00 00 00       	mov    0x0,%eax
+  89:	83 e8 02             	sub    $0x2,%eax
+  8c:	3b 45 f4             	cmp    -0xc(%ebp),%eax
+  8f:	7f 1b                	jg     ac <_drawGame+0x74>
+  91:	a1 00 00 00 00       	mov    0x0,%eax
+  96:	83 c0 02             	add    $0x2,%eax
+  99:	3b 45 f4             	cmp    -0xc(%ebp),%eax
+  9c:	7c 0e                	jl     ac <_drawGame+0x74>
+  9e:	c7 04 24 7c 00 00 00 	movl   $0x7c,(%esp)
+  a5:	e8 00 00 00 00       	call   aa <_drawGame+0x72>
+  aa:	eb 0c                	jmp    b8 <_drawGame+0x80>
+  ac:	c7 04 24 20 00 00 00 	movl   $0x20,(%esp)
+  b3:	e8 00 00 00 00       	call   b8 <_drawGame+0x80>
+  b8:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+  bc:	83 7d f0 27          	cmpl   $0x27,-0x10(%ebp)
+  c0:	7e 9a                	jle    5c <_drawGame+0x24>
+  c2:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+  c9:	e8 00 00 00 00       	call   ce <_drawGame+0x96>
+  ce:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  d2:	83 7d f4 13          	cmpl   $0x13,-0xc(%ebp)
+  d6:	0f 8e 77 ff ff ff    	jle    53 <_drawGame+0x1b>
+  dc:	90                   	nop
+  dd:	c9                   	leave  
+  de:	c3                   	ret    
+
+000000df <_updateGame>:
+  df:	55                   	push   %ebp
+  e0:	89 e5                	mov    %esp,%ebp
+  e2:	8b 15 00 00 00 00    	mov    0x0,%edx
+  e8:	a1 00 00 00 00       	mov    0x0,%eax
+  ed:	01 d0                	add    %edx,%eax
+  ef:	a3 00 00 00 00       	mov    %eax,0x0
+  f4:	8b 15 00 00 00 00    	mov    0x0,%edx
+  fa:	a1 00 00 00 00       	mov    0x0,%eax
+  ff:	01 d0                	add    %edx,%eax
+ 101:	a3 00 00 00 00       	mov    %eax,0x0
+ 106:	a1 00 00 00 00       	mov    0x0,%eax
+ 10b:	85 c0                	test   %eax,%eax
+ 10d:	7e 0a                	jle    119 <_updateGame+0x3a>
+ 10f:	a1 00 00 00 00       	mov    0x0,%eax
+ 114:	83 f8 12             	cmp    $0x12,%eax
+ 117:	7e 0c                	jle    125 <_updateGame+0x46>
+ 119:	a1 00 00 00 00       	mov    0x0,%eax
+ 11e:	f7 d8                	neg    %eax
+ 120:	a3 00 00 00 00       	mov    %eax,0x0
+ 125:	a1 00 00 00 00       	mov    0x0,%eax
+ 12a:	85 c0                	test   %eax,%eax
+ 12c:	7f 0c                	jg     13a <_updateGame+0x5b>
+ 12e:	a1 00 00 00 00       	mov    0x0,%eax
+ 133:	f7 d8                	neg    %eax
+ 135:	a3 00 00 00 00       	mov    %eax,0x0
+ 13a:	a1 00 00 00 00       	mov    0x0,%eax
+ 13f:	83 f8 26             	cmp    $0x26,%eax
+ 142:	75 2e                	jne    172 <_updateGame+0x93>
+ 144:	a1 00 00 00 00       	mov    0x0,%eax
+ 149:	8d 50 fe             	lea    -0x2(%eax),%edx
+ 14c:	a1 00 00 00 00       	mov    0x0,%eax
+ 151:	39 c2                	cmp    %eax,%edx
+ 153:	7f 1d                	jg     172 <_updateGame+0x93>
+ 155:	a1 00 00 00 00       	mov    0x0,%eax
+ 15a:	8d 50 02             	lea    0x2(%eax),%edx
+ 15d:	a1 00 00 00 00       	mov    0x0,%eax
+ 162:	39 c2                	cmp    %eax,%edx
+ 164:	7c 0c                	jl     172 <_updateGame+0x93>
+ 166:	a1 00 00 00 00       	mov    0x0,%eax
+ 16b:	f7 d8                	neg    %eax
+ 16d:	a3 00 00 00 00       	mov    %eax,0x0
+ 172:	90                   	nop
+ 173:	5d                   	pop    %ebp
+ 174:	c3                   	ret    
+
+00000175 <_main>:
+ 175:	55                   	push   %ebp
+ 176:	89 e5                	mov    %esp,%ebp
+ 178:	83 e4 f0             	and    $0xfffffff0,%esp
+ 17b:	83 ec 10             	sub    $0x10,%esp
+ 17e:	e8 00 00 00 00       	call   183 <_main+0xe>
+ 183:	e8 78 fe ff ff       	call   0 <_initGame>
+ 188:	e8 ab fe ff ff       	call   38 <_drawGame>
+ 18d:	e8 4d ff ff ff       	call   df <_updateGame>
+ 192:	c7 04 24 a0 86 01 00 	movl   $0x186a0,(%esp)
+ 199:	e8 00 00 00 00       	call   19e <_main+0x29>
+ 19e:	eb e8                	jmp    188 <_main+0x13>

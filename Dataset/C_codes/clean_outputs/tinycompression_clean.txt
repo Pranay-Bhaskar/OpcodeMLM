@@ -1,0 +1,48 @@
+tinycompression.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+movl $0x1,-0xc(%ebp)
+movl $0x1,-0x10(%ebp)
+mov -0x10(%ebp),%edx
+mov 0x8(%ebp),%eax
+%edx,%eax
+movzbl (%eax),%edx
+mov -0x10(%ebp),%eax
+lea -0x1(%eax),%ecx
+mov 0x8(%ebp),%eax
+%ecx,%eax
+movzbl (%eax),%eax
+cmp %al,%dl
+addl $0x1,-0xc(%ebp)
+mov -0x10(%ebp),%eax
+lea -0x1(%eax),%edx
+mov 0x8(%ebp),%eax
+%edx,%eax
+movzbl (%eax),%eax
+movsbl %al,%eax
+mov %eax,0x8(%esp)
+mov -0xc(%ebp),%eax
+mov %eax,0x4(%esp)
+movl $0x0,(%esp)
+movl $0x1,-0xc(%ebp)
+addl $0x1,-0x10(%ebp)
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+mov %eax,%edx
+mov -0x10(%ebp),%eax
+cmp %eax,%edx
+movl $0xa,(%esp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x20,%esp
+movl $0x5,0x1c(%esp)
+mov 0x1c(%esp),%eax
+mov %eax,(%esp)
+mov $0x0,%eax
+leave
+ret

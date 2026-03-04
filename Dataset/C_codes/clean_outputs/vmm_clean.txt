@@ -1,0 +1,60 @@
+vmm.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x10,%esp
+movl $0x0,-0x4(%ebp)
+mov -0x4(%ebp),%eax
+mov -0x4(%ebp),%edx
+mov %edx,0x0(,%eax,8)
+mov -0x4(%ebp),%eax
+movl $0x0,0x4(,%eax,8)
+addl $0x1,-0x4(%ebp)
+cmpl $0x9,-0x4(%ebp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x18,%esp
+mov 0x8(%ebp),%eax
+mov 0x4(,%eax,8),%eax
+test %eax,%eax
+mov 0x8(%ebp),%eax
+movl $0x1,0x4(,%eax,8)
+mov 0x8(%ebp),%eax
+mov %eax,0x4(%esp)
+movl $0x0,(%esp)
+mov 0x8(%ebp),%eax
+mov %eax,0x4(%esp)
+movl $0x16,(%esp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+movl $0x0,-0xc(%ebp)
+movl $0x0,-0x10(%ebp)
+mov -0x10(%ebp),%eax
+mov 0x4(,%eax,8),%eax
+test %eax,%eax
+addl $0x1,-0xc(%ebp)
+addl $0x1,-0x10(%ebp)
+cmpl $0x9,-0x10(%ebp)
+movl $0xa,0x8(%esp)
+mov -0xc(%ebp),%eax
+mov %eax,0x4(%esp)
+movl $0x34,(%esp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x10,%esp
+movl $0x3,(%esp)
+movl $0x7,(%esp)
+mov $0x0,%eax
+leave
+ret
+nop

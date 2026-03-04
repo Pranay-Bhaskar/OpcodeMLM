@@ -1,0 +1,101 @@
+
+Mandelbrot.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_main>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 e4 f0             	and    $0xfffffff0,%esp
+   6:	83 ec 50             	sub    $0x50,%esp
+   9:	e8 00 00 00 00       	call   e <_main+0xe>
+   e:	c7 44 24 30 50 00 00 	movl   $0x50,0x30(%esp)
+  15:	00 
+  16:	c7 44 24 2c 18 00 00 	movl   $0x18,0x2c(%esp)
+  1d:	00 
+  1e:	c7 44 24 28 e8 03 00 	movl   $0x3e8,0x28(%esp)
+  25:	00 
+  26:	c7 44 24 4c 00 00 00 	movl   $0x0,0x4c(%esp)
+  2d:	00 
+  2e:	e9 0b 01 00 00       	jmp    13e <_main+0x13e>
+  33:	c7 44 24 48 00 00 00 	movl   $0x0,0x48(%esp)
+  3a:	00 
+  3b:	e9 df 00 00 00       	jmp    11f <_main+0x11f>
+  40:	db 44 24 48          	fildl  0x48(%esp)
+  44:	db 44 24 30          	fildl  0x30(%esp)
+  48:	dd 05 00 00 00 00    	fldl   0x0
+  4e:	de f9                	fdivrp %st,%st(1)
+  50:	de e9                	fsubrp %st,%st(1)
+  52:	dd 05 08 00 00 00    	fldl   0x8
+  58:	de c9                	fmulp  %st,%st(1)
+  5a:	db 44 24 30          	fildl  0x30(%esp)
+  5e:	de f9                	fdivrp %st,%st(1)
+  60:	dd 5c 24 20          	fstpl  0x20(%esp)
+  64:	db 44 24 4c          	fildl  0x4c(%esp)
+  68:	db 44 24 2c          	fildl  0x2c(%esp)
+  6c:	dd 05 00 00 00 00    	fldl   0x0
+  72:	de f9                	fdivrp %st,%st(1)
+  74:	de e9                	fsubrp %st,%st(1)
+  76:	d9 c0                	fld    %st(0)
+  78:	de c1                	faddp  %st,%st(1)
+  7a:	db 44 24 2c          	fildl  0x2c(%esp)
+  7e:	de f9                	fdivrp %st,%st(1)
+  80:	dd 5c 24 18          	fstpl  0x18(%esp)
+  84:	d9 ee                	fldz   
+  86:	dd 5c 24 40          	fstpl  0x40(%esp)
+  8a:	d9 ee                	fldz   
+  8c:	dd 5c 24 38          	fstpl  0x38(%esp)
+  90:	c7 44 24 34 00 00 00 	movl   $0x0,0x34(%esp)
+  97:	00 
+  98:	eb 39                	jmp    d3 <_main+0xd3>
+  9a:	dd 44 24 40          	fldl   0x40(%esp)
+  9e:	dc 4c 24 40          	fmull  0x40(%esp)
+  a2:	dd 44 24 38          	fldl   0x38(%esp)
+  a6:	dc 4c 24 38          	fmull  0x38(%esp)
+  aa:	de e9                	fsubrp %st,%st(1)
+  ac:	dc 44 24 20          	faddl  0x20(%esp)
+  b0:	dd 5c 24 10          	fstpl  0x10(%esp)
+  b4:	dd 44 24 40          	fldl   0x40(%esp)
+  b8:	d8 c0                	fadd   %st(0),%st
+  ba:	dc 4c 24 38          	fmull  0x38(%esp)
+  be:	dc 44 24 18          	faddl  0x18(%esp)
+  c2:	dd 5c 24 38          	fstpl  0x38(%esp)
+  c6:	dd 44 24 10          	fldl   0x10(%esp)
+  ca:	dd 5c 24 40          	fstpl  0x40(%esp)
+  ce:	83 44 24 34 01       	addl   $0x1,0x34(%esp)
+  d3:	dd 44 24 40          	fldl   0x40(%esp)
+  d7:	dc 4c 24 40          	fmull  0x40(%esp)
+  db:	dd 44 24 38          	fldl   0x38(%esp)
+  df:	dc 4c 24 38          	fmull  0x38(%esp)
+  e3:	de c1                	faddp  %st,%st(1)
+  e5:	dd 05 08 00 00 00    	fldl   0x8
+  eb:	da e9                	fucompp 
+  ed:	df e0                	fnstsw %ax
+  ef:	9e                   	sahf   
+  f0:	76 0a                	jbe    fc <_main+0xfc>
+  f2:	8b 44 24 34          	mov    0x34(%esp),%eax
+  f6:	3b 44 24 28          	cmp    0x28(%esp),%eax
+  fa:	7c 9e                	jl     9a <_main+0x9a>
+  fc:	8b 44 24 34          	mov    0x34(%esp),%eax
+ 100:	3b 44 24 28          	cmp    0x28(%esp),%eax
+ 104:	75 07                	jne    10d <_main+0x10d>
+ 106:	b8 23 00 00 00       	mov    $0x23,%eax
+ 10b:	eb 05                	jmp    112 <_main+0x112>
+ 10d:	b8 20 00 00 00       	mov    $0x20,%eax
+ 112:	89 04 24             	mov    %eax,(%esp)
+ 115:	e8 00 00 00 00       	call   11a <_main+0x11a>
+ 11a:	83 44 24 48 01       	addl   $0x1,0x48(%esp)
+ 11f:	8b 44 24 48          	mov    0x48(%esp),%eax
+ 123:	3b 44 24 30          	cmp    0x30(%esp),%eax
+ 127:	0f 8c 13 ff ff ff    	jl     40 <_main+0x40>
+ 12d:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+ 134:	e8 00 00 00 00       	call   139 <_main+0x139>
+ 139:	83 44 24 4c 01       	addl   $0x1,0x4c(%esp)
+ 13e:	8b 44 24 4c          	mov    0x4c(%esp),%eax
+ 142:	3b 44 24 2c          	cmp    0x2c(%esp),%eax
+ 146:	0f 8c e7 fe ff ff    	jl     33 <_main+0x33>
+ 14c:	b8 00 00 00 00       	mov    $0x0,%eax
+ 151:	c9                   	leave  
+ 152:	c3                   	ret    
+ 153:	90                   	nop

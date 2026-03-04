@@ -1,0 +1,29 @@
+midi.o: file format pe-i386
+lea 0x4(%esp),%ecx
+and $0xfffffff0,%esp
+pushl -0x4(%ecx)
+push %ebp
+mov %esp,%ebp
+push %ecx
+sub $0x24,%esp
+movl $0x0,(%esp)
+movl $0x0,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+mov 0x4(,%eax,8),%eax
+mov %eax,%edx
+mov -0xc(%ebp),%eax
+mov 0x0(,%eax,8),%eax
+mov %edx,0x4(%esp)
+mov %eax,(%esp)
+sub $0x8,%esp
+addl $0x1,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+cmp $0x4,%eax
+mov $0x0,%eax
+mov -0x4(%ebp),%ecx
+leave
+lea -0x4(%ecx),%esp
+ret
+nop
+nop
+nop

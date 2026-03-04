@@ -1,0 +1,35 @@
+
+aes.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_aes_encrypt_block>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	53                   	push   %ebx
+   4:	83 ec 10             	sub    $0x10,%esp
+   7:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+   e:	eb 26                	jmp    36 <_aes_encrypt_block+0x36>
+  10:	8b 55 f8             	mov    -0x8(%ebp),%edx
+  13:	8b 45 10             	mov    0x10(%ebp),%eax
+  16:	01 d0                	add    %edx,%eax
+  18:	8b 4d f8             	mov    -0x8(%ebp),%ecx
+  1b:	8b 55 08             	mov    0x8(%ebp),%edx
+  1e:	01 ca                	add    %ecx,%edx
+  20:	0f b6 1a             	movzbl (%edx),%ebx
+  23:	8b 4d f8             	mov    -0x8(%ebp),%ecx
+  26:	8b 55 0c             	mov    0xc(%ebp),%edx
+  29:	01 ca                	add    %ecx,%edx
+  2b:	0f b6 12             	movzbl (%edx),%edx
+  2e:	31 da                	xor    %ebx,%edx
+  30:	88 10                	mov    %dl,(%eax)
+  32:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+  36:	83 7d f8 0f          	cmpl   $0xf,-0x8(%ebp)
+  3a:	7e d4                	jle    10 <_aes_encrypt_block+0x10>
+  3c:	90                   	nop
+  3d:	83 c4 10             	add    $0x10,%esp
+  40:	5b                   	pop    %ebx
+  41:	5d                   	pop    %ebp
+  42:	c3                   	ret    
+  43:	90                   	nop

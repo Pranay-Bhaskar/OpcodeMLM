@@ -1,0 +1,316 @@
+
+matrixchainm.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_printOptimalParens>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	8b 45 0c             	mov    0xc(%ebp),%eax
+   9:	3b 45 10             	cmp    0x10(%ebp),%eax
+   c:	75 15                	jne    23 <_printOptimalParens+0x23>
+   e:	8b 45 0c             	mov    0xc(%ebp),%eax
+  11:	89 44 24 04          	mov    %eax,0x4(%esp)
+  15:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  1c:	e8 00 00 00 00       	call   21 <_printOptimalParens+0x21>
+  21:	eb 6f                	jmp    92 <_printOptimalParens+0x92>
+  23:	c7 04 24 28 00 00 00 	movl   $0x28,(%esp)
+  2a:	e8 00 00 00 00       	call   2f <_printOptimalParens+0x2f>
+  2f:	8b 45 0c             	mov    0xc(%ebp),%eax
+  32:	69 d0 c8 00 00 00    	imul   $0xc8,%eax,%edx
+  38:	8b 45 08             	mov    0x8(%ebp),%eax
+  3b:	01 c2                	add    %eax,%edx
+  3d:	8b 45 10             	mov    0x10(%ebp),%eax
+  40:	8b 04 82             	mov    (%edx,%eax,4),%eax
+  43:	89 44 24 08          	mov    %eax,0x8(%esp)
+  47:	8b 45 0c             	mov    0xc(%ebp),%eax
+  4a:	89 44 24 04          	mov    %eax,0x4(%esp)
+  4e:	8b 45 08             	mov    0x8(%ebp),%eax
+  51:	89 04 24             	mov    %eax,(%esp)
+  54:	e8 a7 ff ff ff       	call   0 <_printOptimalParens>
+  59:	8b 45 0c             	mov    0xc(%ebp),%eax
+  5c:	69 d0 c8 00 00 00    	imul   $0xc8,%eax,%edx
+  62:	8b 45 08             	mov    0x8(%ebp),%eax
+  65:	01 c2                	add    %eax,%edx
+  67:	8b 45 10             	mov    0x10(%ebp),%eax
+  6a:	8b 04 82             	mov    (%edx,%eax,4),%eax
+  6d:	8d 50 01             	lea    0x1(%eax),%edx
+  70:	8b 45 10             	mov    0x10(%ebp),%eax
+  73:	89 44 24 08          	mov    %eax,0x8(%esp)
+  77:	89 54 24 04          	mov    %edx,0x4(%esp)
+  7b:	8b 45 08             	mov    0x8(%ebp),%eax
+  7e:	89 04 24             	mov    %eax,(%esp)
+  81:	e8 7a ff ff ff       	call   0 <_printOptimalParens>
+  86:	c7 04 24 29 00 00 00 	movl   $0x29,(%esp)
+  8d:	e8 00 00 00 00       	call   92 <_printOptimalParens+0x92>
+  92:	90                   	nop
+  93:	c9                   	leave  
+  94:	c3                   	ret    
+
+00000095 <_matrixChainOrder>:
+  95:	55                   	push   %ebp
+  96:	89 e5                	mov    %esp,%ebp
+  98:	53                   	push   %ebx
+  99:	b8 64 4e 00 00       	mov    $0x4e64,%eax
+  9e:	e8 00 00 00 00       	call   a3 <_matrixChainOrder+0xe>
+  a3:	29 c4                	sub    %eax,%esp
+  a5:	c7 45 f4 01 00 00 00 	movl   $0x1,-0xc(%ebp)
+  ac:	eb 1d                	jmp    cb <_matrixChainOrder+0x36>
+  ae:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  b1:	69 c0 cc 00 00 00    	imul   $0xcc,%eax,%eax
+  b7:	8d 4d f8             	lea    -0x8(%ebp),%ecx
+  ba:	01 c8                	add    %ecx,%eax
+  bc:	2d 38 27 00 00       	sub    $0x2738,%eax
+  c1:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+  c7:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  cb:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  ce:	3b 45 0c             	cmp    0xc(%ebp),%eax
+  d1:	7c db                	jl     ae <_matrixChainOrder+0x19>
+  d3:	c7 45 f0 02 00 00 00 	movl   $0x2,-0x10(%ebp)
+  da:	e9 16 01 00 00       	jmp    1f5 <_matrixChainOrder+0x160>
+  df:	c7 45 ec 01 00 00 00 	movl   $0x1,-0x14(%ebp)
+  e6:	e9 f4 00 00 00       	jmp    1df <_matrixChainOrder+0x14a>
+  eb:	8b 55 ec             	mov    -0x14(%ebp),%edx
+  ee:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  f1:	01 d0                	add    %edx,%eax
+  f3:	83 e8 01             	sub    $0x1,%eax
+  f6:	89 45 d4             	mov    %eax,-0x2c(%ebp)
+  f9:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  fc:	6b d0 32             	imul   $0x32,%eax,%edx
+  ff:	8b 45 d4             	mov    -0x2c(%ebp),%eax
+ 102:	01 d0                	add    %edx,%eax
+ 104:	c7 84 85 c0 d8 ff ff 	movl   $0x7fffffff,-0x2740(%ebp,%eax,4)
+ 10b:	ff ff ff 7f 
+ 10f:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 112:	89 45 e8             	mov    %eax,-0x18(%ebp)
+ 115:	e9 b2 00 00 00       	jmp    1cc <_matrixChainOrder+0x137>
+ 11a:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 11d:	6b d0 32             	imul   $0x32,%eax,%edx
+ 120:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 123:	01 d0                	add    %edx,%eax
+ 125:	8b 94 85 c0 d8 ff ff 	mov    -0x2740(%ebp,%eax,4),%edx
+ 12c:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 12f:	83 c0 01             	add    $0x1,%eax
+ 132:	6b c8 32             	imul   $0x32,%eax,%ecx
+ 135:	8b 45 d4             	mov    -0x2c(%ebp),%eax
+ 138:	01 c8                	add    %ecx,%eax
+ 13a:	8b 84 85 c0 d8 ff ff 	mov    -0x2740(%ebp,%eax,4),%eax
+ 141:	8d 0c 02             	lea    (%edx,%eax,1),%ecx
+ 144:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 147:	05 ff ff ff 3f       	add    $0x3fffffff,%eax
+ 14c:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+ 153:	8b 45 08             	mov    0x8(%ebp),%eax
+ 156:	01 d0                	add    %edx,%eax
+ 158:	8b 10                	mov    (%eax),%edx
+ 15a:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 15d:	8d 1c 85 00 00 00 00 	lea    0x0(,%eax,4),%ebx
+ 164:	8b 45 08             	mov    0x8(%ebp),%eax
+ 167:	01 d8                	add    %ebx,%eax
+ 169:	8b 00                	mov    (%eax),%eax
+ 16b:	0f af d0             	imul   %eax,%edx
+ 16e:	8b 45 d4             	mov    -0x2c(%ebp),%eax
+ 171:	8d 1c 85 00 00 00 00 	lea    0x0(,%eax,4),%ebx
+ 178:	8b 45 08             	mov    0x8(%ebp),%eax
+ 17b:	01 d8                	add    %ebx,%eax
+ 17d:	8b 00                	mov    (%eax),%eax
+ 17f:	0f af c2             	imul   %edx,%eax
+ 182:	01 c8                	add    %ecx,%eax
+ 184:	89 45 d0             	mov    %eax,-0x30(%ebp)
+ 187:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 18a:	6b d0 32             	imul   $0x32,%eax,%edx
+ 18d:	8b 45 d4             	mov    -0x2c(%ebp),%eax
+ 190:	01 d0                	add    %edx,%eax
+ 192:	8b 84 85 c0 d8 ff ff 	mov    -0x2740(%ebp,%eax,4),%eax
+ 199:	3b 45 d0             	cmp    -0x30(%ebp),%eax
+ 19c:	7e 2a                	jle    1c8 <_matrixChainOrder+0x133>
+ 19e:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 1a1:	6b d0 32             	imul   $0x32,%eax,%edx
+ 1a4:	8b 45 d4             	mov    -0x2c(%ebp),%eax
+ 1a7:	01 c2                	add    %eax,%edx
+ 1a9:	8b 45 d0             	mov    -0x30(%ebp),%eax
+ 1ac:	89 84 95 c0 d8 ff ff 	mov    %eax,-0x2740(%ebp,%edx,4)
+ 1b3:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 1b6:	6b d0 32             	imul   $0x32,%eax,%edx
+ 1b9:	8b 45 d4             	mov    -0x2c(%ebp),%eax
+ 1bc:	01 c2                	add    %eax,%edx
+ 1be:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 1c1:	89 84 95 b0 b1 ff ff 	mov    %eax,-0x4e50(%ebp,%edx,4)
+ 1c8:	83 45 e8 01          	addl   $0x1,-0x18(%ebp)
+ 1cc:	8b 45 d4             	mov    -0x2c(%ebp),%eax
+ 1cf:	83 e8 01             	sub    $0x1,%eax
+ 1d2:	3b 45 e8             	cmp    -0x18(%ebp),%eax
+ 1d5:	0f 8d 3f ff ff ff    	jge    11a <_matrixChainOrder+0x85>
+ 1db:	83 45 ec 01          	addl   $0x1,-0x14(%ebp)
+ 1df:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 1e2:	2b 45 f0             	sub    -0x10(%ebp),%eax
+ 1e5:	83 c0 01             	add    $0x1,%eax
+ 1e8:	3b 45 ec             	cmp    -0x14(%ebp),%eax
+ 1eb:	0f 8f fa fe ff ff    	jg     eb <_matrixChainOrder+0x56>
+ 1f1:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+ 1f5:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 1f8:	3b 45 0c             	cmp    0xc(%ebp),%eax
+ 1fb:	0f 8c de fe ff ff    	jl     df <_matrixChainOrder+0x4a>
+ 201:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 204:	83 e8 01             	sub    $0x1,%eax
+ 207:	83 c0 32             	add    $0x32,%eax
+ 20a:	8b 84 85 c0 d8 ff ff 	mov    -0x2740(%ebp,%eax,4),%eax
+ 211:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 215:	c7 04 24 04 00 00 00 	movl   $0x4,(%esp)
+ 21c:	e8 00 00 00 00       	call   221 <_matrixChainOrder+0x18c>
+ 221:	c7 04 24 2c 00 00 00 	movl   $0x2c,(%esp)
+ 228:	e8 00 00 00 00       	call   22d <_matrixChainOrder+0x198>
+ 22d:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 230:	83 e8 01             	sub    $0x1,%eax
+ 233:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 237:	c7 44 24 04 01 00 00 	movl   $0x1,0x4(%esp)
+ 23e:	00 
+ 23f:	8d 85 b0 b1 ff ff    	lea    -0x4e50(%ebp),%eax
+ 245:	89 04 24             	mov    %eax,(%esp)
+ 248:	e8 b3 fd ff ff       	call   0 <_printOptimalParens>
+ 24d:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+ 254:	e8 00 00 00 00       	call   259 <_matrixChainOrder+0x1c4>
+ 259:	c7 04 24 47 00 00 00 	movl   $0x47,(%esp)
+ 260:	e8 00 00 00 00       	call   265 <_matrixChainOrder+0x1d0>
+ 265:	c7 45 e4 01 00 00 00 	movl   $0x1,-0x1c(%ebp)
+ 26c:	eb 5d                	jmp    2cb <_matrixChainOrder+0x236>
+ 26e:	c7 45 e0 01 00 00 00 	movl   $0x1,-0x20(%ebp)
+ 275:	eb 3c                	jmp    2b3 <_matrixChainOrder+0x21e>
+ 277:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 27a:	3b 45 e0             	cmp    -0x20(%ebp),%eax
+ 27d:	7e 0e                	jle    28d <_matrixChainOrder+0x1f8>
+ 27f:	c7 04 24 58 00 00 00 	movl   $0x58,(%esp)
+ 286:	e8 00 00 00 00       	call   28b <_matrixChainOrder+0x1f6>
+ 28b:	eb 22                	jmp    2af <_matrixChainOrder+0x21a>
+ 28d:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 290:	6b d0 32             	imul   $0x32,%eax,%edx
+ 293:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 296:	01 d0                	add    %edx,%eax
+ 298:	8b 84 85 c0 d8 ff ff 	mov    -0x2740(%ebp,%eax,4),%eax
+ 29f:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 2a3:	c7 04 24 5d 00 00 00 	movl   $0x5d,(%esp)
+ 2aa:	e8 00 00 00 00       	call   2af <_matrixChainOrder+0x21a>
+ 2af:	83 45 e0 01          	addl   $0x1,-0x20(%ebp)
+ 2b3:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 2b6:	3b 45 0c             	cmp    0xc(%ebp),%eax
+ 2b9:	7c bc                	jl     277 <_matrixChainOrder+0x1e2>
+ 2bb:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+ 2c2:	e8 00 00 00 00       	call   2c7 <_matrixChainOrder+0x232>
+ 2c7:	83 45 e4 01          	addl   $0x1,-0x1c(%ebp)
+ 2cb:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 2ce:	3b 45 0c             	cmp    0xc(%ebp),%eax
+ 2d1:	7c 9b                	jl     26e <_matrixChainOrder+0x1d9>
+ 2d3:	c7 04 24 62 00 00 00 	movl   $0x62,(%esp)
+ 2da:	e8 00 00 00 00       	call   2df <_matrixChainOrder+0x24a>
+ 2df:	c7 45 dc 01 00 00 00 	movl   $0x1,-0x24(%ebp)
+ 2e6:	eb 5d                	jmp    345 <_matrixChainOrder+0x2b0>
+ 2e8:	c7 45 d8 01 00 00 00 	movl   $0x1,-0x28(%ebp)
+ 2ef:	eb 3c                	jmp    32d <_matrixChainOrder+0x298>
+ 2f1:	8b 45 dc             	mov    -0x24(%ebp),%eax
+ 2f4:	3b 45 d8             	cmp    -0x28(%ebp),%eax
+ 2f7:	7e 0e                	jle    307 <_matrixChainOrder+0x272>
+ 2f9:	c7 04 24 58 00 00 00 	movl   $0x58,(%esp)
+ 300:	e8 00 00 00 00       	call   305 <_matrixChainOrder+0x270>
+ 305:	eb 22                	jmp    329 <_matrixChainOrder+0x294>
+ 307:	8b 45 dc             	mov    -0x24(%ebp),%eax
+ 30a:	6b d0 32             	imul   $0x32,%eax,%edx
+ 30d:	8b 45 d8             	mov    -0x28(%ebp),%eax
+ 310:	01 d0                	add    %edx,%eax
+ 312:	8b 84 85 b0 b1 ff ff 	mov    -0x4e50(%ebp,%eax,4),%eax
+ 319:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 31d:	c7 04 24 5d 00 00 00 	movl   $0x5d,(%esp)
+ 324:	e8 00 00 00 00       	call   329 <_matrixChainOrder+0x294>
+ 329:	83 45 d8 01          	addl   $0x1,-0x28(%ebp)
+ 32d:	8b 45 d8             	mov    -0x28(%ebp),%eax
+ 330:	3b 45 0c             	cmp    0xc(%ebp),%eax
+ 333:	7c bc                	jl     2f1 <_matrixChainOrder+0x25c>
+ 335:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+ 33c:	e8 00 00 00 00       	call   341 <_matrixChainOrder+0x2ac>
+ 341:	83 45 dc 01          	addl   $0x1,-0x24(%ebp)
+ 345:	8b 45 dc             	mov    -0x24(%ebp),%eax
+ 348:	3b 45 0c             	cmp    0xc(%ebp),%eax
+ 34b:	7c 9b                	jl     2e8 <_matrixChainOrder+0x253>
+ 34d:	90                   	nop
+ 34e:	81 c4 64 4e 00 00    	add    $0x4e64,%esp
+ 354:	5b                   	pop    %ebx
+ 355:	5d                   	pop    %ebp
+ 356:	c3                   	ret    
+
+00000357 <_menu>:
+ 357:	55                   	push   %ebp
+ 358:	89 e5                	mov    %esp,%ebp
+ 35a:	81 ec f8 00 00 00    	sub    $0xf8,%esp
+ 360:	c7 04 24 74 00 00 00 	movl   $0x74,(%esp)
+ 367:	e8 00 00 00 00       	call   36c <_menu+0x15>
+ 36c:	c7 04 24 a1 00 00 00 	movl   $0xa1,(%esp)
+ 373:	e8 00 00 00 00       	call   378 <_menu+0x21>
+ 378:	c7 04 24 bd 00 00 00 	movl   $0xbd,(%esp)
+ 37f:	e8 00 00 00 00       	call   384 <_menu+0x2d>
+ 384:	c7 04 24 c5 00 00 00 	movl   $0xc5,(%esp)
+ 38b:	e8 00 00 00 00       	call   390 <_menu+0x39>
+ 390:	8d 45 f0             	lea    -0x10(%ebp),%eax
+ 393:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 397:	c7 04 24 ce 00 00 00 	movl   $0xce,(%esp)
+ 39e:	e8 00 00 00 00       	call   3a3 <_menu+0x4c>
+ 3a3:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 3a6:	85 c0                	test   %eax,%eax
+ 3a8:	0f 84 8c 00 00 00    	je     43a <_menu+0xe3>
+ 3ae:	83 f8 01             	cmp    $0x1,%eax
+ 3b1:	0f 85 91 00 00 00    	jne    448 <_menu+0xf1>
+ 3b7:	c7 04 24 d1 00 00 00 	movl   $0xd1,(%esp)
+ 3be:	e8 00 00 00 00       	call   3c3 <_menu+0x6c>
+ 3c3:	8d 45 ec             	lea    -0x14(%ebp),%eax
+ 3c6:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 3ca:	c7 04 24 ce 00 00 00 	movl   $0xce,(%esp)
+ 3d1:	e8 00 00 00 00       	call   3d6 <_menu+0x7f>
+ 3d6:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 3d9:	83 c0 01             	add    $0x1,%eax
+ 3dc:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 3e0:	c7 04 24 ec 00 00 00 	movl   $0xec,(%esp)
+ 3e7:	e8 00 00 00 00       	call   3ec <_menu+0x95>
+ 3ec:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 3f3:	eb 22                	jmp    417 <_menu+0xc0>
+ 3f5:	8d 85 24 ff ff ff    	lea    -0xdc(%ebp),%eax
+ 3fb:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 3fe:	c1 e2 02             	shl    $0x2,%edx
+ 401:	01 d0                	add    %edx,%eax
+ 403:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 407:	c7 04 24 ce 00 00 00 	movl   $0xce,(%esp)
+ 40e:	e8 00 00 00 00       	call   413 <_menu+0xbc>
+ 413:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 417:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 41a:	39 45 f4             	cmp    %eax,-0xc(%ebp)
+ 41d:	7e d6                	jle    3f5 <_menu+0x9e>
+ 41f:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 422:	83 c0 01             	add    $0x1,%eax
+ 425:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 429:	8d 85 24 ff ff ff    	lea    -0xdc(%ebp),%eax
+ 42f:	89 04 24             	mov    %eax,(%esp)
+ 432:	e8 5e fc ff ff       	call   95 <_matrixChainOrder>
+ 437:	90                   	nop
+ 438:	eb 1a                	jmp    454 <_menu+0xfd>
+ 43a:	c7 04 24 11 01 00 00 	movl   $0x111,(%esp)
+ 441:	e8 00 00 00 00       	call   446 <_menu+0xef>
+ 446:	eb 0c                	jmp    454 <_menu+0xfd>
+ 448:	c7 04 24 1c 01 00 00 	movl   $0x11c,(%esp)
+ 44f:	e8 00 00 00 00       	call   454 <_menu+0xfd>
+ 454:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 457:	85 c0                	test   %eax,%eax
+ 459:	0f 85 01 ff ff ff    	jne    360 <_menu+0x9>
+ 45f:	90                   	nop
+ 460:	c9                   	leave  
+ 461:	c3                   	ret    
+
+00000462 <_main>:
+ 462:	55                   	push   %ebp
+ 463:	89 e5                	mov    %esp,%ebp
+ 465:	83 e4 f0             	and    $0xfffffff0,%esp
+ 468:	e8 00 00 00 00       	call   46d <_main+0xb>
+ 46d:	e8 e5 fe ff ff       	call   357 <_menu>
+ 472:	b8 00 00 00 00       	mov    $0x0,%eax
+ 477:	c9                   	leave  
+ 478:	c3                   	ret    
+ 479:	90                   	nop
+ 47a:	90                   	nop
+ 47b:	90                   	nop

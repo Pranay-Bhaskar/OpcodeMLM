@@ -1,0 +1,174 @@
+
+multiplayercardgame.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_initDeck>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 10             	sub    $0x10,%esp
+   6:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+   d:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+  14:	eb 43                	jmp    59 <_initDeck+0x59>
+  16:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  1d:	eb 30                	jmp    4f <_initDeck+0x4f>
+  1f:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  22:	8b 14 85 20 00 00 00 	mov    0x20(,%eax,4),%edx
+  29:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  2c:	89 14 c5 00 00 00 00 	mov    %edx,0x0(,%eax,8)
+  33:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  36:	8b 14 85 00 00 00 00 	mov    0x0(,%eax,4),%edx
+  3d:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  40:	89 14 c5 04 00 00 00 	mov    %edx,0x4(,%eax,8)
+  47:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  4b:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  4f:	83 7d f4 0c          	cmpl   $0xc,-0xc(%ebp)
+  53:	7e ca                	jle    1f <_initDeck+0x1f>
+  55:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+  59:	83 7d f8 03          	cmpl   $0x3,-0x8(%ebp)
+  5d:	7e b7                	jle    16 <_initDeck+0x16>
+  5f:	90                   	nop
+  60:	c9                   	leave  
+  61:	c3                   	ret    
+
+00000062 <_shuffleDeck>:
+  62:	55                   	push   %ebp
+  63:	89 e5                	mov    %esp,%ebp
+  65:	83 ec 18             	sub    $0x18,%esp
+  68:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  6f:	e9 80 00 00 00       	jmp    f4 <_shuffleDeck+0x92>
+  74:	e8 00 00 00 00       	call   79 <_shuffleDeck+0x17>
+  79:	89 c1                	mov    %eax,%ecx
+  7b:	ba 4f ec c4 4e       	mov    $0x4ec4ec4f,%edx
+  80:	89 c8                	mov    %ecx,%eax
+  82:	f7 ea                	imul   %edx
+  84:	c1 fa 04             	sar    $0x4,%edx
+  87:	89 c8                	mov    %ecx,%eax
+  89:	c1 f8 1f             	sar    $0x1f,%eax
+  8c:	29 c2                	sub    %eax,%edx
+  8e:	89 d0                	mov    %edx,%eax
+  90:	89 45 f0             	mov    %eax,-0x10(%ebp)
+  93:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  96:	6b c0 34             	imul   $0x34,%eax,%eax
+  99:	29 c1                	sub    %eax,%ecx
+  9b:	89 c8                	mov    %ecx,%eax
+  9d:	89 45 f0             	mov    %eax,-0x10(%ebp)
+  a0:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  a3:	8b 14 c5 04 00 00 00 	mov    0x4(,%eax,8),%edx
+  aa:	8b 04 c5 00 00 00 00 	mov    0x0(,%eax,8),%eax
+  b1:	89 45 e8             	mov    %eax,-0x18(%ebp)
+  b4:	89 55 ec             	mov    %edx,-0x14(%ebp)
+  b7:	8b 4d f4             	mov    -0xc(%ebp),%ecx
+  ba:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  bd:	8b 14 c5 04 00 00 00 	mov    0x4(,%eax,8),%edx
+  c4:	8b 04 c5 00 00 00 00 	mov    0x0(,%eax,8),%eax
+  cb:	89 04 cd 00 00 00 00 	mov    %eax,0x0(,%ecx,8)
+  d2:	89 14 cd 04 00 00 00 	mov    %edx,0x4(,%ecx,8)
+  d9:	8b 4d f0             	mov    -0x10(%ebp),%ecx
+  dc:	8b 45 e8             	mov    -0x18(%ebp),%eax
+  df:	8b 55 ec             	mov    -0x14(%ebp),%edx
+  e2:	89 04 cd 00 00 00 00 	mov    %eax,0x0(,%ecx,8)
+  e9:	89 14 cd 04 00 00 00 	mov    %edx,0x4(,%ecx,8)
+  f0:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  f4:	83 7d f4 33          	cmpl   $0x33,-0xc(%ebp)
+  f8:	0f 8e 76 ff ff ff    	jle    74 <_shuffleDeck+0x12>
+  fe:	90                   	nop
+  ff:	c9                   	leave  
+ 100:	c3                   	ret    
+
+00000101 <_dealCards>:
+ 101:	55                   	push   %ebp
+ 102:	89 e5                	mov    %esp,%ebp
+ 104:	83 ec 10             	sub    $0x10,%esp
+ 107:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+ 10e:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+ 115:	eb 4b                	jmp    162 <_dealCards+0x61>
+ 117:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 11e:	eb 38                	jmp    158 <_dealCards+0x57>
+ 120:	8b 55 fc             	mov    -0x4(%ebp),%edx
+ 123:	8d 42 01             	lea    0x1(%edx),%eax
+ 126:	89 45 fc             	mov    %eax,-0x4(%ebp)
+ 129:	8b 4d f8             	mov    -0x8(%ebp),%ecx
+ 12c:	89 c8                	mov    %ecx,%eax
+ 12e:	c1 e0 02             	shl    $0x2,%eax
+ 131:	01 c8                	add    %ecx,%eax
+ 133:	8b 4d f4             	mov    -0xc(%ebp),%ecx
+ 136:	01 c1                	add    %eax,%ecx
+ 138:	8b 04 d5 00 00 00 00 	mov    0x0(,%edx,8),%eax
+ 13f:	8b 14 d5 04 00 00 00 	mov    0x4(,%edx,8),%edx
+ 146:	89 04 cd 00 00 00 00 	mov    %eax,0x0(,%ecx,8)
+ 14d:	89 14 cd 04 00 00 00 	mov    %edx,0x4(,%ecx,8)
+ 154:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 158:	83 7d f4 04          	cmpl   $0x4,-0xc(%ebp)
+ 15c:	7e c2                	jle    120 <_dealCards+0x1f>
+ 15e:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+ 162:	83 7d f8 03          	cmpl   $0x3,-0x8(%ebp)
+ 166:	7e af                	jle    117 <_dealCards+0x16>
+ 168:	90                   	nop
+ 169:	c9                   	leave  
+ 16a:	c3                   	ret    
+
+0000016b <_showHands>:
+ 16b:	55                   	push   %ebp
+ 16c:	89 e5                	mov    %esp,%ebp
+ 16e:	83 ec 28             	sub    $0x28,%esp
+ 171:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 178:	eb 79                	jmp    1f3 <_showHands+0x88>
+ 17a:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 17d:	83 c0 01             	add    $0x1,%eax
+ 180:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 184:	c7 04 24 38 00 00 00 	movl   $0x38,(%esp)
+ 18b:	e8 00 00 00 00       	call   190 <_showHands+0x25>
+ 190:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+ 197:	eb 44                	jmp    1dd <_showHands+0x72>
+ 199:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 19c:	89 d0                	mov    %edx,%eax
+ 19e:	c1 e0 02             	shl    $0x2,%eax
+ 1a1:	01 d0                	add    %edx,%eax
+ 1a3:	8b 55 f0             	mov    -0x10(%ebp),%edx
+ 1a6:	01 d0                	add    %edx,%eax
+ 1a8:	8b 0c c5 04 00 00 00 	mov    0x4(,%eax,8),%ecx
+ 1af:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 1b2:	89 d0                	mov    %edx,%eax
+ 1b4:	c1 e0 02             	shl    $0x2,%eax
+ 1b7:	01 d0                	add    %edx,%eax
+ 1b9:	8b 55 f0             	mov    -0x10(%ebp),%edx
+ 1bc:	01 d0                	add    %edx,%eax
+ 1be:	8b 04 c5 00 00 00 00 	mov    0x0(,%eax,8),%eax
+ 1c5:	89 4c 24 08          	mov    %ecx,0x8(%esp)
+ 1c9:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 1cd:	c7 04 24 49 00 00 00 	movl   $0x49,(%esp)
+ 1d4:	e8 00 00 00 00       	call   1d9 <_showHands+0x6e>
+ 1d9:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+ 1dd:	83 7d f0 04          	cmpl   $0x4,-0x10(%ebp)
+ 1e1:	7e b6                	jle    199 <_showHands+0x2e>
+ 1e3:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+ 1ea:	e8 00 00 00 00       	call   1ef <_showHands+0x84>
+ 1ef:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 1f3:	83 7d f4 03          	cmpl   $0x3,-0xc(%ebp)
+ 1f7:	7e 81                	jle    17a <_showHands+0xf>
+ 1f9:	90                   	nop
+ 1fa:	c9                   	leave  
+ 1fb:	c3                   	ret    
+
+000001fc <_main>:
+ 1fc:	55                   	push   %ebp
+ 1fd:	89 e5                	mov    %esp,%ebp
+ 1ff:	83 e4 f0             	and    $0xfffffff0,%esp
+ 202:	83 ec 10             	sub    $0x10,%esp
+ 205:	e8 00 00 00 00       	call   20a <_main+0xe>
+ 20a:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 211:	e8 00 00 00 00       	call   216 <_main+0x1a>
+ 216:	89 04 24             	mov    %eax,(%esp)
+ 219:	e8 00 00 00 00       	call   21e <_main+0x22>
+ 21e:	e8 dd fd ff ff       	call   0 <_initDeck>
+ 223:	e8 3a fe ff ff       	call   62 <_shuffleDeck>
+ 228:	e8 d4 fe ff ff       	call   101 <_dealCards>
+ 22d:	e8 39 ff ff ff       	call   16b <_showHands>
+ 232:	b8 00 00 00 00       	mov    $0x0,%eax
+ 237:	c9                   	leave  
+ 238:	c3                   	ret    
+ 239:	90                   	nop
+ 23a:	90                   	nop
+ 23b:	90                   	nop

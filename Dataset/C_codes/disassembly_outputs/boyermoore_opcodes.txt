@@ -1,0 +1,145 @@
+
+boyermoore.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_max>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	8b 55 08             	mov    0x8(%ebp),%edx
+   6:	8b 45 0c             	mov    0xc(%ebp),%eax
+   9:	39 d0                	cmp    %edx,%eax
+   b:	7d 02                	jge    f <_max+0xf>
+   d:	89 d0                	mov    %edx,%eax
+   f:	5d                   	pop    %ebp
+  10:	c3                   	ret    
+
+00000011 <_badCharHeuristic>:
+  11:	55                   	push   %ebp
+  12:	89 e5                	mov    %esp,%ebp
+  14:	83 ec 10             	sub    $0x10,%esp
+  17:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+  1e:	eb 19                	jmp    39 <_badCharHeuristic+0x28>
+  20:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  23:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+  2a:	8b 45 10             	mov    0x10(%ebp),%eax
+  2d:	01 d0                	add    %edx,%eax
+  2f:	c7 00 ff ff ff ff    	movl   $0xffffffff,(%eax)
+  35:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  39:	81 7d fc ff 00 00 00 	cmpl   $0xff,-0x4(%ebp)
+  40:	7e de                	jle    20 <_badCharHeuristic+0xf>
+  42:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+  49:	eb 23                	jmp    6e <_badCharHeuristic+0x5d>
+  4b:	8b 55 f8             	mov    -0x8(%ebp),%edx
+  4e:	8b 45 08             	mov    0x8(%ebp),%eax
+  51:	01 d0                	add    %edx,%eax
+  53:	0f b6 00             	movzbl (%eax),%eax
+  56:	0f b6 c0             	movzbl %al,%eax
+  59:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+  60:	8b 45 10             	mov    0x10(%ebp),%eax
+  63:	01 c2                	add    %eax,%edx
+  65:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  68:	89 02                	mov    %eax,(%edx)
+  6a:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+  6e:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  71:	3b 45 0c             	cmp    0xc(%ebp),%eax
+  74:	7c d5                	jl     4b <_badCharHeuristic+0x3a>
+  76:	90                   	nop
+  77:	c9                   	leave  
+  78:	c3                   	ret    
+
+00000079 <_searchBM>:
+  79:	55                   	push   %ebp
+  7a:	89 e5                	mov    %esp,%ebp
+  7c:	81 ec 28 04 00 00    	sub    $0x428,%esp
+  82:	8b 45 0c             	mov    0xc(%ebp),%eax
+  85:	89 04 24             	mov    %eax,(%esp)
+  88:	e8 00 00 00 00       	call   8d <_searchBM+0x14>
+  8d:	89 45 ec             	mov    %eax,-0x14(%ebp)
+  90:	8b 45 08             	mov    0x8(%ebp),%eax
+  93:	89 04 24             	mov    %eax,(%esp)
+  96:	e8 00 00 00 00       	call   9b <_searchBM+0x22>
+  9b:	89 45 e8             	mov    %eax,-0x18(%ebp)
+  9e:	8d 85 e8 fb ff ff    	lea    -0x418(%ebp),%eax
+  a4:	89 44 24 08          	mov    %eax,0x8(%esp)
+  a8:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  ab:	89 44 24 04          	mov    %eax,0x4(%esp)
+  af:	8b 45 0c             	mov    0xc(%ebp),%eax
+  b2:	89 04 24             	mov    %eax,(%esp)
+  b5:	e8 57 ff ff ff       	call   11 <_badCharHeuristic>
+  ba:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  c1:	e9 c1 00 00 00       	jmp    187 <_searchBM+0x10e>
+  c6:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  c9:	83 e8 01             	sub    $0x1,%eax
+  cc:	89 45 f0             	mov    %eax,-0x10(%ebp)
+  cf:	eb 04                	jmp    d5 <_searchBM+0x5c>
+  d1:	83 6d f0 01          	subl   $0x1,-0x10(%ebp)
+  d5:	83 7d f0 00          	cmpl   $0x0,-0x10(%ebp)
+  d9:	78 21                	js     fc <_searchBM+0x83>
+  db:	8b 55 f0             	mov    -0x10(%ebp),%edx
+  de:	8b 45 0c             	mov    0xc(%ebp),%eax
+  e1:	01 d0                	add    %edx,%eax
+  e3:	0f b6 10             	movzbl (%eax),%edx
+  e6:	8b 4d f4             	mov    -0xc(%ebp),%ecx
+  e9:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  ec:	01 c8                	add    %ecx,%eax
+  ee:	89 c1                	mov    %eax,%ecx
+  f0:	8b 45 08             	mov    0x8(%ebp),%eax
+  f3:	01 c8                	add    %ecx,%eax
+  f5:	0f b6 00             	movzbl (%eax),%eax
+  f8:	38 c2                	cmp    %al,%dl
+  fa:	74 d5                	je     d1 <_searchBM+0x58>
+  fc:	83 7d f0 00          	cmpl   $0x0,-0x10(%ebp)
+ 100:	79 4f                	jns    151 <_searchBM+0xd8>
+ 102:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 105:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 109:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 110:	e8 00 00 00 00       	call   115 <_searchBM+0x9c>
+ 115:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 118:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 11b:	01 d0                	add    %edx,%eax
+ 11d:	3b 45 e8             	cmp    -0x18(%ebp),%eax
+ 120:	7d 25                	jge    147 <_searchBM+0xce>
+ 122:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 125:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 128:	01 d0                	add    %edx,%eax
+ 12a:	89 c2                	mov    %eax,%edx
+ 12c:	8b 45 08             	mov    0x8(%ebp),%eax
+ 12f:	01 d0                	add    %edx,%eax
+ 131:	0f b6 00             	movzbl (%eax),%eax
+ 134:	0f b6 c0             	movzbl %al,%eax
+ 137:	8b 84 85 e8 fb ff ff 	mov    -0x418(%ebp,%eax,4),%eax
+ 13e:	8b 55 ec             	mov    -0x14(%ebp),%edx
+ 141:	29 c2                	sub    %eax,%edx
+ 143:	89 d0                	mov    %edx,%eax
+ 145:	eb 05                	jmp    14c <_searchBM+0xd3>
+ 147:	b8 01 00 00 00       	mov    $0x1,%eax
+ 14c:	01 45 f4             	add    %eax,-0xc(%ebp)
+ 14f:	eb 36                	jmp    187 <_searchBM+0x10e>
+ 151:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 154:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 157:	01 d0                	add    %edx,%eax
+ 159:	89 c2                	mov    %eax,%edx
+ 15b:	8b 45 08             	mov    0x8(%ebp),%eax
+ 15e:	01 d0                	add    %edx,%eax
+ 160:	0f b6 00             	movzbl (%eax),%eax
+ 163:	0f b6 c0             	movzbl %al,%eax
+ 166:	8b 84 85 e8 fb ff ff 	mov    -0x418(%ebp,%eax,4),%eax
+ 16d:	8b 55 f0             	mov    -0x10(%ebp),%edx
+ 170:	29 c2                	sub    %eax,%edx
+ 172:	89 d0                	mov    %edx,%eax
+ 174:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 178:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
+ 17f:	e8 7c fe ff ff       	call   0 <_max>
+ 184:	01 45 f4             	add    %eax,-0xc(%ebp)
+ 187:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 18a:	2b 45 ec             	sub    -0x14(%ebp),%eax
+ 18d:	3b 45 f4             	cmp    -0xc(%ebp),%eax
+ 190:	0f 8d 30 ff ff ff    	jge    c6 <_searchBM+0x4d>
+ 196:	90                   	nop
+ 197:	c9                   	leave  
+ 198:	c3                   	ret    
+ 199:	90                   	nop
+ 19a:	90                   	nop
+ 19b:	90                   	nop

@@ -1,0 +1,90 @@
+
+vmm.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_initFile>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 10             	sub    $0x10,%esp
+   6:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+   d:	eb 1f                	jmp    2e <_initFile+0x2e>
+   f:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  12:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  15:	89 14 c5 00 00 00 00 	mov    %edx,0x0(,%eax,8)
+  1c:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  1f:	c7 04 c5 04 00 00 00 	movl   $0x0,0x4(,%eax,8)
+  26:	00 00 00 00 
+  2a:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  2e:	83 7d fc 09          	cmpl   $0x9,-0x4(%ebp)
+  32:	7e db                	jle    f <_initFile+0xf>
+  34:	90                   	nop
+  35:	c9                   	leave  
+  36:	c3                   	ret    
+
+00000037 <_downloadChunk>:
+  37:	55                   	push   %ebp
+  38:	89 e5                	mov    %esp,%ebp
+  3a:	83 ec 18             	sub    $0x18,%esp
+  3d:	8b 45 08             	mov    0x8(%ebp),%eax
+  40:	8b 04 c5 04 00 00 00 	mov    0x4(,%eax,8),%eax
+  47:	85 c0                	test   %eax,%eax
+  49:	75 23                	jne    6e <_downloadChunk+0x37>
+  4b:	8b 45 08             	mov    0x8(%ebp),%eax
+  4e:	c7 04 c5 04 00 00 00 	movl   $0x1,0x4(,%eax,8)
+  55:	01 00 00 00 
+  59:	8b 45 08             	mov    0x8(%ebp),%eax
+  5c:	89 44 24 04          	mov    %eax,0x4(%esp)
+  60:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  67:	e8 00 00 00 00       	call   6c <_downloadChunk+0x35>
+  6c:	eb 13                	jmp    81 <_downloadChunk+0x4a>
+  6e:	8b 45 08             	mov    0x8(%ebp),%eax
+  71:	89 44 24 04          	mov    %eax,0x4(%esp)
+  75:	c7 04 24 16 00 00 00 	movl   $0x16,(%esp)
+  7c:	e8 00 00 00 00       	call   81 <_downloadChunk+0x4a>
+  81:	90                   	nop
+  82:	c9                   	leave  
+  83:	c3                   	ret    
+
+00000084 <_showProgress>:
+  84:	55                   	push   %ebp
+  85:	89 e5                	mov    %esp,%ebp
+  87:	83 ec 28             	sub    $0x28,%esp
+  8a:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  91:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+  98:	eb 16                	jmp    b0 <_showProgress+0x2c>
+  9a:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  9d:	8b 04 c5 04 00 00 00 	mov    0x4(,%eax,8),%eax
+  a4:	85 c0                	test   %eax,%eax
+  a6:	74 04                	je     ac <_showProgress+0x28>
+  a8:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  ac:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+  b0:	83 7d f0 09          	cmpl   $0x9,-0x10(%ebp)
+  b4:	7e e4                	jle    9a <_showProgress+0x16>
+  b6:	c7 44 24 08 0a 00 00 	movl   $0xa,0x8(%esp)
+  bd:	00 
+  be:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  c1:	89 44 24 04          	mov    %eax,0x4(%esp)
+  c5:	c7 04 24 34 00 00 00 	movl   $0x34,(%esp)
+  cc:	e8 00 00 00 00       	call   d1 <_showProgress+0x4d>
+  d1:	90                   	nop
+  d2:	c9                   	leave  
+  d3:	c3                   	ret    
+
+000000d4 <_main>:
+  d4:	55                   	push   %ebp
+  d5:	89 e5                	mov    %esp,%ebp
+  d7:	83 e4 f0             	and    $0xfffffff0,%esp
+  da:	83 ec 10             	sub    $0x10,%esp
+  dd:	e8 00 00 00 00       	call   e2 <_main+0xe>
+  e2:	e8 19 ff ff ff       	call   0 <_initFile>
+  e7:	c7 04 24 03 00 00 00 	movl   $0x3,(%esp)
+  ee:	e8 44 ff ff ff       	call   37 <_downloadChunk>
+  f3:	c7 04 24 07 00 00 00 	movl   $0x7,(%esp)
+  fa:	e8 38 ff ff ff       	call   37 <_downloadChunk>
+  ff:	e8 80 ff ff ff       	call   84 <_showProgress>
+ 104:	b8 00 00 00 00       	mov    $0x0,%eax
+ 109:	c9                   	leave  
+ 10a:	c3                   	ret    
+ 10b:	90                   	nop

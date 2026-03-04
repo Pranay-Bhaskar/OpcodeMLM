@@ -1,0 +1,518 @@
+
+email.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_find_user>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 28             	sub    $0x28,%esp
+   6:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+   d:	eb 36                	jmp    45 <_find_user+0x45>
+   f:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  12:	69 c0 a8 11 01 00    	imul   $0x111a8,%eax,%eax
+  18:	8d 90 00 00 00 00    	lea    0x0(%eax),%edx
+  1e:	8b 45 08             	mov    0x8(%ebp),%eax
+  21:	89 44 24 04          	mov    %eax,0x4(%esp)
+  25:	89 14 24             	mov    %edx,(%esp)
+  28:	e8 00 00 00 00       	call   2d <_find_user+0x2d>
+  2d:	85 c0                	test   %eax,%eax
+  2f:	75 10                	jne    41 <_find_user+0x41>
+  31:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  34:	69 c0 a8 11 01 00    	imul   $0x111a8,%eax,%eax
+  3a:	05 00 00 00 00       	add    $0x0,%eax
+  3f:	eb 13                	jmp    54 <_find_user+0x54>
+  41:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  45:	a1 00 00 00 00       	mov    0x0,%eax
+  4a:	39 45 f4             	cmp    %eax,-0xc(%ebp)
+  4d:	7c c0                	jl     f <_find_user+0xf>
+  4f:	b8 00 00 00 00       	mov    $0x0,%eax
+  54:	c9                   	leave  
+  55:	c3                   	ret    
+
+00000056 <_register_user>:
+  56:	55                   	push   %ebp
+  57:	89 e5                	mov    %esp,%ebp
+  59:	83 ec 58             	sub    $0x58,%esp
+  5c:	a1 00 00 00 00       	mov    0x0,%eax
+  61:	83 f8 09             	cmp    $0x9,%eax
+  64:	7e 11                	jle    77 <_register_user+0x21>
+  66:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  6d:	e8 00 00 00 00       	call   72 <_register_user+0x1c>
+  72:	e9 92 00 00 00       	jmp    109 <_register_user+0xb3>
+  77:	c7 04 24 13 00 00 00 	movl   $0x13,(%esp)
+  7e:	e8 00 00 00 00       	call   83 <_register_user+0x2d>
+  83:	8d 45 c6             	lea    -0x3a(%ebp),%eax
+  86:	89 44 24 04          	mov    %eax,0x4(%esp)
+  8a:	c7 04 24 24 00 00 00 	movl   $0x24,(%esp)
+  91:	e8 00 00 00 00       	call   96 <_register_user+0x40>
+  96:	8d 45 c6             	lea    -0x3a(%ebp),%eax
+  99:	89 04 24             	mov    %eax,(%esp)
+  9c:	e8 5f ff ff ff       	call   0 <_find_user>
+  a1:	85 c0                	test   %eax,%eax
+  a3:	74 0e                	je     b3 <_register_user+0x5d>
+  a5:	c7 04 24 27 00 00 00 	movl   $0x27,(%esp)
+  ac:	e8 00 00 00 00       	call   b1 <_register_user+0x5b>
+  b1:	eb 56                	jmp    109 <_register_user+0xb3>
+  b3:	a1 00 00 00 00       	mov    0x0,%eax
+  b8:	69 c0 a8 11 01 00    	imul   $0x111a8,%eax,%eax
+  be:	8d 90 00 00 00 00    	lea    0x0(%eax),%edx
+  c4:	8d 45 c6             	lea    -0x3a(%ebp),%eax
+  c7:	89 44 24 04          	mov    %eax,0x4(%esp)
+  cb:	89 14 24             	mov    %edx,(%esp)
+  ce:	e8 00 00 00 00       	call   d3 <_register_user+0x7d>
+  d3:	a1 00 00 00 00       	mov    0x0,%eax
+  d8:	69 c0 a8 11 01 00    	imul   $0x111a8,%eax,%eax
+  de:	05 a4 11 01 00       	add    $0x111a4,%eax
+  e3:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+  e9:	a1 00 00 00 00       	mov    0x0,%eax
+  ee:	83 c0 01             	add    $0x1,%eax
+  f1:	a3 00 00 00 00       	mov    %eax,0x0
+  f6:	8d 45 c6             	lea    -0x3a(%ebp),%eax
+  f9:	89 44 24 04          	mov    %eax,0x4(%esp)
+  fd:	c7 04 24 3c 00 00 00 	movl   $0x3c,(%esp)
+ 104:	e8 00 00 00 00       	call   109 <_register_user+0xb3>
+ 109:	c9                   	leave  
+ 10a:	c3                   	ret    
+
+0000010b <_compose_email>:
+ 10b:	55                   	push   %ebp
+ 10c:	89 e5                	mov    %esp,%ebp
+ 10e:	57                   	push   %edi
+ 10f:	56                   	push   %esi
+ 110:	53                   	push   %ebx
+ 111:	81 ec 6c 05 00 00    	sub    $0x56c,%esp
+ 117:	c7 04 24 51 00 00 00 	movl   $0x51,(%esp)
+ 11e:	e8 00 00 00 00       	call   123 <_compose_email+0x18>
+ 123:	8d 45 b2             	lea    -0x4e(%ebp),%eax
+ 126:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 12a:	c7 04 24 24 00 00 00 	movl   $0x24,(%esp)
+ 131:	e8 00 00 00 00       	call   136 <_compose_email+0x2b>
+ 136:	e8 00 00 00 00       	call   13b <_compose_email+0x30>
+ 13b:	c7 04 24 56 00 00 00 	movl   $0x56,(%esp)
+ 142:	e8 00 00 00 00       	call   147 <_compose_email+0x3c>
+ 147:	a1 00 00 00 00       	mov    0x0,%eax
+ 14c:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 150:	c7 44 24 04 64 00 00 	movl   $0x64,0x4(%esp)
+ 157:	00 
+ 158:	8d 85 4e ff ff ff    	lea    -0xb2(%ebp),%eax
+ 15e:	89 04 24             	mov    %eax,(%esp)
+ 161:	e8 00 00 00 00       	call   166 <_compose_email+0x5b>
+ 166:	c7 44 24 04 60 00 00 	movl   $0x60,0x4(%esp)
+ 16d:	00 
+ 16e:	8d 85 4e ff ff ff    	lea    -0xb2(%ebp),%eax
+ 174:	89 04 24             	mov    %eax,(%esp)
+ 177:	e8 00 00 00 00       	call   17c <_compose_email+0x71>
+ 17c:	c6 84 05 4e ff ff ff 	movb   $0x0,-0xb2(%ebp,%eax,1)
+ 183:	00 
+ 184:	c7 04 24 62 00 00 00 	movl   $0x62,(%esp)
+ 18b:	e8 00 00 00 00       	call   190 <_compose_email+0x85>
+ 190:	a1 00 00 00 00       	mov    0x0,%eax
+ 195:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 199:	c7 44 24 04 f4 01 00 	movl   $0x1f4,0x4(%esp)
+ 1a0:	00 
+ 1a1:	8d 85 5a fd ff ff    	lea    -0x2a6(%ebp),%eax
+ 1a7:	89 04 24             	mov    %eax,(%esp)
+ 1aa:	e8 00 00 00 00       	call   1af <_compose_email+0xa4>
+ 1af:	c7 44 24 04 60 00 00 	movl   $0x60,0x4(%esp)
+ 1b6:	00 
+ 1b7:	8d 85 5a fd ff ff    	lea    -0x2a6(%ebp),%eax
+ 1bd:	89 04 24             	mov    %eax,(%esp)
+ 1c0:	e8 00 00 00 00       	call   1c5 <_compose_email+0xba>
+ 1c5:	c6 84 05 5a fd ff ff 	movb   $0x0,-0x2a6(%ebp,%eax,1)
+ 1cc:	00 
+ 1cd:	8d 45 b2             	lea    -0x4e(%ebp),%eax
+ 1d0:	89 04 24             	mov    %eax,(%esp)
+ 1d3:	e8 28 fe ff ff       	call   0 <_find_user>
+ 1d8:	89 45 e4             	mov    %eax,-0x1c(%ebp)
+ 1db:	83 7d e4 00          	cmpl   $0x0,-0x1c(%ebp)
+ 1df:	75 11                	jne    1f2 <_compose_email+0xe7>
+ 1e1:	c7 04 24 69 00 00 00 	movl   $0x69,(%esp)
+ 1e8:	e8 00 00 00 00       	call   1ed <_compose_email+0xe2>
+ 1ed:	e9 f0 00 00 00       	jmp    2e2 <_compose_email+0x1d7>
+ 1f2:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 1f5:	8b 80 a4 11 01 00    	mov    0x111a4(%eax),%eax
+ 1fb:	83 f8 63             	cmp    $0x63,%eax
+ 1fe:	7e 11                	jle    211 <_compose_email+0x106>
+ 200:	c7 04 24 7e 00 00 00 	movl   $0x7e,(%esp)
+ 207:	e8 00 00 00 00       	call   20c <_compose_email+0x101>
+ 20c:	e9 d1 00 00 00       	jmp    2e2 <_compose_email+0x1d7>
+ 211:	8b 45 08             	mov    0x8(%ebp),%eax
+ 214:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 218:	8d 85 9e fa ff ff    	lea    -0x562(%ebp),%eax
+ 21e:	89 04 24             	mov    %eax,(%esp)
+ 221:	e8 00 00 00 00       	call   226 <_compose_email+0x11b>
+ 226:	8d 45 b2             	lea    -0x4e(%ebp),%eax
+ 229:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 22d:	8d 85 9e fa ff ff    	lea    -0x562(%ebp),%eax
+ 233:	83 c0 32             	add    $0x32,%eax
+ 236:	89 04 24             	mov    %eax,(%esp)
+ 239:	e8 00 00 00 00       	call   23e <_compose_email+0x133>
+ 23e:	8d 85 4e ff ff ff    	lea    -0xb2(%ebp),%eax
+ 244:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 248:	8d 85 9e fa ff ff    	lea    -0x562(%ebp),%eax
+ 24e:	83 c0 64             	add    $0x64,%eax
+ 251:	89 04 24             	mov    %eax,(%esp)
+ 254:	e8 00 00 00 00       	call   259 <_compose_email+0x14e>
+ 259:	8d 85 5a fd ff ff    	lea    -0x2a6(%ebp),%eax
+ 25f:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 263:	8d 85 9e fa ff ff    	lea    -0x562(%ebp),%eax
+ 269:	05 c8 00 00 00       	add    $0xc8,%eax
+ 26e:	89 04 24             	mov    %eax,(%esp)
+ 271:	e8 00 00 00 00       	call   276 <_compose_email+0x16b>
+ 276:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 279:	8b 80 a4 11 01 00    	mov    0x111a4(%eax),%eax
+ 27f:	8d 48 01             	lea    0x1(%eax),%ecx
+ 282:	8b 55 e4             	mov    -0x1c(%ebp),%edx
+ 285:	89 8a a4 11 01 00    	mov    %ecx,0x111a4(%edx)
+ 28b:	8b 55 e4             	mov    -0x1c(%ebp),%edx
+ 28e:	69 c0 bc 02 00 00    	imul   $0x2bc,%eax,%eax
+ 294:	01 d0                	add    %edx,%eax
+ 296:	83 c0 30             	add    $0x30,%eax
+ 299:	83 c0 02             	add    $0x2,%eax
+ 29c:	8d 95 9e fa ff ff    	lea    -0x562(%ebp),%edx
+ 2a2:	b9 bc 02 00 00       	mov    $0x2bc,%ecx
+ 2a7:	8b 1a                	mov    (%edx),%ebx
+ 2a9:	89 18                	mov    %ebx,(%eax)
+ 2ab:	8b 5c 0a fc          	mov    -0x4(%edx,%ecx,1),%ebx
+ 2af:	89 5c 08 fc          	mov    %ebx,-0x4(%eax,%ecx,1)
+ 2b3:	8d 58 04             	lea    0x4(%eax),%ebx
+ 2b6:	83 e3 fc             	and    $0xfffffffc,%ebx
+ 2b9:	29 d8                	sub    %ebx,%eax
+ 2bb:	29 c2                	sub    %eax,%edx
+ 2bd:	01 c1                	add    %eax,%ecx
+ 2bf:	83 e1 fc             	and    $0xfffffffc,%ecx
+ 2c2:	89 c8                	mov    %ecx,%eax
+ 2c4:	c1 e8 02             	shr    $0x2,%eax
+ 2c7:	89 df                	mov    %ebx,%edi
+ 2c9:	89 d6                	mov    %edx,%esi
+ 2cb:	89 c1                	mov    %eax,%ecx
+ 2cd:	f3 a5                	rep movsl %ds:(%esi),%es:(%edi)
+ 2cf:	8d 45 b2             	lea    -0x4e(%ebp),%eax
+ 2d2:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 2d6:	c7 04 24 8a 00 00 00 	movl   $0x8a,(%esp)
+ 2dd:	e8 00 00 00 00       	call   2e2 <_compose_email+0x1d7>
+ 2e2:	81 c4 6c 05 00 00    	add    $0x56c,%esp
+ 2e8:	5b                   	pop    %ebx
+ 2e9:	5e                   	pop    %esi
+ 2ea:	5f                   	pop    %edi
+ 2eb:	5d                   	pop    %ebp
+ 2ec:	c3                   	ret    
+
+000002ed <_view_inbox>:
+ 2ed:	55                   	push   %ebp
+ 2ee:	89 e5                	mov    %esp,%ebp
+ 2f0:	83 ec 28             	sub    $0x28,%esp
+ 2f3:	8b 45 08             	mov    0x8(%ebp),%eax
+ 2f6:	89 04 24             	mov    %eax,(%esp)
+ 2f9:	e8 02 fd ff ff       	call   0 <_find_user>
+ 2fe:	89 45 f0             	mov    %eax,-0x10(%ebp)
+ 301:	83 7d f0 00          	cmpl   $0x0,-0x10(%ebp)
+ 305:	75 0e                	jne    315 <_view_inbox+0x28>
+ 307:	c7 04 24 9d 00 00 00 	movl   $0x9d,(%esp)
+ 30e:	e8 00 00 00 00       	call   313 <_view_inbox+0x26>
+ 313:	eb 77                	jmp    38c <_view_inbox+0x9f>
+ 315:	8b 45 08             	mov    0x8(%ebp),%eax
+ 318:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 31c:	c7 04 24 ad 00 00 00 	movl   $0xad,(%esp)
+ 323:	e8 00 00 00 00       	call   328 <_view_inbox+0x3b>
+ 328:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 32f:	eb 4d                	jmp    37e <_view_inbox+0x91>
+ 331:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 334:	69 c0 bc 02 00 00    	imul   $0x2bc,%eax,%eax
+ 33a:	8d 90 90 00 00 00    	lea    0x90(%eax),%edx
+ 340:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 343:	01 d0                	add    %edx,%eax
+ 345:	8d 48 06             	lea    0x6(%eax),%ecx
+ 348:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 34b:	69 c0 bc 02 00 00    	imul   $0x2bc,%eax,%eax
+ 351:	8d 50 30             	lea    0x30(%eax),%edx
+ 354:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 357:	01 d0                	add    %edx,%eax
+ 359:	8d 50 02             	lea    0x2(%eax),%edx
+ 35c:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 35f:	83 c0 01             	add    $0x1,%eax
+ 362:	89 4c 24 0c          	mov    %ecx,0xc(%esp)
+ 366:	89 54 24 08          	mov    %edx,0x8(%esp)
+ 36a:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 36e:	c7 04 24 bc 00 00 00 	movl   $0xbc,(%esp)
+ 375:	e8 00 00 00 00       	call   37a <_view_inbox+0x8d>
+ 37a:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 37e:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 381:	8b 80 a4 11 01 00    	mov    0x111a4(%eax),%eax
+ 387:	3b 45 f4             	cmp    -0xc(%ebp),%eax
+ 38a:	7f a5                	jg     331 <_view_inbox+0x44>
+ 38c:	c9                   	leave  
+ 38d:	c3                   	ret    
+
+0000038e <_read_email>:
+ 38e:	55                   	push   %ebp
+ 38f:	89 e5                	mov    %esp,%ebp
+ 391:	57                   	push   %edi
+ 392:	56                   	push   %esi
+ 393:	81 ec f0 02 00 00    	sub    $0x2f0,%esp
+ 399:	8b 45 08             	mov    0x8(%ebp),%eax
+ 39c:	89 04 24             	mov    %eax,(%esp)
+ 39f:	e8 5c fc ff ff       	call   0 <_find_user>
+ 3a4:	89 45 f4             	mov    %eax,-0xc(%ebp)
+ 3a7:	83 7d f4 00          	cmpl   $0x0,-0xc(%ebp)
+ 3ab:	75 11                	jne    3be <_read_email+0x30>
+ 3ad:	c7 04 24 9d 00 00 00 	movl   $0x9d,(%esp)
+ 3b4:	e8 00 00 00 00       	call   3b9 <_read_email+0x2b>
+ 3b9:	e9 bc 00 00 00       	jmp    47a <_read_email+0xec>
+ 3be:	c7 04 24 d8 00 00 00 	movl   $0xd8,(%esp)
+ 3c5:	e8 00 00 00 00       	call   3ca <_read_email+0x3c>
+ 3ca:	8d 45 f0             	lea    -0x10(%ebp),%eax
+ 3cd:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 3d1:	c7 04 24 ed 00 00 00 	movl   $0xed,(%esp)
+ 3d8:	e8 00 00 00 00       	call   3dd <_read_email+0x4f>
+ 3dd:	e8 00 00 00 00       	call   3e2 <_read_email+0x54>
+ 3e2:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 3e5:	85 c0                	test   %eax,%eax
+ 3e7:	7e 10                	jle    3f9 <_read_email+0x6b>
+ 3e9:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 3ec:	8b 90 a4 11 01 00    	mov    0x111a4(%eax),%edx
+ 3f2:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 3f5:	39 c2                	cmp    %eax,%edx
+ 3f7:	7d 0e                	jge    407 <_read_email+0x79>
+ 3f9:	c7 04 24 f0 00 00 00 	movl   $0xf0,(%esp)
+ 400:	e8 00 00 00 00       	call   405 <_read_email+0x77>
+ 405:	eb 73                	jmp    47a <_read_email+0xec>
+ 407:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 40a:	83 e8 01             	sub    $0x1,%eax
+ 40d:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 410:	69 c0 bc 02 00 00    	imul   $0x2bc,%eax,%eax
+ 416:	01 d0                	add    %edx,%eax
+ 418:	8d 50 30             	lea    0x30(%eax),%edx
+ 41b:	8d 85 34 fd ff ff    	lea    -0x2cc(%ebp),%eax
+ 421:	83 c2 02             	add    $0x2,%edx
+ 424:	b9 af 00 00 00       	mov    $0xaf,%ecx
+ 429:	89 c7                	mov    %eax,%edi
+ 42b:	89 d6                	mov    %edx,%esi
+ 42d:	f3 a5                	rep movsl %ds:(%esi),%es:(%edi)
+ 42f:	c7 04 24 fc 00 00 00 	movl   $0xfc,(%esp)
+ 436:	e8 00 00 00 00       	call   43b <_read_email+0xad>
+ 43b:	8d 85 34 fd ff ff    	lea    -0x2cc(%ebp),%eax
+ 441:	05 c8 00 00 00       	add    $0xc8,%eax
+ 446:	89 44 24 10          	mov    %eax,0x10(%esp)
+ 44a:	8d 85 34 fd ff ff    	lea    -0x2cc(%ebp),%eax
+ 450:	83 c0 64             	add    $0x64,%eax
+ 453:	89 44 24 0c          	mov    %eax,0xc(%esp)
+ 457:	8d 85 34 fd ff ff    	lea    -0x2cc(%ebp),%eax
+ 45d:	83 c0 32             	add    $0x32,%eax
+ 460:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 464:	8d 85 34 fd ff ff    	lea    -0x2cc(%ebp),%eax
+ 46a:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 46e:	c7 04 24 0c 01 00 00 	movl   $0x10c,(%esp)
+ 475:	e8 00 00 00 00       	call   47a <_read_email+0xec>
+ 47a:	81 c4 f0 02 00 00    	add    $0x2f0,%esp
+ 480:	5e                   	pop    %esi
+ 481:	5f                   	pop    %edi
+ 482:	5d                   	pop    %ebp
+ 483:	c3                   	ret    
+
+00000484 <_delete_email>:
+ 484:	55                   	push   %ebp
+ 485:	89 e5                	mov    %esp,%ebp
+ 487:	57                   	push   %edi
+ 488:	56                   	push   %esi
+ 489:	53                   	push   %ebx
+ 48a:	83 ec 2c             	sub    $0x2c,%esp
+ 48d:	8b 45 08             	mov    0x8(%ebp),%eax
+ 490:	89 04 24             	mov    %eax,(%esp)
+ 493:	e8 68 fb ff ff       	call   0 <_find_user>
+ 498:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 49b:	83 7d e0 00          	cmpl   $0x0,-0x20(%ebp)
+ 49f:	75 11                	jne    4b2 <_delete_email+0x2e>
+ 4a1:	c7 04 24 9d 00 00 00 	movl   $0x9d,(%esp)
+ 4a8:	e8 00 00 00 00       	call   4ad <_delete_email+0x29>
+ 4ad:	e9 e5 00 00 00       	jmp    597 <_delete_email+0x113>
+ 4b2:	c7 04 24 34 01 00 00 	movl   $0x134,(%esp)
+ 4b9:	e8 00 00 00 00       	call   4be <_delete_email+0x3a>
+ 4be:	8d 45 dc             	lea    -0x24(%ebp),%eax
+ 4c1:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 4c5:	c7 04 24 ed 00 00 00 	movl   $0xed,(%esp)
+ 4cc:	e8 00 00 00 00       	call   4d1 <_delete_email+0x4d>
+ 4d1:	e8 00 00 00 00       	call   4d6 <_delete_email+0x52>
+ 4d6:	8b 45 dc             	mov    -0x24(%ebp),%eax
+ 4d9:	85 c0                	test   %eax,%eax
+ 4db:	7e 10                	jle    4ed <_delete_email+0x69>
+ 4dd:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 4e0:	8b 90 a4 11 01 00    	mov    0x111a4(%eax),%edx
+ 4e6:	8b 45 dc             	mov    -0x24(%ebp),%eax
+ 4e9:	39 c2                	cmp    %eax,%edx
+ 4eb:	7d 11                	jge    4fe <_delete_email+0x7a>
+ 4ed:	c7 04 24 f0 00 00 00 	movl   $0xf0,(%esp)
+ 4f4:	e8 00 00 00 00       	call   4f9 <_delete_email+0x75>
+ 4f9:	e9 99 00 00 00       	jmp    597 <_delete_email+0x113>
+ 4fe:	8b 45 dc             	mov    -0x24(%ebp),%eax
+ 501:	83 e8 01             	sub    $0x1,%eax
+ 504:	89 45 e4             	mov    %eax,-0x1c(%ebp)
+ 507:	eb 5c                	jmp    565 <_delete_email+0xe1>
+ 509:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 50c:	8d 58 01             	lea    0x1(%eax),%ebx
+ 50f:	8b 55 e0             	mov    -0x20(%ebp),%edx
+ 512:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 515:	69 c0 bc 02 00 00    	imul   $0x2bc,%eax,%eax
+ 51b:	01 d0                	add    %edx,%eax
+ 51d:	8d 48 30             	lea    0x30(%eax),%ecx
+ 520:	8b 55 e0             	mov    -0x20(%ebp),%edx
+ 523:	69 c3 bc 02 00 00    	imul   $0x2bc,%ebx,%eax
+ 529:	01 d0                	add    %edx,%eax
+ 52b:	8d 50 30             	lea    0x30(%eax),%edx
+ 52e:	8d 41 02             	lea    0x2(%ecx),%eax
+ 531:	83 c2 02             	add    $0x2,%edx
+ 534:	b9 bc 02 00 00       	mov    $0x2bc,%ecx
+ 539:	8b 1a                	mov    (%edx),%ebx
+ 53b:	89 18                	mov    %ebx,(%eax)
+ 53d:	8b 5c 0a fc          	mov    -0x4(%edx,%ecx,1),%ebx
+ 541:	89 5c 08 fc          	mov    %ebx,-0x4(%eax,%ecx,1)
+ 545:	8d 58 04             	lea    0x4(%eax),%ebx
+ 548:	83 e3 fc             	and    $0xfffffffc,%ebx
+ 54b:	29 d8                	sub    %ebx,%eax
+ 54d:	29 c2                	sub    %eax,%edx
+ 54f:	01 c1                	add    %eax,%ecx
+ 551:	83 e1 fc             	and    $0xfffffffc,%ecx
+ 554:	89 c8                	mov    %ecx,%eax
+ 556:	c1 e8 02             	shr    $0x2,%eax
+ 559:	89 df                	mov    %ebx,%edi
+ 55b:	89 d6                	mov    %edx,%esi
+ 55d:	89 c1                	mov    %eax,%ecx
+ 55f:	f3 a5                	rep movsl %ds:(%esi),%es:(%edi)
+ 561:	83 45 e4 01          	addl   $0x1,-0x1c(%ebp)
+ 565:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 568:	8b 80 a4 11 01 00    	mov    0x111a4(%eax),%eax
+ 56e:	83 e8 01             	sub    $0x1,%eax
+ 571:	3b 45 e4             	cmp    -0x1c(%ebp),%eax
+ 574:	7f 93                	jg     509 <_delete_email+0x85>
+ 576:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 579:	8b 80 a4 11 01 00    	mov    0x111a4(%eax),%eax
+ 57f:	8d 50 ff             	lea    -0x1(%eax),%edx
+ 582:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 585:	89 90 a4 11 01 00    	mov    %edx,0x111a4(%eax)
+ 58b:	c7 04 24 53 01 00 00 	movl   $0x153,(%esp)
+ 592:	e8 00 00 00 00       	call   597 <_delete_email+0x113>
+ 597:	83 c4 2c             	add    $0x2c,%esp
+ 59a:	5b                   	pop    %ebx
+ 59b:	5e                   	pop    %esi
+ 59c:	5f                   	pop    %edi
+ 59d:	5d                   	pop    %ebp
+ 59e:	c3                   	ret    
+
+0000059f <_main>:
+ 59f:	55                   	push   %ebp
+ 5a0:	89 e5                	mov    %esp,%ebp
+ 5a2:	83 e4 f0             	and    $0xfffffff0,%esp
+ 5a5:	83 ec 50             	sub    $0x50,%esp
+ 5a8:	e8 00 00 00 00       	call   5ad <_main+0xe>
+ 5ad:	c7 04 24 62 01 00 00 	movl   $0x162,(%esp)
+ 5b4:	e8 00 00 00 00       	call   5b9 <_main+0x1a>
+ 5b9:	c7 04 24 7d 01 00 00 	movl   $0x17d,(%esp)
+ 5c0:	e8 00 00 00 00       	call   5c5 <_main+0x26>
+ 5c5:	c7 04 24 8e 01 00 00 	movl   $0x18e,(%esp)
+ 5cc:	e8 00 00 00 00       	call   5d1 <_main+0x32>
+ 5d1:	c7 04 24 97 01 00 00 	movl   $0x197,(%esp)
+ 5d8:	e8 00 00 00 00       	call   5dd <_main+0x3e>
+ 5dd:	c7 04 24 9f 01 00 00 	movl   $0x19f,(%esp)
+ 5e4:	e8 00 00 00 00       	call   5e9 <_main+0x4a>
+ 5e9:	8d 44 24 18          	lea    0x18(%esp),%eax
+ 5ed:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 5f1:	c7 04 24 ed 00 00 00 	movl   $0xed,(%esp)
+ 5f8:	e8 00 00 00 00       	call   5fd <_main+0x5e>
+ 5fd:	e8 00 00 00 00       	call   602 <_main+0x63>
+ 602:	8b 44 24 18          	mov    0x18(%esp),%eax
+ 606:	83 f8 01             	cmp    $0x1,%eax
+ 609:	75 07                	jne    612 <_main+0x73>
+ 60b:	e8 46 fa ff ff       	call   56 <_register_user>
+ 610:	eb 9b                	jmp    5ad <_main+0xe>
+ 612:	8b 44 24 18          	mov    0x18(%esp),%eax
+ 616:	83 f8 02             	cmp    $0x2,%eax
+ 619:	0f 85 3d 01 00 00    	jne    75c <_main+0x1bd>
+ 61f:	c7 04 24 13 00 00 00 	movl   $0x13,(%esp)
+ 626:	e8 00 00 00 00       	call   62b <_main+0x8c>
+ 62b:	8d 44 24 1e          	lea    0x1e(%esp),%eax
+ 62f:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 633:	c7 04 24 24 00 00 00 	movl   $0x24,(%esp)
+ 63a:	e8 00 00 00 00       	call   63f <_main+0xa0>
+ 63f:	e8 00 00 00 00       	call   644 <_main+0xa5>
+ 644:	8d 44 24 1e          	lea    0x1e(%esp),%eax
+ 648:	89 04 24             	mov    %eax,(%esp)
+ 64b:	e8 b0 f9 ff ff       	call   0 <_find_user>
+ 650:	85 c0                	test   %eax,%eax
+ 652:	75 11                	jne    665 <_main+0xc6>
+ 654:	c7 04 24 9d 00 00 00 	movl   $0x9d,(%esp)
+ 65b:	e8 00 00 00 00       	call   660 <_main+0xc1>
+ 660:	e9 48 ff ff ff       	jmp    5ad <_main+0xe>
+ 665:	8d 44 24 1e          	lea    0x1e(%esp),%eax
+ 669:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 66d:	c7 04 24 a8 01 00 00 	movl   $0x1a8,(%esp)
+ 674:	e8 00 00 00 00       	call   679 <_main+0xda>
+ 679:	c7 04 24 c1 01 00 00 	movl   $0x1c1,(%esp)
+ 680:	e8 00 00 00 00       	call   685 <_main+0xe6>
+ 685:	c7 04 24 d2 01 00 00 	movl   $0x1d2,(%esp)
+ 68c:	e8 00 00 00 00       	call   691 <_main+0xf2>
+ 691:	c7 04 24 e0 01 00 00 	movl   $0x1e0,(%esp)
+ 698:	e8 00 00 00 00       	call   69d <_main+0xfe>
+ 69d:	c7 04 24 ee 01 00 00 	movl   $0x1ee,(%esp)
+ 6a4:	e8 00 00 00 00       	call   6a9 <_main+0x10a>
+ 6a9:	c7 04 24 fe 01 00 00 	movl   $0x1fe,(%esp)
+ 6b0:	e8 00 00 00 00       	call   6b5 <_main+0x116>
+ 6b5:	c7 04 24 9f 01 00 00 	movl   $0x19f,(%esp)
+ 6bc:	e8 00 00 00 00       	call   6c1 <_main+0x122>
+ 6c1:	8d 44 24 14          	lea    0x14(%esp),%eax
+ 6c5:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 6c9:	c7 04 24 ed 00 00 00 	movl   $0xed,(%esp)
+ 6d0:	e8 00 00 00 00       	call   6d5 <_main+0x136>
+ 6d5:	e8 00 00 00 00       	call   6da <_main+0x13b>
+ 6da:	8b 44 24 14          	mov    0x14(%esp),%eax
+ 6de:	83 f8 01             	cmp    $0x1,%eax
+ 6e1:	75 11                	jne    6f4 <_main+0x155>
+ 6e3:	8d 44 24 1e          	lea    0x1e(%esp),%eax
+ 6e7:	89 04 24             	mov    %eax,(%esp)
+ 6ea:	e8 1c fa ff ff       	call   10b <_compose_email>
+ 6ef:	e9 71 ff ff ff       	jmp    665 <_main+0xc6>
+ 6f4:	8b 44 24 14          	mov    0x14(%esp),%eax
+ 6f8:	83 f8 02             	cmp    $0x2,%eax
+ 6fb:	75 11                	jne    70e <_main+0x16f>
+ 6fd:	8d 44 24 1e          	lea    0x1e(%esp),%eax
+ 701:	89 04 24             	mov    %eax,(%esp)
+ 704:	e8 e4 fb ff ff       	call   2ed <_view_inbox>
+ 709:	e9 57 ff ff ff       	jmp    665 <_main+0xc6>
+ 70e:	8b 44 24 14          	mov    0x14(%esp),%eax
+ 712:	83 f8 03             	cmp    $0x3,%eax
+ 715:	75 11                	jne    728 <_main+0x189>
+ 717:	8d 44 24 1e          	lea    0x1e(%esp),%eax
+ 71b:	89 04 24             	mov    %eax,(%esp)
+ 71e:	e8 6b fc ff ff       	call   38e <_read_email>
+ 723:	e9 3d ff ff ff       	jmp    665 <_main+0xc6>
+ 728:	8b 44 24 14          	mov    0x14(%esp),%eax
+ 72c:	83 f8 04             	cmp    $0x4,%eax
+ 72f:	75 11                	jne    742 <_main+0x1a3>
+ 731:	8d 44 24 1e          	lea    0x1e(%esp),%eax
+ 735:	89 04 24             	mov    %eax,(%esp)
+ 738:	e8 47 fd ff ff       	call   484 <_delete_email>
+ 73d:	e9 23 ff ff ff       	jmp    665 <_main+0xc6>
+ 742:	8b 44 24 14          	mov    0x14(%esp),%eax
+ 746:	83 f8 05             	cmp    $0x5,%eax
+ 749:	74 39                	je     784 <_main+0x1e5>
+ 74b:	c7 04 24 08 02 00 00 	movl   $0x208,(%esp)
+ 752:	e8 00 00 00 00       	call   757 <_main+0x1b8>
+ 757:	e9 09 ff ff ff       	jmp    665 <_main+0xc6>
+ 75c:	8b 44 24 18          	mov    0x18(%esp),%eax
+ 760:	83 f8 03             	cmp    $0x3,%eax
+ 763:	75 0e                	jne    773 <_main+0x1d4>
+ 765:	c7 04 24 18 02 00 00 	movl   $0x218,(%esp)
+ 76c:	e8 00 00 00 00       	call   771 <_main+0x1d2>
+ 771:	eb 17                	jmp    78a <_main+0x1eb>
+ 773:	c7 04 24 08 02 00 00 	movl   $0x208,(%esp)
+ 77a:	e8 00 00 00 00       	call   77f <_main+0x1e0>
+ 77f:	e9 29 fe ff ff       	jmp    5ad <_main+0xe>
+ 784:	90                   	nop
+ 785:	e9 23 fe ff ff       	jmp    5ad <_main+0xe>
+ 78a:	b8 00 00 00 00       	mov    $0x0,%eax
+ 78f:	c9                   	leave  
+ 790:	c3                   	ret    
+ 791:	90                   	nop
+ 792:	90                   	nop
+ 793:	90                   	nop

@@ -1,0 +1,50 @@
+randomhaiku.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x10,%esp
+movl $0x0,(%esp)
+mov %eax,(%esp)
+mov %eax,%ecx
+mov $0x55555556,%edx
+mov %ecx,%eax
+imul %edx
+mov %ecx,%eax
+sar $0x1f,%eax
+sub %eax,%edx
+mov %edx,%eax
+mov %eax,%edx
+%edx,%edx
+%eax,%edx
+mov %ecx,%eax
+sub %edx,%eax
+mov 0x0(,%eax,4),%eax
+mov %eax,(%esp)
+mov %eax,%edx
+mov %edx,%eax
+sar $0x1f,%eax
+shr $0x1f,%eax
+%eax,%edx
+and $0x1,%edx
+sub %eax,%edx
+mov %edx,%eax
+mov 0xc(,%eax,4),%eax
+mov %eax,(%esp)
+mov %eax,%ecx
+mov $0x55555556,%edx
+mov %ecx,%eax
+imul %edx
+mov %ecx,%eax
+sar $0x1f,%eax
+sub %eax,%edx
+mov %edx,%eax
+mov %eax,%edx
+%edx,%edx
+%eax,%edx
+mov %ecx,%eax
+sub %edx,%eax
+mov 0x0(,%eax,4),%eax
+mov %eax,(%esp)
+mov $0x0,%eax
+leave
+ret

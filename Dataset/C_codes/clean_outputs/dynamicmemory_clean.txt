@@ -1,0 +1,29 @@
+dynamicmemory.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x10,%esp
+mov 0x0,%eax
+mov %eax,%edx
+mov 0x8(%ebp),%eax
+%edx,%eax
+cmp $0x400,%eax
+mov $0x0,%eax
+mov 0x0,%eax
+$0x0,%eax
+mov %eax,-0x4(%ebp)
+mov 0x0,%eax
+mov %eax,%edx
+mov 0x8(%ebp),%eax
+%edx,%eax
+mov %eax,0x0
+mov -0x4(%ebp),%eax
+leave
+ret
+push %ebp
+mov %esp,%ebp
+nop
+pop %ebp
+ret
+nop
+nop
+nop

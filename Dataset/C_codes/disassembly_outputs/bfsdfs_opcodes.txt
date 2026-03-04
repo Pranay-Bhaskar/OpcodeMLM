@@ -1,0 +1,153 @@
+
+bfsdfs.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_addEdge>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	8b 55 08             	mov    0x8(%ebp),%edx
+   6:	89 d0                	mov    %edx,%eax
+   8:	c1 e0 02             	shl    $0x2,%eax
+   b:	01 d0                	add    %edx,%eax
+   d:	8b 55 0c             	mov    0xc(%ebp),%edx
+  10:	01 d0                	add    %edx,%eax
+  12:	c7 04 85 00 00 00 00 	movl   $0x1,0x0(,%eax,4)
+  19:	01 00 00 00 
+  1d:	8b 55 0c             	mov    0xc(%ebp),%edx
+  20:	89 d0                	mov    %edx,%eax
+  22:	c1 e0 02             	shl    $0x2,%eax
+  25:	01 d0                	add    %edx,%eax
+  27:	8b 55 08             	mov    0x8(%ebp),%edx
+  2a:	01 d0                	add    %edx,%eax
+  2c:	c7 04 85 00 00 00 00 	movl   $0x1,0x0(,%eax,4)
+  33:	01 00 00 00 
+  37:	90                   	nop
+  38:	5d                   	pop    %ebp
+  39:	c3                   	ret    
+
+0000003a <_BFS>:
+  3a:	55                   	push   %ebp
+  3b:	89 e5                	mov    %esp,%ebp
+  3d:	83 ec 58             	sub    $0x58,%esp
+  40:	c7 45 d4 00 00 00 00 	movl   $0x0,-0x2c(%ebp)
+  47:	c7 45 d8 00 00 00 00 	movl   $0x0,-0x28(%ebp)
+  4e:	c7 45 dc 00 00 00 00 	movl   $0x0,-0x24(%ebp)
+  55:	c7 45 e0 00 00 00 00 	movl   $0x0,-0x20(%ebp)
+  5c:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%ebp)
+  63:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  6a:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+  71:	8b 45 08             	mov    0x8(%ebp),%eax
+  74:	c7 44 85 d4 01 00 00 	movl   $0x1,-0x2c(%ebp,%eax,4)
+  7b:	00 
+  7c:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  7f:	8d 50 01             	lea    0x1(%eax),%edx
+  82:	89 55 f0             	mov    %edx,-0x10(%ebp)
+  85:	8b 55 08             	mov    0x8(%ebp),%edx
+  88:	89 54 85 c0          	mov    %edx,-0x40(%ebp,%eax,4)
+  8c:	eb 76                	jmp    104 <_BFS+0xca>
+  8e:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  91:	8d 50 01             	lea    0x1(%eax),%edx
+  94:	89 55 f4             	mov    %edx,-0xc(%ebp)
+  97:	8b 44 85 c0          	mov    -0x40(%ebp,%eax,4),%eax
+  9b:	89 45 e8             	mov    %eax,-0x18(%ebp)
+  9e:	8b 45 e8             	mov    -0x18(%ebp),%eax
+  a1:	89 44 24 04          	mov    %eax,0x4(%esp)
+  a5:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  ac:	e8 00 00 00 00       	call   b1 <_BFS+0x77>
+  b1:	c7 45 ec 00 00 00 00 	movl   $0x0,-0x14(%ebp)
+  b8:	eb 44                	jmp    fe <_BFS+0xc4>
+  ba:	8b 55 e8             	mov    -0x18(%ebp),%edx
+  bd:	89 d0                	mov    %edx,%eax
+  bf:	c1 e0 02             	shl    $0x2,%eax
+  c2:	01 d0                	add    %edx,%eax
+  c4:	8b 55 ec             	mov    -0x14(%ebp),%edx
+  c7:	01 d0                	add    %edx,%eax
+  c9:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  d0:	85 c0                	test   %eax,%eax
+  d2:	74 26                	je     fa <_BFS+0xc0>
+  d4:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  d7:	8b 44 85 d4          	mov    -0x2c(%ebp,%eax,4),%eax
+  db:	85 c0                	test   %eax,%eax
+  dd:	75 1b                	jne    fa <_BFS+0xc0>
+  df:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  e2:	c7 44 85 d4 01 00 00 	movl   $0x1,-0x2c(%ebp,%eax,4)
+  e9:	00 
+  ea:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  ed:	8d 50 01             	lea    0x1(%eax),%edx
+  f0:	89 55 f0             	mov    %edx,-0x10(%ebp)
+  f3:	8b 55 ec             	mov    -0x14(%ebp),%edx
+  f6:	89 54 85 c0          	mov    %edx,-0x40(%ebp,%eax,4)
+  fa:	83 45 ec 01          	addl   $0x1,-0x14(%ebp)
+  fe:	83 7d ec 04          	cmpl   $0x4,-0x14(%ebp)
+ 102:	7e b6                	jle    ba <_BFS+0x80>
+ 104:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 107:	3b 45 f0             	cmp    -0x10(%ebp),%eax
+ 10a:	7c 82                	jl     8e <_BFS+0x54>
+ 10c:	90                   	nop
+ 10d:	c9                   	leave  
+ 10e:	c3                   	ret    
+
+0000010f <_DFSUtil>:
+ 10f:	55                   	push   %ebp
+ 110:	89 e5                	mov    %esp,%ebp
+ 112:	83 ec 28             	sub    $0x28,%esp
+ 115:	8b 45 08             	mov    0x8(%ebp),%eax
+ 118:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+ 11f:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 122:	01 d0                	add    %edx,%eax
+ 124:	c7 00 01 00 00 00    	movl   $0x1,(%eax)
+ 12a:	8b 45 08             	mov    0x8(%ebp),%eax
+ 12d:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 131:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 138:	e8 00 00 00 00       	call   13d <_DFSUtil+0x2e>
+ 13d:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 144:	eb 45                	jmp    18b <_DFSUtil+0x7c>
+ 146:	8b 55 08             	mov    0x8(%ebp),%edx
+ 149:	89 d0                	mov    %edx,%eax
+ 14b:	c1 e0 02             	shl    $0x2,%eax
+ 14e:	01 d0                	add    %edx,%eax
+ 150:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 153:	01 d0                	add    %edx,%eax
+ 155:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+ 15c:	85 c0                	test   %eax,%eax
+ 15e:	74 27                	je     187 <_DFSUtil+0x78>
+ 160:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 163:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+ 16a:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 16d:	01 d0                	add    %edx,%eax
+ 16f:	8b 00                	mov    (%eax),%eax
+ 171:	85 c0                	test   %eax,%eax
+ 173:	75 12                	jne    187 <_DFSUtil+0x78>
+ 175:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 178:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 17c:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 17f:	89 04 24             	mov    %eax,(%esp)
+ 182:	e8 88 ff ff ff       	call   10f <_DFSUtil>
+ 187:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 18b:	83 7d f4 04          	cmpl   $0x4,-0xc(%ebp)
+ 18f:	7e b5                	jle    146 <_DFSUtil+0x37>
+ 191:	90                   	nop
+ 192:	c9                   	leave  
+ 193:	c3                   	ret    
+
+00000194 <_DFS>:
+ 194:	55                   	push   %ebp
+ 195:	89 e5                	mov    %esp,%ebp
+ 197:	83 ec 38             	sub    $0x38,%esp
+ 19a:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%ebp)
+ 1a1:	c7 45 e8 00 00 00 00 	movl   $0x0,-0x18(%ebp)
+ 1a8:	c7 45 ec 00 00 00 00 	movl   $0x0,-0x14(%ebp)
+ 1af:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+ 1b6:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 1bd:	8d 45 e4             	lea    -0x1c(%ebp),%eax
+ 1c0:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 1c4:	8b 45 08             	mov    0x8(%ebp),%eax
+ 1c7:	89 04 24             	mov    %eax,(%esp)
+ 1ca:	e8 40 ff ff ff       	call   10f <_DFSUtil>
+ 1cf:	90                   	nop
+ 1d0:	c9                   	leave  
+ 1d1:	c3                   	ret    
+ 1d2:	90                   	nop
+ 1d3:	90                   	nop

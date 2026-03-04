@@ -1,0 +1,154 @@
+airlinereservation.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+mov 0x0,%eax
+imul $0x177c,%eax,%eax
+lea 0x0(%eax),%edx
+mov 0x8(%ebp),%eax
+mov %eax,0x4(%esp)
+mov %edx,(%esp)
+movl $0x0,-0xc(%ebp)
+mov 0x0,%eax
+mov -0xc(%ebp),%edx
+$0x1,%edx
+mov -0xc(%ebp),%ecx
+imul $0x3c,%ecx,%ecx
+imul $0x177c,%eax,%eax
+%ecx,%eax
+$0xc,%eax
+mov %edx,(%eax)
+mov 0x0,%eax
+mov -0xc(%ebp),%edx
+imul $0x3c,%edx,%edx
+imul $0x177c,%eax,%eax
+%edx,%eax
+$0x10,%eax
+movl $0x0,(%eax)
+addl $0x1,-0xc(%ebp)
+cmpl $0x63,-0xc(%ebp)
+mov 0x0,%eax
+$0x1,%eax
+mov %eax,0x0
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+movl $0x0,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+imul $0x177c,%eax,%eax
+lea 0x0(%eax),%edx
+mov 0x8(%ebp),%eax
+mov %eax,0x4(%esp)
+mov %edx,(%esp)
+test %eax,%eax
+mov 0xc(%ebp),%eax
+lea -0x1(%eax),%edx
+mov -0xc(%ebp),%eax
+imul $0x3c,%edx,%edx
+imul $0x177c,%eax,%eax
+%edx,%eax
+$0x10,%eax
+mov (%eax),%eax
+test %eax,%eax
+mov 0xc(%ebp),%eax
+lea -0x1(%eax),%edx
+mov -0xc(%ebp),%eax
+imul $0x3c,%edx,%edx
+imul $0x177c,%eax,%eax
+%edx,%eax
+$0x10,%eax
+movl $0x1,(%eax)
+mov 0xc(%ebp),%eax
+sub $0x1,%eax
+imul $0x3c,%eax,%edx
+mov -0xc(%ebp),%eax
+imul $0x177c,%eax,%eax
+%edx,%eax
+$0x0,%eax
+lea 0x14(%eax),%edx
+mov 0x10(%ebp),%eax
+mov %eax,0x4(%esp)
+mov %edx,(%esp)
+mov 0x8(%ebp),%eax
+mov %eax,0xc(%esp)
+mov 0x10(%ebp),%eax
+mov %eax,0x8(%esp)
+mov 0xc(%ebp),%eax
+mov %eax,0x4(%esp)
+movl $0x0,(%esp)
+movl $0x24,(%esp)
+addl $0x1,-0xc(%ebp)
+mov 0x0,%eax
+cmp %eax,-0xc(%ebp)
+movl $0x39,(%esp)
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+movl $0x0,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+imul $0x177c,%eax,%eax
+lea 0x0(%eax),%edx
+mov 0x8(%ebp),%eax
+mov %eax,0x4(%esp)
+mov %edx,(%esp)
+test %eax,%eax
+mov 0x8(%ebp),%eax
+mov %eax,0x4(%esp)
+movl $0x4b,(%esp)
+movl $0x0,-0x10(%ebp)
+mov -0x10(%ebp),%edx
+mov -0xc(%ebp),%eax
+imul $0x3c,%edx,%edx
+imul $0x177c,%eax,%eax
+%edx,%eax
+$0x10,%eax
+mov (%eax),%eax
+test %eax,%eax
+mov -0x10(%ebp),%eax
+imul $0x3c,%eax,%edx
+mov -0xc(%ebp),%eax
+imul $0x177c,%eax,%eax
+%edx,%eax
+$0x0,%eax
+lea 0x14(%eax),%edx
+mov $0x60,%edx
+mov -0x10(%ebp),%ecx
+mov -0xc(%ebp),%eax
+imul $0x3c,%ecx,%ecx
+imul $0x177c,%eax,%eax
+%ecx,%eax
+$0xc,%eax
+mov (%eax),%eax
+mov %edx,0x8(%esp)
+mov %eax,0x4(%esp)
+movl $0x6a,(%esp)
+addl $0x1,-0x10(%ebp)
+cmpl $0x63,-0x10(%ebp)
+addl $0x1,-0xc(%ebp)
+mov 0x0,%eax
+cmp %eax,-0xc(%ebp)
+movl $0x39,(%esp)
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x10,%esp
+movl $0x77,(%esp)
+movl $0x7d,0x8(%esp)
+movl $0xa,0x4(%esp)
+movl $0x77,(%esp)
+movl $0x84,0x8(%esp)
+movl $0xa,0x4(%esp)
+movl $0x77,(%esp)
+movl $0x77,(%esp)
+mov $0x0,%eax
+leave
+ret
+nop
+nop

@@ -1,0 +1,111 @@
+
+filesystemtreewalker.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_listDir>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	81 ec 48 04 00 00    	sub    $0x448,%esp
+   9:	8b 45 08             	mov    0x8(%ebp),%eax
+   c:	89 45 e8             	mov    %eax,-0x18(%ebp)
+   f:	8b 45 e8             	mov    -0x18(%ebp),%eax
+  12:	89 04 24             	mov    %eax,(%esp)
+  15:	e8 00 00 00 00       	call   1a <_listDir+0x1a>
+  1a:	89 45 f0             	mov    %eax,-0x10(%ebp)
+  1d:	83 7d f0 00          	cmpl   $0x0,-0x10(%ebp)
+  21:	0f 84 f4 00 00 00    	je     11b <_listDir+0x11b>
+  27:	e9 be 00 00 00       	jmp    ea <_listDir+0xea>
+  2c:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  2f:	83 c0 0c             	add    $0xc,%eax
+  32:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  39:	00 
+  3a:	89 04 24             	mov    %eax,(%esp)
+  3d:	e8 00 00 00 00       	call   42 <_listDir+0x42>
+  42:	85 c0                	test   %eax,%eax
+  44:	0f 84 a0 00 00 00    	je     ea <_listDir+0xea>
+  4a:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  4d:	83 c0 0c             	add    $0xc,%eax
+  50:	c7 44 24 04 02 00 00 	movl   $0x2,0x4(%esp)
+  57:	00 
+  58:	89 04 24             	mov    %eax,(%esp)
+  5b:	e8 00 00 00 00       	call   60 <_listDir+0x60>
+  60:	85 c0                	test   %eax,%eax
+  62:	75 05                	jne    69 <_listDir+0x69>
+  64:	e9 81 00 00 00       	jmp    ea <_listDir+0xea>
+  69:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  70:	eb 10                	jmp    82 <_listDir+0x82>
+  72:	c7 04 24 05 00 00 00 	movl   $0x5,(%esp)
+  79:	e8 00 00 00 00       	call   7e <_listDir+0x7e>
+  7e:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  82:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  85:	3b 45 0c             	cmp    0xc(%ebp),%eax
+  88:	7c e8                	jl     72 <_listDir+0x72>
+  8a:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  8d:	83 c0 0c             	add    $0xc,%eax
+  90:	89 04 24             	mov    %eax,(%esp)
+  93:	e8 00 00 00 00       	call   98 <_listDir+0x98>
+  98:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  9b:	8b 40 08             	mov    0x8(%eax),%eax
+  9e:	83 f8 10             	cmp    $0x10,%eax
+  a1:	75 47                	jne    ea <_listDir+0xea>
+  a3:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  a6:	83 c0 0c             	add    $0xc,%eax
+  a9:	89 44 24 10          	mov    %eax,0x10(%esp)
+  ad:	8b 45 08             	mov    0x8(%ebp),%eax
+  b0:	89 44 24 0c          	mov    %eax,0xc(%esp)
+  b4:	c7 44 24 08 08 00 00 	movl   $0x8,0x8(%esp)
+  bb:	00 
+  bc:	c7 44 24 04 00 04 00 	movl   $0x400,0x4(%esp)
+  c3:	00 
+  c4:	8d 85 e0 fb ff ff    	lea    -0x420(%ebp),%eax
+  ca:	89 04 24             	mov    %eax,(%esp)
+  cd:	e8 00 00 00 00       	call   d2 <_listDir+0xd2>
+  d2:	8b 45 0c             	mov    0xc(%ebp),%eax
+  d5:	83 c0 01             	add    $0x1,%eax
+  d8:	89 44 24 04          	mov    %eax,0x4(%esp)
+  dc:	8d 85 e0 fb ff ff    	lea    -0x420(%ebp),%eax
+  e2:	89 04 24             	mov    %eax,(%esp)
+  e5:	e8 16 ff ff ff       	call   0 <_listDir>
+  ea:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  ed:	89 45 e4             	mov    %eax,-0x1c(%ebp)
+  f0:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+  f3:	89 04 24             	mov    %eax,(%esp)
+  f6:	e8 00 00 00 00       	call   fb <_listDir+0xfb>
+  fb:	89 45 ec             	mov    %eax,-0x14(%ebp)
+  fe:	83 7d ec 00          	cmpl   $0x0,-0x14(%ebp)
+ 102:	0f 85 24 ff ff ff    	jne    2c <_listDir+0x2c>
+ 108:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 10b:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 10e:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 111:	89 04 24             	mov    %eax,(%esp)
+ 114:	e8 00 00 00 00       	call   119 <_listDir+0x119>
+ 119:	eb 01                	jmp    11c <_listDir+0x11c>
+ 11b:	90                   	nop
+ 11c:	c9                   	leave  
+ 11d:	c3                   	ret    
+
+0000011e <_main>:
+ 11e:	55                   	push   %ebp
+ 11f:	89 e5                	mov    %esp,%ebp
+ 121:	83 e4 f0             	and    $0xfffffff0,%esp
+ 124:	83 ec 20             	sub    $0x20,%esp
+ 127:	e8 00 00 00 00       	call   12c <_main+0xe>
+ 12c:	83 7d 08 01          	cmpl   $0x1,0x8(%ebp)
+ 130:	7e 08                	jle    13a <_main+0x1c>
+ 132:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 135:	8b 40 04             	mov    0x4(%eax),%eax
+ 138:	eb 05                	jmp    13f <_main+0x21>
+ 13a:	b8 00 00 00 00       	mov    $0x0,%eax
+ 13f:	89 44 24 1c          	mov    %eax,0x1c(%esp)
+ 143:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+ 14a:	00 
+ 14b:	8b 44 24 1c          	mov    0x1c(%esp),%eax
+ 14f:	89 04 24             	mov    %eax,(%esp)
+ 152:	e8 a9 fe ff ff       	call   0 <_listDir>
+ 157:	b8 00 00 00 00       	mov    $0x0,%eax
+ 15c:	c9                   	leave  
+ 15d:	c3                   	ret    
+ 15e:	90                   	nop
+ 15f:	90                   	nop

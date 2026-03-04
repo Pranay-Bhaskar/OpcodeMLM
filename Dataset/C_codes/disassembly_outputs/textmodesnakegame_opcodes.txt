@@ -1,0 +1,326 @@
+
+textmodesnakegame.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_setup>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 08             	sub    $0x8,%esp
+   6:	c7 05 00 00 00 00 00 	movl   $0x0,0x0
+   d:	00 00 00 
+  10:	c7 05 00 00 00 00 00 	movl   $0x0,0x0
+  17:	00 00 00 
+  1a:	a1 00 00 00 00       	mov    0x0,%eax
+  1f:	89 c2                	mov    %eax,%edx
+  21:	c1 ea 1f             	shr    $0x1f,%edx
+  24:	01 d0                	add    %edx,%eax
+  26:	d1 f8                	sar    %eax
+  28:	a3 00 00 00 00       	mov    %eax,0x0
+  2d:	a1 04 00 00 00       	mov    0x4,%eax
+  32:	89 c2                	mov    %eax,%edx
+  34:	c1 ea 1f             	shr    $0x1f,%edx
+  37:	01 d0                	add    %edx,%eax
+  39:	d1 f8                	sar    %eax
+  3b:	a3 00 00 00 00       	mov    %eax,0x0
+  40:	e8 00 00 00 00       	call   45 <_setup+0x45>
+  45:	8b 0d 00 00 00 00    	mov    0x0,%ecx
+  4b:	99                   	cltd   
+  4c:	f7 f9                	idiv   %ecx
+  4e:	89 d0                	mov    %edx,%eax
+  50:	a3 00 00 00 00       	mov    %eax,0x0
+  55:	e8 00 00 00 00       	call   5a <_setup+0x5a>
+  5a:	8b 0d 04 00 00 00    	mov    0x4,%ecx
+  60:	99                   	cltd   
+  61:	f7 f9                	idiv   %ecx
+  63:	89 d0                	mov    %edx,%eax
+  65:	a3 00 00 00 00       	mov    %eax,0x0
+  6a:	c7 05 00 00 00 00 00 	movl   $0x0,0x0
+  71:	00 00 00 
+  74:	90                   	nop
+  75:	c9                   	leave  
+  76:	c3                   	ret    
+
+00000077 <_draw>:
+  77:	55                   	push   %ebp
+  78:	89 e5                	mov    %esp,%ebp
+  7a:	83 ec 38             	sub    $0x38,%esp
+  7d:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  84:	e8 00 00 00 00       	call   89 <_draw+0x12>
+  89:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  90:	eb 10                	jmp    a2 <_draw+0x2b>
+  92:	c7 04 24 23 00 00 00 	movl   $0x23,(%esp)
+  99:	e8 00 00 00 00       	call   9e <_draw+0x27>
+  9e:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  a2:	a1 00 00 00 00       	mov    0x0,%eax
+  a7:	83 c0 02             	add    $0x2,%eax
+  aa:	3b 45 f4             	cmp    -0xc(%ebp),%eax
+  ad:	7f e3                	jg     92 <_draw+0x1b>
+  af:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+  b6:	e8 00 00 00 00       	call   bb <_draw+0x44>
+  bb:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+  c2:	e9 01 01 00 00       	jmp    1c8 <_draw+0x151>
+  c7:	c7 45 ec 00 00 00 00 	movl   $0x0,-0x14(%ebp)
+  ce:	e9 d7 00 00 00       	jmp    1aa <_draw+0x133>
+  d3:	83 7d ec 00          	cmpl   $0x0,-0x14(%ebp)
+  d7:	75 0c                	jne    e5 <_draw+0x6e>
+  d9:	c7 04 24 23 00 00 00 	movl   $0x23,(%esp)
+  e0:	e8 00 00 00 00       	call   e5 <_draw+0x6e>
+  e5:	a1 00 00 00 00       	mov    0x0,%eax
+  ea:	39 45 f0             	cmp    %eax,-0x10(%ebp)
+  ed:	75 1b                	jne    10a <_draw+0x93>
+  ef:	a1 00 00 00 00       	mov    0x0,%eax
+  f4:	39 45 ec             	cmp    %eax,-0x14(%ebp)
+  f7:	75 11                	jne    10a <_draw+0x93>
+  f9:	c7 04 24 4f 00 00 00 	movl   $0x4f,(%esp)
+ 100:	e8 00 00 00 00       	call   105 <_draw+0x8e>
+ 105:	e9 83 00 00 00       	jmp    18d <_draw+0x116>
+ 10a:	a1 00 00 00 00       	mov    0x0,%eax
+ 10f:	39 45 f0             	cmp    %eax,-0x10(%ebp)
+ 112:	75 18                	jne    12c <_draw+0xb5>
+ 114:	a1 00 00 00 00       	mov    0x0,%eax
+ 119:	39 45 ec             	cmp    %eax,-0x14(%ebp)
+ 11c:	75 0e                	jne    12c <_draw+0xb5>
+ 11e:	c7 04 24 46 00 00 00 	movl   $0x46,(%esp)
+ 125:	e8 00 00 00 00       	call   12a <_draw+0xb3>
+ 12a:	eb 61                	jmp    18d <_draw+0x116>
+ 12c:	c7 45 e8 00 00 00 00 	movl   $0x0,-0x18(%ebp)
+ 133:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%ebp)
+ 13a:	eb 35                	jmp    171 <_draw+0xfa>
+ 13c:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 13f:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+ 146:	3b 45 ec             	cmp    -0x14(%ebp),%eax
+ 149:	75 22                	jne    16d <_draw+0xf6>
+ 14b:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 14e:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+ 155:	3b 45 f0             	cmp    -0x10(%ebp),%eax
+ 158:	75 13                	jne    16d <_draw+0xf6>
+ 15a:	c7 04 24 6f 00 00 00 	movl   $0x6f,(%esp)
+ 161:	e8 00 00 00 00       	call   166 <_draw+0xef>
+ 166:	c7 45 e8 01 00 00 00 	movl   $0x1,-0x18(%ebp)
+ 16d:	83 45 e4 01          	addl   $0x1,-0x1c(%ebp)
+ 171:	a1 00 00 00 00       	mov    0x0,%eax
+ 176:	39 45 e4             	cmp    %eax,-0x1c(%ebp)
+ 179:	7c c1                	jl     13c <_draw+0xc5>
+ 17b:	83 7d e8 00          	cmpl   $0x0,-0x18(%ebp)
+ 17f:	75 0c                	jne    18d <_draw+0x116>
+ 181:	c7 04 24 20 00 00 00 	movl   $0x20,(%esp)
+ 188:	e8 00 00 00 00       	call   18d <_draw+0x116>
+ 18d:	a1 00 00 00 00       	mov    0x0,%eax
+ 192:	83 e8 01             	sub    $0x1,%eax
+ 195:	3b 45 ec             	cmp    -0x14(%ebp),%eax
+ 198:	75 0c                	jne    1a6 <_draw+0x12f>
+ 19a:	c7 04 24 23 00 00 00 	movl   $0x23,(%esp)
+ 1a1:	e8 00 00 00 00       	call   1a6 <_draw+0x12f>
+ 1a6:	83 45 ec 01          	addl   $0x1,-0x14(%ebp)
+ 1aa:	a1 00 00 00 00       	mov    0x0,%eax
+ 1af:	39 45 ec             	cmp    %eax,-0x14(%ebp)
+ 1b2:	0f 8c 1b ff ff ff    	jl     d3 <_draw+0x5c>
+ 1b8:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+ 1bf:	e8 00 00 00 00       	call   1c4 <_draw+0x14d>
+ 1c4:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+ 1c8:	a1 04 00 00 00       	mov    0x4,%eax
+ 1cd:	39 45 f0             	cmp    %eax,-0x10(%ebp)
+ 1d0:	0f 8c f1 fe ff ff    	jl     c7 <_draw+0x50>
+ 1d6:	c7 45 e0 00 00 00 00 	movl   $0x0,-0x20(%ebp)
+ 1dd:	eb 10                	jmp    1ef <_draw+0x178>
+ 1df:	c7 04 24 23 00 00 00 	movl   $0x23,(%esp)
+ 1e6:	e8 00 00 00 00       	call   1eb <_draw+0x174>
+ 1eb:	83 45 e0 01          	addl   $0x1,-0x20(%ebp)
+ 1ef:	a1 00 00 00 00       	mov    0x0,%eax
+ 1f4:	83 c0 02             	add    $0x2,%eax
+ 1f7:	3b 45 e0             	cmp    -0x20(%ebp),%eax
+ 1fa:	7f e3                	jg     1df <_draw+0x168>
+ 1fc:	a1 00 00 00 00       	mov    0x0,%eax
+ 201:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 205:	c7 04 24 04 00 00 00 	movl   $0x4,(%esp)
+ 20c:	e8 00 00 00 00       	call   211 <_draw+0x19a>
+ 211:	90                   	nop
+ 212:	c9                   	leave  
+ 213:	c3                   	ret    
+
+00000214 <_input>:
+ 214:	55                   	push   %ebp
+ 215:	89 e5                	mov    %esp,%ebp
+ 217:	83 ec 08             	sub    $0x8,%esp
+ 21a:	e8 00 00 00 00       	call   21f <_input+0xb>
+ 21f:	85 c0                	test   %eax,%eax
+ 221:	74 51                	je     274 <_input+0x60>
+ 223:	e8 00 00 00 00       	call   228 <_input+0x14>
+ 228:	83 e8 61             	sub    $0x61,%eax
+ 22b:	83 f8 17             	cmp    $0x17,%eax
+ 22e:	77 44                	ja     274 <_input+0x60>
+ 230:	8b 04 85 10 00 00 00 	mov    0x10(,%eax,4),%eax
+ 237:	ff e0                	jmp    *%eax
+ 239:	c7 05 00 00 00 00 01 	movl   $0x1,0x0
+ 240:	00 00 00 
+ 243:	eb 2f                	jmp    274 <_input+0x60>
+ 245:	c7 05 00 00 00 00 02 	movl   $0x2,0x0
+ 24c:	00 00 00 
+ 24f:	eb 23                	jmp    274 <_input+0x60>
+ 251:	c7 05 00 00 00 00 03 	movl   $0x3,0x0
+ 258:	00 00 00 
+ 25b:	eb 17                	jmp    274 <_input+0x60>
+ 25d:	c7 05 00 00 00 00 04 	movl   $0x4,0x0
+ 264:	00 00 00 
+ 267:	eb 0b                	jmp    274 <_input+0x60>
+ 269:	c7 05 00 00 00 00 01 	movl   $0x1,0x0
+ 270:	00 00 00 
+ 273:	90                   	nop
+ 274:	90                   	nop
+ 275:	c9                   	leave  
+ 276:	c3                   	ret    
+
+00000277 <_logic>:
+ 277:	55                   	push   %ebp
+ 278:	89 e5                	mov    %esp,%ebp
+ 27a:	83 ec 28             	sub    $0x28,%esp
+ 27d:	a1 00 00 00 00       	mov    0x0,%eax
+ 282:	89 45 f4             	mov    %eax,-0xc(%ebp)
+ 285:	a1 00 00 00 00       	mov    0x0,%eax
+ 28a:	89 45 f0             	mov    %eax,-0x10(%ebp)
+ 28d:	a1 00 00 00 00       	mov    0x0,%eax
+ 292:	a3 00 00 00 00       	mov    %eax,0x0
+ 297:	a1 00 00 00 00       	mov    0x0,%eax
+ 29c:	a3 00 00 00 00       	mov    %eax,0x0
+ 2a1:	c7 45 ec 01 00 00 00 	movl   $0x1,-0x14(%ebp)
+ 2a8:	eb 44                	jmp    2ee <_logic+0x77>
+ 2aa:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 2ad:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+ 2b4:	89 45 e4             	mov    %eax,-0x1c(%ebp)
+ 2b7:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 2ba:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+ 2c1:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 2c4:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 2c7:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 2ca:	89 14 85 00 00 00 00 	mov    %edx,0x0(,%eax,4)
+ 2d1:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 2d4:	8b 55 f0             	mov    -0x10(%ebp),%edx
+ 2d7:	89 14 85 00 00 00 00 	mov    %edx,0x0(,%eax,4)
+ 2de:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 2e1:	89 45 f4             	mov    %eax,-0xc(%ebp)
+ 2e4:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 2e7:	89 45 f0             	mov    %eax,-0x10(%ebp)
+ 2ea:	83 45 ec 01          	addl   $0x1,-0x14(%ebp)
+ 2ee:	a1 00 00 00 00       	mov    0x0,%eax
+ 2f3:	39 45 ec             	cmp    %eax,-0x14(%ebp)
+ 2f6:	7c b2                	jl     2aa <_logic+0x33>
+ 2f8:	a1 00 00 00 00       	mov    0x0,%eax
+ 2fd:	83 f8 02             	cmp    $0x2,%eax
+ 300:	74 27                	je     329 <_logic+0xb2>
+ 302:	83 f8 02             	cmp    $0x2,%eax
+ 305:	77 07                	ja     30e <_logic+0x97>
+ 307:	83 f8 01             	cmp    $0x1,%eax
+ 30a:	74 0e                	je     31a <_logic+0xa3>
+ 30c:	eb 47                	jmp    355 <_logic+0xde>
+ 30e:	83 f8 03             	cmp    $0x3,%eax
+ 311:	74 25                	je     338 <_logic+0xc1>
+ 313:	83 f8 04             	cmp    $0x4,%eax
+ 316:	74 2f                	je     347 <_logic+0xd0>
+ 318:	eb 3b                	jmp    355 <_logic+0xde>
+ 31a:	a1 00 00 00 00       	mov    0x0,%eax
+ 31f:	83 e8 01             	sub    $0x1,%eax
+ 322:	a3 00 00 00 00       	mov    %eax,0x0
+ 327:	eb 2c                	jmp    355 <_logic+0xde>
+ 329:	a1 00 00 00 00       	mov    0x0,%eax
+ 32e:	83 c0 01             	add    $0x1,%eax
+ 331:	a3 00 00 00 00       	mov    %eax,0x0
+ 336:	eb 1d                	jmp    355 <_logic+0xde>
+ 338:	a1 00 00 00 00       	mov    0x0,%eax
+ 33d:	83 e8 01             	sub    $0x1,%eax
+ 340:	a3 00 00 00 00       	mov    %eax,0x0
+ 345:	eb 0e                	jmp    355 <_logic+0xde>
+ 347:	a1 00 00 00 00       	mov    0x0,%eax
+ 34c:	83 c0 01             	add    $0x1,%eax
+ 34f:	a3 00 00 00 00       	mov    %eax,0x0
+ 354:	90                   	nop
+ 355:	a1 00 00 00 00       	mov    0x0,%eax
+ 35a:	85 c0                	test   %eax,%eax
+ 35c:	78 27                	js     385 <_logic+0x10e>
+ 35e:	8b 15 00 00 00 00    	mov    0x0,%edx
+ 364:	a1 00 00 00 00       	mov    0x0,%eax
+ 369:	39 c2                	cmp    %eax,%edx
+ 36b:	7d 18                	jge    385 <_logic+0x10e>
+ 36d:	a1 00 00 00 00       	mov    0x0,%eax
+ 372:	85 c0                	test   %eax,%eax
+ 374:	78 0f                	js     385 <_logic+0x10e>
+ 376:	8b 15 00 00 00 00    	mov    0x0,%edx
+ 37c:	a1 04 00 00 00       	mov    0x4,%eax
+ 381:	39 c2                	cmp    %eax,%edx
+ 383:	7c 0a                	jl     38f <_logic+0x118>
+ 385:	c7 05 00 00 00 00 01 	movl   $0x1,0x0
+ 38c:	00 00 00 
+ 38f:	c7 45 e8 00 00 00 00 	movl   $0x0,-0x18(%ebp)
+ 396:	eb 34                	jmp    3cc <_logic+0x155>
+ 398:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 39b:	8b 14 85 00 00 00 00 	mov    0x0(,%eax,4),%edx
+ 3a2:	a1 00 00 00 00       	mov    0x0,%eax
+ 3a7:	39 c2                	cmp    %eax,%edx
+ 3a9:	75 1d                	jne    3c8 <_logic+0x151>
+ 3ab:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 3ae:	8b 14 85 00 00 00 00 	mov    0x0(,%eax,4),%edx
+ 3b5:	a1 00 00 00 00       	mov    0x0,%eax
+ 3ba:	39 c2                	cmp    %eax,%edx
+ 3bc:	75 0a                	jne    3c8 <_logic+0x151>
+ 3be:	c7 05 00 00 00 00 01 	movl   $0x1,0x0
+ 3c5:	00 00 00 
+ 3c8:	83 45 e8 01          	addl   $0x1,-0x18(%ebp)
+ 3cc:	a1 00 00 00 00       	mov    0x0,%eax
+ 3d1:	39 45 e8             	cmp    %eax,-0x18(%ebp)
+ 3d4:	7c c2                	jl     398 <_logic+0x121>
+ 3d6:	8b 15 00 00 00 00    	mov    0x0,%edx
+ 3dc:	a1 00 00 00 00       	mov    0x0,%eax
+ 3e1:	39 c2                	cmp    %eax,%edx
+ 3e3:	75 53                	jne    438 <_logic+0x1c1>
+ 3e5:	8b 15 00 00 00 00    	mov    0x0,%edx
+ 3eb:	a1 00 00 00 00       	mov    0x0,%eax
+ 3f0:	39 c2                	cmp    %eax,%edx
+ 3f2:	75 44                	jne    438 <_logic+0x1c1>
+ 3f4:	a1 00 00 00 00       	mov    0x0,%eax
+ 3f9:	83 c0 0a             	add    $0xa,%eax
+ 3fc:	a3 00 00 00 00       	mov    %eax,0x0
+ 401:	e8 00 00 00 00       	call   406 <_logic+0x18f>
+ 406:	8b 0d 00 00 00 00    	mov    0x0,%ecx
+ 40c:	99                   	cltd   
+ 40d:	f7 f9                	idiv   %ecx
+ 40f:	89 d0                	mov    %edx,%eax
+ 411:	a3 00 00 00 00       	mov    %eax,0x0
+ 416:	e8 00 00 00 00       	call   41b <_logic+0x1a4>
+ 41b:	8b 0d 04 00 00 00    	mov    0x4,%ecx
+ 421:	99                   	cltd   
+ 422:	f7 f9                	idiv   %ecx
+ 424:	89 d0                	mov    %edx,%eax
+ 426:	a3 00 00 00 00       	mov    %eax,0x0
+ 42b:	a1 00 00 00 00       	mov    0x0,%eax
+ 430:	83 c0 01             	add    $0x1,%eax
+ 433:	a3 00 00 00 00       	mov    %eax,0x0
+ 438:	90                   	nop
+ 439:	c9                   	leave  
+ 43a:	c3                   	ret    
+
+0000043b <_main>:
+ 43b:	8d 4c 24 04          	lea    0x4(%esp),%ecx
+ 43f:	83 e4 f0             	and    $0xfffffff0,%esp
+ 442:	ff 71 fc             	pushl  -0x4(%ecx)
+ 445:	55                   	push   %ebp
+ 446:	89 e5                	mov    %esp,%ebp
+ 448:	51                   	push   %ecx
+ 449:	83 ec 14             	sub    $0x14,%esp
+ 44c:	e8 00 00 00 00       	call   451 <_main+0x16>
+ 451:	e8 aa fb ff ff       	call   0 <_setup>
+ 456:	eb 1e                	jmp    476 <_main+0x3b>
+ 458:	e8 1a fc ff ff       	call   77 <_draw>
+ 45d:	e8 b2 fd ff ff       	call   214 <_input>
+ 462:	e8 10 fe ff ff       	call   277 <_logic>
+ 467:	c7 04 24 64 00 00 00 	movl   $0x64,(%esp)
+ 46e:	e8 00 00 00 00       	call   473 <_main+0x38>
+ 473:	83 ec 04             	sub    $0x4,%esp
+ 476:	a1 00 00 00 00       	mov    0x0,%eax
+ 47b:	85 c0                	test   %eax,%eax
+ 47d:	74 d9                	je     458 <_main+0x1d>
+ 47f:	b8 00 00 00 00       	mov    $0x0,%eax
+ 484:	8b 4d fc             	mov    -0x4(%ebp),%ecx
+ 487:	c9                   	leave  
+ 488:	8d 61 fc             	lea    -0x4(%ecx),%esp
+ 48b:	c3                   	ret    

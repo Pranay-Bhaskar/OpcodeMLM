@@ -1,0 +1,77 @@
+Mandelbrot.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x50,%esp
+movl $0x50,0x30(%esp)
+movl $0x18,0x2c(%esp)
+movl $0x3e8,0x28(%esp)
+movl $0x0,0x4c(%esp)
+movl $0x0,0x48(%esp)
+fildl 0x48(%esp)
+fildl 0x30(%esp)
+fldl 0x0
+fdivrp %st,%st(1)
+fsubrp %st,%st(1)
+fldl 0x8
+fmulp %st,%st(1)
+fildl 0x30(%esp)
+fdivrp %st,%st(1)
+fstpl 0x20(%esp)
+fildl 0x4c(%esp)
+fildl 0x2c(%esp)
+fldl 0x0
+fdivrp %st,%st(1)
+fsubrp %st,%st(1)
+fld %st(0)
+faddp %st,%st(1)
+fildl 0x2c(%esp)
+fdivrp %st,%st(1)
+fstpl 0x18(%esp)
+fldz
+fstpl 0x40(%esp)
+fldz
+fstpl 0x38(%esp)
+movl $0x0,0x34(%esp)
+fldl 0x40(%esp)
+fmull 0x40(%esp)
+fldl 0x38(%esp)
+fmull 0x38(%esp)
+fsubrp %st,%st(1)
+faddl 0x20(%esp)
+fstpl 0x10(%esp)
+fldl 0x40(%esp)
+%st(0),%st
+fmull 0x38(%esp)
+faddl 0x18(%esp)
+fstpl 0x38(%esp)
+fldl 0x10(%esp)
+fstpl 0x40(%esp)
+addl $0x1,0x34(%esp)
+fldl 0x40(%esp)
+fmull 0x40(%esp)
+fldl 0x38(%esp)
+fmull 0x38(%esp)
+faddp %st,%st(1)
+fldl 0x8
+fucompp
+fnstsw %ax
+sahf
+mov 0x34(%esp),%eax
+cmp 0x28(%esp),%eax
+mov 0x34(%esp),%eax
+cmp 0x28(%esp),%eax
+mov $0x23,%eax
+mov $0x20,%eax
+mov %eax,(%esp)
+addl $0x1,0x48(%esp)
+mov 0x48(%esp),%eax
+cmp 0x30(%esp),%eax
+movl $0xa,(%esp)
+addl $0x1,0x4c(%esp)
+mov 0x4c(%esp),%eax
+cmp 0x2c(%esp),%eax
+mov $0x0,%eax
+leave
+ret
+nop

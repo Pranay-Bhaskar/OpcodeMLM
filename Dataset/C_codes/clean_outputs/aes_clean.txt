@@ -1,0 +1,27 @@
+aes.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+push %ebx
+sub $0x10,%esp
+movl $0x0,-0x8(%ebp)
+mov -0x8(%ebp),%edx
+mov 0x10(%ebp),%eax
+%edx,%eax
+mov -0x8(%ebp),%ecx
+mov 0x8(%ebp),%edx
+%ecx,%edx
+movzbl (%edx),%ebx
+mov -0x8(%ebp),%ecx
+mov 0xc(%ebp),%edx
+%ecx,%edx
+movzbl (%edx),%edx
+xor %ebx,%edx
+mov %dl,(%eax)
+addl $0x1,-0x8(%ebp)
+cmpl $0xf,-0x8(%ebp)
+nop
+$0x10,%esp
+pop %ebx
+pop %ebp
+ret
+nop

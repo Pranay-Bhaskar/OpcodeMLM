@@ -1,0 +1,54 @@
+
+hashtable.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_hash>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	8b 4d 08             	mov    0x8(%ebp),%ecx
+   6:	ba 67 66 66 66       	mov    $0x66666667,%edx
+   b:	89 c8                	mov    %ecx,%eax
+   d:	f7 ea                	imul   %edx
+   f:	c1 fa 02             	sar    $0x2,%edx
+  12:	89 c8                	mov    %ecx,%eax
+  14:	c1 f8 1f             	sar    $0x1f,%eax
+  17:	29 c2                	sub    %eax,%edx
+  19:	89 d0                	mov    %edx,%eax
+  1b:	c1 e0 02             	shl    $0x2,%eax
+  1e:	01 d0                	add    %edx,%eax
+  20:	01 c0                	add    %eax,%eax
+  22:	29 c1                	sub    %eax,%ecx
+  24:	89 ca                	mov    %ecx,%edx
+  26:	89 d0                	mov    %edx,%eax
+  28:	5d                   	pop    %ebp
+  29:	c3                   	ret    
+
+0000002a <_insert>:
+  2a:	55                   	push   %ebp
+  2b:	89 e5                	mov    %esp,%ebp
+  2d:	83 ec 28             	sub    $0x28,%esp
+  30:	8b 45 08             	mov    0x8(%ebp),%eax
+  33:	89 04 24             	mov    %eax,(%esp)
+  36:	e8 c5 ff ff ff       	call   0 <_hash>
+  3b:	89 45 f4             	mov    %eax,-0xc(%ebp)
+  3e:	c7 04 24 08 00 00 00 	movl   $0x8,(%esp)
+  45:	e8 00 00 00 00       	call   4a <_insert+0x20>
+  4a:	89 45 f0             	mov    %eax,-0x10(%ebp)
+  4d:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  50:	8b 55 08             	mov    0x8(%ebp),%edx
+  53:	89 10                	mov    %edx,(%eax)
+  55:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  58:	8b 14 85 00 00 00 00 	mov    0x0(,%eax,4),%edx
+  5f:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  62:	89 50 04             	mov    %edx,0x4(%eax)
+  65:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  68:	8b 55 f0             	mov    -0x10(%ebp),%edx
+  6b:	89 14 85 00 00 00 00 	mov    %edx,0x0(,%eax,4)
+  72:	90                   	nop
+  73:	c9                   	leave  
+  74:	c3                   	ret    
+  75:	90                   	nop
+  76:	90                   	nop
+  77:	90                   	nop

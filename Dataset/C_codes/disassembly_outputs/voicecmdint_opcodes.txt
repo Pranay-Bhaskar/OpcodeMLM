@@ -1,0 +1,87 @@
+
+voicecmdint.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_executeCommand>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+   d:	00 
+   e:	8b 45 08             	mov    0x8(%ebp),%eax
+  11:	89 04 24             	mov    %eax,(%esp)
+  14:	e8 00 00 00 00       	call   19 <_executeCommand+0x19>
+  19:	85 c0                	test   %eax,%eax
+  1b:	75 0e                	jne    2b <_executeCommand+0x2b>
+  1d:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+  24:	e8 00 00 00 00       	call   29 <_executeCommand+0x29>
+  29:	eb 5d                	jmp    88 <_executeCommand+0x88>
+  2b:	c7 44 24 04 1f 00 00 	movl   $0x1f,0x4(%esp)
+  32:	00 
+  33:	8b 45 08             	mov    0x8(%ebp),%eax
+  36:	89 04 24             	mov    %eax,(%esp)
+  39:	e8 00 00 00 00       	call   3e <_executeCommand+0x3e>
+  3e:	85 c0                	test   %eax,%eax
+  40:	75 0e                	jne    50 <_executeCommand+0x50>
+  42:	c7 04 24 2a 00 00 00 	movl   $0x2a,(%esp)
+  49:	e8 00 00 00 00       	call   4e <_executeCommand+0x4e>
+  4e:	eb 38                	jmp    88 <_executeCommand+0x88>
+  50:	c7 44 24 04 40 00 00 	movl   $0x40,0x4(%esp)
+  57:	00 
+  58:	8b 45 08             	mov    0x8(%ebp),%eax
+  5b:	89 04 24             	mov    %eax,(%esp)
+  5e:	e8 00 00 00 00       	call   63 <_executeCommand+0x63>
+  63:	85 c0                	test   %eax,%eax
+  65:	75 0e                	jne    75 <_executeCommand+0x75>
+  67:	c7 04 24 4b 00 00 00 	movl   $0x4b,(%esp)
+  6e:	e8 00 00 00 00       	call   73 <_executeCommand+0x73>
+  73:	eb 13                	jmp    88 <_executeCommand+0x88>
+  75:	8b 45 08             	mov    0x8(%ebp),%eax
+  78:	89 44 24 04          	mov    %eax,0x4(%esp)
+  7c:	c7 04 24 5c 00 00 00 	movl   $0x5c,(%esp)
+  83:	e8 00 00 00 00       	call   88 <_executeCommand+0x88>
+  88:	90                   	nop
+  89:	c9                   	leave  
+  8a:	c3                   	ret    
+
+0000008b <_main>:
+  8b:	55                   	push   %ebp
+  8c:	89 e5                	mov    %esp,%ebp
+  8e:	83 e4 f0             	and    $0xfffffff0,%esp
+  91:	83 c4 80             	add    $0xffffff80,%esp
+  94:	e8 00 00 00 00       	call   99 <_main+0xe>
+  99:	c7 04 24 74 00 00 00 	movl   $0x74,(%esp)
+  a0:	e8 00 00 00 00       	call   a5 <_main+0x1a>
+  a5:	a1 00 00 00 00       	mov    0x0,%eax
+  aa:	89 44 24 08          	mov    %eax,0x8(%esp)
+  ae:	c7 44 24 04 64 00 00 	movl   $0x64,0x4(%esp)
+  b5:	00 
+  b6:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+  ba:	89 04 24             	mov    %eax,(%esp)
+  bd:	e8 00 00 00 00       	call   c2 <_main+0x37>
+  c2:	c7 44 24 04 94 00 00 	movl   $0x94,0x4(%esp)
+  c9:	00 
+  ca:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+  ce:	89 04 24             	mov    %eax,(%esp)
+  d1:	e8 00 00 00 00       	call   d6 <_main+0x4b>
+  d6:	c6 44 04 1c 00       	movb   $0x0,0x1c(%esp,%eax,1)
+  db:	c7 44 24 04 96 00 00 	movl   $0x96,0x4(%esp)
+  e2:	00 
+  e3:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+  e7:	89 04 24             	mov    %eax,(%esp)
+  ea:	e8 00 00 00 00       	call   ef <_main+0x64>
+  ef:	85 c0                	test   %eax,%eax
+  f1:	74 0e                	je     101 <_main+0x76>
+  f3:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+  f7:	89 04 24             	mov    %eax,(%esp)
+  fa:	e8 01 ff ff ff       	call   0 <_executeCommand>
+  ff:	eb a4                	jmp    a5 <_main+0x1a>
+ 101:	90                   	nop
+ 102:	b8 00 00 00 00       	mov    $0x0,%eax
+ 107:	c9                   	leave  
+ 108:	c3                   	ret    
+ 109:	90                   	nop
+ 10a:	90                   	nop
+ 10b:	90                   	nop

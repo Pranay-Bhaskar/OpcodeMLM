@@ -1,0 +1,93 @@
+
+unionfind.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_makeSet>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 10             	sub    $0x10,%esp
+   6:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+   d:	eb 1f                	jmp    2e <_makeSet+0x2e>
+   f:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  12:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  15:	89 14 85 00 00 00 00 	mov    %edx,0x0(,%eax,4)
+  1c:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  1f:	c7 04 85 00 00 00 00 	movl   $0x0,0x0(,%eax,4)
+  26:	00 00 00 00 
+  2a:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  2e:	83 7d fc 09          	cmpl   $0x9,-0x4(%ebp)
+  32:	7e db                	jle    f <_makeSet+0xf>
+  34:	90                   	nop
+  35:	c9                   	leave  
+  36:	c3                   	ret    
+
+00000037 <_find>:
+  37:	55                   	push   %ebp
+  38:	89 e5                	mov    %esp,%ebp
+  3a:	83 ec 18             	sub    $0x18,%esp
+  3d:	8b 45 08             	mov    0x8(%ebp),%eax
+  40:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  47:	3b 45 08             	cmp    0x8(%ebp),%eax
+  4a:	74 1e                	je     6a <_find+0x33>
+  4c:	8b 45 08             	mov    0x8(%ebp),%eax
+  4f:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  56:	89 04 24             	mov    %eax,(%esp)
+  59:	e8 d9 ff ff ff       	call   37 <_find>
+  5e:	89 c2                	mov    %eax,%edx
+  60:	8b 45 08             	mov    0x8(%ebp),%eax
+  63:	89 14 85 00 00 00 00 	mov    %edx,0x0(,%eax,4)
+  6a:	8b 45 08             	mov    0x8(%ebp),%eax
+  6d:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  74:	c9                   	leave  
+  75:	c3                   	ret    
+
+00000076 <_unionSet>:
+  76:	55                   	push   %ebp
+  77:	89 e5                	mov    %esp,%ebp
+  79:	83 ec 28             	sub    $0x28,%esp
+  7c:	8b 45 08             	mov    0x8(%ebp),%eax
+  7f:	89 04 24             	mov    %eax,(%esp)
+  82:	e8 b0 ff ff ff       	call   37 <_find>
+  87:	89 45 f4             	mov    %eax,-0xc(%ebp)
+  8a:	8b 45 0c             	mov    0xc(%ebp),%eax
+  8d:	89 04 24             	mov    %eax,(%esp)
+  90:	e8 a2 ff ff ff       	call   37 <_find>
+  95:	89 45 f0             	mov    %eax,-0x10(%ebp)
+  98:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  9b:	3b 45 f0             	cmp    -0x10(%ebp),%eax
+  9e:	74 74                	je     114 <_unionSet+0x9e>
+  a0:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  a3:	8b 14 85 00 00 00 00 	mov    0x0(,%eax,4),%edx
+  aa:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  ad:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  b4:	39 c2                	cmp    %eax,%edx
+  b6:	7d 0f                	jge    c7 <_unionSet+0x51>
+  b8:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  bb:	8b 55 f0             	mov    -0x10(%ebp),%edx
+  be:	89 14 85 00 00 00 00 	mov    %edx,0x0(,%eax,4)
+  c5:	eb 4e                	jmp    115 <_unionSet+0x9f>
+  c7:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  ca:	8b 14 85 00 00 00 00 	mov    0x0(,%eax,4),%edx
+  d1:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  d4:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  db:	39 c2                	cmp    %eax,%edx
+  dd:	7e 0f                	jle    ee <_unionSet+0x78>
+  df:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  e2:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  e5:	89 14 85 00 00 00 00 	mov    %edx,0x0(,%eax,4)
+  ec:	eb 27                	jmp    115 <_unionSet+0x9f>
+  ee:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  f1:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  f4:	89 14 85 00 00 00 00 	mov    %edx,0x0(,%eax,4)
+  fb:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  fe:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+ 105:	8d 50 01             	lea    0x1(%eax),%edx
+ 108:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 10b:	89 14 85 00 00 00 00 	mov    %edx,0x0(,%eax,4)
+ 112:	eb 01                	jmp    115 <_unionSet+0x9f>
+ 114:	90                   	nop
+ 115:	c9                   	leave  
+ 116:	c3                   	ret    
+ 117:	90                   	nop

@@ -1,0 +1,166 @@
+
+dungeon.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_initMap>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 10             	sub    $0x10,%esp
+   6:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+   d:	eb 30                	jmp    3f <_initMap+0x3f>
+   f:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+  16:	eb 1d                	jmp    35 <_initMap+0x35>
+  18:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  1b:	89 d0                	mov    %edx,%eax
+  1d:	c1 e0 02             	shl    $0x2,%eax
+  20:	01 d0                	add    %edx,%eax
+  22:	01 c0                	add    %eax,%eax
+  24:	8b 55 f8             	mov    -0x8(%ebp),%edx
+  27:	01 d0                	add    %edx,%eax
+  29:	05 00 00 00 00       	add    $0x0,%eax
+  2e:	c6 00 2e             	movb   $0x2e,(%eax)
+  31:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+  35:	83 7d f8 09          	cmpl   $0x9,-0x8(%ebp)
+  39:	7e dd                	jle    18 <_initMap+0x18>
+  3b:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  3f:	83 7d fc 09          	cmpl   $0x9,-0x4(%ebp)
+  43:	7e ca                	jle    f <_initMap+0xf>
+  45:	8b 15 00 00 00 00    	mov    0x0,%edx
+  4b:	8b 0d 04 00 00 00    	mov    0x4,%ecx
+  51:	89 d0                	mov    %edx,%eax
+  53:	c1 e0 02             	shl    $0x2,%eax
+  56:	01 d0                	add    %edx,%eax
+  58:	01 c0                	add    %eax,%eax
+  5a:	01 c8                	add    %ecx,%eax
+  5c:	05 00 00 00 00       	add    $0x0,%eax
+  61:	c6 00 50             	movb   $0x50,(%eax)
+  64:	c6 05 63 00 00 00 45 	movb   $0x45,0x63
+  6b:	90                   	nop
+  6c:	c9                   	leave  
+  6d:	c3                   	ret    
+
+0000006e <_showMap>:
+  6e:	55                   	push   %ebp
+  6f:	89 e5                	mov    %esp,%ebp
+  71:	83 ec 28             	sub    $0x28,%esp
+  74:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  7b:	eb 4f                	jmp    cc <_showMap+0x5e>
+  7d:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+  84:	eb 30                	jmp    b6 <_showMap+0x48>
+  86:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  89:	89 d0                	mov    %edx,%eax
+  8b:	c1 e0 02             	shl    $0x2,%eax
+  8e:	01 d0                	add    %edx,%eax
+  90:	01 c0                	add    %eax,%eax
+  92:	8b 55 f0             	mov    -0x10(%ebp),%edx
+  95:	01 d0                	add    %edx,%eax
+  97:	05 00 00 00 00       	add    $0x0,%eax
+  9c:	0f b6 00             	movzbl (%eax),%eax
+  9f:	0f be c0             	movsbl %al,%eax
+  a2:	89 44 24 04          	mov    %eax,0x4(%esp)
+  a6:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  ad:	e8 00 00 00 00       	call   b2 <_showMap+0x44>
+  b2:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+  b6:	83 7d f0 09          	cmpl   $0x9,-0x10(%ebp)
+  ba:	7e ca                	jle    86 <_showMap+0x18>
+  bc:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+  c3:	e8 00 00 00 00       	call   c8 <_showMap+0x5a>
+  c8:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  cc:	83 7d f4 09          	cmpl   $0x9,-0xc(%ebp)
+  d0:	7e ab                	jle    7d <_showMap+0xf>
+  d2:	90                   	nop
+  d3:	c9                   	leave  
+  d4:	c3                   	ret    
+
+000000d5 <_movePlayer>:
+  d5:	55                   	push   %ebp
+  d6:	89 e5                	mov    %esp,%ebp
+  d8:	83 ec 04             	sub    $0x4,%esp
+  db:	8b 45 08             	mov    0x8(%ebp),%eax
+  de:	88 45 fc             	mov    %al,-0x4(%ebp)
+  e1:	8b 15 00 00 00 00    	mov    0x0,%edx
+  e7:	8b 0d 04 00 00 00    	mov    0x4,%ecx
+  ed:	89 d0                	mov    %edx,%eax
+  ef:	c1 e0 02             	shl    $0x2,%eax
+  f2:	01 d0                	add    %edx,%eax
+  f4:	01 c0                	add    %eax,%eax
+  f6:	01 c8                	add    %ecx,%eax
+  f8:	05 00 00 00 00       	add    $0x0,%eax
+  fd:	c6 00 2e             	movb   $0x2e,(%eax)
+ 100:	80 7d fc 77          	cmpb   $0x77,-0x4(%ebp)
+ 104:	75 16                	jne    11c <_movePlayer+0x47>
+ 106:	a1 00 00 00 00       	mov    0x0,%eax
+ 10b:	85 c0                	test   %eax,%eax
+ 10d:	7e 0d                	jle    11c <_movePlayer+0x47>
+ 10f:	a1 00 00 00 00       	mov    0x0,%eax
+ 114:	83 e8 01             	sub    $0x1,%eax
+ 117:	a3 00 00 00 00       	mov    %eax,0x0
+ 11c:	80 7d fc 73          	cmpb   $0x73,-0x4(%ebp)
+ 120:	75 17                	jne    139 <_movePlayer+0x64>
+ 122:	a1 00 00 00 00       	mov    0x0,%eax
+ 127:	83 f8 08             	cmp    $0x8,%eax
+ 12a:	7f 0d                	jg     139 <_movePlayer+0x64>
+ 12c:	a1 00 00 00 00       	mov    0x0,%eax
+ 131:	83 c0 01             	add    $0x1,%eax
+ 134:	a3 00 00 00 00       	mov    %eax,0x0
+ 139:	80 7d fc 61          	cmpb   $0x61,-0x4(%ebp)
+ 13d:	75 16                	jne    155 <_movePlayer+0x80>
+ 13f:	a1 04 00 00 00       	mov    0x4,%eax
+ 144:	85 c0                	test   %eax,%eax
+ 146:	7e 0d                	jle    155 <_movePlayer+0x80>
+ 148:	a1 04 00 00 00       	mov    0x4,%eax
+ 14d:	83 e8 01             	sub    $0x1,%eax
+ 150:	a3 04 00 00 00       	mov    %eax,0x4
+ 155:	80 7d fc 64          	cmpb   $0x64,-0x4(%ebp)
+ 159:	75 17                	jne    172 <_movePlayer+0x9d>
+ 15b:	a1 04 00 00 00       	mov    0x4,%eax
+ 160:	83 f8 08             	cmp    $0x8,%eax
+ 163:	7f 0d                	jg     172 <_movePlayer+0x9d>
+ 165:	a1 04 00 00 00       	mov    0x4,%eax
+ 16a:	83 c0 01             	add    $0x1,%eax
+ 16d:	a3 04 00 00 00       	mov    %eax,0x4
+ 172:	8b 15 00 00 00 00    	mov    0x0,%edx
+ 178:	8b 0d 04 00 00 00    	mov    0x4,%ecx
+ 17e:	89 d0                	mov    %edx,%eax
+ 180:	c1 e0 02             	shl    $0x2,%eax
+ 183:	01 d0                	add    %edx,%eax
+ 185:	01 c0                	add    %eax,%eax
+ 187:	01 c8                	add    %ecx,%eax
+ 189:	05 00 00 00 00       	add    $0x0,%eax
+ 18e:	c6 00 50             	movb   $0x50,(%eax)
+ 191:	90                   	nop
+ 192:	c9                   	leave  
+ 193:	c3                   	ret    
+
+00000194 <_main>:
+ 194:	55                   	push   %ebp
+ 195:	89 e5                	mov    %esp,%ebp
+ 197:	83 e4 f0             	and    $0xfffffff0,%esp
+ 19a:	83 ec 20             	sub    $0x20,%esp
+ 19d:	e8 00 00 00 00       	call   1a2 <_main+0xe>
+ 1a2:	e8 59 fe ff ff       	call   0 <_initMap>
+ 1a7:	e8 c2 fe ff ff       	call   6e <_showMap>
+ 1ac:	c7 04 24 04 00 00 00 	movl   $0x4,(%esp)
+ 1b3:	e8 00 00 00 00       	call   1b8 <_main+0x24>
+ 1b8:	8d 44 24 1f          	lea    0x1f(%esp),%eax
+ 1bc:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 1c0:	c7 04 24 15 00 00 00 	movl   $0x15,(%esp)
+ 1c7:	e8 00 00 00 00       	call   1cc <_main+0x38>
+ 1cc:	0f b6 44 24 1f       	movzbl 0x1f(%esp),%eax
+ 1d1:	0f be c0             	movsbl %al,%eax
+ 1d4:	89 04 24             	mov    %eax,(%esp)
+ 1d7:	e8 f9 fe ff ff       	call   d5 <_movePlayer>
+ 1dc:	a1 00 00 00 00       	mov    0x0,%eax
+ 1e1:	83 f8 09             	cmp    $0x9,%eax
+ 1e4:	75 c1                	jne    1a7 <_main+0x13>
+ 1e6:	a1 04 00 00 00       	mov    0x4,%eax
+ 1eb:	83 f8 09             	cmp    $0x9,%eax
+ 1ee:	75 b7                	jne    1a7 <_main+0x13>
+ 1f0:	c7 04 24 19 00 00 00 	movl   $0x19,(%esp)
+ 1f7:	e8 00 00 00 00       	call   1fc <_main+0x68>
+ 1fc:	90                   	nop
+ 1fd:	b8 00 00 00 00       	mov    $0x0,%eax
+ 202:	c9                   	leave  
+ 203:	c3                   	ret    

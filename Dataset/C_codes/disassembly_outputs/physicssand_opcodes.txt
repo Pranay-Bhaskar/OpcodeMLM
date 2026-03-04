@@ -1,0 +1,148 @@
+
+physicssand.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_initParticles>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+   d:	e9 82 00 00 00       	jmp    94 <_initParticles+0x94>
+  12:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  15:	01 c0                	add    %eax,%eax
+  17:	89 45 e8             	mov    %eax,-0x18(%ebp)
+  1a:	db 45 e8             	fildl  -0x18(%ebp)
+  1d:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  20:	c1 e0 04             	shl    $0x4,%eax
+  23:	05 00 00 00 00       	add    $0x0,%eax
+  28:	d9 18                	fstps  (%eax)
+  2a:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  2d:	01 c0                	add    %eax,%eax
+  2f:	89 45 e8             	mov    %eax,-0x18(%ebp)
+  32:	db 45 e8             	fildl  -0x18(%ebp)
+  35:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  38:	c1 e0 04             	shl    $0x4,%eax
+  3b:	05 04 00 00 00       	add    $0x4,%eax
+  40:	d9 18                	fstps  (%eax)
+  42:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  45:	83 c0 01             	add    $0x1,%eax
+  48:	89 45 e8             	mov    %eax,-0x18(%ebp)
+  4b:	db 45 e8             	fildl  -0x18(%ebp)
+  4e:	dd 05 28 00 00 00    	fldl   0x28
+  54:	de c9                	fmulp  %st,%st(1)
+  56:	d9 5d ec             	fstps  -0x14(%ebp)
+  59:	d9 45 ec             	flds   -0x14(%ebp)
+  5c:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  5f:	c1 e0 04             	shl    $0x4,%eax
+  62:	05 08 00 00 00       	add    $0x8,%eax
+  67:	d9 18                	fstps  (%eax)
+  69:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  6c:	83 c0 01             	add    $0x1,%eax
+  6f:	89 45 e8             	mov    %eax,-0x18(%ebp)
+  72:	db 45 e8             	fildl  -0x18(%ebp)
+  75:	dd 05 30 00 00 00    	fldl   0x30
+  7b:	de c9                	fmulp  %st,%st(1)
+  7d:	d9 5d ec             	fstps  -0x14(%ebp)
+  80:	d9 45 ec             	flds   -0x14(%ebp)
+  83:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  86:	c1 e0 04             	shl    $0x4,%eax
+  89:	05 0c 00 00 00       	add    $0xc,%eax
+  8e:	d9 18                	fstps  (%eax)
+  90:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  94:	83 7d fc 04          	cmpl   $0x4,-0x4(%ebp)
+  98:	0f 8e 74 ff ff ff    	jle    12 <_initParticles+0x12>
+  9e:	90                   	nop
+  9f:	c9                   	leave  
+  a0:	c3                   	ret    
+
+000000a1 <_updateParticles>:
+  a1:	55                   	push   %ebp
+  a2:	89 e5                	mov    %esp,%ebp
+  a4:	83 ec 10             	sub    $0x10,%esp
+  a7:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+  ae:	eb 56                	jmp    106 <_updateParticles+0x65>
+  b0:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  b3:	c1 e0 04             	shl    $0x4,%eax
+  b6:	05 00 00 00 00       	add    $0x0,%eax
+  bb:	d9 00                	flds   (%eax)
+  bd:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  c0:	c1 e0 04             	shl    $0x4,%eax
+  c3:	05 08 00 00 00       	add    $0x8,%eax
+  c8:	d9 00                	flds   (%eax)
+  ca:	de c1                	faddp  %st,%st(1)
+  cc:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  cf:	c1 e0 04             	shl    $0x4,%eax
+  d2:	05 00 00 00 00       	add    $0x0,%eax
+  d7:	d9 18                	fstps  (%eax)
+  d9:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  dc:	c1 e0 04             	shl    $0x4,%eax
+  df:	05 04 00 00 00       	add    $0x4,%eax
+  e4:	d9 00                	flds   (%eax)
+  e6:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  e9:	c1 e0 04             	shl    $0x4,%eax
+  ec:	05 0c 00 00 00       	add    $0xc,%eax
+  f1:	d9 00                	flds   (%eax)
+  f3:	de c1                	faddp  %st,%st(1)
+  f5:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  f8:	c1 e0 04             	shl    $0x4,%eax
+  fb:	05 04 00 00 00       	add    $0x4,%eax
+ 100:	d9 18                	fstps  (%eax)
+ 102:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+ 106:	83 7d fc 04          	cmpl   $0x4,-0x4(%ebp)
+ 10a:	7e a4                	jle    b0 <_updateParticles+0xf>
+ 10c:	90                   	nop
+ 10d:	c9                   	leave  
+ 10e:	c3                   	ret    
+
+0000010f <_showParticles>:
+ 10f:	55                   	push   %ebp
+ 110:	89 e5                	mov    %esp,%ebp
+ 112:	83 ec 38             	sub    $0x38,%esp
+ 115:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 11c:	eb 3b                	jmp    159 <_showParticles+0x4a>
+ 11e:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 121:	c1 e0 04             	shl    $0x4,%eax
+ 124:	05 04 00 00 00       	add    $0x4,%eax
+ 129:	d9 00                	flds   (%eax)
+ 12b:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 12e:	c1 e0 04             	shl    $0x4,%eax
+ 131:	05 00 00 00 00       	add    $0x0,%eax
+ 136:	d9 00                	flds   (%eax)
+ 138:	d9 c9                	fxch   %st(1)
+ 13a:	dd 5c 24 10          	fstpl  0x10(%esp)
+ 13e:	dd 5c 24 08          	fstpl  0x8(%esp)
+ 142:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 145:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 149:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 150:	e8 00 00 00 00       	call   155 <_showParticles+0x46>
+ 155:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 159:	83 7d f4 04          	cmpl   $0x4,-0xc(%ebp)
+ 15d:	7e bf                	jle    11e <_showParticles+0xf>
+ 15f:	90                   	nop
+ 160:	c9                   	leave  
+ 161:	c3                   	ret    
+
+00000162 <_main>:
+ 162:	55                   	push   %ebp
+ 163:	89 e5                	mov    %esp,%ebp
+ 165:	83 e4 f0             	and    $0xfffffff0,%esp
+ 168:	83 ec 20             	sub    $0x20,%esp
+ 16b:	e8 00 00 00 00       	call   170 <_main+0xe>
+ 170:	e8 8b fe ff ff       	call   0 <_initParticles>
+ 175:	c7 44 24 1c 00 00 00 	movl   $0x0,0x1c(%esp)
+ 17c:	00 
+ 17d:	eb 23                	jmp    1a2 <_main+0x40>
+ 17f:	8b 44 24 1c          	mov    0x1c(%esp),%eax
+ 183:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 187:	c7 04 24 1b 00 00 00 	movl   $0x1b,(%esp)
+ 18e:	e8 00 00 00 00       	call   193 <_main+0x31>
+ 193:	e8 77 ff ff ff       	call   10f <_showParticles>
+ 198:	e8 04 ff ff ff       	call   a1 <_updateParticles>
+ 19d:	83 44 24 1c 01       	addl   $0x1,0x1c(%esp)
+ 1a2:	83 7c 24 1c 04       	cmpl   $0x4,0x1c(%esp)
+ 1a7:	7e d6                	jle    17f <_main+0x1d>
+ 1a9:	b8 00 00 00 00       	mov    $0x0,%eax
+ 1ae:	c9                   	leave  
+ 1af:	c3                   	ret    

@@ -1,0 +1,75 @@
+filesystemtreewalker.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x448,%esp
+mov 0x8(%ebp),%eax
+mov %eax,-0x18(%ebp)
+mov -0x18(%ebp),%eax
+mov %eax,(%esp)
+mov %eax,-0x10(%ebp)
+cmpl $0x0,-0x10(%ebp)
+mov -0x14(%ebp),%eax
+$0xc,%eax
+movl $0x0,0x4(%esp)
+mov %eax,(%esp)
+test %eax,%eax
+mov -0x14(%ebp),%eax
+$0xc,%eax
+movl $0x2,0x4(%esp)
+mov %eax,(%esp)
+test %eax,%eax
+movl $0x0,-0xc(%ebp)
+movl $0x5,(%esp)
+addl $0x1,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+cmp 0xc(%ebp),%eax
+mov -0x14(%ebp),%eax
+$0xc,%eax
+mov %eax,(%esp)
+mov -0x14(%ebp),%eax
+mov 0x8(%eax),%eax
+cmp $0x10,%eax
+mov -0x14(%ebp),%eax
+$0xc,%eax
+mov %eax,0x10(%esp)
+mov 0x8(%ebp),%eax
+mov %eax,0xc(%esp)
+movl $0x8,0x8(%esp)
+movl $0x400,0x4(%esp)
+lea -0x420(%ebp),%eax
+mov %eax,(%esp)
+mov 0xc(%ebp),%eax
+$0x1,%eax
+mov %eax,0x4(%esp)
+lea -0x420(%ebp),%eax
+mov %eax,(%esp)
+mov -0x10(%ebp),%eax
+mov %eax,-0x1c(%ebp)
+mov -0x1c(%ebp),%eax
+mov %eax,(%esp)
+mov %eax,-0x14(%ebp)
+cmpl $0x0,-0x14(%ebp)
+mov -0x10(%ebp),%eax
+mov %eax,-0x20(%ebp)
+mov -0x20(%ebp),%eax
+mov %eax,(%esp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x20,%esp
+cmpl $0x1,0x8(%ebp)
+mov 0xc(%ebp),%eax
+mov 0x4(%eax),%eax
+mov $0x0,%eax
+mov %eax,0x1c(%esp)
+movl $0x0,0x4(%esp)
+mov 0x1c(%esp),%eax
+mov %eax,(%esp)
+mov $0x0,%eax
+leave
+ret
+nop
+nop

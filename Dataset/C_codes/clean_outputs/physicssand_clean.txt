@@ -1,0 +1,121 @@
+physicssand.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x18,%esp
+movl $0x0,-0x4(%ebp)
+mov -0x4(%ebp),%eax
+%eax,%eax
+mov %eax,-0x18(%ebp)
+fildl -0x18(%ebp)
+mov -0x4(%ebp),%eax
+shl $0x4,%eax
+$0x0,%eax
+fstps (%eax)
+mov -0x4(%ebp),%eax
+%eax,%eax
+mov %eax,-0x18(%ebp)
+fildl -0x18(%ebp)
+mov -0x4(%ebp),%eax
+shl $0x4,%eax
+$0x4,%eax
+fstps (%eax)
+mov -0x4(%ebp),%eax
+$0x1,%eax
+mov %eax,-0x18(%ebp)
+fildl -0x18(%ebp)
+fldl 0x28
+fmulp %st,%st(1)
+fstps -0x14(%ebp)
+flds -0x14(%ebp)
+mov -0x4(%ebp),%eax
+shl $0x4,%eax
+$0x8,%eax
+fstps (%eax)
+mov -0x4(%ebp),%eax
+$0x1,%eax
+mov %eax,-0x18(%ebp)
+fildl -0x18(%ebp)
+fldl 0x30
+fmulp %st,%st(1)
+fstps -0x14(%ebp)
+flds -0x14(%ebp)
+mov -0x4(%ebp),%eax
+shl $0x4,%eax
+$0xc,%eax
+fstps (%eax)
+addl $0x1,-0x4(%ebp)
+cmpl $0x4,-0x4(%ebp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x10,%esp
+movl $0x0,-0x4(%ebp)
+mov -0x4(%ebp),%eax
+shl $0x4,%eax
+$0x0,%eax
+flds (%eax)
+mov -0x4(%ebp),%eax
+shl $0x4,%eax
+$0x8,%eax
+flds (%eax)
+faddp %st,%st(1)
+mov -0x4(%ebp),%eax
+shl $0x4,%eax
+$0x0,%eax
+fstps (%eax)
+mov -0x4(%ebp),%eax
+shl $0x4,%eax
+$0x4,%eax
+flds (%eax)
+mov -0x4(%ebp),%eax
+shl $0x4,%eax
+$0xc,%eax
+flds (%eax)
+faddp %st,%st(1)
+mov -0x4(%ebp),%eax
+shl $0x4,%eax
+$0x4,%eax
+fstps (%eax)
+addl $0x1,-0x4(%ebp)
+cmpl $0x4,-0x4(%ebp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x38,%esp
+movl $0x0,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+shl $0x4,%eax
+$0x4,%eax
+flds (%eax)
+mov -0xc(%ebp),%eax
+shl $0x4,%eax
+$0x0,%eax
+flds (%eax)
+fxch %st(1)
+fstpl 0x10(%esp)
+fstpl 0x8(%esp)
+mov -0xc(%ebp),%eax
+mov %eax,0x4(%esp)
+movl $0x0,(%esp)
+addl $0x1,-0xc(%ebp)
+cmpl $0x4,-0xc(%ebp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x20,%esp
+movl $0x0,0x1c(%esp)
+mov 0x1c(%esp),%eax
+mov %eax,0x4(%esp)
+movl $0x1b,(%esp)
+addl $0x1,0x1c(%esp)
+cmpl $0x4,0x1c(%esp)
+mov $0x0,%eax
+leave
+ret

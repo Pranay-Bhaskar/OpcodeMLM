@@ -1,0 +1,134 @@
+
+trafficflo.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_initCars>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+   d:	eb 46                	jmp    55 <_initCars+0x55>
+   f:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  12:	89 d0                	mov    %edx,%eax
+  14:	c1 e0 02             	shl    $0x2,%eax
+  17:	01 c2                	add    %eax,%edx
+  19:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  1c:	89 14 c5 00 00 00 00 	mov    %edx,0x0(,%eax,8)
+  23:	e8 00 00 00 00       	call   28 <_initCars+0x28>
+  28:	89 c1                	mov    %eax,%ecx
+  2a:	ba 56 55 55 55       	mov    $0x55555556,%edx
+  2f:	89 c8                	mov    %ecx,%eax
+  31:	f7 ea                	imul   %edx
+  33:	89 c8                	mov    %ecx,%eax
+  35:	c1 f8 1f             	sar    $0x1f,%eax
+  38:	29 c2                	sub    %eax,%edx
+  3a:	89 d0                	mov    %edx,%eax
+  3c:	01 c0                	add    %eax,%eax
+  3e:	01 d0                	add    %edx,%eax
+  40:	29 c1                	sub    %eax,%ecx
+  42:	89 ca                	mov    %ecx,%edx
+  44:	83 c2 01             	add    $0x1,%edx
+  47:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  4a:	89 14 c5 04 00 00 00 	mov    %edx,0x4(,%eax,8)
+  51:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  55:	83 7d f4 09          	cmpl   $0x9,-0xc(%ebp)
+  59:	7e b4                	jle    f <_initCars+0xf>
+  5b:	90                   	nop
+  5c:	c9                   	leave  
+  5d:	c3                   	ret    
+
+0000005e <_updateTraffic>:
+  5e:	55                   	push   %ebp
+  5f:	89 e5                	mov    %esp,%ebp
+  61:	83 ec 10             	sub    $0x10,%esp
+  64:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+  6b:	eb 41                	jmp    ae <_updateTraffic+0x50>
+  6d:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  70:	8b 14 c5 00 00 00 00 	mov    0x0(,%eax,8),%edx
+  77:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  7a:	8b 04 c5 04 00 00 00 	mov    0x4(,%eax,8),%eax
+  81:	01 c2                	add    %eax,%edx
+  83:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  86:	89 14 c5 00 00 00 00 	mov    %edx,0x0(,%eax,8)
+  8d:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  90:	8b 04 c5 00 00 00 00 	mov    0x0(,%eax,8),%eax
+  97:	83 f8 31             	cmp    $0x31,%eax
+  9a:	7e 0e                	jle    aa <_updateTraffic+0x4c>
+  9c:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  9f:	c7 04 c5 00 00 00 00 	movl   $0x0,0x0(,%eax,8)
+  a6:	00 00 00 00 
+  aa:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  ae:	83 7d fc 09          	cmpl   $0x9,-0x4(%ebp)
+  b2:	7e b9                	jle    6d <_updateTraffic+0xf>
+  b4:	90                   	nop
+  b5:	c9                   	leave  
+  b6:	c3                   	ret    
+
+000000b7 <_showRoad>:
+  b7:	55                   	push   %ebp
+  b8:	89 e5                	mov    %esp,%ebp
+  ba:	83 ec 58             	sub    $0x58,%esp
+  bd:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  c4:	eb 0f                	jmp    d5 <_showRoad+0x1e>
+  c6:	8d 55 ba             	lea    -0x46(%ebp),%edx
+  c9:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  cc:	01 d0                	add    %edx,%eax
+  ce:	c6 00 2e             	movb   $0x2e,(%eax)
+  d1:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  d5:	83 7d f4 31          	cmpl   $0x31,-0xc(%ebp)
+  d9:	7e eb                	jle    c6 <_showRoad+0xf>
+  db:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+  e2:	eb 13                	jmp    f7 <_showRoad+0x40>
+  e4:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  e7:	8b 04 c5 00 00 00 00 	mov    0x0(,%eax,8),%eax
+  ee:	c6 44 05 ba 43       	movb   $0x43,-0x46(%ebp,%eax,1)
+  f3:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+  f7:	83 7d f0 09          	cmpl   $0x9,-0x10(%ebp)
+  fb:	7e e7                	jle    e4 <_showRoad+0x2d>
+  fd:	c7 45 ec 00 00 00 00 	movl   $0x0,-0x14(%ebp)
+ 104:	eb 1a                	jmp    120 <_showRoad+0x69>
+ 106:	8d 55 ba             	lea    -0x46(%ebp),%edx
+ 109:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 10c:	01 d0                	add    %edx,%eax
+ 10e:	0f b6 00             	movzbl (%eax),%eax
+ 111:	0f be c0             	movsbl %al,%eax
+ 114:	89 04 24             	mov    %eax,(%esp)
+ 117:	e8 00 00 00 00       	call   11c <_showRoad+0x65>
+ 11c:	83 45 ec 01          	addl   $0x1,-0x14(%ebp)
+ 120:	83 7d ec 31          	cmpl   $0x31,-0x14(%ebp)
+ 124:	7e e0                	jle    106 <_showRoad+0x4f>
+ 126:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+ 12d:	e8 00 00 00 00       	call   132 <_showRoad+0x7b>
+ 132:	90                   	nop
+ 133:	c9                   	leave  
+ 134:	c3                   	ret    
+
+00000135 <_main>:
+ 135:	55                   	push   %ebp
+ 136:	89 e5                	mov    %esp,%ebp
+ 138:	83 e4 f0             	and    $0xfffffff0,%esp
+ 13b:	83 ec 20             	sub    $0x20,%esp
+ 13e:	e8 00 00 00 00       	call   143 <_main+0xe>
+ 143:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 14a:	e8 00 00 00 00       	call   14f <_main+0x1a>
+ 14f:	89 04 24             	mov    %eax,(%esp)
+ 152:	e8 00 00 00 00       	call   157 <_main+0x22>
+ 157:	e8 a4 fe ff ff       	call   0 <_initCars>
+ 15c:	c7 44 24 1c 00 00 00 	movl   $0x0,0x1c(%esp)
+ 163:	00 
+ 164:	eb 23                	jmp    189 <_main+0x54>
+ 166:	8b 44 24 1c          	mov    0x1c(%esp),%eax
+ 16a:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 16e:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 175:	e8 00 00 00 00       	call   17a <_main+0x45>
+ 17a:	e8 38 ff ff ff       	call   b7 <_showRoad>
+ 17f:	e8 da fe ff ff       	call   5e <_updateTraffic>
+ 184:	83 44 24 1c 01       	addl   $0x1,0x1c(%esp)
+ 189:	83 7c 24 1c 13       	cmpl   $0x13,0x1c(%esp)
+ 18e:	7e d6                	jle    166 <_main+0x31>
+ 190:	b8 00 00 00 00       	mov    $0x0,%eax
+ 195:	c9                   	leave  
+ 196:	c3                   	ret    
+ 197:	90                   	nop

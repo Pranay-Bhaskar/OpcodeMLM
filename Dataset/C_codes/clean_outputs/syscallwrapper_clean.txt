@@ -1,0 +1,15 @@
+syscallwrapper.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x18,%esp
+mov 0x10(%ebp),%eax
+mov %eax,0x8(%esp)
+mov 0xc(%ebp),%eax
+mov %eax,0x4(%esp)
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+leave
+ret
+nop
+nop
+nop

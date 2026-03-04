@@ -1,0 +1,149 @@
+
+dijkstra.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_minDistance>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 10             	sub    $0x10,%esp
+   6:	c7 45 fc ff ff ff 7f 	movl   $0x7fffffff,-0x4(%ebp)
+   d:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  14:	eb 49                	jmp    5f <_minDistance+0x5f>
+  16:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  19:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+  20:	8b 45 0c             	mov    0xc(%ebp),%eax
+  23:	01 d0                	add    %edx,%eax
+  25:	8b 00                	mov    (%eax),%eax
+  27:	85 c0                	test   %eax,%eax
+  29:	75 30                	jne    5b <_minDistance+0x5b>
+  2b:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  2e:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+  35:	8b 45 08             	mov    0x8(%ebp),%eax
+  38:	01 d0                	add    %edx,%eax
+  3a:	8b 00                	mov    (%eax),%eax
+  3c:	3b 45 fc             	cmp    -0x4(%ebp),%eax
+  3f:	7f 1a                	jg     5b <_minDistance+0x5b>
+  41:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  44:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+  4b:	8b 45 08             	mov    0x8(%ebp),%eax
+  4e:	01 d0                	add    %edx,%eax
+  50:	8b 00                	mov    (%eax),%eax
+  52:	89 45 fc             	mov    %eax,-0x4(%ebp)
+  55:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  58:	89 45 f8             	mov    %eax,-0x8(%ebp)
+  5b:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  5f:	83 7d f4 04          	cmpl   $0x4,-0xc(%ebp)
+  63:	7e b1                	jle    16 <_minDistance+0x16>
+  65:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  68:	c9                   	leave  
+  69:	c3                   	ret    
+
+0000006a <_dijkstra>:
+  6a:	55                   	push   %ebp
+  6b:	89 e5                	mov    %esp,%ebp
+  6d:	83 ec 58             	sub    $0x58,%esp
+  70:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  77:	eb 1a                	jmp    93 <_dijkstra+0x29>
+  79:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  7c:	c7 44 85 d0 ff ff ff 	movl   $0x7fffffff,-0x30(%ebp,%eax,4)
+  83:	7f 
+  84:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  87:	c7 44 85 bc 00 00 00 	movl   $0x0,-0x44(%ebp,%eax,4)
+  8e:	00 
+  8f:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  93:	83 7d f4 04          	cmpl   $0x4,-0xc(%ebp)
+  97:	7e e0                	jle    79 <_dijkstra+0xf>
+  99:	8b 45 0c             	mov    0xc(%ebp),%eax
+  9c:	c7 44 85 d0 00 00 00 	movl   $0x0,-0x30(%ebp,%eax,4)
+  a3:	00 
+  a4:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+  ab:	e9 d3 00 00 00       	jmp    183 <_dijkstra+0x119>
+  b0:	8d 45 bc             	lea    -0x44(%ebp),%eax
+  b3:	89 44 24 04          	mov    %eax,0x4(%esp)
+  b7:	8d 45 d0             	lea    -0x30(%ebp),%eax
+  ba:	89 04 24             	mov    %eax,(%esp)
+  bd:	e8 3e ff ff ff       	call   0 <_minDistance>
+  c2:	89 45 e4             	mov    %eax,-0x1c(%ebp)
+  c5:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+  c8:	c7 44 85 bc 01 00 00 	movl   $0x1,-0x44(%ebp,%eax,4)
+  cf:	00 
+  d0:	c7 45 ec 00 00 00 00 	movl   $0x0,-0x14(%ebp)
+  d7:	e9 99 00 00 00       	jmp    175 <_dijkstra+0x10b>
+  dc:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  df:	8b 44 85 bc          	mov    -0x44(%ebp,%eax,4),%eax
+  e3:	85 c0                	test   %eax,%eax
+  e5:	0f 85 86 00 00 00    	jne    171 <_dijkstra+0x107>
+  eb:	8b 55 e4             	mov    -0x1c(%ebp),%edx
+  ee:	89 d0                	mov    %edx,%eax
+  f0:	c1 e0 02             	shl    $0x2,%eax
+  f3:	01 d0                	add    %edx,%eax
+  f5:	c1 e0 02             	shl    $0x2,%eax
+  f8:	89 c2                	mov    %eax,%edx
+  fa:	8b 45 08             	mov    0x8(%ebp),%eax
+  fd:	01 c2                	add    %eax,%edx
+  ff:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 102:	8b 04 82             	mov    (%edx,%eax,4),%eax
+ 105:	85 c0                	test   %eax,%eax
+ 107:	74 68                	je     171 <_dijkstra+0x107>
+ 109:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 10c:	8b 44 85 d0          	mov    -0x30(%ebp,%eax,4),%eax
+ 110:	3d ff ff ff 7f       	cmp    $0x7fffffff,%eax
+ 115:	74 5a                	je     171 <_dijkstra+0x107>
+ 117:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 11a:	8b 4c 85 d0          	mov    -0x30(%ebp,%eax,4),%ecx
+ 11e:	8b 55 e4             	mov    -0x1c(%ebp),%edx
+ 121:	89 d0                	mov    %edx,%eax
+ 123:	c1 e0 02             	shl    $0x2,%eax
+ 126:	01 d0                	add    %edx,%eax
+ 128:	c1 e0 02             	shl    $0x2,%eax
+ 12b:	89 c2                	mov    %eax,%edx
+ 12d:	8b 45 08             	mov    0x8(%ebp),%eax
+ 130:	01 c2                	add    %eax,%edx
+ 132:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 135:	8b 04 82             	mov    (%edx,%eax,4),%eax
+ 138:	8d 14 01             	lea    (%ecx,%eax,1),%edx
+ 13b:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 13e:	8b 44 85 d0          	mov    -0x30(%ebp,%eax,4),%eax
+ 142:	39 c2                	cmp    %eax,%edx
+ 144:	7d 2b                	jge    171 <_dijkstra+0x107>
+ 146:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 149:	8b 4c 85 d0          	mov    -0x30(%ebp,%eax,4),%ecx
+ 14d:	8b 55 e4             	mov    -0x1c(%ebp),%edx
+ 150:	89 d0                	mov    %edx,%eax
+ 152:	c1 e0 02             	shl    $0x2,%eax
+ 155:	01 d0                	add    %edx,%eax
+ 157:	c1 e0 02             	shl    $0x2,%eax
+ 15a:	89 c2                	mov    %eax,%edx
+ 15c:	8b 45 08             	mov    0x8(%ebp),%eax
+ 15f:	01 c2                	add    %eax,%edx
+ 161:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 164:	8b 04 82             	mov    (%edx,%eax,4),%eax
+ 167:	8d 14 01             	lea    (%ecx,%eax,1),%edx
+ 16a:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 16d:	89 54 85 d0          	mov    %edx,-0x30(%ebp,%eax,4)
+ 171:	83 45 ec 01          	addl   $0x1,-0x14(%ebp)
+ 175:	83 7d ec 04          	cmpl   $0x4,-0x14(%ebp)
+ 179:	0f 8e 5d ff ff ff    	jle    dc <_dijkstra+0x72>
+ 17f:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+ 183:	83 7d f0 03          	cmpl   $0x3,-0x10(%ebp)
+ 187:	0f 8e 23 ff ff ff    	jle    b0 <_dijkstra+0x46>
+ 18d:	c7 45 e8 00 00 00 00 	movl   $0x0,-0x18(%ebp)
+ 194:	eb 22                	jmp    1b8 <_dijkstra+0x14e>
+ 196:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 199:	8b 44 85 d0          	mov    -0x30(%ebp,%eax,4),%eax
+ 19d:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 1a1:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 1a4:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 1a8:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 1af:	e8 00 00 00 00       	call   1b4 <_dijkstra+0x14a>
+ 1b4:	83 45 e8 01          	addl   $0x1,-0x18(%ebp)
+ 1b8:	83 7d e8 04          	cmpl   $0x4,-0x18(%ebp)
+ 1bc:	7e d8                	jle    196 <_dijkstra+0x12c>
+ 1be:	90                   	nop
+ 1bf:	c9                   	leave  
+ 1c0:	c3                   	ret    
+ 1c1:	90                   	nop
+ 1c2:	90                   	nop
+ 1c3:	90                   	nop

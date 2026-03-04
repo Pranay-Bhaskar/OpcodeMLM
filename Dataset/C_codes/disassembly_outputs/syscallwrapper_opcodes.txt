@@ -1,0 +1,22 @@
+
+syscallwrapper.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_my_write>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	8b 45 10             	mov    0x10(%ebp),%eax
+   9:	89 44 24 08          	mov    %eax,0x8(%esp)
+   d:	8b 45 0c             	mov    0xc(%ebp),%eax
+  10:	89 44 24 04          	mov    %eax,0x4(%esp)
+  14:	8b 45 08             	mov    0x8(%ebp),%eax
+  17:	89 04 24             	mov    %eax,(%esp)
+  1a:	e8 00 00 00 00       	call   1f <_my_write+0x1f>
+  1f:	c9                   	leave  
+  20:	c3                   	ret    
+  21:	90                   	nop
+  22:	90                   	nop
+  23:	90                   	nop

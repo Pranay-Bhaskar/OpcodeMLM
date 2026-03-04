@@ -1,0 +1,2689 @@
+fileio.exe: file format pei-i386
+sub $0x1c,%esp
+mov 0x20(%esp),%eax
+mov (%eax),%eax
+mov (%eax),%eax
+cmp $0xc0000091,%eax
+cmp $0xc000008d,%eax
+cmp $0xc0000005,%eax
+movl $0x0,0x4(%esp)
+movl $0xb,(%esp)
+cmp $0x1,%eax
+test %eax,%eax
+lea 0x0(%esi,%eiz,1),%esi
+xor %eax,%eax
+$0x1c,%esp
+ret $0x4
+nop
+lea 0x0(%esi,%eiz,1),%esi
+cmp $0xc0000094,%eax
+cmp $0xc0000096,%eax
+cmp $0xc0000093,%eax
+movl $0x0,0x4(%esp)
+movl $0x8,(%esp)
+cmp $0x1,%eax
+test %eax,%eax
+movl $0x8,(%esp)
+call *%eax
+mov $0xffffffff,%eax
+lea 0x0(%esi),%esi
+movl $0x0,0x4(%esp)
+movl $0x8,(%esp)
+cmp $0x1,%eax
+movl $0x1,0x4(%esp)
+movl $0x8,(%esp)
+mov $0xffffffff,%eax
+mov %esi,%esi
+lea 0x0(%edi,%eiz,1),%edi
+cmp $0xc000001d,%eax
+movl $0x0,0x4(%esp)
+movl $0x4,(%esp)
+cmp $0x1,%eax
+test %eax,%eax
+movl $0x4,(%esp)
+call *%eax
+mov $0xffffffff,%eax
+nop
+movl $0xb,(%esp)
+call *%eax
+mov $0xffffffff,%eax
+movl $0x1,0x4(%esp)
+movl $0x8,(%esp)
+movl $0x0,(%esp)
+mov $0xffffffff,%eax
+movl $0x1,0x4(%esp)
+movl $0x4,(%esp)
+or $0xffffffff,%eax
+movl $0x1,0x4(%esp)
+movl $0xb,(%esp)
+or $0xffffffff,%eax
+lea 0x0(%esi,%eiz,1),%esi
+lea 0x0(%edi,%eiz,1),%edi
+push %ebp
+mov %esp,%ebp
+push %ebx
+sub $0x14,%esp
+mov 0x405098,%eax
+test %eax,%eax
+movl $0x0,0x8(%esp)
+movl $0x2,0x4(%esp)
+movl $0x0,(%esp)
+call *%eax
+sub $0xc,%esp
+movl $0x401000,(%esp)
+sub $0x4,%esp
+mov 0x404008,%eax
+mov %eax,(%esp)
+mov 0x407020,%eax
+test %eax,%eax
+mov 0x4081b0,%ebx
+mov %eax,0x40400c
+mov %eax,0x4(%esp)
+mov 0x10(%ebx),%eax
+mov %eax,(%esp)
+mov 0x407020,%eax
+mov %eax,0x4(%esp)
+mov 0x30(%ebx),%eax
+mov %eax,(%esp)
+mov 0x407020,%eax
+mov %eax,0x4(%esp)
+mov 0x50(%ebx),%eax
+mov %eax,(%esp)
+mov 0x40400c,%edx
+mov %edx,(%eax)
+and $0xfffffff0,%esp
+mov (%eax),%eax
+mov %eax,0x8(%esp)
+mov 0x407000,%eax
+mov %eax,0x4(%esp)
+mov 0x407004,%eax
+mov %eax,(%esp)
+mov %eax,%ebx
+mov %ebx,(%esp)
+mov %esi,%esi
+lea 0x0(%edi,%eiz,1),%edi
+sub $0x3c,%esp
+lea 0x2c(%esp),%eax
+movl $0x407000,0x4(%esp)
+movl $0x407004,(%esp)
+movl $0x0,0x2c(%esp)
+mov %eax,0x10(%esp)
+mov 0x404004,%eax
+and $0x1,%eax
+mov %eax,0xc(%esp)
+lea 0x28(%esp),%eax
+mov %eax,0x8(%esp)
+$0x3c,%esp
+ret
+nop
+sub $0x1c,%esp
+movl $0x1,(%esp)
+call *0x40819c
+lea 0x0(%esi,%eiz,1),%esi
+lea 0x0(%edi,%eiz,1),%edi
+sub $0x1c,%esp
+movl $0x2,(%esp)
+call *0x40819c
+lea 0x0(%esi,%eiz,1),%esi
+lea 0x0(%edi,%eiz,1),%edi
+jmp *0x4081c8
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+jmp *0x4081b8
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+push %ebp
+mov %esp,%ebp
+push %esi
+push %ebx
+sub $0x10,%esp
+movl $0x405000,(%esp)
+sub $0x4,%esp
+test %eax,%eax
+movl $0x405000,(%esp)
+mov %eax,%ebx
+sub $0x4,%esp
+mov %eax,0x40706c
+movl $0x405013,0x4(%esp)
+mov %ebx,(%esp)
+sub $0x8,%esp
+mov %eax,%esi
+movl $0x405029,0x4(%esp)
+mov %ebx,(%esp)
+sub $0x8,%esp
+mov %eax,0x404000
+test %esi,%esi
+movl $0x407008,0x4(%esp)
+movl $0x4060b8,(%esp)
+call *%esi
+mov 0x404018,%eax
+test %eax,%eax
+movl $0x405041,(%esp)
+sub $0x4,%esp
+test %eax,%eax
+mov $0x0,%edx
+movl $0x40504f,0x4(%esp)
+mov %eax,(%esp)
+sub $0x8,%esp
+mov %eax,%edx
+test %edx,%edx
+movl $0x404018,(%esp)
+call *%edx
+movl $0x401430,(%esp)
+lea -0x8(%ebp),%esp
+pop %ebx
+pop %esi
+pop %ebp
+ret
+lea 0x0(%esi),%esi
+movl $0x0,0x404000
+mov $0x0,%esi
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+push %ebp
+mov %esp,%ebp
+sub $0x18,%esp
+mov 0x404000,%eax
+test %eax,%eax
+movl $0x4060b8,(%esp)
+call *%eax
+mov 0x40706c,%eax
+test %eax,%eax
+mov %eax,(%esp)
+sub $0x4,%esp
+leave
+ret
+nop
+nop
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+$0xffffff80,%esp
+movl $0x405064,0x4(%esp)
+movl $0x405066,(%esp)
+mov %eax,0x7c(%esp)
+mov 0x7c(%esp),%eax
+mov %eax,0xc(%esp)
+movl $0x13,0x8(%esp)
+movl $0x1,0x4(%esp)
+movl $0x40506f,(%esp)
+mov 0x7c(%esp),%eax
+mov %eax,(%esp)
+movl $0x405083,0x4(%esp)
+movl $0x405066,(%esp)
+mov %eax,0x7c(%esp)
+mov 0x7c(%esp),%eax
+mov %eax,0x8(%esp)
+movl $0x64,0x4(%esp)
+lea 0x18(%esp),%eax
+mov %eax,(%esp)
+lea 0x18(%esp),%eax
+mov %eax,0x4(%esp)
+movl $0x405085,(%esp)
+mov 0x7c(%esp),%eax
+mov %eax,(%esp)
+mov $0x0,%eax
+leave
+ret
+nop
+nop
+nop
+xchg %ax,%ax
+xchg %ax,%ax
+xchg %ax,%ax
+xchg %ax,%ax
+xchg %ax,%ax
+xchg %ax,%ax
+push %ebp
+mov %esp,%ebp
+push %edi
+push %esi
+push %ebx
+sub $0x4c,%esp
+testb $0x2,0x404004
+mov %esp,-0x3c(%ebp)
+mov %eax,(%esp)
+mov %eax,%esi
+lea 0x11(%eax,%eax,1),%eax
+shr $0x4,%eax
+shl $0x4,%eax
+sub %eax,%esp
+movl $0x0,-0x1c(%ebp)
+movl $0x0,-0x2c(%ebp)
+lea 0x10(%esp),%eax
+movl $0x0,-0x30(%ebp)
+mov %eax,%edx
+mov %eax,-0x34(%ebp)
+mov 0x404004,%eax
+and $0x4400,%eax
+or $0x10,%eax
+mov %eax,-0x38(%ebp)
+xor %eax,%eax
+lea 0x0(%esi,%eiz,1),%esi
+$0x1,%esi
+movsbl -0x1(%esi),%ecx
+test %ecx,%ecx
+mov %ecx,%ebx
+cmp $0x3f,%bl
+cmp $0x27,%bl
+cmp $0x2a,%bl
+cmp $0x22,%bl
+mov %eax,%ecx
+sar %ecx
+%edx,%ecx
+$0x1,%edx
+movb $0x5c,-0x1(%edx)
+cmp %ecx,%edx
+cmpl $0x27,-0x2c(%ebp)
+test $0x1,%al
+$0x1,%esi
+mov %ecx,%edx
+xorl $0x22,-0x2c(%ebp)
+movsbl -0x1(%esi),%ecx
+xor %eax,%eax
+movl $0x1,-0x30(%ebp)
+test %ecx,%ecx
+mov %ecx,%ebx
+lea 0x0(%esi,%eiz,1),%esi
+test %eax,%eax
+%edx,%eax
+lea 0x0(%esi),%esi
+$0x1,%edx
+movb $0x5c,-0x1(%edx)
+cmp %eax,%edx
+cmp %eax,-0x34(%ebp)
+mov -0x30(%ebp),%edx
+test %edx,%edx
+mov -0x24(%ebp),%eax
+mov %eax,0x407004
+mov -0x20(%ebp),%eax
+mov %eax,0x407000
+mov -0x3c(%ebp),%esp
+lea -0xc(%ebp),%esp
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+lea 0x0(%esi),%esi
+cmp $0x5c,%bl
+cmp $0x7f,%bl
+cmp $0x5b,%bl
+testb $0x20,0x404004
+test %eax,%eax
+lea -0x1(%eax),%edi
+mov $0x1,%ecx
+lea 0x1(%edx,%edi,1),%edi
+mov %edx,%eax
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+$0x1,%eax
+movb $0x5c,-0x1(%eax)
+cmp %edi,%eax
+test %cl,%cl
+lea 0x1(%eax),%edx
+mov %bl,(%eax)
+xor %eax,%eax
+nop
+lea 0x0(%esi,%eiz,1),%esi
+mov %eax,%edx
+lea 0x1(%edx),%eax
+movb $0x7f,(%edx)
+lea 0x0(%esi),%esi
+test %eax,%eax
+lea (%edx,%eax,1),%edi
+nop
+lea 0x0(%esi,%eiz,1),%esi
+$0x1,%edx
+movb $0x5c,-0x1(%edx)
+cmp %edi,%edx
+mov -0x2c(%ebp),%eax
+test %eax,%eax
+mov 0x408190,%eax
+cmpl $0x1,(%eax)
+movl $0x40,0x4(%esp)
+mov %ecx,(%esp)
+mov %ecx,-0x40(%ebp)
+test %eax,%eax
+mov -0x40(%ebp),%ecx
+cmp $0x9,%ecx
+lea 0x1(%edi),%edx
+mov %bl,(%edi)
+xor %eax,%eax
+test %eax,%eax
+lea -0x1(%eax),%edi
+mov -0x2c(%ebp),%eax
+cmp $0x7f,%ecx
+sete %cl
+test %eax,%eax
+setne %al
+or %eax,%ecx
+cmpl $0x27,-0x2c(%ebp)
+$0x1,%eax
+testb $0x10,0x404004
+mov %eax,%ecx
+sar %ecx
+%edx,%ecx
+xchg %ax,%ax
+$0x1,%edx
+movb $0x5c,-0x1(%edx)
+cmp %ecx,%edx
+cmpl $0x22,-0x2c(%ebp)
+test $0x1,%al
+xorl $0x27,-0x2c(%ebp)
+mov %ecx,%edx
+xor %eax,%eax
+movl $0x1,-0x30(%ebp)
+lea 0x1(%ecx),%edx
+movb $0x22,(%ecx)
+xor %eax,%eax
+movl $0x1,-0x30(%ebp)
+mov 0x4081bc,%eax
+mov (%eax),%eax
+testb $0x40,(%eax,%ecx,2)
+cmp %edi,-0x34(%ebp)
+mov -0x30(%ebp),%eax
+test %eax,%eax
+mov %edi,%edx
+xor %eax,%eax
+movl $0x0,-0x30(%ebp)
+movb $0x0,(%eax)
+lea -0x28(%ebp),%eax
+movl $0x0,0x8(%esp)
+mov %eax,0xc(%esp)
+mov -0x38(%ebp),%eax
+mov %eax,0x4(%esp)
+mov -0x34(%ebp),%eax
+mov %eax,(%esp)
+nop
+lea 0x0(%esi,%eiz,1),%esi
+lea -0xc(%ebp),%esp
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+lea 0x1(%ecx),%edx
+movb $0x27,(%ecx)
+xor %eax,%eax
+movl $0x1,-0x30(%ebp)
+movb $0x5c,(%edx)
+$0x1,%edx
+lea 0x0(%esi,%eiz,1),%esi
+lea -0x28(%ebp),%eax
+movb $0x0,(%edi)
+movl $0x0,0x8(%esp)
+mov %eax,0xc(%esp)
+mov -0x38(%ebp),%ebx
+mov %ebx,0x4(%esp)
+mov -0x34(%ebp),%edi
+mov %edi,(%esp)
+mov %ebx,%eax
+mov %edi,%edx
+movl $0x0,-0x30(%ebp)
+or $0x1,%eax
+mov %eax,-0x38(%ebp)
+xor %eax,%eax
+mov -0x2c(%ebp),%eax
+test %eax,%eax
+setne %al
+cmp $0x7f,%ecx
+sete %cl
+or %eax,%ecx
+mov %edx,%eax
+mov %edx,%edi
+mov %edx,%ecx
+mov %edx,%eax
+mov %edx,%ecx
+nop
+pushf
+pushf
+pop %eax
+mov %eax,%edx
+xor $0x200000,%eax
+push %eax
+popf
+pushf
+pop %eax
+popf
+xor %edx,%eax
+test $0x200000,%eax
+push %ebx
+xor %eax,%eax
+cpuid
+test %eax,%eax
+mov $0x1,%eax
+cpuid
+xor %eax,%eax
+test $0x1,%dh
+or $0x1,%eax
+test $0x20,%ch
+or $0x80,%eax
+test $0x80,%dh
+or $0x2,%eax
+test $0x800000,%edx
+or $0x4,%eax
+test $0x1000000,%edx
+or $0x8,%eax
+push %ebp
+mov %esp,%ebp
+sub $0x200,%esp
+and $0xfffffff0,%esp
+fxsave (%esp)
+mov 0xc8(%esp),%ebx
+xorl $0x13c0de,0xc8(%esp)
+fxrstor (%esp)
+mov %ebx,0xc8(%esp)
+fxsave (%esp)
+xchg %ebx,0xc8(%esp)
+fxrstor (%esp)
+xor 0xc8(%esp),%ebx
+leave
+cmp $0x13c0de,%ebx
+test $0x2000000,%edx
+or $0x10,%eax
+test $0x4000000,%edx
+or $0x20,%eax
+test $0x1,%cl
+or $0x40,%eax
+mov %eax,0x407024
+mov $0x80000000,%eax
+cpuid
+cmp $0x80000000,%eax
+mov $0x80000001,%eax
+cpuid
+xor %eax,%eax
+test %edx,%edx
+mov $0x100,%eax
+test $0x40000000,%edx
+or $0x200,%eax
+or %eax,0x407024
+pop %ebx
+repz ret
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+mov 0x404010,%eax
+mov (%eax),%eax
+test %eax,%eax
+sub $0xc,%esp
+xchg %ax,%ax
+call *%eax
+mov 0x404010,%eax
+lea 0x4(%eax),%edx
+mov 0x4(%eax),%eax
+mov %edx,0x404010
+test %eax,%eax
+$0xc,%esp
+repz ret
+lea 0x0(%esi,%eiz,1),%esi
+push %ebx
+sub $0x18,%esp
+mov 0x403c40,%ebx
+cmp $0xffffffff,%ebx
+test %ebx,%ebx
+call *0x403c40(,%ebx,4)
+sub $0x1,%ebx
+movl $0x4019d0,(%esp)
+$0x18,%esp
+pop %ebx
+ret
+xor %ebx,%ebx
+mov %eax,%ebx
+lea 0x1(%ebx),%eax
+mov 0x403c40(,%eax,4),%edx
+test %edx,%edx
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+mov 0x407028,%eax
+test %eax,%eax
+repz ret
+nop
+lea 0x0(%esi,%eiz,1),%esi
+movl $0x1,0x407028
+nop
+nop
+nop
+nop
+sub $0x1c,%esp
+mov 0x24(%esp),%eax
+cmp $0x3,%eax
+test %eax,%eax
+mov $0x1,%eax
+$0x1c,%esp
+ret $0xc
+nop
+lea 0x0(%esi,%eiz,1),%esi
+mov 0x28(%esp),%edx
+mov %eax,0x4(%esp)
+mov 0x20(%esp),%eax
+mov %edx,0x8(%esp)
+mov %eax,(%esp)
+mov $0x1,%eax
+$0x1c,%esp
+ret $0xc
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+push %esi
+push %ebx
+sub $0x14,%esp
+cmpl $0x2,0x407064
+mov 0x24(%esp),%eax
+movl $0x2,0x407064
+cmp $0x2,%eax
+cmp $0x1,%eax
+$0x14,%esp
+mov $0x1,%eax
+pop %ebx
+pop %esi
+ret $0xc
+mov $0x409014,%esi
+sub $0x409014,%esi
+cmp $0x3,%esi
+xor %ebx,%ebx
+mov 0x409014(%ebx),%eax
+test %eax,%eax
+call *%eax
+$0x4,%ebx
+cmp %ebx,%esi
+$0x14,%esp
+mov $0x1,%eax
+pop %ebx
+pop %esi
+ret $0xc
+mov 0x28(%esp),%eax
+movl $0x1,0x4(%esp)
+mov %eax,0x8(%esp)
+mov 0x20(%esp),%eax
+mov %eax,(%esp)
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+xor %eax,%eax
+ret
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+push %esi
+push %ebx
+sub $0x14,%esp
+movl $0x407044,(%esp)
+mov 0x40703c,%ebx
+sub $0x4,%esp
+test %ebx,%ebx
+xchg %ax,%ax
+mov (%ebx),%eax
+mov %eax,(%esp)
+sub $0x4,%esp
+mov %eax,%esi
+test %eax,%eax
+test %esi,%esi
+mov 0x4(%ebx),%eax
+mov %esi,(%esp)
+call *%eax
+mov 0x8(%ebx),%ebx
+test %ebx,%ebx
+movl $0x407044,(%esp)
+sub $0x4,%esp
+$0x14,%esp
+pop %ebx
+pop %esi
+ret
+push %esi
+push %ebx
+xor %esi,%esi
+sub $0x14,%esp
+mov 0x407040,%eax
+test %eax,%eax
+$0x14,%esp
+mov %esi,%eax
+pop %ebx
+pop %esi
+ret
+nop
+lea 0x0(%esi,%eiz,1),%esi
+movl $0xc,0x4(%esp)
+movl $0x1,(%esp)
+test %eax,%eax
+mov %eax,%ebx
+mov 0x20(%esp),%eax
+movl $0x407044,(%esp)
+mov %eax,(%ebx)
+mov 0x24(%esp),%eax
+mov %eax,0x4(%ebx)
+mov 0x40703c,%eax
+sub $0x4,%esp
+mov %ebx,0x40703c
+movl $0x407044,(%esp)
+mov %eax,0x8(%ebx)
+sub $0x4,%esp
+mov %esi,%eax
+$0x14,%esp
+pop %ebx
+pop %esi
+ret
+mov $0xffffffff,%esi
+lea 0x0(%esi,%eiz,1),%esi
+lea 0x0(%edi,%eiz,1),%edi
+push %ebx
+sub $0x18,%esp
+mov 0x407040,%eax
+mov 0x20(%esp),%ebx
+test %eax,%eax
+$0x18,%esp
+xor %eax,%eax
+pop %ebx
+ret
+nop
+lea 0x0(%esi,%eiz,1),%esi
+movl $0x407044,(%esp)
+mov 0x40703c,%edx
+sub $0x4,%esp
+test %edx,%edx
+mov (%edx),%eax
+cmp %eax,%ebx
+mov (%eax),%ecx
+cmp %ebx,%ecx
+mov %eax,%edx
+mov 0x8(%edx),%eax
+test %eax,%eax
+movl $0x407044,(%esp)
+sub $0x4,%esp
+$0x18,%esp
+xor %eax,%eax
+pop %ebx
+ret
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+mov 0x8(%eax),%ecx
+mov %ecx,0x8(%edx)
+mov %eax,(%esp)
+movl $0x407044,(%esp)
+sub $0x4,%esp
+mov 0x8(%edx),%eax
+mov %eax,0x40703c
+mov %edx,%eax
+nop
+lea 0x0(%esi,%eiz,1),%esi
+sub $0x1c,%esp
+mov 0x24(%esp),%eax
+cmp $0x1,%eax
+cmp $0x3,%eax
+mov 0x407040,%eax
+test %eax,%eax
+mov $0x1,%eax
+$0x1c,%esp
+ret
+mov 0x407040,%eax
+test %eax,%eax
+mov 0x407040,%eax
+cmp $0x1,%eax
+movl $0x407044,(%esp)
+movl $0x0,0x407040
+sub $0x4,%esp
+mov 0x407040,%eax
+test %eax,%eax
+movl $0x1,0x407040
+mov $0x1,%eax
+$0x1c,%esp
+ret
+nop
+movl $0x407044,(%esp)
+sub $0x4,%esp
+nop
+lea 0x0(%esi,%eiz,1),%esi
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+push %esi
+push %ebx
+sub $0x14,%esp
+mov 0x4081b0,%eax
+movl $0x17,0x8(%esp)
+movl $0x1,0x4(%esp)
+lea 0x24(%esp),%esi
+movl $0x40509c,(%esp)
+lea 0x40(%eax),%ebx
+mov %ebx,0xc(%esp)
+mov 0x20(%esp),%eax
+mov %esi,0x8(%esp)
+mov %ebx,(%esp)
+mov %eax,0x4(%esp)
+lea 0x0(%esi),%esi
+push %ebp
+push %edi
+mov %ecx,%edi
+push %esi
+push %ebx
+mov %eax,%ebx
+mov %edx,%esi
+sub $0x4c,%esp
+lea 0x24(%esp),%eax
+movl $0x1c,0x8(%esp)
+mov %ebx,(%esp)
+mov %eax,0x4(%esp)
+sub $0xc,%esp
+test %eax,%eax
+mov 0x38(%esp),%eax
+cmp $0x40,%eax
+cmp $0x4,%eax
+mov %edi,0x8(%esp)
+mov %esi,0x4(%esp)
+mov %ebx,(%esp)
+$0x4c,%esp
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+mov 0x30(%esp),%eax
+lea 0x20(%esp),%ebp
+movl $0x40,0x8(%esp)
+mov %ebp,0xc(%esp)
+mov %eax,0x4(%esp)
+mov 0x24(%esp),%eax
+mov %eax,(%esp)
+sub $0x10,%esp
+mov 0x38(%esp),%edx
+mov %edi,0x8(%esp)
+mov %esi,0x4(%esp)
+mov %ebx,(%esp)
+mov %edx,0x1c(%esp)
+mov 0x1c(%esp),%edx
+cmp $0x40,%edx
+cmp $0x4,%edx
+mov 0x20(%esp),%eax
+mov %ebp,0xc(%esp)
+mov %eax,0x8(%esp)
+mov 0x30(%esp),%eax
+mov %eax,0x4(%esp)
+mov 0x24(%esp),%eax
+mov %eax,(%esp)
+sub $0x10,%esp
+$0x4c,%esp
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+mov %ebx,0x8(%esp)
+movl $0x1c,0x4(%esp)
+movl $0x4050b4,(%esp)
+mov 0x40705c,%eax
+test %eax,%eax
+ret
+lea 0x0(%esi),%esi
+mov $0x405304,%eax
+movl $0x1,0x40705c
+sub $0x405304,%eax
+cmp $0x7,%eax
+push %edi
+push %esi
+push %ebx
+sub $0x20,%esp
+cmp $0xb,%eax
+mov 0x405304,%esi
+test %esi,%esi
+mov 0x405308,%ebx
+test %ebx,%ebx
+mov 0x40530c,%ecx
+mov $0x405310,%ebx
+test %ecx,%ecx
+mov $0x405304,%ebx
+mov 0x8(%ebx),%eax
+cmp $0x1,%eax
+$0xc,%ebx
+cmp $0x405304,%ebx
+mov (%ebx),%edx
+mov 0x4(%ebx),%edi
+lea 0x400000(%edx),%esi
+mov 0x400000(%edx),%ecx
+movzbl 0x8(%ebx),%edx
+lea 0x400000(%edi),%eax
+cmp $0x10,%edx
+cmp $0x20,%edx
+cmp $0x8,%edx
+mov %edx,0x4(%esp)
+movl $0x40511c,(%esp)
+movl $0x0,0x1c(%esp)
+mov $0x405304,%ebx
+cmp $0x405304,%ebx
+mov 0x4(%ebx),%ecx
+mov (%ebx),%edx
+$0x8,%ebx
+0x400000(%ecx),%edx
+lea 0x400000(%ecx),%eax
+mov $0x4,%ecx
+mov %edx,0x1c(%esp)
+lea 0x1c(%esp),%edx
+cmp $0x405304,%ebx
+$0x20,%esp
+pop %ebx
+pop %esi
+pop %edi
+ret
+mov %esi,%esi
+lea 0x0(%edi,%eiz,1),%edi
+mov $0x405304,%ebx
+mov (%ebx),%edx
+test %edx,%edx
+mov 0x4(%ebx),%eax
+test %eax,%eax
+nop
+lea 0x0(%esi,%eiz,1),%esi
+movzwl 0x400000(%edi),%edx
+test %dx,%dx
+or $0xffff0000,%edx
+sub %esi,%edx
+%edx,%ecx
+lea 0x1c(%esp),%edx
+mov %ecx,0x1c(%esp)
+mov $0x2,%ecx
+lea 0x0(%esi),%esi
+movzbl (%eax),%edi
+mov %edi,%edx
+test %dl,%dl
+or $0xffffff00,%edi
+sub %esi,%edi
+lea 0x1c(%esp),%edx
+%edi,%ecx
+mov %ecx,0x1c(%esp)
+mov $0x1,%ecx
+lea 0x0(%esi),%esi
+sub %esi,%ecx
+(%eax),%ecx
+lea 0x1c(%esp),%edx
+mov %ecx,0x1c(%esp)
+mov $0x4,%ecx
+mov %eax,0x4(%esp)
+movl $0x4050e8,(%esp)
+nop
+nop
+nop
+nop
+nop
+push %ecx
+push %eax
+cmp $0x1000,%eax
+lea 0xc(%esp),%ecx
+sub $0x1000,%ecx
+orl $0x0,(%ecx)
+sub $0x1000,%eax
+cmp $0x1000,%eax
+sub %eax,%ecx
+orl $0x0,(%ecx)
+pop %eax
+pop %ecx
+ret
+nop
+nop
+xchg %ax,%ax
+xchg %ax,%ax
+sub $0x1c,%esp
+mov 0x20(%esp),%eax
+movl $0x1f80,0xc(%esp)
+cmp $0xfffffffd,%eax
+cmp $0xfffffffc,%eax
+test %eax,%eax
+cmp $0xffffffff,%eax
+cmp $0xfffffffe,%eax
+fldenv (%eax)
+movzwl 0x1c(%eax),%eax
+mov %eax,0xc(%esp)
+testb $0x10,0x407024
+ldmxcsr 0xc(%esp)
+xor %eax,%eax
+$0x1c,%esp
+ret
+movl $0xffffffff,0x404014
+fninit
+movl $0xfffffffe,0x404014
+call *0x4081a8
+mov 0x404014,%eax
+nop
+nop
+nop
+nop
+test %eax,%eax
+push %esi
+push %ebx
+mov %edx,%ebx
+shr $0x5,%ebx
+xor %ecx,%ecx
+xor $0x1,%ebx
+and $0x1,%ebx
+mov %esi,%esi
+lea 0x0(%edi,%eiz,1),%edi
+movsbl (%eax),%edx
+test %edx,%edx
+test %bl,%bl
+cmp $0x7f,%edx
+$0x1,%eax
+test %ecx,%ecx
+cmp $0x2a,%edx
+cmp $0x3f,%edx
+xor %ecx,%ecx
+cmp $0x5b,%edx
+movsbl (%eax),%edx
+sete %cl
+test %edx,%edx
+mov %edx,%eax
+pop %ebx
+pop %esi
+ret
+cmp $0x1,%ecx
+cmp $0x5d,%edx
+cmp $0x21,%edx
+setne %dl
+movzbl %dl,%edx
+%edx,%ecx
+lea 0x0(%esi,%eiz,1),%esi
+cmpb $0x0,0x1(%eax)
+lea 0x2(%eax),%esi
+mov %esi,%eax
+lea 0x0(%esi),%esi
+mov $0x1,%edx
+mov %edx,%eax
+pop %ebx
+pop %esi
+ret
+xor %edx,%edx
+mov %edx,%eax
+ret
+xor %edx,%edx
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+test %eax,%eax
+push %esi
+push %ebx
+mov %eax,%esi
+sub $0x14,%esp
+mov 0xc(%eax),%eax
+lea 0x1(%eax),%ebx
+lea 0x0(,%ebx,4),%eax
+mov %eax,(%esp)
+mov %eax,%ecx
+mov %eax,0x8(%esi)
+mov $0x3,%eax
+test %ecx,%ecx
+test %ebx,%ebx
+mov %ebx,%edx
+movl $0x0,0x4(%esi)
+nop
+lea 0x0(%esi,%eiz,1),%esi
+sub $0x1,%edx
+test %edx,%edx
+movl $0x0,(%ecx,%edx,4)
+xor %eax,%eax
+$0x14,%esp
+pop %ebx
+pop %esi
+ret
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+xor %eax,%eax
+ret
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+push %ebp
+push %edi
+mov %eax,%edi
+push %esi
+push %ebx
+sub $0x3c,%esp
+movsbl (%eax),%ebx
+mov %edx,0x1c(%esp)
+mov %ecx,0x20(%esp)
+cmp $0x5d,%ebx
+mov %ebx,%ebp
+cmp $0x2d,%ebx
+mov 0x1c(%esp),%ecx
+mov %ecx,%eax
+not %eax
+mov %eax,0x28(%esp)
+mov $0x1,%eax
+sub %ecx,%eax
+mov %eax,0x2c(%esp)
+mov %ebp,%esi
+sub 0x1c(%esp),%esi
+test %esi,%esi
+movsbl %dl,%ebx
+cmp $0x5d,%ebx
+lea 0x1(%edi),%esi
+cmp $0x2d,%ebx
+test %ebx,%ebx
+cmp $0x2f,%ebx
+cmp $0x5c,%ebx
+movzbl (%esi),%edx
+mov %ebx,%ebp
+mov %esi,%edi
+testl $0x4000,0x20(%esp)
+mov %ebp,(%esp)
+mov %dl,0x24(%esp)
+mov %eax,%esi
+mov 0x1c(%esp),%eax
+mov %eax,(%esp)
+sub %eax,%esi
+movzbl 0x24(%esp),%edx
+test %esi,%esi
+mov 0x20(%esp),%eax
+and $0x20,%eax
+lea 0x0(%esi,%eiz,1),%esi
+$0x1,%edi
+test %dl,%dl
+movzbl (%edi),%edx
+cmp $0x5d,%dl
+cmp $0x7f,%dl
+test %eax,%eax
+movzbl 0x1(%edi),%edx
+$0x1,%edi
+lea 0x0(%esi),%esi
+movzbl 0x1(%edi),%edx
+cmp $0x5d,%dl
+movsbl %dl,%ebx
+test %ebx,%ebx
+mov 0x20(%esp),%ecx
+lea 0x2(%edi),%esi
+and $0x4000,%ecx
+cmp %ebx,%ebp
+mov %esi,0x24(%esp)
+mov %ebp,%eax
+mov %ecx,%esi
+mov 0x28(%esp),%eax
+lea (%eax,%ebp,1),%edi
+test %edi,%edi
+cmp %ebp,%ebx
+mov %ebp,%eax
+test %esi,%esi
+lea 0x1(%eax),%ebp
+mov %eax,(%esp)
+mov %eax,%edi
+mov 0x1c(%esp),%eax
+mov %eax,(%esp)
+sub %eax,%edi
+test %edi,%edi
+mov 0x20(%esp),%edx
+mov 0x24(%esp),%esi
+and $0x20,%edx
+movzbl (%esi),%eax
+cmp $0x5d,%al
+cmp $0x7f,%al
+$0x1,%esi
+test %al,%al
+$0x3c,%esp
+xor %eax,%eax
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+xchg %ax,%ax
+cmp 0x1c(%esp),%ebx
+movsbl 0x1(%edi),%ebx
+$0x1,%edi
+mov $0x2d,%ebp
+mov %esi,%edi
+xchg %ax,%ax
+mov 0x24(%esp),%esi
+lea 0x0(%esi,%eiz,1),%esi
+test %edx,%edx
+movzbl 0x1(%esi),%eax
+$0x1,%esi
+lea 0x0(%esi),%esi
+$0x1,%esi
+movzbl (%esi),%eax
+cmp $0x5d,%al
+$0x3c,%esp
+lea 0x1(%esi),%eax
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+mov 0x20(%esp),%edx
+$0x1,%edi
+and $0x20,%edx
+nop
+movzbl (%edi),%eax
+cmp $0x5d,%al
+cmp $0x7f,%al
+$0x1,%edi
+test %al,%al
+mov %esi,%esi
+lea 0x0(%edi,%eiz,1),%edi
+test %edx,%edx
+movzbl 0x1(%edi),%eax
+$0x1,%edi
+lea 0x0(%esi),%esi
+$0x1,%edi
+$0x3c,%esp
+lea 0x1(%edi),%eax
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+$0x1,%edi
+mov %esi,0x24(%esp)
+mov %ecx,%esi
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+mov 0x2c(%esp),%eax
+lea (%eax,%edi,1),%ebp
+test %ebp,%ebp
+cmp %edi,%ebx
+mov %edi,%ebp
+test %esi,%esi
+lea -0x1(%ebp),%edi
+mov %ebp,(%esp)
+mov %eax,%ebp
+mov 0x1c(%esp),%eax
+mov %eax,(%esp)
+sub %eax,%ebp
+test %ebp,%ebp
+mov 0x20(%esp),%edx
+mov 0x24(%esp),%esi
+and $0x20,%edx
+movzbl (%esi),%eax
+cmp $0x5d,%al
+cmp $0x7f,%al
+$0x1,%esi
+test %al,%al
+xchg %ax,%ax
+test %edx,%edx
+movzbl 0x1(%esi),%eax
+$0x1,%esi
+lea 0x0(%esi),%esi
+$0x1,%esi
+lea 0x0(%esi,%eiz,1),%esi
+lea 0x0(%edi,%eiz,1),%edi
+push %ebp
+push %edi
+mov %eax,%ebp
+push %esi
+push %ebx
+sub $0x2c,%esp
+cmpb $0x2e,(%edx)
+mov %ecx,0x14(%esp)
+movzbl (%eax),%ecx
+mov 0x14(%esp),%eax
+lea 0x1(%edx),%edi
+shr $0x5,%eax
+xor $0x1,%eax
+mov %eax,0x18(%esp)
+movsbl %cl,%edx
+lea -0x1(%edi),%esi
+lea 0x1(%ebp),%eax
+test %edx,%edx
+cmp $0x3f,%cl
+cmp $0x5b,%cl
+cmp $0x2a,%cl
+testb $0x1,0x18(%esp)
+cmp $0x7f,%edx
+mov %eax,%ebp
+movsbl -0x1(%edi),%ebx
+test %bl,%bl
+testl $0x4000,0x14(%esp)
+mov %edx,(%esp)
+mov %edx,0x1c(%esp)
+mov %ebx,(%esp)
+mov %eax,%esi
+mov 0x1c(%esp),%edx
+sub %eax,%esi
+test %esi,%esi
+mov %edx,%eax
+sub %ebx,%eax
+$0x2c,%esp
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+xchg %ax,%ax
+movzbl 0x1(%ebp),%edx
+mov %eax,%ebx
+cmp $0x2a,%dl
+nop
+lea 0x0(%esi,%eiz,1),%esi
+$0x1,%ebx
+movzbl (%ebx),%edx
+cmp $0x2a,%dl
+xor %eax,%eax
+test %dl,%dl
+mov 0x14(%esp),%edi
+or $0x10000,%edi
+lea 0x0(%esi),%esi
+$0x1,%esi
+cmpb $0x0,-0x1(%esi)
+mov %edi,%ecx
+mov %esi,%edx
+mov %ebx,%eax
+test %eax,%eax
+$0x2c,%esp
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+movsbl -0x1(%edi),%edx
+test %edx,%edx
+cmpb $0x21,0x1(%ebp)
+mov 0x14(%esp),%ecx
+mov %eax,%ebp
+test %ebp,%ebp
+movzbl 0x0(%ebp),%ecx
+$0x1,%edi
+cmpb $0x0,-0x1(%edi)
+mov %eax,%ebp
+nop
+mov %edx,%esi
+sub %ebx,%esi
+lea 0x0(%esi,%eiz,1),%esi
+cmp $0x2e,%cl
+movsbl %cl,%eax
+sub $0x2e,%eax
+testl $0x10000,0x14(%esp)
+lea 0x2(%ebp),%ebx
+mov 0x14(%esp),%ecx
+mov %ebx,%eax
+test %eax,%eax
+mov %ebx,%ebp
+nop
+lea 0x0(%esi,%eiz,1),%esi
+movsbl 0x1(%ebp),%edx
+$0x2,%ebp
+test %edx,%edx
+movsbl (%esi),%eax
+neg %eax
+movzbl 0x2(%ebp),%eax
+cmp $0x5d,%al
+mov 0x14(%esp),%edx
+and $0x20,%edx
+nop
+$0x1,%ebx
+test %al,%al
+movzbl (%ebx),%eax
+cmp $0x5d,%al
+cmp $0x7f,%al
+test %edx,%edx
+movzbl 0x1(%ebx),%eax
+$0x1,%ebx
+$0x1,%ebx
+lea 0x1(%ebx),%ebp
+mov $0x5d,%eax
+xor %ebx,%ebx
+mov $0x3f,%eax
+mov $0x5b,%eax
+lea 0x3(%ebp),%ebx
+movzbl 0x3(%ebp),%eax
+lea 0x0(%esi),%esi
+push %edi
+push %esi
+mov %eax,%esi
+push %ebx
+mov %edx,%ebx
+sub $0x10,%esp
+mov 0xc(%edx),%eax
+0x4(%edx),%eax
+lea 0x8(,%eax,4),%eax
+mov %eax,0x4(%esp)
+mov 0x8(%edx),%eax
+mov %eax,(%esp)
+test %eax,%eax
+mov 0x4(%ebx),%ecx
+mov 0xc(%ebx),%edx
+mov %eax,0x8(%ebx)
+lea 0x1(%ecx),%edi
+%edx,%ecx
+%edi,%edx
+mov %edi,0x4(%ebx)
+mov %esi,(%eax,%ecx,4)
+movl $0x0,(%eax,%edx,4)
+$0x10,%esp
+xor %eax,%eax
+pop %ebx
+pop %esi
+pop %edi
+ret
+$0x10,%esp
+mov $0x1,%eax
+pop %ebx
+pop %esi
+pop %edi
+ret
+lea 0x0(%esi,%eiz,1),%esi
+push %esi
+push %ebx
+mov %eax,%ebx
+mov %edx,%esi
+sub $0x14,%esp
+mov (%eax),%eax
+test %eax,%eax
+mov 0x8(%ebx),%eax
+test %eax,%eax
+test %esi,%esi
+mov 0x4(%ebx),%eax
+test %eax,%eax
+mov %esi,%edx
+mov %ebx,(%esp)
+$0x14,%esp
+pop %ebx
+pop %esi
+ret
+nop
+lea 0x0(%esi,%eiz,1),%esi
+mov %esi,%edx
+lea 0x0(%esi,%eiz,1),%esi
+push %ebp
+mov %esp,%ebp
+push %edi
+push %esi
+push %ebx
+mov %eax,%ebx
+sub $0x6c,%esp
+mov %edx,-0x30(%ebp)
+and $0x4,%dh
+mov %ecx,-0x3c(%ebp)
+mov %esp,-0x58(%ebp)
+mov %ebx,(%esp)
+lea 0x1(%eax),%edx
+$0x10,%eax
+shr $0x4,%eax
+shl $0x4,%eax
+sub %eax,%esp
+lea 0xc(%esp),%eax
+mov %edx,0x8(%esp)
+mov %ebx,0x4(%esp)
+mov %eax,(%esp)
+mov %eax,(%esp)
+mov %eax,-0x2c(%ebp)
+mov %eax,%esi
+lea -0x28(%ebp),%eax
+movl $0x0,-0x1c(%ebp)
+test %eax,%eax
+mov %eax,-0x34(%ebp)
+mov -0x30(%ebp),%edi
+mov %esi,%eax
+mov %edi,%edx
+test %eax,%eax
+lea -0x28(%ebp),%eax
+mov %edi,%edx
+or $0x80,%dh
+mov %eax,(%esp)
+mov -0x3c(%ebp),%ecx
+mov %esi,%eax
+mov %eax,-0x34(%ebp)
+mov -0x34(%ebp),%ecx
+test %ecx,%ecx
+movzbl 0x1(%ebx),%eax
+cmp $0x2f,%al
+cmp $0x5c,%al
+mov -0x2c(%ebp),%esi
+mov $0x405148,%edi
+mov $0x2,%ecx
+repz cmpsb %es:(%edi),%ds:(%esi)
+mov -0x2c(%ebp),%eax
+mov %eax,(%esp)
+%ebx,%eax
+cmp %eax,%ebx
+movzbl (%eax),%ecx
+cmp $0x2f,%cl
+mov %cl,-0x5d(%ebp)
+cmp $0x5c,%cl
+lea 0x0(%esi,%eiz,1),%esi
+movzbl -0x1(%eax),%ecx
+mov %edx,%eax
+cmp $0x2f,%cl
+cmp $0x5c,%cl
+lea -0x1(%eax),%edx
+cmp %edx,%ebx
+movzbl -0x1(%eax),%eax
+mov %edx,-0x38(%ebp)
+mov %al,-0x5d(%ebp)
+movzbl -0x5d(%ebp),%eax
+cmp $0x2f,%al
+cmp $0x5c,%al
+mov -0x38(%ebp),%edx
+movzbl -0x5d(%ebp),%esi
+mov %eax,%esi
+$0x1,%edx
+movzbl (%edx),%eax
+cmp $0x2f,%al
+sete %bl
+cmp $0x5c,%al
+sete %cl
+or %cl,%bl
+mov %esi,%eax
+mov %edx,-0x38(%ebp)
+mov %al,-0x5d(%ebp)
+mov -0x2c(%ebp),%eax
+mov %eax,-0x5c(%ebp)
+mov -0x20(%ebp),%eax
+mov -0x30(%ebp),%edi
+movl $0x2,-0x34(%ebp)
+mov %eax,-0x44(%ebp)
+mov (%eax),%eax
+and $0x8000,%edi
+mov %edi,-0x2c(%ebp)
+test %eax,%eax
+mov %eax,(%esp)
+test %eax,%eax
+mov %eax,%edi
+mov -0x5c(%ebp),%eax
+test %eax,%eax
+mov -0x44(%ebp),%eax
+mov (%eax),%eax
+mov %eax,(%esp)
+mov %eax,-0x40(%ebp)
+mov -0x40(%ebp),%eax
+movl $0x0,-0x48(%ebp)
+$0x2,%eax
+mov %eax,-0x54(%ebp)
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+mov %edi,(%esp)
+test %eax,%eax
+mov %eax,%esi
+mov -0x2c(%ebp),%eax
+test %eax,%eax
+cmpl $0x10,0x8(%esi)
+lea 0xc(%esi),%ebx
+mov -0x30(%ebp),%ecx
+mov -0x38(%ebp),%eax
+mov %ebx,%edx
+test %eax,%eax
+movzwl 0x6(%esi),%edx
+mov -0x54(%ebp),%eax
+mov %esp,-0x50(%ebp)
+lea 0xf(%edx,%eax,1),%eax
+shr $0x4,%eax
+shl $0x4,%eax
+sub %eax,%esp
+mov -0x40(%ebp),%eax
+movl $0x0,-0x4c(%ebp)
+lea 0xc(%esp),%esi
+test %eax,%eax
+mov -0x4c(%ebp),%eax
+$0x1,%edx
+mov %ebx,0x4(%esp)
+mov %edx,0x8(%esp)
+mov %esp,%ebx
+%esi,%eax
+mov %eax,(%esp)
+mov %esi,(%esp)
+$0x10,%eax
+shr $0x4,%eax
+shl $0x4,%eax
+sub %eax,%esp
+mov %esi,%eax
+lea 0xc(%esp),%ecx
+mov %ecx,%esi
+$0x1,%esi
+$0x1,%eax
+test %dl,%dl
+mov %dl,-0x1(%esi)
+movzbl (%eax),%edx
+cmp $0x7f,%dl
+movzbl 0x1(%eax),%edx
+$0x1,%eax
+$0x1,%esi
+$0x1,%eax
+test %dl,%dl
+mov %dl,-0x1(%esi)
+mov %ecx,(%esp)
+test %eax,%eax
+mov %eax,%esi
+mov %ebx,%esp
+mov -0x34(%ebp),%ebx
+cmp $0x2,%ebx
+sete %al
+movzbl %al,%eax
+sub $0x1,%eax
+and %eax,%ebx
+mov -0x30(%ebp),%eax
+mov %ebx,-0x34(%ebp)
+test $0x40,%al
+mov -0x48(%ebp),%ebx
+test %ebx,%ebx
+and $0x4000,%eax
+mov %edi,-0x4c(%ebp)
+mov %eax,%edi
+test %eax,%eax
+mov (%ebx),%edx
+mov 0x4(%ebx),%ecx
+test %ecx,%ecx
+mov %ecx,%ebx
+mov 0x8(%ebx),%eax
+test %edi,%edi
+mov %esi,(%esp)
+mov %eax,0x4(%esp)
+test %eax,%eax
+mov (%ebx),%edx
+mov 0x4(%ebx),%ecx
+mov %edx,%ecx
+test %ecx,%ecx
+mov -0x4c(%ebp),%edi
+mov %eax,-0x4c(%ebp)
+movl $0xc,(%esp)
+test %eax,%eax
+mov -0x4c(%ebp),%edx
+mov %esi,0x8(%eax)
+movl $0x0,0x4(%eax)
+movl $0x0,(%eax)
+test %edx,%edx
+mov %eax,0x4(%ebx)
+movl $0x1,-0x34(%ebp)
+lea 0x0(%esi),%esi
+mov -0x58(%ebp),%esp
+mov -0x34(%ebp),%eax
+lea -0xc(%ebp),%esp
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+xchg %ax,%ax
+mov %esp,-0x40(%ebp)
+mov %eax,(%esp)
+$0x10,%eax
+shr $0x4,%eax
+shl $0x4,%eax
+sub %eax,%esp
+mov %ebx,%esi
+lea 0xc(%esp),%eax
+mov %eax,%edi
+mov %eax,-0x38(%ebp)
+movzbl (%ebx),%eax
+cmp $0x7f,%al
+cmp $0x7b,%al
+test %al,%al
+lea 0x1(%edi),%edx
+lea 0x1(%esi),%ecx
+mov %al,(%edi)
+cmp $0x7b,%al
+movzbl 0x1(%esi),%eax
+mov %edx,%edi
+mov %ecx,%esi
+cmp $0x7f,%al
+movzbl 0x1(%esi),%eax
+movb $0x7f,(%edi)
+test %al,%al
+$0x1,%edi
+$0x1,%esi
+lea 0x0(%esi,%eiz,1),%esi
+mov %edi,-0x34(%ebp)
+mov %esi,%edi
+mov -0x34(%ebp),%edx
+mov $0x1,%ecx
+movzbl 0x1(%edi),%eax
+cmp $0x7f,%al
+$0x1,%edi
+cmp $0x7d,%al
+cmp $0x2c,%al
+cmp $0x1,%ecx
+sub $0x1,%ecx
+mov %al,(%edx)
+movzbl 0x1(%edi),%eax
+$0x1,%edx
+cmp $0x7f,%al
+movzbl 0x2(%edi),%eax
+movb $0x7f,(%edx)
+lea 0x2(%edx),%ebx
+test %al,%al
+mov %al,0x1(%edx)
+movb $0x0,0x2(%edx)
+movl $0x1,-0x34(%ebp)
+lea 0x0(%esi,%eiz,1),%esi
+cmp $0x7b,%al
+test %al,%al
+setne -0x2c(%ebp)
+movzbl -0x2c(%ebp),%ebx
+test %bl,%bl
+lea 0x1(%edx),%esi
+mov %al,(%edx)
+mov %esi,%edx
+nop
+movzbl 0x3(%edi),%eax
+mov %ebx,%edx
+$0x3,%edi
+nop
+lea 0x0(%esi,%eiz,1),%esi
+$0x1,%ecx
+mov $0x1,%ebx
+movb $0x1,-0x2c(%ebp)
+xchg %ax,%ax
+mov %al,0x1(%edi)
+$0x2,%esi
+movzbl (%esi),%eax
+$0x2,%edi
+cmp $0x2c,%al
+mov %edi,%eax
+mov $0x1,%esi
+movzbl 0x1(%eax),%ebx
+lea 0x1(%eax),%ecx
+cmp $0x7f,%bl
+cmpb $0x0,0x2(%eax)
+nop
+lea 0x0(%esi,%eiz,1),%esi
+cmpb $0x0,0x1(%eax)
+mov %eax,%ecx
+movzbl 0x2(%ecx),%ebx
+lea 0x2(%ecx),%eax
+cmp $0x7f,%bl
+cmp $0x7b,%bl
+cmp $0x7d,%bl
+sub $0x1,%esi
+lea 0x1(%eax),%ecx
+movzbl 0x1(%eax),%eax
+lea 0x0(%esi,%eiz,1),%esi
+movzbl (%ecx),%eax
+$0x1,%edx
+$0x1,%ecx
+test %al,%al
+mov %al,-0x1(%edx)
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+mov -0x30(%ebp),%esi
+mov -0x3c(%ebp),%ecx
+mov -0x38(%ebp),%eax
+mov %esi,%edx
+or $0x1,%esi
+cmp $0x1,%eax
+mov %esi,-0x30(%ebp)
+cmpb $0x2c,(%edi)
+mov %eax,-0x34(%ebp)
+test %bl,%bl
+nop
+lea 0x0(%esi,%eiz,1),%esi
+movb $0x0,(%edx)
+movl $0x1,-0x34(%ebp)
+mov -0x40(%ebp),%esp
+$0x1,%esi
+mov %edi,%eax
+mov -0x2c(%ebp),%eax
+mov %esp,%esi
+mov %eax,(%esp)
+$0x10,%eax
+shr $0x4,%eax
+shl $0x4,%eax
+mov -0x2c(%ebp),%edx
+sub %eax,%esp
+lea 0xc(%esp),%edi
+mov %edi,%ecx
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+$0x1,%ecx
+$0x1,%edx
+test %al,%al
+mov %al,-0x1(%ecx)
+movzbl (%edx),%eax
+cmp $0x7f,%al
+movzbl 0x1(%edx),%eax
+$0x1,%edx
+mov %edi,(%esp)
+test %eax,%eax
+mov %esi,%esp
+lea -0x28(%ebp),%edx
+mov %eax,-0x34(%ebp)
+mov %ecx,%eax
+testb $0x10,-0x30(%ebp)
+mov %ebx,-0x38(%ebp)
+movb $0x5c,-0x5d(%ebp)
+movl $0x0,-0x5c(%ebp)
+mov %edi,(%esp)
+mov -0x48(%ebp),%edx
+test %edx,%edx
+mov 0x8(%ebp),%edx
+mov -0x48(%ebp),%eax
+mov -0x44(%ebp),%edi
+lea 0x4(%edi),%ebx
+mov -0x4(%ebx),%eax
+mov %eax,(%esp)
+mov 0x4(%edi),%eax
+test %eax,%eax
+cmpl $0x1,-0x34(%ebp)
+mov %ebx,-0x44(%ebp)
+mov %esi,%esi
+lea 0x0(%edi,%eiz,1),%edi
+mov 0x8(%ebp),%ecx
+test %ecx,%ecx
+mov -0x50(%ebp),%esp
+testb $0x4,-0x30(%ebp)
+mov -0x44(%ebp),%edi
+lea 0x4(%edi),%ebx
+mov %edi,%eax
+mov (%eax),%eax
+mov %eax,(%esp)
+mov 0x4(%edi),%eax
+test %eax,%eax
+mov -0x44(%ebp),%eax
+mov 0x4(%eax),%eax
+$0x4,%ebx
+mov %eax,(%esp)
+mov (%ebx),%eax
+test %eax,%eax
+mov -0x20(%ebp),%eax
+movl $0x1,-0x34(%ebp)
+mov %eax,-0x44(%ebp)
+mov -0x44(%ebp),%eax
+mov %eax,(%esp)
+mov -0x58(%ebp),%esp
+lea 0x0(%esi),%esi
+mov -0x44(%ebp),%eax
+mov %edx,-0x4c(%ebp)
+mov -0x40(%ebp),%edx
+mov (%eax),%eax
+mov %esi,(%esp)
+mov %edx,0x8(%esp)
+mov %eax,0x4(%esp)
+mov -0x40(%ebp),%ecx
+mov -0x4c(%ebp),%edx
+movzbl 0xb(%esp,%ecx,1),%eax
+cmp $0x2f,%al
+cmp $0x5c,%al
+mov %ecx,%eax
+$0x1,%eax
+mov %eax,-0x4c(%ebp)
+mov %ecx,%eax
+movzbl -0x5d(%ebp),%ecx
+mov %cl,(%esi,%eax,1)
+movl $0x3,-0x34(%ebp)
+mov -0x40(%ebp),%eax
+mov %eax,-0x4c(%ebp)
+mov 0x8(%ebp),%edx
+mov %esi,%eax
+movl $0x0,-0x40(%ebp)
+mov %eax,(%ebx)
+mov -0x48(%ebp),%ebx
+test %ebx,%ebx
+mov %eax,-0x48(%ebp)
+mov -0x20(%ebp),%eax
+mov %eax,-0x44(%ebp)
+mov -0x3c(%ebp),%edi
+test %edi,%edi
+mov (%eax),%eax
+mov %eax,0x4(%esp)
+mov -0x44(%ebp),%esi
+mov (%esi),%eax
+mov %eax,(%esp)
+call *%edi
+test %eax,%eax
+mov %esi,%eax
+lea 0x4(%esi),%ebx
+mov %esi,%edi
+mov %edx,-0x38(%ebp)
+mov %cl,-0x5d(%ebp)
+movl $0xc,(%esp)
+test %eax,%eax
+mov %esi,0x8(%eax)
+movl $0x0,0x4(%eax)
+movl $0x0,(%eax)
+mov -0x2c(%ebp),%eax
+movb $0x5c,-0x5d(%ebp)
+mov %eax,-0x5c(%ebp)
+mov -0x30(%ebp),%edx
+mov %ebx,%eax
+test %eax,%eax
+mov %eax,-0x34(%ebp)
+mov %ebx,(%esp)
+mov %esp,%esi
+$0x10,%eax
+shr $0x4,%eax
+shl $0x4,%eax
+sub %eax,%esp
+lea 0xc(%esp),%ecx
+mov %ecx,%edx
+$0x1,%edx
+$0x1,%ebx
+test %al,%al
+mov %al,-0x1(%edx)
+movzbl (%ebx),%eax
+cmp $0x7f,%al
+movzbl 0x1(%ebx),%eax
+$0x1,%ebx
+mov %ecx,(%esp)
+test %eax,%eax
+mov %esi,%esp
+mov 0x8(%ebp),%edx
+test %edx,%edx
+mov 0x8(%ebp),%edx
+mov -0x20(%ebp),%eax
+mov %eax,-0x44(%ebp)
+mov %eax,-0x38(%ebp)
+movzbl (%eax),%ebx
+mov %eax,-0x38(%ebp)
+mov %bl,-0x5d(%ebp)
+cmpb $0x0,-0x2c(%ebp)
+cmp $0x2c,%al
+mov %esi,%edx
+cmp $0x7b,%al
+mov -0x40(%ebp),%esp
+mov %edx,-0x34(%ebp)
+mov %ecx,%edi
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+push %ebp
+mov %esp,%ebp
+push %edi
+push %esi
+push %ebx
+sub $0x2c,%esp
+mov 0x14(%ebp),%esi
+mov 0x8(%ebp),%ebx
+mov 0xc(%ebp),%edi
+test %esi,%esi
+test $0x2,%edi
+cmpl $0x40514a,(%esi)
+mov %esi,%eax
+movl $0x40514a,(%esi)
+mov %esi,(%esp)
+mov 0x10(%ebp),%ecx
+mov %edi,%edx
+mov %ebx,%eax
+cmp $0x2,%eax
+mov %eax,%ecx
+lea -0xc(%ebp),%esp
+mov %ecx,%eax
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+movl $0x0,0xc(%esi)
+lea 0x0(%esi,%eiz,1),%esi
+and $0x10,%edi
+mov %eax,-0x20(%ebp)
+mov %esp,-0x1c(%ebp)
+mov %ebx,(%esp)
+$0x10,%eax
+shr $0x4,%eax
+shl $0x4,%eax
+mov -0x20(%ebp),%ecx
+sub %eax,%esp
+lea 0x4(%esp),%edi
+mov %edi,%edx
+xchg %ax,%ax
+$0x1,%edx
+$0x1,%ebx
+test %al,%al
+mov %al,-0x1(%edx)
+movzbl (%ebx),%eax
+cmp $0x7f,%al
+movzbl 0x1(%ebx),%eax
+$0x1,%ebx
+$0x1,%edx
+$0x1,%ebx
+test %al,%al
+mov %al,-0x1(%edx)
+mov %ecx,-0x20(%ebp)
+mov %edi,(%esp)
+test %eax,%eax
+mov -0x1c(%ebp),%esp
+mov -0x20(%ebp),%ecx
+mov %esi,%edx
+mov %ecx,-0x1c(%ebp)
+mov -0x1c(%ebp),%ecx
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+push %edi
+push %esi
+push %ebx
+sub $0x10,%esp
+mov 0x20(%esp),%esi
+cmpl $0x40514a,(%esi)
+$0x10,%esp
+pop %ebx
+pop %esi
+pop %edi
+ret
+lea 0x0(%esi,%eiz,1),%esi
+mov 0x4(%esi),%eax
+mov 0xc(%esi),%edx
+test %eax,%eax
+lea -0x1(%eax),%edi
+lea 0x0(,%edx,4),%ebx
+mov 0x8(%esi),%eax
+sub $0x1,%edi
+mov (%eax,%ebx,1),%eax
+$0x4,%ebx
+mov %eax,(%esp)
+cmp $0xffffffff,%edi
+mov 0x8(%esi),%eax
+mov %eax,0x20(%esp)
+$0x10,%esp
+pop %ebx
+pop %esi
+pop %edi
+nop
+push %ebp
+mov %esp,%ebp
+push %edi
+push %esi
+push %ebx
+sub $0x2c,%esp
+movl $0x0,0x4(%esp)
+movl $0x2,(%esp)
+test %eax,%eax
+mov %eax,%ebx
+mov %eax,(%esp)
+mov %eax,%ebx
+movl $0x40515c,0x4(%esp)
+movl $0x2,(%esp)
+mov 0x8(%ebp),%esi
+test %esi,%esi
+mov 0x8(%ebp),%eax
+cmpb $0x0,(%eax)
+movl $0x0,0x8(%esp)
+movl $0x40515e,0x4(%esp)
+movl $0x0,(%esp)
+lea 0x1(%eax),%esi
+mov %esi,0x4(%esp)
+mov 0x407068,%eax
+mov %eax,(%esp)
+mov %eax,0x407068
+mov %esi,0x8(%esp)
+movl $0x40515e,0x4(%esp)
+mov %eax,(%esp)
+mov %ebx,0x4(%esp)
+movl $0x2,(%esp)
+mov %ebx,(%esp)
+mov 0x407068,%esi
+lea -0xc(%ebp),%esp
+pop %ebx
+mov %esi,%eax
+pop %esi
+pop %edi
+pop %ebp
+ret
+mov %esp,-0x24(%ebp)
+movl $0x0,0x8(%esp)
+mov 0x8(%ebp),%eax
+movl $0x0,(%esp)
+mov %eax,0x4(%esp)
+mov %eax,%edx
+lea 0x12(%eax,%eax,1),%eax
+shr $0x4,%eax
+shl $0x4,%eax
+sub %eax,%esp
+mov %edx,0x8(%esp)
+mov 0x8(%ebp),%eax
+lea 0xc(%esp),%edi
+mov %edi,(%esp)
+mov %eax,0x4(%esp)
+xor %ecx,%ecx
+mov %eax,-0x28(%ebp)
+cmp $0x1,%eax
+mov %cx,(%edi,%eax,2)
+movzwl (%edi),%eax
+mov %edi,-0x1c(%ebp)
+mov %ax,-0x1e(%ebp)
+cmp $0x2f,%ax
+cmp $0x5c,%ax
+cmpw $0x3a,0x2(%edi)
+movzwl -0x1e(%ebp),%eax
+test %ax,%ax
+mov -0x1c(%ebp),%ecx
+mov %eax,%edx
+mov %ecx,%esi
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+cmp $0x5c,%dx
+mov %ecx,%eax
+movzwl 0x2(%eax),%edx
+lea 0x2(%eax),%ecx
+test %dx,%dx
+cmp $0x2f,%dx
+movzwl (%ecx),%edx
+mov %ecx,%eax
+cmp $0x2f,%dx
+$0x2,%eax
+movzwl (%eax),%edx
+cmp $0x2f,%dx
+cmp $0x5c,%dx
+test %dx,%dx
+movzwl 0x2(%eax),%edx
+mov %eax,%esi
+lea 0x2(%eax),%ecx
+test %dx,%dx
+cmp %esi,-0x1c(%ebp)
+movzwl -0x1e(%ebp),%eax
+cmp $0x2f,%ax
+cmp $0x5c,%ax
+mov -0x1c(%ebp),%esi
+mov $0x2e,%ecx
+mov %esi,%eax
+mov %cx,(%esi)
+$0x2,%eax
+xor %edx,%edx
+mov %dx,(%eax)
+movl $0x0,0x8(%esp)
+mov %edi,0x4(%esp)
+movl $0x0,(%esp)
+lea 0x1(%eax),%edx
+mov %edx,0x4(%esp)
+mov 0x407068,%eax
+mov %edx,-0x1c(%ebp)
+mov %eax,(%esp)
+mov -0x1c(%ebp),%edx
+mov %eax,0x407068
+mov %eax,%esi
+mov %edi,0x4(%esp)
+mov %eax,(%esp)
+mov %edx,0x8(%esp)
+mov -0x24(%ebp),%esp
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+lea -0x2(%esi),%eax
+cmp %eax,-0x1c(%ebp)
+movzwl -0x2(%esi),%edx
+mov %eax,%esi
+cmp $0x2f,%dx
+cmp $0x5c,%dx
+xor %edx,%edx
+mov %edi,%ecx
+mov %dx,0x2(%eax)
+movzwl (%edi),%edx
+cmp $0x2f,%dx
+cmp $0x5c,%dx
+lea 0x0(%esi,%eiz,1),%esi
+$0x2,%ecx
+movzwl (%ecx),%eax
+cmp $0x2f,%ax
+cmp $0x5c,%ax
+mov %ecx,%eax
+sub %edi,%eax
+cmp $0x5,%eax
+mov %edi,%ecx
+mov %ecx,%eax
+test %dx,%dx
+$0x2,%ecx
+cmp $0x2f,%dx
+mov %dx,-0x2(%ecx)
+cmpw $0x5c,(%eax)
+lea 0x2(%eax),%esi
+movzwl 0x2(%eax),%edx
+mov %esi,%eax
+test %dx,%dx
+mov -0x28(%ebp),%eax
+xor %esi,%esi
+mov %si,(%ecx)
+mov %edi,0x4(%esp)
+mov %eax,0x8(%esp)
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+cmp $0xffffffff,%eax
+mov 0x8(%ebp),%esi
+movb $0x0,(%esi,%eax,1)
+mov %ebx,0x4(%esp)
+movl $0x2,(%esp)
+mov %ebx,(%esp)
+mov -0x24(%ebp),%esp
+lea -0xc(%ebp),%esp
+mov %esi,%eax
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+mov %esi,%eax
+movzwl (%eax),%edx
+cmp $0x5c,%dx
+cmp $0x2f,%dx
+lea 0x0(%esi),%esi
+$0x2,%eax
+movzwl (%eax),%edx
+cmp $0x2f,%dx
+cmp $0x5c,%dx
+movzwl -0x1e(%ebp),%eax
+cmp 0x2(%edi),%ax
+cmpw $0x0,0x4(%edi)
+mov %ebx,0x4(%esp)
+movl $0x2,(%esp)
+mov %ebx,(%esp)
+mov 0x8(%ebp),%esi
+cmp %dx,0x2(%edi)
+movzwl (%ecx),%edx
+lea 0x4(%edi),%eax
+mov %eax,-0x1c(%ebp)
+movzwl 0x4(%edi),%eax
+mov %ax,-0x1e(%ebp)
+mov -0x1c(%ebp),%eax
+$0x2,%eax
+movzwl -0x1e(%ebp),%ecx
+cmp $0x2f,%cx
+cmp $0x5c,%cx
+movzwl -0x1e(%ebp),%ecx
+cmp %cx,0x2(%eax)
+movzwl 0x4(%eax),%edx
+cmp $0x2f,%dx
+cmp $0x5c,%dx
+mov %esi,%eax
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+push %esi
+push %ebx
+mov %edx,%ebx
+sub $0x154,%esp
+lea 0x10(%esp),%edx
+mov %eax,(%esp)
+mov %edx,0x4(%esp)
+sub $0x8,%esp
+cmp $0xffffffff,%eax
+mov %eax,%esi
+xor %eax,%eax
+lea 0xc(%ebx),%ecx
+mov %ax,0x6(%ebx)
+xor %eax,%eax
+movzwl 0x6(%ebx),%eax
+$0x1,%eax
+cmp $0x104,%ax
+mov %ax,0x6(%ebx)
+$0x0,%ecx
+movzwl %ax,%eax
+movzbl 0x3c(%esp,%eax,1),%eax
+test %al,%al
+mov %al,(%ecx)
+mov 0x10(%esp),%eax
+and $0x58,%al
+cmp $0x10,%eax
+movl $0x18,0x8(%ebx)
+$0x154,%esp
+mov %esi,%eax
+pop %ebx
+pop %esi
+ret
+xchg %ax,%ax
+mov %eax,0x8(%ebx)
+$0x154,%esp
+mov %esi,%eax
+pop %ebx
+pop %esi
+ret
+mov %eax,%ebx
+cmp $0x3,%eax
+mov %eax,(%ebx)
+cmpl $0x10b,(%eax)
+cmpl $0x2,(%eax)
+movl $0x16,(%eax)
+movl $0x14,(%eax)
+movl $0x2,(%eax)
+nop
+push %esi
+push %ebx
+mov %edx,%ebx
+sub $0x154,%esp
+lea 0x10(%esp),%edx
+mov %eax,(%esp)
+mov %edx,0x4(%esp)
+sub $0x8,%esp
+test %eax,%eax
+mov %eax,%esi
+xor %eax,%eax
+lea 0xc(%ebx),%ecx
+mov %ax,0x6(%ebx)
+xor %eax,%eax
+movzwl 0x6(%ebx),%eax
+$0x1,%eax
+cmp $0x104,%ax
+mov %ax,0x6(%ebx)
+$0x0,%ecx
+movzwl %ax,%eax
+movzbl 0x3c(%esp,%eax,1),%eax
+test %al,%al
+mov %al,(%ecx)
+mov 0x10(%esp),%eax
+and $0x58,%al
+cmp $0x10,%eax
+mov %eax,0x8(%ebx)
+$0x154,%esp
+mov %esi,%eax
+pop %ebx
+pop %esi
+ret
+lea 0x0(%esi,%eiz,1),%esi
+movl $0x18,0x8(%ebx)
+$0x154,%esp
+mov %esi,%eax
+pop %ebx
+pop %esi
+ret
+cmp $0x12,%eax
+movl $0x2,(%eax)
+$0x154,%esp
+mov %esi,%eax
+pop %ebx
+pop %esi
+ret
+lea 0x0(%esi,%eiz,1),%esi
+lea 0x0(%edi,%eiz,1),%edi
+push %ebp
+push %edi
+push %esi
+push %ebx
+sub $0x12c,%esp
+mov 0x140(%esp),%eax
+test %eax,%eax
+cmpb $0x0,(%eax)
+lea 0x1c(%esp),%edi
+movl $0x104,0x8(%esp)
+mov %eax,0x4(%esp)
+mov %edi,(%esp)
+cmpb $0x0,0x1c(%esp)
+mov %edi,%eax
+mov (%eax),%ecx
+$0x4,%eax
+lea -0x1010101(%ecx),%edx
+not %ecx
+and %ecx,%edx
+and $0x80808080,%edx
+test $0x8080,%edx
+mov %edx,%ecx
+%dl,%cl
+sbb $0x3,%eax
+sub %edi,%eax
+movzbl 0x1b(%esp,%eax,1),%edx
+cmp $0x2f,%dl
+cmp $0x5c,%dl
+mov $0x5c,%ecx
+mov %cx,(%edi,%eax,1)
+$0x1,%eax
+lea 0x0(%esi,%eiz,1),%esi
+mov (%eax),%ecx
+$0x4,%eax
+lea -0x1010101(%ecx),%edx
+not %ecx
+and %ecx,%edx
+and $0x80808080,%edx
+test $0x8080,%edx
+mov %edx,%ecx
+%dl,%cl
+sbb $0x3,%eax
+sub %edi,%eax
+mov $0x2a,%edx
+mov %edi,%ebx
+mov %dx,(%edi,%eax,1)
+mov (%ebx),%edx
+$0x4,%ebx
+lea -0x1010101(%edx),%eax
+not %edx
+and %edx,%eax
+and $0x80808080,%eax
+test $0x8080,%eax
+shr $0x10,%eax
+$0x2,%ebx
+mov %eax,%ecx
+%al,%cl
+sbb $0x3,%ebx
+sub %edi,%ebx
+lea 0x11c(%ebx),%eax
+mov %eax,(%esp)
+test %eax,%eax
+mov %eax,%esi
+lea 0x118(%eax),%ebp
+$0x1,%ebx
+mov %edi,0x4(%esp)
+mov %ebx,0x8(%esp)
+mov %ebp,(%esp)
+mov %esi,%edx
+mov %ebp,%eax
+cmp $0xffffffff,%eax
+mov %eax,0x110(%esi)
+mov $0x110,%eax
+movl $0x0,0x114(%esi)
+movl $0x0,(%esi)
+mov %ax,0x4(%esi)
+$0x12c,%esp
+mov %esi,%eax
+pop %ebx
+pop %esi
+pop %edi
+pop %ebp
+ret
+xchg %ax,%ax
+shr $0x10,%edx
+$0x2,%eax
+nop
+lea 0x0(%esi,%eiz,1),%esi
+shr $0x10,%edx
+$0x2,%eax
+nop
+lea 0x0(%esi,%eiz,1),%esi
+xor %esi,%esi
+movl $0x2,(%eax)
+movl $0xc,(%eax)
+xor %esi,%esi
+movl $0x16,(%eax)
+mov %esi,(%esp)
+xor %esi,%esi
+mov %esi,%esi
+lea 0x0(%edi,%eiz,1),%edi
+push %ebx
+sub $0x8,%esp
+mov 0x10(%esp),%ebx
+test %ebx,%ebx
+mov 0x114(%ebx),%eax
+lea 0x1(%eax),%edx
+test %eax,%eax
+mov %edx,0x114(%ebx)
+mov 0x110(%ebx),%eax
+mov %ebx,%edx
+test %eax,%eax
+mov %ebx,%eax
+$0x8,%esp
+pop %ebx
+ret
+movl $0x9,(%eax)
+xor %eax,%eax
+lea 0x0(%esi),%esi
+lea 0x0(%edi,%eiz,1),%edi
+push %ebx
+sub $0x18,%esp
+mov 0x20(%esp),%ebx
+test %ebx,%ebx
+mov 0x110(%ebx),%eax
+mov %eax,(%esp)
+sub $0x4,%esp
+test %eax,%eax
+mov %ebx,(%esp)
+xor %eax,%eax
+$0x18,%esp
+pop %ebx
+ret
+movl $0x9,(%eax)
+mov $0xffffffff,%eax
+lea 0x0(%esi,%eiz,1),%esi
+lea 0x0(%edi,%eiz,1),%edi
+push %ebx
+sub $0x18,%esp
+mov 0x20(%esp),%ebx
+test %ebx,%ebx
+mov 0x110(%ebx),%eax
+mov %eax,(%esp)
+sub $0x4,%esp
+test %eax,%eax
+movl $0x9,(%eax)
+$0x18,%esp
+pop %ebx
+ret
+lea 0x118(%ebx),%eax
+mov %ebx,%edx
+cmp $0xffffffff,%eax
+mov %eax,0x110(%ebx)
+movl $0x0,0x114(%ebx)
+$0x18,%esp
+pop %ebx
+ret
+nop
+lea 0x0(%esi,%eiz,1),%esi
+sub $0xc,%esp
+mov 0x10(%esp),%eax
+test %eax,%eax
+mov 0x114(%eax),%eax
+$0xc,%esp
+ret
+movl $0x9,(%eax)
+mov $0xffffffff,%eax
+mov %esi,%esi
+lea 0x0(%edi,%eiz,1),%edi
+push %esi
+push %ebx
+sub $0x14,%esp
+mov 0x24(%esp),%esi
+mov 0x20(%esp),%ebx
+test %esi,%esi
+mov %ebx,(%esp)
+test %esi,%esi
+cmpl $0xffffffff,0x110(%ebx)
+nop
+lea 0x0(%esi,%eiz,1),%esi
+mov 0x110(%ebx),%eax
+mov %ebx,%edx
+test %eax,%eax
+mov 0x114(%ebx),%eax
+$0x1,%eax
+cmp %eax,%esi
+mov %eax,0x114(%ebx)
+$0x14,%esp
+pop %ebx
+pop %esi
+ret
+lea 0x0(%esi),%esi
+movl $0x16,(%eax)
+$0x14,%esp
+pop %ebx
+pop %esi
+ret
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+jmp *0x408210
+nop
+nop
+jmp *0x40820c
+nop
+nop
+jmp *0x408208
+nop
+nop
+jmp *0x408204
+nop
+nop
+jmp *0x408200
+nop
+nop
+jmp *0x4081fc
+nop
+nop
+jmp *0x4081f8
+nop
+nop
+jmp *0x4081f4
+nop
+nop
+jmp *0x4081f0
+nop
+nop
+jmp *0x4081ec
+nop
+nop
+jmp *0x4081e8
+nop
+nop
+jmp *0x4081e4
+nop
+nop
+jmp *0x4081e0
+nop
+nop
+jmp *0x4081dc
+nop
+nop
+jmp *0x4081d8
+nop
+nop
+jmp *0x4081d4
+nop
+nop
+jmp *0x4081d0
+nop
+nop
+jmp *0x4081cc
+nop
+nop
+jmp *0x4081c4
+nop
+nop
+jmp *0x4081c0
+nop
+nop
+jmp *0x4081b4
+nop
+nop
+jmp *0x4081ac
+nop
+nop
+jmp *0x4081a4
+nop
+nop
+jmp *0x4081a0
+nop
+nop
+jmp *0x408198
+nop
+nop
+jmp *0x408194
+nop
+nop
+jmp *0x40818c
+nop
+nop
+jmp *0x408178
+nop
+nop
+jmp *0x408174
+nop
+nop
+jmp *0x408170
+nop
+nop
+jmp *0x40816c
+nop
+nop
+jmp *0x408168
+nop
+nop
+jmp *0x408164
+nop
+nop
+jmp *0x408160
+nop
+nop
+jmp *0x40815c
+nop
+nop
+jmp *0x408158
+nop
+nop
+jmp *0x408154
+nop
+nop
+jmp *0x408150
+nop
+nop
+jmp *0x40814c
+nop
+nop
+jmp *0x408148
+nop
+nop
+jmp *0x408144
+nop
+nop
+jmp *0x408140
+nop
+nop
+jmp *0x40813c
+nop
+nop
+jmp *0x408138
+nop
+nop
+jmp *0x408134
+nop
+nop
+jmp *0x408184
+nop
+nop
+jmp *0x408180
+nop
+nop
+xchg %ax,%ax
+xchg %ax,%ax
+xchg %ax,%ax
+xchg %ax,%ax
+push %ebp
+mov %esp,%ebp
+pop %ebp
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+(bad)
+(bad)
+(bad)
+.byte 0xff
+xor %bh,(%eax,%eax,2)
+%al,(%eax)
+%al,(%eax)
+(bad)
+(bad)
+(bad)
+incl (%eax)
+%al,(%eax)

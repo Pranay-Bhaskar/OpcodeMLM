@@ -1,0 +1,68 @@
+wether.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+movl $0x0,(%esp)
+mov %eax,(%esp)
+movl $0x1,-0xc(%ebp)
+mov %eax,%ecx
+mov $0xea0ea0eb,%edx
+mov %ecx,%eax
+imul %edx
+lea (%edx,%ecx,1),%eax
+sar $0x5,%eax
+mov %eax,%edx
+mov %ecx,%eax
+sar $0x1f,%eax
+sub %eax,%edx
+mov %edx,%eax
+imul $0x23,%eax,%eax
+sub %eax,%ecx
+mov %ecx,%eax
+sub $0x5,%eax
+mov %eax,-0x10(%ebp)
+mov %eax,%ecx
+mov $0x66666667,%edx
+mov %ecx,%eax
+imul %edx
+sar %edx
+mov %ecx,%eax
+sar $0x1f,%eax
+sub %eax,%edx
+mov %edx,%eax
+mov %eax,%edx
+shl $0x2,%edx
+%eax,%edx
+mov %ecx,%eax
+sub %edx,%eax
+mov 0x0(,%eax,4),%eax
+mov %eax,-0x14(%ebp)
+mov -0x10(%ebp),%eax
+mov %eax,0xc(%esp)
+mov -0x14(%ebp),%eax
+mov %eax,0x8(%esp)
+mov -0xc(%ebp),%eax
+mov %eax,0x4(%esp)
+movl $0x20,(%esp)
+addl $0x1,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+cmp 0x8(%ebp),%eax
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x20,%esp
+movl $0x3c,(%esp)
+lea 0x1c(%esp),%eax
+mov %eax,0x4(%esp)
+movl $0x5f,(%esp)
+mov 0x1c(%esp),%eax
+mov %eax,(%esp)
+mov $0x0,%eax
+leave
+ret
+nop
+nop
+nop

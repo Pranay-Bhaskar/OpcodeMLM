@@ -1,0 +1,54 @@
+
+bitmanipulation.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_setBit>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	8b 45 0c             	mov    0xc(%ebp),%eax
+   6:	ba 01 00 00 00       	mov    $0x1,%edx
+   b:	89 c1                	mov    %eax,%ecx
+   d:	d3 e2                	shl    %cl,%edx
+   f:	89 d0                	mov    %edx,%eax
+  11:	0b 45 08             	or     0x8(%ebp),%eax
+  14:	5d                   	pop    %ebp
+  15:	c3                   	ret    
+
+00000016 <_clearBit>:
+  16:	55                   	push   %ebp
+  17:	89 e5                	mov    %esp,%ebp
+  19:	8b 45 0c             	mov    0xc(%ebp),%eax
+  1c:	ba 01 00 00 00       	mov    $0x1,%edx
+  21:	89 c1                	mov    %eax,%ecx
+  23:	d3 e2                	shl    %cl,%edx
+  25:	89 d0                	mov    %edx,%eax
+  27:	f7 d0                	not    %eax
+  29:	23 45 08             	and    0x8(%ebp),%eax
+  2c:	5d                   	pop    %ebp
+  2d:	c3                   	ret    
+
+0000002e <_toggleBit>:
+  2e:	55                   	push   %ebp
+  2f:	89 e5                	mov    %esp,%ebp
+  31:	8b 45 0c             	mov    0xc(%ebp),%eax
+  34:	ba 01 00 00 00       	mov    $0x1,%edx
+  39:	89 c1                	mov    %eax,%ecx
+  3b:	d3 e2                	shl    %cl,%edx
+  3d:	89 d0                	mov    %edx,%eax
+  3f:	33 45 08             	xor    0x8(%ebp),%eax
+  42:	5d                   	pop    %ebp
+  43:	c3                   	ret    
+
+00000044 <_checkBit>:
+  44:	55                   	push   %ebp
+  45:	89 e5                	mov    %esp,%ebp
+  47:	8b 45 0c             	mov    0xc(%ebp),%eax
+  4a:	8b 55 08             	mov    0x8(%ebp),%edx
+  4d:	89 c1                	mov    %eax,%ecx
+  4f:	d3 fa                	sar    %cl,%edx
+  51:	89 d0                	mov    %edx,%eax
+  53:	83 e0 01             	and    $0x1,%eax
+  56:	5d                   	pop    %ebp
+  57:	c3                   	ret    

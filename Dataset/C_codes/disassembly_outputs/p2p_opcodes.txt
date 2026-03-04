@@ -1,0 +1,252 @@
+
+p2p.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_server_thread@4>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	81 ec 48 04 00 00    	sub    $0x448,%esp
+   9:	c7 44 24 08 00 00 00 	movl   $0x0,0x8(%esp)
+  10:	00 
+  11:	c7 44 24 04 01 00 00 	movl   $0x1,0x4(%esp)
+  18:	00 
+  19:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
+  20:	e8 00 00 00 00       	call   25 <_server_thread@4+0x25>
+  25:	83 ec 0c             	sub    $0xc,%esp
+  28:	89 45 f4             	mov    %eax,-0xc(%ebp)
+  2b:	83 7d f4 ff          	cmpl   $0xffffffff,-0xc(%ebp)
+  2f:	75 1f                	jne    50 <_server_thread@4+0x50>
+  31:	e8 00 00 00 00       	call   36 <_server_thread@4+0x36>
+  36:	89 44 24 04          	mov    %eax,0x4(%esp)
+  3a:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  41:	e8 00 00 00 00       	call   46 <_server_thread@4+0x46>
+  46:	b8 01 00 00 00       	mov    $0x1,%eax
+  4b:	e9 44 01 00 00       	jmp    194 <_server_thread@4+0x194>
+  50:	66 c7 45 dc 02 00    	movw   $0x2,-0x24(%ebp)
+  56:	c7 45 e0 00 00 00 00 	movl   $0x0,-0x20(%ebp)
+  5d:	c7 04 24 82 23 00 00 	movl   $0x2382,(%esp)
+  64:	e8 00 00 00 00       	call   69 <_server_thread@4+0x69>
+  69:	83 ec 04             	sub    $0x4,%esp
+  6c:	66 89 45 de          	mov    %ax,-0x22(%ebp)
+  70:	c7 44 24 08 10 00 00 	movl   $0x10,0x8(%esp)
+  77:	00 
+  78:	8d 45 dc             	lea    -0x24(%ebp),%eax
+  7b:	89 44 24 04          	mov    %eax,0x4(%esp)
+  7f:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  82:	89 04 24             	mov    %eax,(%esp)
+  85:	e8 00 00 00 00       	call   8a <_server_thread@4+0x8a>
+  8a:	83 ec 0c             	sub    $0xc,%esp
+  8d:	83 f8 ff             	cmp    $0xffffffff,%eax
+  90:	75 2d                	jne    bf <_server_thread@4+0xbf>
+  92:	e8 00 00 00 00       	call   97 <_server_thread@4+0x97>
+  97:	89 44 24 04          	mov    %eax,0x4(%esp)
+  9b:	c7 04 24 1d 00 00 00 	movl   $0x1d,(%esp)
+  a2:	e8 00 00 00 00       	call   a7 <_server_thread@4+0xa7>
+  a7:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  aa:	89 04 24             	mov    %eax,(%esp)
+  ad:	e8 00 00 00 00       	call   b2 <_server_thread@4+0xb2>
+  b2:	83 ec 04             	sub    $0x4,%esp
+  b5:	b8 01 00 00 00       	mov    $0x1,%eax
+  ba:	e9 d5 00 00 00       	jmp    194 <_server_thread@4+0x194>
+  bf:	c7 44 24 04 05 00 00 	movl   $0x5,0x4(%esp)
+  c6:	00 
+  c7:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  ca:	89 04 24             	mov    %eax,(%esp)
+  cd:	e8 00 00 00 00       	call   d2 <_server_thread@4+0xd2>
+  d2:	83 ec 08             	sub    $0x8,%esp
+  d5:	c7 44 24 04 82 23 00 	movl   $0x2382,0x4(%esp)
+  dc:	00 
+  dd:	c7 04 24 30 00 00 00 	movl   $0x30,(%esp)
+  e4:	e8 00 00 00 00       	call   e9 <_server_thread@4+0xe9>
+  e9:	c7 45 c8 10 00 00 00 	movl   $0x10,-0x38(%ebp)
+  f0:	8d 45 c8             	lea    -0x38(%ebp),%eax
+  f3:	89 44 24 08          	mov    %eax,0x8(%esp)
+  f7:	8d 45 cc             	lea    -0x34(%ebp),%eax
+  fa:	89 44 24 04          	mov    %eax,0x4(%esp)
+  fe:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 101:	89 04 24             	mov    %eax,(%esp)
+ 104:	e8 00 00 00 00       	call   109 <_server_thread@4+0x109>
+ 109:	83 ec 0c             	sub    $0xc,%esp
+ 10c:	89 45 f0             	mov    %eax,-0x10(%ebp)
+ 10f:	83 7d f0 ff          	cmpl   $0xffffffff,-0x10(%ebp)
+ 113:	75 17                	jne    12c <_server_thread@4+0x12c>
+ 115:	e8 00 00 00 00       	call   11a <_server_thread@4+0x11a>
+ 11a:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 11e:	c7 04 24 50 00 00 00 	movl   $0x50,(%esp)
+ 125:	e8 00 00 00 00       	call   12a <_server_thread@4+0x12a>
+ 12a:	eb 63                	jmp    18f <_server_thread@4+0x18f>
+ 12c:	c7 44 24 0c 00 00 00 	movl   $0x0,0xc(%esp)
+ 133:	00 
+ 134:	c7 44 24 08 ff 03 00 	movl   $0x3ff,0x8(%esp)
+ 13b:	00 
+ 13c:	8d 85 c8 fb ff ff    	lea    -0x438(%ebp),%eax
+ 142:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 146:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 149:	89 04 24             	mov    %eax,(%esp)
+ 14c:	e8 00 00 00 00       	call   151 <_server_thread@4+0x151>
+ 151:	83 ec 10             	sub    $0x10,%esp
+ 154:	89 45 ec             	mov    %eax,-0x14(%ebp)
+ 157:	83 7d ec 00          	cmpl   $0x0,-0x14(%ebp)
+ 15b:	7e 24                	jle    181 <_server_thread@4+0x181>
+ 15d:	8d 95 c8 fb ff ff    	lea    -0x438(%ebp),%edx
+ 163:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 166:	01 d0                	add    %edx,%eax
+ 168:	c6 00 00             	movb   $0x0,(%eax)
+ 16b:	8d 85 c8 fb ff ff    	lea    -0x438(%ebp),%eax
+ 171:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 175:	c7 04 24 63 00 00 00 	movl   $0x63,(%esp)
+ 17c:	e8 00 00 00 00       	call   181 <_server_thread@4+0x181>
+ 181:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 184:	89 04 24             	mov    %eax,(%esp)
+ 187:	e8 00 00 00 00       	call   18c <_server_thread@4+0x18c>
+ 18c:	83 ec 04             	sub    $0x4,%esp
+ 18f:	e9 5c ff ff ff       	jmp    f0 <_server_thread@4+0xf0>
+ 194:	c9                   	leave  
+ 195:	c2 04 00             	ret    $0x4
+
+00000198 <_client_send>:
+ 198:	55                   	push   %ebp
+ 199:	89 e5                	mov    %esp,%ebp
+ 19b:	83 ec 38             	sub    $0x38,%esp
+ 19e:	c7 44 24 08 00 00 00 	movl   $0x0,0x8(%esp)
+ 1a5:	00 
+ 1a6:	c7 44 24 04 01 00 00 	movl   $0x1,0x4(%esp)
+ 1ad:	00 
+ 1ae:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
+ 1b5:	e8 00 00 00 00       	call   1ba <_client_send+0x22>
+ 1ba:	83 ec 0c             	sub    $0xc,%esp
+ 1bd:	89 45 f4             	mov    %eax,-0xc(%ebp)
+ 1c0:	83 7d f4 ff          	cmpl   $0xffffffff,-0xc(%ebp)
+ 1c4:	75 1a                	jne    1e0 <_client_send+0x48>
+ 1c6:	e8 00 00 00 00       	call   1cb <_client_send+0x33>
+ 1cb:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 1cf:	c7 04 24 7c 00 00 00 	movl   $0x7c,(%esp)
+ 1d6:	e8 00 00 00 00       	call   1db <_client_send+0x43>
+ 1db:	e9 ab 00 00 00       	jmp    28b <_client_send+0xf3>
+ 1e0:	66 c7 45 e4 02 00    	movw   $0x2,-0x1c(%ebp)
+ 1e6:	c7 04 24 82 23 00 00 	movl   $0x2382,(%esp)
+ 1ed:	e8 00 00 00 00       	call   1f2 <_client_send+0x5a>
+ 1f2:	83 ec 04             	sub    $0x4,%esp
+ 1f5:	66 89 45 e6          	mov    %ax,-0x1a(%ebp)
+ 1f9:	c7 04 24 9f 00 00 00 	movl   $0x9f,(%esp)
+ 200:	e8 00 00 00 00       	call   205 <_client_send+0x6d>
+ 205:	83 ec 04             	sub    $0x4,%esp
+ 208:	89 45 e8             	mov    %eax,-0x18(%ebp)
+ 20b:	c7 44 24 08 10 00 00 	movl   $0x10,0x8(%esp)
+ 212:	00 
+ 213:	8d 45 e4             	lea    -0x1c(%ebp),%eax
+ 216:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 21a:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 21d:	89 04 24             	mov    %eax,(%esp)
+ 220:	e8 00 00 00 00       	call   225 <_client_send+0x8d>
+ 225:	83 ec 0c             	sub    $0xc,%esp
+ 228:	85 c0                	test   %eax,%eax
+ 22a:	79 25                	jns    251 <_client_send+0xb9>
+ 22c:	e8 00 00 00 00       	call   231 <_client_send+0x99>
+ 231:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 235:	c7 04 24 a9 00 00 00 	movl   $0xa9,(%esp)
+ 23c:	e8 00 00 00 00       	call   241 <_client_send+0xa9>
+ 241:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 244:	89 04 24             	mov    %eax,(%esp)
+ 247:	e8 00 00 00 00       	call   24c <_client_send+0xb4>
+ 24c:	83 ec 04             	sub    $0x4,%esp
+ 24f:	eb 3a                	jmp    28b <_client_send+0xf3>
+ 251:	8b 45 08             	mov    0x8(%ebp),%eax
+ 254:	89 04 24             	mov    %eax,(%esp)
+ 257:	e8 00 00 00 00       	call   25c <_client_send+0xc4>
+ 25c:	c7 44 24 0c 00 00 00 	movl   $0x0,0xc(%esp)
+ 263:	00 
+ 264:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 268:	8b 45 08             	mov    0x8(%ebp),%eax
+ 26b:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 26f:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 272:	89 04 24             	mov    %eax,(%esp)
+ 275:	e8 00 00 00 00       	call   27a <_client_send+0xe2>
+ 27a:	83 ec 10             	sub    $0x10,%esp
+ 27d:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 280:	89 04 24             	mov    %eax,(%esp)
+ 283:	e8 00 00 00 00       	call   288 <_client_send+0xf0>
+ 288:	83 ec 04             	sub    $0x4,%esp
+ 28b:	c9                   	leave  
+ 28c:	c3                   	ret    
+
+0000028d <_main>:
+ 28d:	8d 4c 24 04          	lea    0x4(%esp),%ecx
+ 291:	83 e4 f0             	and    $0xfffffff0,%esp
+ 294:	ff 71 fc             	pushl  -0x4(%ecx)
+ 297:	55                   	push   %ebp
+ 298:	89 e5                	mov    %esp,%ebp
+ 29a:	51                   	push   %ecx
+ 29b:	81 ec c4 05 00 00    	sub    $0x5c4,%esp
+ 2a1:	e8 00 00 00 00       	call   2a6 <_main+0x19>
+ 2a6:	8d 85 60 fe ff ff    	lea    -0x1a0(%ebp),%eax
+ 2ac:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 2b0:	c7 04 24 02 02 00 00 	movl   $0x202,(%esp)
+ 2b7:	e8 00 00 00 00       	call   2bc <_main+0x2f>
+ 2bc:	83 ec 08             	sub    $0x8,%esp
+ 2bf:	85 c0                	test   %eax,%eax
+ 2c1:	74 1f                	je     2e2 <_main+0x55>
+ 2c3:	e8 00 00 00 00       	call   2c8 <_main+0x3b>
+ 2c8:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 2cc:	c7 04 24 c0 00 00 00 	movl   $0xc0,(%esp)
+ 2d3:	e8 00 00 00 00       	call   2d8 <_main+0x4b>
+ 2d8:	b8 01 00 00 00       	mov    $0x1,%eax
+ 2dd:	e9 d9 00 00 00       	jmp    3bb <_main+0x12e>
+ 2e2:	8d 85 5c fe ff ff    	lea    -0x1a4(%ebp),%eax
+ 2e8:	89 44 24 14          	mov    %eax,0x14(%esp)
+ 2ec:	c7 44 24 10 00 00 00 	movl   $0x0,0x10(%esp)
+ 2f3:	00 
+ 2f4:	c7 44 24 0c 00 00 00 	movl   $0x0,0xc(%esp)
+ 2fb:	00 
+ 2fc:	c7 44 24 08 00 00 00 	movl   $0x0,0x8(%esp)
+ 303:	00 
+ 304:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+ 30b:	00 
+ 30c:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 313:	e8 00 00 00 00       	call   318 <_main+0x8b>
+ 318:	83 ec 18             	sub    $0x18,%esp
+ 31b:	89 45 f0             	mov    %eax,-0x10(%ebp)
+ 31e:	83 7d f0 00          	cmpl   $0x0,-0x10(%ebp)
+ 322:	75 18                	jne    33c <_main+0xaf>
+ 324:	c7 04 24 e4 00 00 00 	movl   $0xe4,(%esp)
+ 32b:	e8 00 00 00 00       	call   330 <_main+0xa3>
+ 330:	e8 00 00 00 00       	call   335 <_main+0xa8>
+ 335:	b8 01 00 00 00       	mov    $0x1,%eax
+ 33a:	eb 7f                	jmp    3bb <_main+0x12e>
+ 33c:	c7 04 24 e8 03 00 00 	movl   $0x3e8,(%esp)
+ 343:	e8 00 00 00 00       	call   348 <_main+0xbb>
+ 348:	83 ec 04             	sub    $0x4,%esp
+ 34b:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 352:	eb 41                	jmp    395 <_main+0x108>
+ 354:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 357:	83 c0 01             	add    $0x1,%eax
+ 35a:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 35e:	c7 44 24 04 04 01 00 	movl   $0x104,0x4(%esp)
+ 365:	00 
+ 366:	8d 85 5c fa ff ff    	lea    -0x5a4(%ebp),%eax
+ 36c:	89 04 24             	mov    %eax,(%esp)
+ 36f:	e8 00 00 00 00       	call   374 <_main+0xe7>
+ 374:	8d 85 5c fa ff ff    	lea    -0x5a4(%ebp),%eax
+ 37a:	89 04 24             	mov    %eax,(%esp)
+ 37d:	e8 16 fe ff ff       	call   198 <_client_send>
+ 382:	c7 04 24 e8 03 00 00 	movl   $0x3e8,(%esp)
+ 389:	e8 00 00 00 00       	call   38e <_main+0x101>
+ 38e:	83 ec 04             	sub    $0x4,%esp
+ 391:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 395:	83 7d f4 04          	cmpl   $0x4,-0xc(%ebp)
+ 399:	7e b9                	jle    354 <_main+0xc7>
+ 39b:	c7 44 24 04 ff ff ff 	movl   $0xffffffff,0x4(%esp)
+ 3a2:	ff 
+ 3a3:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 3a6:	89 04 24             	mov    %eax,(%esp)
+ 3a9:	e8 00 00 00 00       	call   3ae <_main+0x121>
+ 3ae:	83 ec 08             	sub    $0x8,%esp
+ 3b1:	e8 00 00 00 00       	call   3b6 <_main+0x129>
+ 3b6:	b8 00 00 00 00       	mov    $0x0,%eax
+ 3bb:	8b 4d fc             	mov    -0x4(%ebp),%ecx
+ 3be:	c9                   	leave  
+ 3bf:	8d 61 fc             	lea    -0x4(%ecx),%esp
+ 3c2:	c3                   	ret    
+ 3c3:	90                   	nop

@@ -1,0 +1,123 @@
+bfsdfs.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+mov 0x8(%ebp),%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+mov 0xc(%ebp),%edx
+%edx,%eax
+movl $0x1,0x0(,%eax,4)
+mov 0xc(%ebp),%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+mov 0x8(%ebp),%edx
+%edx,%eax
+movl $0x1,0x0(,%eax,4)
+nop
+pop %ebp
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x58,%esp
+movl $0x0,-0x2c(%ebp)
+movl $0x0,-0x28(%ebp)
+movl $0x0,-0x24(%ebp)
+movl $0x0,-0x20(%ebp)
+movl $0x0,-0x1c(%ebp)
+movl $0x0,-0xc(%ebp)
+movl $0x0,-0x10(%ebp)
+mov 0x8(%ebp),%eax
+movl $0x1,-0x2c(%ebp,%eax,4)
+mov -0x10(%ebp),%eax
+lea 0x1(%eax),%edx
+mov %edx,-0x10(%ebp)
+mov 0x8(%ebp),%edx
+mov %edx,-0x40(%ebp,%eax,4)
+mov -0xc(%ebp),%eax
+lea 0x1(%eax),%edx
+mov %edx,-0xc(%ebp)
+mov -0x40(%ebp,%eax,4),%eax
+mov %eax,-0x18(%ebp)
+mov -0x18(%ebp),%eax
+mov %eax,0x4(%esp)
+movl $0x0,(%esp)
+movl $0x0,-0x14(%ebp)
+mov -0x18(%ebp),%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+mov -0x14(%ebp),%edx
+%edx,%eax
+mov 0x0(,%eax,4),%eax
+test %eax,%eax
+mov -0x14(%ebp),%eax
+mov -0x2c(%ebp,%eax,4),%eax
+test %eax,%eax
+mov -0x14(%ebp),%eax
+movl $0x1,-0x2c(%ebp,%eax,4)
+mov -0x10(%ebp),%eax
+lea 0x1(%eax),%edx
+mov %edx,-0x10(%ebp)
+mov -0x14(%ebp),%edx
+mov %edx,-0x40(%ebp,%eax,4)
+addl $0x1,-0x14(%ebp)
+cmpl $0x4,-0x14(%ebp)
+mov -0xc(%ebp),%eax
+cmp -0x10(%ebp),%eax
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+mov 0x8(%ebp),%eax
+lea 0x0(,%eax,4),%edx
+mov 0xc(%ebp),%eax
+%edx,%eax
+movl $0x1,(%eax)
+mov 0x8(%ebp),%eax
+mov %eax,0x4(%esp)
+movl $0x0,(%esp)
+movl $0x0,-0xc(%ebp)
+mov 0x8(%ebp),%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+mov -0xc(%ebp),%edx
+%edx,%eax
+mov 0x0(,%eax,4),%eax
+test %eax,%eax
+mov -0xc(%ebp),%eax
+lea 0x0(,%eax,4),%edx
+mov 0xc(%ebp),%eax
+%edx,%eax
+mov (%eax),%eax
+test %eax,%eax
+mov 0xc(%ebp),%eax
+mov %eax,0x4(%esp)
+mov -0xc(%ebp),%eax
+mov %eax,(%esp)
+addl $0x1,-0xc(%ebp)
+cmpl $0x4,-0xc(%ebp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x38,%esp
+movl $0x0,-0x1c(%ebp)
+movl $0x0,-0x18(%ebp)
+movl $0x0,-0x14(%ebp)
+movl $0x0,-0x10(%ebp)
+movl $0x0,-0xc(%ebp)
+lea -0x1c(%ebp),%eax
+mov %eax,0x4(%esp)
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+nop
+leave
+ret
+nop
+nop

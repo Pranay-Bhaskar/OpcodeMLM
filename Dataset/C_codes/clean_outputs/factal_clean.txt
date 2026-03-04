@@ -1,0 +1,43 @@
+factal.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+cmpl $0x0,0x8(%ebp)
+movl $0x0,-0xc(%ebp)
+movl $0x20,(%esp)
+addl $0x1,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+cmp 0xc(%ebp),%eax
+movl $0x0,(%esp)
+movl $0x0,-0x10(%ebp)
+movl $0x20,(%esp)
+addl $0x1,-0x10(%ebp)
+mov -0x10(%ebp),%eax
+cmp 0xc(%ebp),%eax
+movl $0x2,(%esp)
+mov 0xc(%ebp),%eax
+lea 0x1(%eax),%edx
+mov 0x8(%ebp),%eax
+sub $0x1,%eax
+mov %edx,0x4(%esp)
+mov %eax,(%esp)
+mov 0xc(%ebp),%eax
+lea 0x2(%eax),%edx
+mov 0x8(%ebp),%eax
+sub $0x1,%eax
+mov %edx,0x4(%esp)
+mov %eax,(%esp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x20,%esp
+movl $0x5,0x1c(%esp)
+movl $0x0,0x4(%esp)
+mov 0x1c(%esp),%eax
+mov %eax,(%esp)
+mov $0x0,%eax
+leave
+ret

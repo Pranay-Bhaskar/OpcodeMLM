@@ -1,0 +1,93 @@
+
+fsdefragmenter.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_defragment>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 40             	sub    $0x40,%esp
+   6:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+   d:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+  14:	eb 2a                	jmp    40 <_defragment+0x40>
+  16:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  19:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  20:	83 f8 ff             	cmp    $0xffffffff,%eax
+  23:	74 17                	je     3c <_defragment+0x3c>
+  25:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  28:	8d 50 01             	lea    0x1(%eax),%edx
+  2b:	89 55 fc             	mov    %edx,-0x4(%ebp)
+  2e:	8b 55 f8             	mov    -0x8(%ebp),%edx
+  31:	8b 14 95 00 00 00 00 	mov    0x0(,%edx,4),%edx
+  38:	89 54 85 cc          	mov    %edx,-0x34(%ebp,%eax,4)
+  3c:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+  40:	83 7d f8 09          	cmpl   $0x9,-0x8(%ebp)
+  44:	7e d0                	jle    16 <_defragment+0x16>
+  46:	eb 11                	jmp    59 <_defragment+0x59>
+  48:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  4b:	8d 50 01             	lea    0x1(%eax),%edx
+  4e:	89 55 fc             	mov    %edx,-0x4(%ebp)
+  51:	c7 44 85 cc ff ff ff 	movl   $0xffffffff,-0x34(%ebp,%eax,4)
+  58:	ff 
+  59:	83 7d fc 09          	cmpl   $0x9,-0x4(%ebp)
+  5d:	7e e9                	jle    48 <_defragment+0x48>
+  5f:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  66:	eb 15                	jmp    7d <_defragment+0x7d>
+  68:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  6b:	8b 54 85 cc          	mov    -0x34(%ebp,%eax,4),%edx
+  6f:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  72:	89 14 85 00 00 00 00 	mov    %edx,0x0(,%eax,4)
+  79:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  7d:	83 7d f4 09          	cmpl   $0x9,-0xc(%ebp)
+  81:	7e e5                	jle    68 <_defragment+0x68>
+  83:	90                   	nop
+  84:	c9                   	leave  
+  85:	c3                   	ret    
+
+00000086 <_showDisk>:
+  86:	55                   	push   %ebp
+  87:	89 e5                	mov    %esp,%ebp
+  89:	83 ec 28             	sub    $0x28,%esp
+  8c:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  93:	eb 3b                	jmp    d0 <_showDisk+0x4a>
+  95:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  98:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  9f:	83 f8 ff             	cmp    $0xffffffff,%eax
+  a2:	75 0e                	jne    b2 <_showDisk+0x2c>
+  a4:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  ab:	e8 00 00 00 00       	call   b0 <_showDisk+0x2a>
+  b0:	eb 1a                	jmp    cc <_showDisk+0x46>
+  b2:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  b5:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  bc:	89 44 24 04          	mov    %eax,0x4(%esp)
+  c0:	c7 04 24 05 00 00 00 	movl   $0x5,(%esp)
+  c7:	e8 00 00 00 00       	call   cc <_showDisk+0x46>
+  cc:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  d0:	83 7d f4 09          	cmpl   $0x9,-0xc(%ebp)
+  d4:	7e bf                	jle    95 <_showDisk+0xf>
+  d6:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+  dd:	e8 00 00 00 00       	call   e2 <_showDisk+0x5c>
+  e2:	90                   	nop
+  e3:	c9                   	leave  
+  e4:	c3                   	ret    
+
+000000e5 <_main>:
+  e5:	55                   	push   %ebp
+  e6:	89 e5                	mov    %esp,%ebp
+  e8:	83 e4 f0             	and    $0xfffffff0,%esp
+  eb:	83 ec 10             	sub    $0x10,%esp
+  ee:	e8 00 00 00 00       	call   f3 <_main+0xe>
+  f3:	c7 04 24 0b 00 00 00 	movl   $0xb,(%esp)
+  fa:	e8 00 00 00 00       	call   ff <_main+0x1a>
+  ff:	e8 82 ff ff ff       	call   86 <_showDisk>
+ 104:	e8 f7 fe ff ff       	call   0 <_defragment>
+ 109:	c7 04 24 23 00 00 00 	movl   $0x23,(%esp)
+ 110:	e8 00 00 00 00       	call   115 <_main+0x30>
+ 115:	e8 6c ff ff ff       	call   86 <_showDisk>
+ 11a:	b8 00 00 00 00       	mov    $0x0,%eax
+ 11f:	c9                   	leave  
+ 120:	c3                   	ret    
+ 121:	90                   	nop
+ 122:	90                   	nop
+ 123:	90                   	nop

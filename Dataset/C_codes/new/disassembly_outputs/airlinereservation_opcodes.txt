@@ -1,0 +1,201 @@
+
+airlinereservation.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_addFlight>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 28             	sub    $0x28,%esp
+   6:	a1 00 00 00 00       	mov    0x0,%eax
+   b:	69 c0 7c 17 00 00    	imul   $0x177c,%eax,%eax
+  11:	8d 90 00 00 00 00    	lea    0x0(%eax),%edx
+  17:	8b 45 08             	mov    0x8(%ebp),%eax
+  1a:	89 44 24 04          	mov    %eax,0x4(%esp)
+  1e:	89 14 24             	mov    %edx,(%esp)
+  21:	e8 00 00 00 00       	call   26 <_addFlight+0x26>
+  26:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  2d:	eb 42                	jmp    71 <_addFlight+0x71>
+  2f:	a1 00 00 00 00       	mov    0x0,%eax
+  34:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  37:	83 c2 01             	add    $0x1,%edx
+  3a:	8b 4d f4             	mov    -0xc(%ebp),%ecx
+  3d:	6b c9 3c             	imul   $0x3c,%ecx,%ecx
+  40:	69 c0 7c 17 00 00    	imul   $0x177c,%eax,%eax
+  46:	01 c8                	add    %ecx,%eax
+  48:	05 0c 00 00 00       	add    $0xc,%eax
+  4d:	89 10                	mov    %edx,(%eax)
+  4f:	a1 00 00 00 00       	mov    0x0,%eax
+  54:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  57:	6b d2 3c             	imul   $0x3c,%edx,%edx
+  5a:	69 c0 7c 17 00 00    	imul   $0x177c,%eax,%eax
+  60:	01 d0                	add    %edx,%eax
+  62:	05 10 00 00 00       	add    $0x10,%eax
+  67:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+  6d:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  71:	83 7d f4 63          	cmpl   $0x63,-0xc(%ebp)
+  75:	7e b8                	jle    2f <_addFlight+0x2f>
+  77:	a1 00 00 00 00       	mov    0x0,%eax
+  7c:	83 c0 01             	add    $0x1,%eax
+  7f:	a3 00 00 00 00       	mov    %eax,0x0
+  84:	90                   	nop
+  85:	c9                   	leave  
+  86:	c3                   	ret    
+
+00000087 <_bookSeat>:
+  87:	55                   	push   %ebp
+  88:	89 e5                	mov    %esp,%ebp
+  8a:	83 ec 28             	sub    $0x28,%esp
+  8d:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  94:	e9 c4 00 00 00       	jmp    15d <_bookSeat+0xd6>
+  99:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  9c:	69 c0 7c 17 00 00    	imul   $0x177c,%eax,%eax
+  a2:	8d 90 00 00 00 00    	lea    0x0(%eax),%edx
+  a8:	8b 45 08             	mov    0x8(%ebp),%eax
+  ab:	89 44 24 04          	mov    %eax,0x4(%esp)
+  af:	89 14 24             	mov    %edx,(%esp)
+  b2:	e8 00 00 00 00       	call   b7 <_bookSeat+0x30>
+  b7:	85 c0                	test   %eax,%eax
+  b9:	0f 85 9a 00 00 00    	jne    159 <_bookSeat+0xd2>
+  bf:	8b 45 0c             	mov    0xc(%ebp),%eax
+  c2:	8d 50 ff             	lea    -0x1(%eax),%edx
+  c5:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  c8:	6b d2 3c             	imul   $0x3c,%edx,%edx
+  cb:	69 c0 7c 17 00 00    	imul   $0x177c,%eax,%eax
+  d1:	01 d0                	add    %edx,%eax
+  d3:	05 10 00 00 00       	add    $0x10,%eax
+  d8:	8b 00                	mov    (%eax),%eax
+  da:	85 c0                	test   %eax,%eax
+  dc:	75 6d                	jne    14b <_bookSeat+0xc4>
+  de:	8b 45 0c             	mov    0xc(%ebp),%eax
+  e1:	8d 50 ff             	lea    -0x1(%eax),%edx
+  e4:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  e7:	6b d2 3c             	imul   $0x3c,%edx,%edx
+  ea:	69 c0 7c 17 00 00    	imul   $0x177c,%eax,%eax
+  f0:	01 d0                	add    %edx,%eax
+  f2:	05 10 00 00 00       	add    $0x10,%eax
+  f7:	c7 00 01 00 00 00    	movl   $0x1,(%eax)
+  fd:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 100:	83 e8 01             	sub    $0x1,%eax
+ 103:	6b d0 3c             	imul   $0x3c,%eax,%edx
+ 106:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 109:	69 c0 7c 17 00 00    	imul   $0x177c,%eax,%eax
+ 10f:	01 d0                	add    %edx,%eax
+ 111:	05 00 00 00 00       	add    $0x0,%eax
+ 116:	8d 50 14             	lea    0x14(%eax),%edx
+ 119:	8b 45 10             	mov    0x10(%ebp),%eax
+ 11c:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 120:	89 14 24             	mov    %edx,(%esp)
+ 123:	e8 00 00 00 00       	call   128 <_bookSeat+0xa1>
+ 128:	8b 45 08             	mov    0x8(%ebp),%eax
+ 12b:	89 44 24 0c          	mov    %eax,0xc(%esp)
+ 12f:	8b 45 10             	mov    0x10(%ebp),%eax
+ 132:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 136:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 139:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 13d:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 144:	e8 00 00 00 00       	call   149 <_bookSeat+0xc2>
+ 149:	eb 2c                	jmp    177 <_bookSeat+0xf0>
+ 14b:	c7 04 24 24 00 00 00 	movl   $0x24,(%esp)
+ 152:	e8 00 00 00 00       	call   157 <_bookSeat+0xd0>
+ 157:	eb 1e                	jmp    177 <_bookSeat+0xf0>
+ 159:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 15d:	a1 00 00 00 00       	mov    0x0,%eax
+ 162:	39 45 f4             	cmp    %eax,-0xc(%ebp)
+ 165:	0f 8c 2e ff ff ff    	jl     99 <_bookSeat+0x12>
+ 16b:	c7 04 24 39 00 00 00 	movl   $0x39,(%esp)
+ 172:	e8 00 00 00 00       	call   177 <_bookSeat+0xf0>
+ 177:	c9                   	leave  
+ 178:	c3                   	ret    
+
+00000179 <_showFlight>:
+ 179:	55                   	push   %ebp
+ 17a:	89 e5                	mov    %esp,%ebp
+ 17c:	83 ec 28             	sub    $0x28,%esp
+ 17f:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 186:	e9 ba 00 00 00       	jmp    245 <_showFlight+0xcc>
+ 18b:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 18e:	69 c0 7c 17 00 00    	imul   $0x177c,%eax,%eax
+ 194:	8d 90 00 00 00 00    	lea    0x0(%eax),%edx
+ 19a:	8b 45 08             	mov    0x8(%ebp),%eax
+ 19d:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 1a1:	89 14 24             	mov    %edx,(%esp)
+ 1a4:	e8 00 00 00 00       	call   1a9 <_showFlight+0x30>
+ 1a9:	85 c0                	test   %eax,%eax
+ 1ab:	0f 85 90 00 00 00    	jne    241 <_showFlight+0xc8>
+ 1b1:	8b 45 08             	mov    0x8(%ebp),%eax
+ 1b4:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 1b8:	c7 04 24 4b 00 00 00 	movl   $0x4b,(%esp)
+ 1bf:	e8 00 00 00 00       	call   1c4 <_showFlight+0x4b>
+ 1c4:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+ 1cb:	eb 6c                	jmp    239 <_showFlight+0xc0>
+ 1cd:	8b 55 f0             	mov    -0x10(%ebp),%edx
+ 1d0:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 1d3:	6b d2 3c             	imul   $0x3c,%edx,%edx
+ 1d6:	69 c0 7c 17 00 00    	imul   $0x177c,%eax,%eax
+ 1dc:	01 d0                	add    %edx,%eax
+ 1de:	05 10 00 00 00       	add    $0x10,%eax
+ 1e3:	8b 00                	mov    (%eax),%eax
+ 1e5:	85 c0                	test   %eax,%eax
+ 1e7:	74 1b                	je     204 <_showFlight+0x8b>
+ 1e9:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 1ec:	6b d0 3c             	imul   $0x3c,%eax,%edx
+ 1ef:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 1f2:	69 c0 7c 17 00 00    	imul   $0x177c,%eax,%eax
+ 1f8:	01 d0                	add    %edx,%eax
+ 1fa:	05 00 00 00 00       	add    $0x0,%eax
+ 1ff:	8d 50 14             	lea    0x14(%eax),%edx
+ 202:	eb 05                	jmp    209 <_showFlight+0x90>
+ 204:	ba 60 00 00 00       	mov    $0x60,%edx
+ 209:	8b 4d f0             	mov    -0x10(%ebp),%ecx
+ 20c:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 20f:	6b c9 3c             	imul   $0x3c,%ecx,%ecx
+ 212:	69 c0 7c 17 00 00    	imul   $0x177c,%eax,%eax
+ 218:	01 c8                	add    %ecx,%eax
+ 21a:	05 0c 00 00 00       	add    $0xc,%eax
+ 21f:	8b 00                	mov    (%eax),%eax
+ 221:	89 54 24 08          	mov    %edx,0x8(%esp)
+ 225:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 229:	c7 04 24 6a 00 00 00 	movl   $0x6a,(%esp)
+ 230:	e8 00 00 00 00       	call   235 <_showFlight+0xbc>
+ 235:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+ 239:	83 7d f0 63          	cmpl   $0x63,-0x10(%ebp)
+ 23d:	7e 8e                	jle    1cd <_showFlight+0x54>
+ 23f:	eb 1e                	jmp    25f <_showFlight+0xe6>
+ 241:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 245:	a1 00 00 00 00       	mov    0x0,%eax
+ 24a:	39 45 f4             	cmp    %eax,-0xc(%ebp)
+ 24d:	0f 8c 38 ff ff ff    	jl     18b <_showFlight+0x12>
+ 253:	c7 04 24 39 00 00 00 	movl   $0x39,(%esp)
+ 25a:	e8 00 00 00 00       	call   25f <_showFlight+0xe6>
+ 25f:	c9                   	leave  
+ 260:	c3                   	ret    
+
+00000261 <_main>:
+ 261:	55                   	push   %ebp
+ 262:	89 e5                	mov    %esp,%ebp
+ 264:	83 e4 f0             	and    $0xfffffff0,%esp
+ 267:	83 ec 10             	sub    $0x10,%esp
+ 26a:	e8 00 00 00 00       	call   26f <_main+0xe>
+ 26f:	c7 04 24 77 00 00 00 	movl   $0x77,(%esp)
+ 276:	e8 85 fd ff ff       	call   0 <_addFlight>
+ 27b:	c7 44 24 08 7d 00 00 	movl   $0x7d,0x8(%esp)
+ 282:	00 
+ 283:	c7 44 24 04 0a 00 00 	movl   $0xa,0x4(%esp)
+ 28a:	00 
+ 28b:	c7 04 24 77 00 00 00 	movl   $0x77,(%esp)
+ 292:	e8 f0 fd ff ff       	call   87 <_bookSeat>
+ 297:	c7 44 24 08 84 00 00 	movl   $0x84,0x8(%esp)
+ 29e:	00 
+ 29f:	c7 44 24 04 0a 00 00 	movl   $0xa,0x4(%esp)
+ 2a6:	00 
+ 2a7:	c7 04 24 77 00 00 00 	movl   $0x77,(%esp)
+ 2ae:	e8 d4 fd ff ff       	call   87 <_bookSeat>
+ 2b3:	c7 04 24 77 00 00 00 	movl   $0x77,(%esp)
+ 2ba:	e8 ba fe ff ff       	call   179 <_showFlight>
+ 2bf:	b8 00 00 00 00       	mov    $0x0,%eax
+ 2c4:	c9                   	leave  
+ 2c5:	c3                   	ret    
+ 2c6:	90                   	nop
+ 2c7:	90                   	nop

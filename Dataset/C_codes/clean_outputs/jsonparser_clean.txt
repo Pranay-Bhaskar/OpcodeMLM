@@ -1,0 +1,20 @@
+jsonparser.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x88,%esp
+lea -0x6c(%ebp),%eax
+mov %eax,0xc(%esp)
+lea -0x3a(%ebp),%eax
+mov %eax,0x8(%esp)
+movl $0x0,0x4(%esp)
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+lea -0x6c(%ebp),%eax
+mov %eax,0x8(%esp)
+lea -0x3a(%ebp),%eax
+mov %eax,0x4(%esp)
+movl $0x12,(%esp)
+nop
+leave
+ret
+nop

@@ -1,0 +1,275 @@
+
+epidemic.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_initPopulation>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 10             	sub    $0x10,%esp
+   6:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+   d:	eb 4f                	jmp    5e <_initPopulation+0x5e>
+   f:	83 7d fc 00          	cmpl   $0x0,-0x4(%ebp)
+  13:	0f 94 c0             	sete   %al
+  16:	0f b6 c8             	movzbl %al,%ecx
+  19:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  1c:	89 d0                	mov    %edx,%eax
+  1e:	01 c0                	add    %eax,%eax
+  20:	01 d0                	add    %edx,%eax
+  22:	c1 e0 02             	shl    $0x2,%eax
+  25:	05 00 00 00 00       	add    $0x0,%eax
+  2a:	89 08                	mov    %ecx,(%eax)
+  2c:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  2f:	89 d0                	mov    %edx,%eax
+  31:	01 c0                	add    %eax,%eax
+  33:	01 d0                	add    %edx,%eax
+  35:	c1 e0 02             	shl    $0x2,%eax
+  38:	05 04 00 00 00       	add    $0x4,%eax
+  3d:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+  43:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  46:	89 d0                	mov    %edx,%eax
+  48:	01 c0                	add    %eax,%eax
+  4a:	01 d0                	add    %edx,%eax
+  4c:	c1 e0 02             	shl    $0x2,%eax
+  4f:	05 08 00 00 00       	add    $0x8,%eax
+  54:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+  5a:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  5e:	83 7d fc 63          	cmpl   $0x63,-0x4(%ebp)
+  62:	7e ab                	jle    f <_initPopulation+0xf>
+  64:	90                   	nop
+  65:	c9                   	leave  
+  66:	c3                   	ret    
+
+00000067 <_simulateDay>:
+  67:	55                   	push   %ebp
+  68:	89 e5                	mov    %esp,%ebp
+  6a:	83 ec 28             	sub    $0x28,%esp
+  6d:	8b 45 08             	mov    0x8(%ebp),%eax
+  70:	89 44 24 04          	mov    %eax,0x4(%esp)
+  74:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  7b:	e8 00 00 00 00       	call   80 <_simulateDay+0x19>
+  80:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  87:	e9 a0 01 00 00       	jmp    22c <_simulateDay+0x1c5>
+  8c:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  8f:	89 d0                	mov    %edx,%eax
+  91:	01 c0                	add    %eax,%eax
+  93:	01 d0                	add    %edx,%eax
+  95:	c1 e0 02             	shl    $0x2,%eax
+  98:	05 00 00 00 00       	add    $0x0,%eax
+  9d:	8b 00                	mov    (%eax),%eax
+  9f:	85 c0                	test   %eax,%eax
+  a1:	0f 84 81 01 00 00    	je     228 <_simulateDay+0x1c1>
+  a7:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  aa:	89 d0                	mov    %edx,%eax
+  ac:	01 c0                	add    %eax,%eax
+  ae:	01 d0                	add    %edx,%eax
+  b0:	c1 e0 02             	shl    $0x2,%eax
+  b3:	05 08 00 00 00       	add    $0x8,%eax
+  b8:	8b 00                	mov    (%eax),%eax
+  ba:	85 c0                	test   %eax,%eax
+  bc:	0f 85 66 01 00 00    	jne    228 <_simulateDay+0x1c1>
+  c2:	e8 00 00 00 00       	call   c7 <_simulateDay+0x60>
+  c7:	89 c1                	mov    %eax,%ecx
+  c9:	ba 1f 85 eb 51       	mov    $0x51eb851f,%edx
+  ce:	89 c8                	mov    %ecx,%eax
+  d0:	f7 ea                	imul   %edx
+  d2:	c1 fa 05             	sar    $0x5,%edx
+  d5:	89 c8                	mov    %ecx,%eax
+  d7:	c1 f8 1f             	sar    $0x1f,%eax
+  da:	29 c2                	sub    %eax,%edx
+  dc:	89 d0                	mov    %edx,%eax
+  de:	89 45 f0             	mov    %eax,-0x10(%ebp)
+  e1:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  e4:	6b c0 64             	imul   $0x64,%eax,%eax
+  e7:	29 c1                	sub    %eax,%ecx
+  e9:	89 c8                	mov    %ecx,%eax
+  eb:	89 45 f0             	mov    %eax,-0x10(%ebp)
+  ee:	83 7d f0 04          	cmpl   $0x4,-0x10(%ebp)
+  f2:	7f 46                	jg     13a <_simulateDay+0xd3>
+  f4:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  f7:	89 d0                	mov    %edx,%eax
+  f9:	01 c0                	add    %eax,%eax
+  fb:	01 d0                	add    %edx,%eax
+  fd:	c1 e0 02             	shl    $0x2,%eax
+ 100:	05 08 00 00 00       	add    $0x8,%eax
+ 105:	c7 00 01 00 00 00    	movl   $0x1,(%eax)
+ 10b:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 10e:	89 d0                	mov    %edx,%eax
+ 110:	01 c0                	add    %eax,%eax
+ 112:	01 d0                	add    %edx,%eax
+ 114:	c1 e0 02             	shl    $0x2,%eax
+ 117:	05 00 00 00 00       	add    $0x0,%eax
+ 11c:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+ 122:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 125:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 129:	c7 04 24 09 00 00 00 	movl   $0x9,(%esp)
+ 130:	e8 00 00 00 00       	call   135 <_simulateDay+0xce>
+ 135:	e9 ee 00 00 00       	jmp    228 <_simulateDay+0x1c1>
+ 13a:	83 7d f0 13          	cmpl   $0x13,-0x10(%ebp)
+ 13e:	7f 46                	jg     186 <_simulateDay+0x11f>
+ 140:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 143:	89 d0                	mov    %edx,%eax
+ 145:	01 c0                	add    %eax,%eax
+ 147:	01 d0                	add    %edx,%eax
+ 149:	c1 e0 02             	shl    $0x2,%eax
+ 14c:	05 04 00 00 00       	add    $0x4,%eax
+ 151:	c7 00 01 00 00 00    	movl   $0x1,(%eax)
+ 157:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 15a:	89 d0                	mov    %edx,%eax
+ 15c:	01 c0                	add    %eax,%eax
+ 15e:	01 d0                	add    %edx,%eax
+ 160:	c1 e0 02             	shl    $0x2,%eax
+ 163:	05 00 00 00 00       	add    $0x0,%eax
+ 168:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+ 16e:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 171:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 175:	c7 04 24 1a 00 00 00 	movl   $0x1a,(%esp)
+ 17c:	e8 00 00 00 00       	call   181 <_simulateDay+0x11a>
+ 181:	e9 a2 00 00 00       	jmp    228 <_simulateDay+0x1c1>
+ 186:	e8 00 00 00 00       	call   18b <_simulateDay+0x124>
+ 18b:	89 c1                	mov    %eax,%ecx
+ 18d:	ba 1f 85 eb 51       	mov    $0x51eb851f,%edx
+ 192:	89 c8                	mov    %ecx,%eax
+ 194:	f7 ea                	imul   %edx
+ 196:	c1 fa 05             	sar    $0x5,%edx
+ 199:	89 c8                	mov    %ecx,%eax
+ 19b:	c1 f8 1f             	sar    $0x1f,%eax
+ 19e:	29 c2                	sub    %eax,%edx
+ 1a0:	89 d0                	mov    %edx,%eax
+ 1a2:	89 45 ec             	mov    %eax,-0x14(%ebp)
+ 1a5:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 1a8:	6b c0 64             	imul   $0x64,%eax,%eax
+ 1ab:	29 c1                	sub    %eax,%ecx
+ 1ad:	89 c8                	mov    %ecx,%eax
+ 1af:	89 45 ec             	mov    %eax,-0x14(%ebp)
+ 1b2:	8b 55 ec             	mov    -0x14(%ebp),%edx
+ 1b5:	89 d0                	mov    %edx,%eax
+ 1b7:	01 c0                	add    %eax,%eax
+ 1b9:	01 d0                	add    %edx,%eax
+ 1bb:	c1 e0 02             	shl    $0x2,%eax
+ 1be:	05 00 00 00 00       	add    $0x0,%eax
+ 1c3:	8b 00                	mov    (%eax),%eax
+ 1c5:	85 c0                	test   %eax,%eax
+ 1c7:	75 5f                	jne    228 <_simulateDay+0x1c1>
+ 1c9:	8b 55 ec             	mov    -0x14(%ebp),%edx
+ 1cc:	89 d0                	mov    %edx,%eax
+ 1ce:	01 c0                	add    %eax,%eax
+ 1d0:	01 d0                	add    %edx,%eax
+ 1d2:	c1 e0 02             	shl    $0x2,%eax
+ 1d5:	05 04 00 00 00       	add    $0x4,%eax
+ 1da:	8b 00                	mov    (%eax),%eax
+ 1dc:	85 c0                	test   %eax,%eax
+ 1de:	75 48                	jne    228 <_simulateDay+0x1c1>
+ 1e0:	8b 55 ec             	mov    -0x14(%ebp),%edx
+ 1e3:	89 d0                	mov    %edx,%eax
+ 1e5:	01 c0                	add    %eax,%eax
+ 1e7:	01 d0                	add    %edx,%eax
+ 1e9:	c1 e0 02             	shl    $0x2,%eax
+ 1ec:	05 08 00 00 00       	add    $0x8,%eax
+ 1f1:	8b 00                	mov    (%eax),%eax
+ 1f3:	85 c0                	test   %eax,%eax
+ 1f5:	75 31                	jne    228 <_simulateDay+0x1c1>
+ 1f7:	8b 55 ec             	mov    -0x14(%ebp),%edx
+ 1fa:	89 d0                	mov    %edx,%eax
+ 1fc:	01 c0                	add    %eax,%eax
+ 1fe:	01 d0                	add    %edx,%eax
+ 200:	c1 e0 02             	shl    $0x2,%eax
+ 203:	05 00 00 00 00       	add    $0x0,%eax
+ 208:	c7 00 01 00 00 00    	movl   $0x1,(%eax)
+ 20e:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 211:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 215:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 218:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 21c:	c7 04 24 30 00 00 00 	movl   $0x30,(%esp)
+ 223:	e8 00 00 00 00       	call   228 <_simulateDay+0x1c1>
+ 228:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 22c:	83 7d f4 63          	cmpl   $0x63,-0xc(%ebp)
+ 230:	0f 8e 56 fe ff ff    	jle    8c <_simulateDay+0x25>
+ 236:	90                   	nop
+ 237:	c9                   	leave  
+ 238:	c3                   	ret    
+
+00000239 <_stats>:
+ 239:	55                   	push   %ebp
+ 23a:	89 e5                	mov    %esp,%ebp
+ 23c:	83 ec 38             	sub    $0x38,%esp
+ 23f:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 246:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+ 24d:	c7 45 ec 00 00 00 00 	movl   $0x0,-0x14(%ebp)
+ 254:	c7 45 e8 00 00 00 00 	movl   $0x0,-0x18(%ebp)
+ 25b:	eb 55                	jmp    2b2 <_stats+0x79>
+ 25d:	8b 55 e8             	mov    -0x18(%ebp),%edx
+ 260:	89 d0                	mov    %edx,%eax
+ 262:	01 c0                	add    %eax,%eax
+ 264:	01 d0                	add    %edx,%eax
+ 266:	c1 e0 02             	shl    $0x2,%eax
+ 269:	05 00 00 00 00       	add    $0x0,%eax
+ 26e:	8b 00                	mov    (%eax),%eax
+ 270:	85 c0                	test   %eax,%eax
+ 272:	74 04                	je     278 <_stats+0x3f>
+ 274:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 278:	8b 55 e8             	mov    -0x18(%ebp),%edx
+ 27b:	89 d0                	mov    %edx,%eax
+ 27d:	01 c0                	add    %eax,%eax
+ 27f:	01 d0                	add    %edx,%eax
+ 281:	c1 e0 02             	shl    $0x2,%eax
+ 284:	05 04 00 00 00       	add    $0x4,%eax
+ 289:	8b 00                	mov    (%eax),%eax
+ 28b:	85 c0                	test   %eax,%eax
+ 28d:	74 04                	je     293 <_stats+0x5a>
+ 28f:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+ 293:	8b 55 e8             	mov    -0x18(%ebp),%edx
+ 296:	89 d0                	mov    %edx,%eax
+ 298:	01 c0                	add    %eax,%eax
+ 29a:	01 d0                	add    %edx,%eax
+ 29c:	c1 e0 02             	shl    $0x2,%eax
+ 29f:	05 08 00 00 00       	add    $0x8,%eax
+ 2a4:	8b 00                	mov    (%eax),%eax
+ 2a6:	85 c0                	test   %eax,%eax
+ 2a8:	74 04                	je     2ae <_stats+0x75>
+ 2aa:	83 45 ec 01          	addl   $0x1,-0x14(%ebp)
+ 2ae:	83 45 e8 01          	addl   $0x1,-0x18(%ebp)
+ 2b2:	83 7d e8 63          	cmpl   $0x63,-0x18(%ebp)
+ 2b6:	7e a5                	jle    25d <_stats+0x24>
+ 2b8:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 2bb:	89 44 24 10          	mov    %eax,0x10(%esp)
+ 2bf:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 2c2:	89 44 24 0c          	mov    %eax,0xc(%esp)
+ 2c6:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 2c9:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 2cd:	8b 45 08             	mov    0x8(%ebp),%eax
+ 2d0:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 2d4:	c7 04 24 50 00 00 00 	movl   $0x50,(%esp)
+ 2db:	e8 00 00 00 00       	call   2e0 <_stats+0xa7>
+ 2e0:	90                   	nop
+ 2e1:	c9                   	leave  
+ 2e2:	c3                   	ret    
+
+000002e3 <_main>:
+ 2e3:	55                   	push   %ebp
+ 2e4:	89 e5                	mov    %esp,%ebp
+ 2e6:	83 e4 f0             	and    $0xfffffff0,%esp
+ 2e9:	83 ec 20             	sub    $0x20,%esp
+ 2ec:	e8 00 00 00 00       	call   2f1 <_main+0xe>
+ 2f1:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 2f8:	e8 00 00 00 00       	call   2fd <_main+0x1a>
+ 2fd:	89 04 24             	mov    %eax,(%esp)
+ 300:	e8 00 00 00 00       	call   305 <_main+0x22>
+ 305:	e8 f6 fc ff ff       	call   0 <_initPopulation>
+ 30a:	c7 44 24 1c 01 00 00 	movl   $0x1,0x1c(%esp)
+ 311:	00 
+ 312:	eb 1d                	jmp    331 <_main+0x4e>
+ 314:	8b 44 24 1c          	mov    0x1c(%esp),%eax
+ 318:	89 04 24             	mov    %eax,(%esp)
+ 31b:	e8 47 fd ff ff       	call   67 <_simulateDay>
+ 320:	8b 44 24 1c          	mov    0x1c(%esp),%eax
+ 324:	89 04 24             	mov    %eax,(%esp)
+ 327:	e8 0d ff ff ff       	call   239 <_stats>
+ 32c:	83 44 24 1c 01       	addl   $0x1,0x1c(%esp)
+ 331:	83 7c 24 1c 1e       	cmpl   $0x1e,0x1c(%esp)
+ 336:	7e dc                	jle    314 <_main+0x31>
+ 338:	b8 00 00 00 00       	mov    $0x0,%eax
+ 33d:	c9                   	leave  
+ 33e:	c3                   	ret    
+ 33f:	90                   	nop

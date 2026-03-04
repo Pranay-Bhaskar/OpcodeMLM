@@ -1,0 +1,94 @@
+lz77compression.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x38,%esp
+mov 0x8(%ebp),%eax
+mov %eax,(%esp)
+mov %eax,-0x24(%ebp)
+movl $0x0,-0xc(%ebp)
+movl $0x0,-0x10(%ebp)
+movl $0x0,-0x14(%ebp)
+movl $0x0,-0x18(%ebp)
+movl $0x1,-0x1c(%ebp)
+movl $0x0,-0x20(%ebp)
+addl $0x1,-0x20(%ebp)
+mov -0xc(%ebp),%edx
+mov -0x20(%ebp),%eax
+%edx,%eax
+cmp -0x24(%ebp),%eax
+mov -0xc(%ebp),%edx
+mov -0x20(%ebp),%eax
+%edx,%eax
+mov %eax,%edx
+mov 0x8(%ebp),%eax
+%edx,%eax
+movzbl (%eax),%edx
+mov -0xc(%ebp),%eax
+sub -0x1c(%ebp),%eax
+mov %eax,%ecx
+mov -0x20(%ebp),%eax
+%ecx,%eax
+mov %eax,%ecx
+mov 0x8(%ebp),%eax
+%ecx,%eax
+movzbl (%eax),%eax
+cmp %al,%dl
+mov -0x20(%ebp),%eax
+cmp -0x14(%ebp),%eax
+mov -0x20(%ebp),%eax
+mov %eax,-0x14(%ebp)
+mov -0x1c(%ebp),%eax
+mov %eax,-0x18(%ebp)
+addl $0x1,-0x1c(%ebp)
+mov -0x1c(%ebp),%eax
+cmp -0xc(%ebp),%eax
+mov -0x10(%ebp),%edx
+mov %edx,%eax
+%eax,%eax
+%edx,%eax
+shl $0x2,%eax
+mov %eax,%edx
+mov 0xc(%ebp),%eax
+%eax,%edx
+mov -0x18(%ebp),%eax
+mov %eax,(%edx)
+mov -0x10(%ebp),%edx
+mov %edx,%eax
+%eax,%eax
+%edx,%eax
+shl $0x2,%eax
+mov %eax,%edx
+mov 0xc(%ebp),%eax
+%eax,%edx
+mov -0x14(%ebp),%eax
+mov %eax,0x4(%edx)
+mov -0x10(%ebp),%edx
+mov %edx,%eax
+%eax,%eax
+%edx,%eax
+shl $0x2,%eax
+mov %eax,%edx
+mov 0xc(%ebp),%eax
+%eax,%edx
+mov -0xc(%ebp),%ecx
+mov -0x14(%ebp),%eax
+%ecx,%eax
+mov %eax,%ecx
+mov 0x8(%ebp),%eax
+%ecx,%eax
+movzbl (%eax),%eax
+mov %al,0x8(%edx)
+mov -0x14(%ebp),%eax
+$0x1,%eax
+%eax,-0xc(%ebp)
+addl $0x1,-0x10(%ebp)
+mov -0xc(%ebp),%eax
+cmp -0x24(%ebp),%eax
+mov 0x10(%ebp),%eax
+mov -0x10(%ebp),%edx
+mov %edx,(%eax)
+nop
+leave
+ret
+nop
+nop

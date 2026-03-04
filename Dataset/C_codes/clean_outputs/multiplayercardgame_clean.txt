@@ -1,0 +1,135 @@
+multiplayercardgame.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x10,%esp
+movl $0x0,-0x4(%ebp)
+movl $0x0,-0x8(%ebp)
+movl $0x0,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+mov 0x20(,%eax,4),%edx
+mov -0x4(%ebp),%eax
+mov %edx,0x0(,%eax,8)
+mov -0x8(%ebp),%eax
+mov 0x0(,%eax,4),%edx
+mov -0x4(%ebp),%eax
+mov %edx,0x4(,%eax,8)
+addl $0x1,-0x4(%ebp)
+addl $0x1,-0xc(%ebp)
+cmpl $0xc,-0xc(%ebp)
+addl $0x1,-0x8(%ebp)
+cmpl $0x3,-0x8(%ebp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x18,%esp
+movl $0x0,-0xc(%ebp)
+mov %eax,%ecx
+mov $0x4ec4ec4f,%edx
+mov %ecx,%eax
+imul %edx
+sar $0x4,%edx
+mov %ecx,%eax
+sar $0x1f,%eax
+sub %eax,%edx
+mov %edx,%eax
+mov %eax,-0x10(%ebp)
+mov -0x10(%ebp),%eax
+imul $0x34,%eax,%eax
+sub %eax,%ecx
+mov %ecx,%eax
+mov %eax,-0x10(%ebp)
+mov -0xc(%ebp),%eax
+mov 0x4(,%eax,8),%edx
+mov 0x0(,%eax,8),%eax
+mov %eax,-0x18(%ebp)
+mov %edx,-0x14(%ebp)
+mov -0xc(%ebp),%ecx
+mov -0x10(%ebp),%eax
+mov 0x4(,%eax,8),%edx
+mov 0x0(,%eax,8),%eax
+mov %eax,0x0(,%ecx,8)
+mov %edx,0x4(,%ecx,8)
+mov -0x10(%ebp),%ecx
+mov -0x18(%ebp),%eax
+mov -0x14(%ebp),%edx
+mov %eax,0x0(,%ecx,8)
+mov %edx,0x4(,%ecx,8)
+addl $0x1,-0xc(%ebp)
+cmpl $0x33,-0xc(%ebp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x10,%esp
+movl $0x0,-0x4(%ebp)
+movl $0x0,-0x8(%ebp)
+movl $0x0,-0xc(%ebp)
+mov -0x4(%ebp),%edx
+lea 0x1(%edx),%eax
+mov %eax,-0x4(%ebp)
+mov -0x8(%ebp),%ecx
+mov %ecx,%eax
+shl $0x2,%eax
+%ecx,%eax
+mov -0xc(%ebp),%ecx
+%eax,%ecx
+mov 0x0(,%edx,8),%eax
+mov 0x4(,%edx,8),%edx
+mov %eax,0x0(,%ecx,8)
+mov %edx,0x4(,%ecx,8)
+addl $0x1,-0xc(%ebp)
+cmpl $0x4,-0xc(%ebp)
+addl $0x1,-0x8(%ebp)
+cmpl $0x3,-0x8(%ebp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x28,%esp
+movl $0x0,-0xc(%ebp)
+mov -0xc(%ebp),%eax
+$0x1,%eax
+mov %eax,0x4(%esp)
+movl $0x38,(%esp)
+movl $0x0,-0x10(%ebp)
+mov -0xc(%ebp),%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+mov -0x10(%ebp),%edx
+%edx,%eax
+mov 0x4(,%eax,8),%ecx
+mov -0xc(%ebp),%edx
+mov %edx,%eax
+shl $0x2,%eax
+%edx,%eax
+mov -0x10(%ebp),%edx
+%edx,%eax
+mov 0x0(,%eax,8),%eax
+mov %ecx,0x8(%esp)
+mov %eax,0x4(%esp)
+movl $0x49,(%esp)
+addl $0x1,-0x10(%ebp)
+cmpl $0x4,-0x10(%ebp)
+movl $0xa,(%esp)
+addl $0x1,-0xc(%ebp)
+cmpl $0x3,-0xc(%ebp)
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+and $0xfffffff0,%esp
+sub $0x10,%esp
+movl $0x0,(%esp)
+mov %eax,(%esp)
+mov $0x0,%eax
+leave
+ret
+nop
+nop
+nop

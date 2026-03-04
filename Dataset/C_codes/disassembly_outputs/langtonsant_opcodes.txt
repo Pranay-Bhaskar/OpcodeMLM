@@ -1,0 +1,159 @@
+
+langtonsant.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_printGrid>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 28             	sub    $0x28,%esp
+   6:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+   d:	e8 00 00 00 00       	call   12 <_printGrid+0x12>
+  12:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  19:	eb 76                	jmp    91 <_printGrid+0x91>
+  1b:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+  22:	eb 57                	jmp    7b <_printGrid+0x7b>
+  24:	a1 04 00 00 00       	mov    0x4,%eax
+  29:	39 45 f4             	cmp    %eax,-0xc(%ebp)
+  2c:	75 18                	jne    46 <_printGrid+0x46>
+  2e:	a1 00 00 00 00       	mov    0x0,%eax
+  33:	39 45 f0             	cmp    %eax,-0x10(%ebp)
+  36:	75 0e                	jne    46 <_printGrid+0x46>
+  38:	c7 04 24 41 00 00 00 	movl   $0x41,(%esp)
+  3f:	e8 00 00 00 00       	call   44 <_printGrid+0x44>
+  44:	eb 31                	jmp    77 <_printGrid+0x77>
+  46:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  49:	89 d0                	mov    %edx,%eax
+  4b:	c1 e0 02             	shl    $0x2,%eax
+  4e:	01 d0                	add    %edx,%eax
+  50:	c1 e0 03             	shl    $0x3,%eax
+  53:	8b 55 f0             	mov    -0x10(%ebp),%edx
+  56:	01 d0                	add    %edx,%eax
+  58:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  5f:	85 c0                	test   %eax,%eax
+  61:	74 07                	je     6a <_printGrid+0x6a>
+  63:	b8 06 00 00 00       	mov    $0x6,%eax
+  68:	eb 05                	jmp    6f <_printGrid+0x6f>
+  6a:	b8 08 00 00 00       	mov    $0x8,%eax
+  6f:	89 04 24             	mov    %eax,(%esp)
+  72:	e8 00 00 00 00       	call   77 <_printGrid+0x77>
+  77:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+  7b:	83 7d f0 27          	cmpl   $0x27,-0x10(%ebp)
+  7f:	7e a3                	jle    24 <_printGrid+0x24>
+  81:	c7 04 24 0a 00 00 00 	movl   $0xa,(%esp)
+  88:	e8 00 00 00 00       	call   8d <_printGrid+0x8d>
+  8d:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  91:	83 7d f4 27          	cmpl   $0x27,-0xc(%ebp)
+  95:	7e 84                	jle    1b <_printGrid+0x1b>
+  97:	90                   	nop
+  98:	c9                   	leave  
+  99:	c3                   	ret    
+
+0000009a <_step>:
+  9a:	55                   	push   %ebp
+  9b:	89 e5                	mov    %esp,%ebp
+  9d:	83 ec 10             	sub    $0x10,%esp
+  a0:	8b 15 04 00 00 00    	mov    0x4,%edx
+  a6:	8b 0d 00 00 00 00    	mov    0x0,%ecx
+  ac:	89 d0                	mov    %edx,%eax
+  ae:	c1 e0 02             	shl    $0x2,%eax
+  b1:	01 d0                	add    %edx,%eax
+  b3:	c1 e0 03             	shl    $0x3,%eax
+  b6:	01 c8                	add    %ecx,%eax
+  b8:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  bf:	85 c0                	test   %eax,%eax
+  c1:	75 41                	jne    104 <_step+0x6a>
+  c3:	a1 00 19 00 00       	mov    0x1900,%eax
+  c8:	89 45 fc             	mov    %eax,-0x4(%ebp)
+  cb:	a1 08 00 00 00       	mov    0x8,%eax
+  d0:	f7 d8                	neg    %eax
+  d2:	a3 00 19 00 00       	mov    %eax,0x1900
+  d7:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  da:	a3 08 00 00 00       	mov    %eax,0x8
+  df:	8b 15 04 00 00 00    	mov    0x4,%edx
+  e5:	8b 0d 00 00 00 00    	mov    0x0,%ecx
+  eb:	89 d0                	mov    %edx,%eax
+  ed:	c1 e0 02             	shl    $0x2,%eax
+  f0:	01 d0                	add    %edx,%eax
+  f2:	c1 e0 03             	shl    $0x3,%eax
+  f5:	01 c8                	add    %ecx,%eax
+  f7:	c7 04 85 00 00 00 00 	movl   $0x1,0x0(,%eax,4)
+  fe:	01 00 00 00 
+ 102:	eb 3f                	jmp    143 <_step+0xa9>
+ 104:	a1 00 19 00 00       	mov    0x1900,%eax
+ 109:	89 45 f8             	mov    %eax,-0x8(%ebp)
+ 10c:	a1 08 00 00 00       	mov    0x8,%eax
+ 111:	a3 00 19 00 00       	mov    %eax,0x1900
+ 116:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 119:	f7 d8                	neg    %eax
+ 11b:	a3 08 00 00 00       	mov    %eax,0x8
+ 120:	8b 15 04 00 00 00    	mov    0x4,%edx
+ 126:	8b 0d 00 00 00 00    	mov    0x0,%ecx
+ 12c:	89 d0                	mov    %edx,%eax
+ 12e:	c1 e0 02             	shl    $0x2,%eax
+ 131:	01 d0                	add    %edx,%eax
+ 133:	c1 e0 03             	shl    $0x3,%eax
+ 136:	01 c8                	add    %ecx,%eax
+ 138:	c7 04 85 00 00 00 00 	movl   $0x0,0x0(,%eax,4)
+ 13f:	00 00 00 00 
+ 143:	8b 15 00 00 00 00    	mov    0x0,%edx
+ 149:	a1 00 19 00 00       	mov    0x1900,%eax
+ 14e:	01 d0                	add    %edx,%eax
+ 150:	8d 48 28             	lea    0x28(%eax),%ecx
+ 153:	ba 67 66 66 66       	mov    $0x66666667,%edx
+ 158:	89 c8                	mov    %ecx,%eax
+ 15a:	f7 ea                	imul   %edx
+ 15c:	c1 fa 04             	sar    $0x4,%edx
+ 15f:	89 c8                	mov    %ecx,%eax
+ 161:	c1 f8 1f             	sar    $0x1f,%eax
+ 164:	29 c2                	sub    %eax,%edx
+ 166:	89 d0                	mov    %edx,%eax
+ 168:	c1 e0 02             	shl    $0x2,%eax
+ 16b:	01 d0                	add    %edx,%eax
+ 16d:	c1 e0 03             	shl    $0x3,%eax
+ 170:	29 c1                	sub    %eax,%ecx
+ 172:	89 ca                	mov    %ecx,%edx
+ 174:	89 15 00 00 00 00    	mov    %edx,0x0
+ 17a:	8b 15 04 00 00 00    	mov    0x4,%edx
+ 180:	a1 08 00 00 00       	mov    0x8,%eax
+ 185:	01 d0                	add    %edx,%eax
+ 187:	8d 48 28             	lea    0x28(%eax),%ecx
+ 18a:	ba 67 66 66 66       	mov    $0x66666667,%edx
+ 18f:	89 c8                	mov    %ecx,%eax
+ 191:	f7 ea                	imul   %edx
+ 193:	c1 fa 04             	sar    $0x4,%edx
+ 196:	89 c8                	mov    %ecx,%eax
+ 198:	c1 f8 1f             	sar    $0x1f,%eax
+ 19b:	29 c2                	sub    %eax,%edx
+ 19d:	89 d0                	mov    %edx,%eax
+ 19f:	c1 e0 02             	shl    $0x2,%eax
+ 1a2:	01 d0                	add    %edx,%eax
+ 1a4:	c1 e0 03             	shl    $0x3,%eax
+ 1a7:	29 c1                	sub    %eax,%ecx
+ 1a9:	89 ca                	mov    %ecx,%edx
+ 1ab:	89 15 04 00 00 00    	mov    %edx,0x4
+ 1b1:	90                   	nop
+ 1b2:	c9                   	leave  
+ 1b3:	c3                   	ret    
+
+000001b4 <_main>:
+ 1b4:	55                   	push   %ebp
+ 1b5:	89 e5                	mov    %esp,%ebp
+ 1b7:	83 e4 f0             	and    $0xfffffff0,%esp
+ 1ba:	83 ec 20             	sub    $0x20,%esp
+ 1bd:	e8 00 00 00 00       	call   1c2 <_main+0xe>
+ 1c2:	c7 44 24 1c 00 00 00 	movl   $0x0,0x1c(%esp)
+ 1c9:	00 
+ 1ca:	eb 1b                	jmp    1e7 <_main+0x33>
+ 1cc:	e8 2f fe ff ff       	call   0 <_printGrid>
+ 1d1:	e8 c4 fe ff ff       	call   9a <_step>
+ 1d6:	c7 04 24 a0 86 01 00 	movl   $0x186a0,(%esp)
+ 1dd:	e8 00 00 00 00       	call   1e2 <_main+0x2e>
+ 1e2:	83 44 24 1c 01       	addl   $0x1,0x1c(%esp)
+ 1e7:	81 7c 24 1c c7 00 00 	cmpl   $0xc7,0x1c(%esp)
+ 1ee:	00 
+ 1ef:	7e db                	jle    1cc <_main+0x18>
+ 1f1:	b8 00 00 00 00       	mov    $0x0,%eax
+ 1f6:	c9                   	leave  
+ 1f7:	c3                   	ret    

@@ -1,0 +1,116 @@
+heap.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x10,%esp
+mov 0x0,%eax
+lea 0x1(%eax),%edx
+mov %edx,0x0
+mov %eax,-0x4(%ebp)
+mov -0x4(%ebp),%eax
+mov 0x8(%ebp),%edx
+mov %edx,0x0(,%eax,4)
+mov -0x4(%ebp),%eax
+mov 0x0(,%eax,4),%eax
+mov %eax,-0x8(%ebp)
+mov -0x4(%ebp),%eax
+sub $0x1,%eax
+mov %eax,%edx
+shr $0x1f,%edx
+%edx,%eax
+sar %eax
+mov 0x0(,%eax,4),%edx
+mov -0x4(%ebp),%eax
+mov %edx,0x0(,%eax,4)
+mov -0x4(%ebp),%eax
+sub $0x1,%eax
+mov %eax,%edx
+shr $0x1f,%edx
+%edx,%eax
+sar %eax
+mov %eax,%edx
+mov -0x8(%ebp),%eax
+mov %eax,0x0(,%edx,4)
+mov -0x4(%ebp),%eax
+sub $0x1,%eax
+mov %eax,%edx
+shr $0x1f,%edx
+%edx,%eax
+sar %eax
+mov %eax,-0x4(%ebp)
+cmpl $0x0,-0x4(%ebp)
+mov -0x4(%ebp),%eax
+sub $0x1,%eax
+mov %eax,%edx
+shr $0x1f,%edx
+%edx,%eax
+sar %eax
+mov 0x0(,%eax,4),%edx
+mov -0x4(%ebp),%eax
+mov 0x0(,%eax,4),%eax
+cmp %eax,%edx
+nop
+leave
+ret
+push %ebp
+mov %esp,%ebp
+sub $0x20,%esp
+mov 0x0,%eax
+test %eax,%eax
+mov $0xffffffff,%eax
+mov 0x0,%eax
+mov %eax,-0xc(%ebp)
+mov 0x0,%eax
+sub $0x1,%eax
+mov %eax,0x0
+mov 0x0,%eax
+mov 0x0(,%eax,4),%eax
+mov %eax,0x0
+movl $0x0,-0x4(%ebp)
+mov -0x4(%ebp),%eax
+%eax,%eax
+$0x1,%eax
+mov %eax,-0x10(%ebp)
+mov -0x4(%ebp),%eax
+$0x1,%eax
+%eax,%eax
+mov %eax,-0x14(%ebp)
+mov -0x4(%ebp),%eax
+mov %eax,-0x8(%ebp)
+mov 0x0,%eax
+cmp %eax,-0x10(%ebp)
+mov -0x10(%ebp),%eax
+mov 0x0(,%eax,4),%edx
+mov -0x8(%ebp),%eax
+mov 0x0(,%eax,4),%eax
+cmp %eax,%edx
+mov -0x10(%ebp),%eax
+mov %eax,-0x8(%ebp)
+mov 0x0,%eax
+cmp %eax,-0x14(%ebp)
+mov -0x14(%ebp),%eax
+mov 0x0(,%eax,4),%edx
+mov -0x8(%ebp),%eax
+mov 0x0(,%eax,4),%eax
+cmp %eax,%edx
+mov -0x14(%ebp),%eax
+mov %eax,-0x8(%ebp)
+mov -0x8(%ebp),%eax
+cmp -0x4(%ebp),%eax
+mov -0x4(%ebp),%eax
+mov 0x0(,%eax,4),%eax
+mov %eax,-0x18(%ebp)
+mov -0x8(%ebp),%eax
+mov 0x0(,%eax,4),%edx
+mov -0x4(%ebp),%eax
+mov %edx,0x0(,%eax,4)
+mov -0x8(%ebp),%eax
+mov -0x18(%ebp),%edx
+mov %edx,0x0(,%eax,4)
+mov -0x8(%ebp),%eax
+mov %eax,-0x4(%ebp)
+nop
+mov -0xc(%ebp),%eax
+leave
+ret
+nop
+nop

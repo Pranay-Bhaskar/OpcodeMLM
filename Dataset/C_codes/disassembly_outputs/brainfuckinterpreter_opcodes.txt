@@ -1,0 +1,142 @@
+
+brainfuckinterpreter.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_run_brainfuck>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	b8 58 75 00 00       	mov    $0x7558,%eax
+   8:	e8 00 00 00 00       	call   d <_run_brainfuck+0xd>
+   d:	29 c4                	sub    %eax,%esp
+   f:	8d 85 b8 8a ff ff    	lea    -0x7548(%ebp),%eax
+  15:	ba 30 75 00 00       	mov    $0x7530,%edx
+  1a:	89 54 24 08          	mov    %edx,0x8(%esp)
+  1e:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  25:	00 
+  26:	89 04 24             	mov    %eax,(%esp)
+  29:	e8 00 00 00 00       	call   2e <_run_brainfuck+0x2e>
+  2e:	8d 85 b8 8a ff ff    	lea    -0x7548(%ebp),%eax
+  34:	89 45 f4             	mov    %eax,-0xc(%ebp)
+  37:	8b 45 08             	mov    0x8(%ebp),%eax
+  3a:	89 45 f0             	mov    %eax,-0x10(%ebp)
+  3d:	e9 fc 00 00 00       	jmp    13e <_run_brainfuck+0x13e>
+  42:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  45:	0f b6 00             	movzbl (%eax),%eax
+  48:	0f be c0             	movsbl %al,%eax
+  4b:	83 e8 2b             	sub    $0x2b,%eax
+  4e:	83 f8 32             	cmp    $0x32,%eax
+  51:	0f 87 e3 00 00 00    	ja     13a <_run_brainfuck+0x13a>
+  57:	8b 04 85 00 00 00 00 	mov    0x0(,%eax,4),%eax
+  5e:	ff e0                	jmp    *%eax
+  60:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  64:	e9 d1 00 00 00       	jmp    13a <_run_brainfuck+0x13a>
+  69:	83 6d f4 01          	subl   $0x1,-0xc(%ebp)
+  6d:	e9 c8 00 00 00       	jmp    13a <_run_brainfuck+0x13a>
+  72:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  75:	0f b6 00             	movzbl (%eax),%eax
+  78:	8d 50 01             	lea    0x1(%eax),%edx
+  7b:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  7e:	88 10                	mov    %dl,(%eax)
+  80:	e9 b5 00 00 00       	jmp    13a <_run_brainfuck+0x13a>
+  85:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  88:	0f b6 00             	movzbl (%eax),%eax
+  8b:	8d 50 ff             	lea    -0x1(%eax),%edx
+  8e:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  91:	88 10                	mov    %dl,(%eax)
+  93:	e9 a2 00 00 00       	jmp    13a <_run_brainfuck+0x13a>
+  98:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  9b:	0f b6 00             	movzbl (%eax),%eax
+  9e:	0f b6 c0             	movzbl %al,%eax
+  a1:	89 04 24             	mov    %eax,(%esp)
+  a4:	e8 00 00 00 00       	call   a9 <_run_brainfuck+0xa9>
+  a9:	e9 8c 00 00 00       	jmp    13a <_run_brainfuck+0x13a>
+  ae:	e8 00 00 00 00       	call   b3 <_run_brainfuck+0xb3>
+  b3:	89 c2                	mov    %eax,%edx
+  b5:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  b8:	88 10                	mov    %dl,(%eax)
+  ba:	eb 7e                	jmp    13a <_run_brainfuck+0x13a>
+  bc:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  bf:	0f b6 00             	movzbl (%eax),%eax
+  c2:	84 c0                	test   %al,%al
+  c4:	75 70                	jne    136 <_run_brainfuck+0x136>
+  c6:	c7 45 ec 01 00 00 00 	movl   $0x1,-0x14(%ebp)
+  cd:	eb 22                	jmp    f1 <_run_brainfuck+0xf1>
+  cf:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+  d3:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  d6:	0f b6 00             	movzbl (%eax),%eax
+  d9:	3c 5b                	cmp    $0x5b,%al
+  db:	75 06                	jne    e3 <_run_brainfuck+0xe3>
+  dd:	83 45 ec 01          	addl   $0x1,-0x14(%ebp)
+  e1:	eb 0e                	jmp    f1 <_run_brainfuck+0xf1>
+  e3:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  e6:	0f b6 00             	movzbl (%eax),%eax
+  e9:	3c 5d                	cmp    $0x5d,%al
+  eb:	75 04                	jne    f1 <_run_brainfuck+0xf1>
+  ed:	83 6d ec 01          	subl   $0x1,-0x14(%ebp)
+  f1:	83 7d ec 00          	cmpl   $0x0,-0x14(%ebp)
+  f5:	75 d8                	jne    cf <_run_brainfuck+0xcf>
+  f7:	eb 3d                	jmp    136 <_run_brainfuck+0x136>
+  f9:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  fc:	0f b6 00             	movzbl (%eax),%eax
+  ff:	84 c0                	test   %al,%al
+ 101:	74 36                	je     139 <_run_brainfuck+0x139>
+ 103:	c7 45 e8 01 00 00 00 	movl   $0x1,-0x18(%ebp)
+ 10a:	eb 22                	jmp    12e <_run_brainfuck+0x12e>
+ 10c:	83 6d f0 01          	subl   $0x1,-0x10(%ebp)
+ 110:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 113:	0f b6 00             	movzbl (%eax),%eax
+ 116:	3c 5d                	cmp    $0x5d,%al
+ 118:	75 06                	jne    120 <_run_brainfuck+0x120>
+ 11a:	83 45 e8 01          	addl   $0x1,-0x18(%ebp)
+ 11e:	eb 0e                	jmp    12e <_run_brainfuck+0x12e>
+ 120:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 123:	0f b6 00             	movzbl (%eax),%eax
+ 126:	3c 5b                	cmp    $0x5b,%al
+ 128:	75 04                	jne    12e <_run_brainfuck+0x12e>
+ 12a:	83 6d e8 01          	subl   $0x1,-0x18(%ebp)
+ 12e:	83 7d e8 00          	cmpl   $0x0,-0x18(%ebp)
+ 132:	75 d8                	jne    10c <_run_brainfuck+0x10c>
+ 134:	eb 03                	jmp    139 <_run_brainfuck+0x139>
+ 136:	90                   	nop
+ 137:	eb 01                	jmp    13a <_run_brainfuck+0x13a>
+ 139:	90                   	nop
+ 13a:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+ 13e:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 141:	0f b6 00             	movzbl (%eax),%eax
+ 144:	84 c0                	test   %al,%al
+ 146:	0f 85 f6 fe ff ff    	jne    42 <_run_brainfuck+0x42>
+ 14c:	90                   	nop
+ 14d:	c9                   	leave  
+ 14e:	c3                   	ret    
+
+0000014f <_main>:
+ 14f:	55                   	push   %ebp
+ 150:	89 e5                	mov    %esp,%ebp
+ 152:	83 e4 f0             	and    $0xfffffff0,%esp
+ 155:	83 ec 10             	sub    $0x10,%esp
+ 158:	e8 00 00 00 00       	call   15d <_main+0xe>
+ 15d:	83 7d 08 01          	cmpl   $0x1,0x8(%ebp)
+ 161:	7f 28                	jg     18b <_main+0x3c>
+ 163:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 166:	8b 00                	mov    (%eax),%eax
+ 168:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 16c:	c7 44 24 04 cc 00 00 	movl   $0xcc,0x4(%esp)
+ 173:	00 
+ 174:	a1 00 00 00 00       	mov    0x0,%eax
+ 179:	83 c0 40             	add    $0x40,%eax
+ 17c:	89 04 24             	mov    %eax,(%esp)
+ 17f:	e8 00 00 00 00       	call   184 <_main+0x35>
+ 184:	b8 01 00 00 00       	mov    $0x1,%eax
+ 189:	eb 15                	jmp    1a0 <_main+0x51>
+ 18b:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 18e:	83 c0 04             	add    $0x4,%eax
+ 191:	8b 00                	mov    (%eax),%eax
+ 193:	89 04 24             	mov    %eax,(%esp)
+ 196:	e8 65 fe ff ff       	call   0 <_run_brainfuck>
+ 19b:	b8 00 00 00 00       	mov    $0x0,%eax
+ 1a0:	c9                   	leave  
+ 1a1:	c3                   	ret    
+ 1a2:	90                   	nop
+ 1a3:	90                   	nop

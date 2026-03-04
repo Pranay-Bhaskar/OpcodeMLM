@@ -1,0 +1,408 @@
+
+knuthmorrispratt.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_computeLPSArray>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 10             	sub    $0x10,%esp
+   6:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+   d:	8b 45 10             	mov    0x10(%ebp),%eax
+  10:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+  16:	c7 45 f8 01 00 00 00 	movl   $0x1,-0x8(%ebp)
+  1d:	eb 72                	jmp    91 <_computeLPSArray+0x91>
+  1f:	8b 55 f8             	mov    -0x8(%ebp),%edx
+  22:	8b 45 08             	mov    0x8(%ebp),%eax
+  25:	01 d0                	add    %edx,%eax
+  27:	0f b6 10             	movzbl (%eax),%edx
+  2a:	8b 4d fc             	mov    -0x4(%ebp),%ecx
+  2d:	8b 45 08             	mov    0x8(%ebp),%eax
+  30:	01 c8                	add    %ecx,%eax
+  32:	0f b6 00             	movzbl (%eax),%eax
+  35:	38 c2                	cmp    %al,%dl
+  37:	75 1e                	jne    57 <_computeLPSArray+0x57>
+  39:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  3d:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  40:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+  47:	8b 45 10             	mov    0x10(%ebp),%eax
+  4a:	01 c2                	add    %eax,%edx
+  4c:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  4f:	89 02                	mov    %eax,(%edx)
+  51:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+  55:	eb 3a                	jmp    91 <_computeLPSArray+0x91>
+  57:	83 7d fc 00          	cmpl   $0x0,-0x4(%ebp)
+  5b:	74 1b                	je     78 <_computeLPSArray+0x78>
+  5d:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  60:	05 ff ff ff 3f       	add    $0x3fffffff,%eax
+  65:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+  6c:	8b 45 10             	mov    0x10(%ebp),%eax
+  6f:	01 d0                	add    %edx,%eax
+  71:	8b 00                	mov    (%eax),%eax
+  73:	89 45 fc             	mov    %eax,-0x4(%ebp)
+  76:	eb 19                	jmp    91 <_computeLPSArray+0x91>
+  78:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  7b:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+  82:	8b 45 10             	mov    0x10(%ebp),%eax
+  85:	01 d0                	add    %edx,%eax
+  87:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+  8d:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+  91:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  94:	3b 45 0c             	cmp    0xc(%ebp),%eax
+  97:	7c 86                	jl     1f <_computeLPSArray+0x1f>
+  99:	90                   	nop
+  9a:	c9                   	leave  
+  9b:	c3                   	ret    
+
+0000009c <_KMPSearch>:
+  9c:	55                   	push   %ebp
+  9d:	89 e5                	mov    %esp,%ebp
+  9f:	53                   	push   %ebx
+  a0:	83 ec 34             	sub    $0x34,%esp
+  a3:	89 e0                	mov    %esp,%eax
+  a5:	89 c3                	mov    %eax,%ebx
+  a7:	8b 45 08             	mov    0x8(%ebp),%eax
+  aa:	89 04 24             	mov    %eax,(%esp)
+  ad:	e8 00 00 00 00       	call   b2 <_KMPSearch+0x16>
+  b2:	89 45 ec             	mov    %eax,-0x14(%ebp)
+  b5:	8b 45 0c             	mov    0xc(%ebp),%eax
+  b8:	89 04 24             	mov    %eax,(%esp)
+  bb:	e8 00 00 00 00       	call   c0 <_KMPSearch+0x24>
+  c0:	89 45 e8             	mov    %eax,-0x18(%ebp)
+  c3:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  c6:	8d 50 ff             	lea    -0x1(%eax),%edx
+  c9:	89 55 e4             	mov    %edx,-0x1c(%ebp)
+  cc:	c1 e0 02             	shl    $0x2,%eax
+  cf:	8d 50 03             	lea    0x3(%eax),%edx
+  d2:	b8 10 00 00 00       	mov    $0x10,%eax
+  d7:	83 e8 01             	sub    $0x1,%eax
+  da:	01 d0                	add    %edx,%eax
+  dc:	b9 10 00 00 00       	mov    $0x10,%ecx
+  e1:	ba 00 00 00 00       	mov    $0x0,%edx
+  e6:	f7 f1                	div    %ecx
+  e8:	6b c0 10             	imul   $0x10,%eax,%eax
+  eb:	e8 00 00 00 00       	call   f0 <_KMPSearch+0x54>
+  f0:	29 c4                	sub    %eax,%esp
+  f2:	8d 44 24 0c          	lea    0xc(%esp),%eax
+  f6:	83 c0 03             	add    $0x3,%eax
+  f9:	c1 e8 02             	shr    $0x2,%eax
+  fc:	c1 e0 02             	shl    $0x2,%eax
+  ff:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 102:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 105:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 109:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 10c:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 110:	8b 45 08             	mov    0x8(%ebp),%eax
+ 113:	89 04 24             	mov    %eax,(%esp)
+ 116:	e8 e5 fe ff ff       	call   0 <_computeLPSArray>
+ 11b:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 122:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+ 129:	e9 8e 00 00 00       	jmp    1bc <_KMPSearch+0x120>
+ 12e:	8b 55 f0             	mov    -0x10(%ebp),%edx
+ 131:	8b 45 08             	mov    0x8(%ebp),%eax
+ 134:	01 d0                	add    %edx,%eax
+ 136:	0f b6 10             	movzbl (%eax),%edx
+ 139:	8b 4d f4             	mov    -0xc(%ebp),%ecx
+ 13c:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 13f:	01 c8                	add    %ecx,%eax
+ 141:	0f b6 00             	movzbl (%eax),%eax
+ 144:	38 c2                	cmp    %al,%dl
+ 146:	75 08                	jne    150 <_KMPSearch+0xb4>
+ 148:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+ 14c:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 150:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 153:	3b 45 ec             	cmp    -0x14(%ebp),%eax
+ 156:	75 27                	jne    17f <_KMPSearch+0xe3>
+ 158:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 15b:	2b 45 f0             	sub    -0x10(%ebp),%eax
+ 15e:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 162:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 169:	e8 00 00 00 00       	call   16e <_KMPSearch+0xd2>
+ 16e:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 171:	8d 50 ff             	lea    -0x1(%eax),%edx
+ 174:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 177:	8b 04 90             	mov    (%eax,%edx,4),%eax
+ 17a:	89 45 f0             	mov    %eax,-0x10(%ebp)
+ 17d:	eb 3d                	jmp    1bc <_KMPSearch+0x120>
+ 17f:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 182:	3b 45 e8             	cmp    -0x18(%ebp),%eax
+ 185:	7d 35                	jge    1bc <_KMPSearch+0x120>
+ 187:	8b 55 f0             	mov    -0x10(%ebp),%edx
+ 18a:	8b 45 08             	mov    0x8(%ebp),%eax
+ 18d:	01 d0                	add    %edx,%eax
+ 18f:	0f b6 10             	movzbl (%eax),%edx
+ 192:	8b 4d f4             	mov    -0xc(%ebp),%ecx
+ 195:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 198:	01 c8                	add    %ecx,%eax
+ 19a:	0f b6 00             	movzbl (%eax),%eax
+ 19d:	38 c2                	cmp    %al,%dl
+ 19f:	74 1b                	je     1bc <_KMPSearch+0x120>
+ 1a1:	83 7d f0 00          	cmpl   $0x0,-0x10(%ebp)
+ 1a5:	74 11                	je     1b8 <_KMPSearch+0x11c>
+ 1a7:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 1aa:	8d 50 ff             	lea    -0x1(%eax),%edx
+ 1ad:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 1b0:	8b 04 90             	mov    (%eax,%edx,4),%eax
+ 1b3:	89 45 f0             	mov    %eax,-0x10(%ebp)
+ 1b6:	eb 04                	jmp    1bc <_KMPSearch+0x120>
+ 1b8:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 1bc:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 1bf:	3b 45 e8             	cmp    -0x18(%ebp),%eax
+ 1c2:	0f 8c 66 ff ff ff    	jl     12e <_KMPSearch+0x92>
+ 1c8:	89 dc                	mov    %ebx,%esp
+ 1ca:	90                   	nop
+ 1cb:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+ 1ce:	c9                   	leave  
+ 1cf:	c3                   	ret    
+
+000001d0 <_badCharHeuristic>:
+ 1d0:	55                   	push   %ebp
+ 1d1:	89 e5                	mov    %esp,%ebp
+ 1d3:	83 ec 10             	sub    $0x10,%esp
+ 1d6:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+ 1dd:	eb 19                	jmp    1f8 <_badCharHeuristic+0x28>
+ 1df:	8b 45 fc             	mov    -0x4(%ebp),%eax
+ 1e2:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+ 1e9:	8b 45 10             	mov    0x10(%ebp),%eax
+ 1ec:	01 d0                	add    %edx,%eax
+ 1ee:	c7 00 ff ff ff ff    	movl   $0xffffffff,(%eax)
+ 1f4:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+ 1f8:	81 7d fc ff 00 00 00 	cmpl   $0xff,-0x4(%ebp)
+ 1ff:	7e de                	jle    1df <_badCharHeuristic+0xf>
+ 201:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+ 208:	eb 23                	jmp    22d <_badCharHeuristic+0x5d>
+ 20a:	8b 55 f8             	mov    -0x8(%ebp),%edx
+ 20d:	8b 45 08             	mov    0x8(%ebp),%eax
+ 210:	01 d0                	add    %edx,%eax
+ 212:	0f b6 00             	movzbl (%eax),%eax
+ 215:	0f be c0             	movsbl %al,%eax
+ 218:	8d 14 85 00 00 00 00 	lea    0x0(,%eax,4),%edx
+ 21f:	8b 45 10             	mov    0x10(%ebp),%eax
+ 222:	01 c2                	add    %eax,%edx
+ 224:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 227:	89 02                	mov    %eax,(%edx)
+ 229:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+ 22d:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 230:	3b 45 0c             	cmp    0xc(%ebp),%eax
+ 233:	7c d5                	jl     20a <_badCharHeuristic+0x3a>
+ 235:	90                   	nop
+ 236:	c9                   	leave  
+ 237:	c3                   	ret    
+
+00000238 <_boyerMooreSearch>:
+ 238:	55                   	push   %ebp
+ 239:	89 e5                	mov    %esp,%ebp
+ 23b:	81 ec 28 04 00 00    	sub    $0x428,%esp
+ 241:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 244:	89 04 24             	mov    %eax,(%esp)
+ 247:	e8 00 00 00 00       	call   24c <_boyerMooreSearch+0x14>
+ 24c:	89 45 ec             	mov    %eax,-0x14(%ebp)
+ 24f:	8b 45 08             	mov    0x8(%ebp),%eax
+ 252:	89 04 24             	mov    %eax,(%esp)
+ 255:	e8 00 00 00 00       	call   25a <_boyerMooreSearch+0x22>
+ 25a:	89 45 e8             	mov    %eax,-0x18(%ebp)
+ 25d:	8d 85 e8 fb ff ff    	lea    -0x418(%ebp),%eax
+ 263:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 267:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 26a:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 26e:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 271:	89 04 24             	mov    %eax,(%esp)
+ 274:	e8 57 ff ff ff       	call   1d0 <_badCharHeuristic>
+ 279:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 280:	e9 ba 00 00 00       	jmp    33f <_boyerMooreSearch+0x107>
+ 285:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 288:	83 e8 01             	sub    $0x1,%eax
+ 28b:	89 45 f0             	mov    %eax,-0x10(%ebp)
+ 28e:	eb 04                	jmp    294 <_boyerMooreSearch+0x5c>
+ 290:	83 6d f0 01          	subl   $0x1,-0x10(%ebp)
+ 294:	83 7d f0 00          	cmpl   $0x0,-0x10(%ebp)
+ 298:	78 21                	js     2bb <_boyerMooreSearch+0x83>
+ 29a:	8b 55 f0             	mov    -0x10(%ebp),%edx
+ 29d:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 2a0:	01 d0                	add    %edx,%eax
+ 2a2:	0f b6 10             	movzbl (%eax),%edx
+ 2a5:	8b 4d f4             	mov    -0xc(%ebp),%ecx
+ 2a8:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 2ab:	01 c8                	add    %ecx,%eax
+ 2ad:	89 c1                	mov    %eax,%ecx
+ 2af:	8b 45 08             	mov    0x8(%ebp),%eax
+ 2b2:	01 c8                	add    %ecx,%eax
+ 2b4:	0f b6 00             	movzbl (%eax),%eax
+ 2b7:	38 c2                	cmp    %al,%dl
+ 2b9:	74 d5                	je     290 <_boyerMooreSearch+0x58>
+ 2bb:	83 7d f0 00          	cmpl   $0x0,-0x10(%ebp)
+ 2bf:	79 4f                	jns    310 <_boyerMooreSearch+0xd8>
+ 2c1:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 2c4:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 2c8:	c7 04 24 20 00 00 00 	movl   $0x20,(%esp)
+ 2cf:	e8 00 00 00 00       	call   2d4 <_boyerMooreSearch+0x9c>
+ 2d4:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 2d7:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 2da:	01 d0                	add    %edx,%eax
+ 2dc:	3b 45 e8             	cmp    -0x18(%ebp),%eax
+ 2df:	7d 25                	jge    306 <_boyerMooreSearch+0xce>
+ 2e1:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 2e4:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 2e7:	01 d0                	add    %edx,%eax
+ 2e9:	89 c2                	mov    %eax,%edx
+ 2eb:	8b 45 08             	mov    0x8(%ebp),%eax
+ 2ee:	01 d0                	add    %edx,%eax
+ 2f0:	0f b6 00             	movzbl (%eax),%eax
+ 2f3:	0f be c0             	movsbl %al,%eax
+ 2f6:	8b 84 85 e8 fb ff ff 	mov    -0x418(%ebp,%eax,4),%eax
+ 2fd:	8b 55 ec             	mov    -0x14(%ebp),%edx
+ 300:	29 c2                	sub    %eax,%edx
+ 302:	89 d0                	mov    %edx,%eax
+ 304:	eb 05                	jmp    30b <_boyerMooreSearch+0xd3>
+ 306:	b8 01 00 00 00       	mov    $0x1,%eax
+ 30b:	01 45 f4             	add    %eax,-0xc(%ebp)
+ 30e:	eb 2f                	jmp    33f <_boyerMooreSearch+0x107>
+ 310:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 313:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 316:	01 d0                	add    %edx,%eax
+ 318:	89 c2                	mov    %eax,%edx
+ 31a:	8b 45 08             	mov    0x8(%ebp),%eax
+ 31d:	01 d0                	add    %edx,%eax
+ 31f:	0f b6 00             	movzbl (%eax),%eax
+ 322:	0f be c0             	movsbl %al,%eax
+ 325:	8b 84 85 e8 fb ff ff 	mov    -0x418(%ebp,%eax,4),%eax
+ 32c:	8b 55 f0             	mov    -0x10(%ebp),%edx
+ 32f:	29 c2                	sub    %eax,%edx
+ 331:	89 d0                	mov    %edx,%eax
+ 333:	85 c0                	test   %eax,%eax
+ 335:	7f 05                	jg     33c <_boyerMooreSearch+0x104>
+ 337:	b8 01 00 00 00       	mov    $0x1,%eax
+ 33c:	01 45 f4             	add    %eax,-0xc(%ebp)
+ 33f:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 342:	2b 45 ec             	sub    -0x14(%ebp),%eax
+ 345:	3b 45 f4             	cmp    -0xc(%ebp),%eax
+ 348:	0f 8d 37 ff ff ff    	jge    285 <_boyerMooreSearch+0x4d>
+ 34e:	90                   	nop
+ 34f:	c9                   	leave  
+ 350:	c3                   	ret    
+
+00000351 <_runAlgorithms>:
+ 351:	55                   	push   %ebp
+ 352:	89 e5                	mov    %esp,%ebp
+ 354:	83 ec 18             	sub    $0x18,%esp
+ 357:	c7 04 24 48 00 00 00 	movl   $0x48,(%esp)
+ 35e:	e8 00 00 00 00       	call   363 <_runAlgorithms+0x12>
+ 363:	8b 45 08             	mov    0x8(%ebp),%eax
+ 366:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 36a:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 36d:	89 04 24             	mov    %eax,(%esp)
+ 370:	e8 27 fd ff ff       	call   9c <_KMPSearch>
+ 375:	c7 04 24 58 00 00 00 	movl   $0x58,(%esp)
+ 37c:	e8 00 00 00 00       	call   381 <_runAlgorithms+0x30>
+ 381:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 384:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 388:	8b 45 08             	mov    0x8(%ebp),%eax
+ 38b:	89 04 24             	mov    %eax,(%esp)
+ 38e:	e8 a5 fe ff ff       	call   238 <_boyerMooreSearch>
+ 393:	90                   	nop
+ 394:	c9                   	leave  
+ 395:	c3                   	ret    
+
+00000396 <_menu>:
+ 396:	55                   	push   %ebp
+ 397:	89 e5                	mov    %esp,%ebp
+ 399:	81 ec f8 07 00 00    	sub    $0x7f8,%esp
+ 39f:	c7 04 24 70 00 00 00 	movl   $0x70,(%esp)
+ 3a6:	e8 00 00 00 00       	call   3ab <_menu+0x15>
+ 3ab:	c7 04 24 8d 00 00 00 	movl   $0x8d,(%esp)
+ 3b2:	e8 00 00 00 00       	call   3b7 <_menu+0x21>
+ 3b7:	c7 04 24 a5 00 00 00 	movl   $0xa5,(%esp)
+ 3be:	e8 00 00 00 00       	call   3c3 <_menu+0x2d>
+ 3c3:	c7 04 24 b0 00 00 00 	movl   $0xb0,(%esp)
+ 3ca:	e8 00 00 00 00       	call   3cf <_menu+0x39>
+ 3cf:	c7 04 24 c3 00 00 00 	movl   $0xc3,(%esp)
+ 3d6:	e8 00 00 00 00       	call   3db <_menu+0x45>
+ 3db:	c7 04 24 cf 00 00 00 	movl   $0xcf,(%esp)
+ 3e2:	e8 00 00 00 00       	call   3e7 <_menu+0x51>
+ 3e7:	c7 04 24 d7 00 00 00 	movl   $0xd7,(%esp)
+ 3ee:	e8 00 00 00 00       	call   3f3 <_menu+0x5d>
+ 3f3:	8d 85 24 f8 ff ff    	lea    -0x7dc(%ebp),%eax
+ 3f9:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 3fd:	c7 04 24 e0 00 00 00 	movl   $0xe0,(%esp)
+ 404:	e8 00 00 00 00       	call   409 <_menu+0x73>
+ 409:	e8 00 00 00 00       	call   40e <_menu+0x78>
+ 40e:	8b 85 24 f8 ff ff    	mov    -0x7dc(%ebp),%eax
+ 414:	83 f8 04             	cmp    $0x4,%eax
+ 417:	0f 87 f9 00 00 00    	ja     516 <_menu+0x180>
+ 41d:	8b 04 85 20 01 00 00 	mov    0x120(,%eax,4),%eax
+ 424:	ff e0                	jmp    *%eax
+ 426:	c7 04 24 e3 00 00 00 	movl   $0xe3,(%esp)
+ 42d:	e8 00 00 00 00       	call   432 <_menu+0x9c>
+ 432:	a1 00 00 00 00       	mov    0x0,%eax
+ 437:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 43b:	c7 44 24 04 e8 03 00 	movl   $0x3e8,0x4(%esp)
+ 442:	00 
+ 443:	8d 85 10 fc ff ff    	lea    -0x3f0(%ebp),%eax
+ 449:	89 04 24             	mov    %eax,(%esp)
+ 44c:	e8 00 00 00 00       	call   451 <_menu+0xbb>
+ 451:	c7 44 24 04 f0 00 00 	movl   $0xf0,0x4(%esp)
+ 458:	00 
+ 459:	8d 85 10 fc ff ff    	lea    -0x3f0(%ebp),%eax
+ 45f:	89 04 24             	mov    %eax,(%esp)
+ 462:	e8 00 00 00 00       	call   467 <_menu+0xd1>
+ 467:	c6 84 05 10 fc ff ff 	movb   $0x0,-0x3f0(%ebp,%eax,1)
+ 46e:	00 
+ 46f:	c7 04 24 f2 00 00 00 	movl   $0xf2,(%esp)
+ 476:	e8 00 00 00 00       	call   47b <_menu+0xe5>
+ 47b:	a1 00 00 00 00       	mov    0x0,%eax
+ 480:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 484:	c7 44 24 04 e8 03 00 	movl   $0x3e8,0x4(%esp)
+ 48b:	00 
+ 48c:	8d 85 28 f8 ff ff    	lea    -0x7d8(%ebp),%eax
+ 492:	89 04 24             	mov    %eax,(%esp)
+ 495:	e8 00 00 00 00       	call   49a <_menu+0x104>
+ 49a:	c7 44 24 04 f0 00 00 	movl   $0xf0,0x4(%esp)
+ 4a1:	00 
+ 4a2:	8d 85 28 f8 ff ff    	lea    -0x7d8(%ebp),%eax
+ 4a8:	89 04 24             	mov    %eax,(%esp)
+ 4ab:	e8 00 00 00 00       	call   4b0 <_menu+0x11a>
+ 4b0:	c6 84 05 28 f8 ff ff 	movb   $0x0,-0x7d8(%ebp,%eax,1)
+ 4b7:	00 
+ 4b8:	eb 68                	jmp    522 <_menu+0x18c>
+ 4ba:	8d 85 10 fc ff ff    	lea    -0x3f0(%ebp),%eax
+ 4c0:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 4c4:	8d 85 28 f8 ff ff    	lea    -0x7d8(%ebp),%eax
+ 4ca:	89 04 24             	mov    %eax,(%esp)
+ 4cd:	e8 ca fb ff ff       	call   9c <_KMPSearch>
+ 4d2:	eb 4e                	jmp    522 <_menu+0x18c>
+ 4d4:	8d 85 28 f8 ff ff    	lea    -0x7d8(%ebp),%eax
+ 4da:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 4de:	8d 85 10 fc ff ff    	lea    -0x3f0(%ebp),%eax
+ 4e4:	89 04 24             	mov    %eax,(%esp)
+ 4e7:	e8 4c fd ff ff       	call   238 <_boyerMooreSearch>
+ 4ec:	eb 34                	jmp    522 <_menu+0x18c>
+ 4ee:	8d 85 28 f8 ff ff    	lea    -0x7d8(%ebp),%eax
+ 4f4:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 4f8:	8d 85 10 fc ff ff    	lea    -0x3f0(%ebp),%eax
+ 4fe:	89 04 24             	mov    %eax,(%esp)
+ 501:	e8 4b fe ff ff       	call   351 <_runAlgorithms>
+ 506:	eb 1a                	jmp    522 <_menu+0x18c>
+ 508:	c7 04 24 02 01 00 00 	movl   $0x102,(%esp)
+ 50f:	e8 00 00 00 00       	call   514 <_menu+0x17e>
+ 514:	eb 0c                	jmp    522 <_menu+0x18c>
+ 516:	c7 04 24 0d 01 00 00 	movl   $0x10d,(%esp)
+ 51d:	e8 00 00 00 00       	call   522 <_menu+0x18c>
+ 522:	8b 85 24 f8 ff ff    	mov    -0x7dc(%ebp),%eax
+ 528:	85 c0                	test   %eax,%eax
+ 52a:	0f 85 6f fe ff ff    	jne    39f <_menu+0x9>
+ 530:	90                   	nop
+ 531:	c9                   	leave  
+ 532:	c3                   	ret    
+
+00000533 <_main>:
+ 533:	55                   	push   %ebp
+ 534:	89 e5                	mov    %esp,%ebp
+ 536:	83 e4 f0             	and    $0xfffffff0,%esp
+ 539:	e8 00 00 00 00       	call   53e <_main+0xb>
+ 53e:	e8 53 fe ff ff       	call   396 <_menu>
+ 543:	b8 00 00 00 00       	mov    $0x0,%eax
+ 548:	c9                   	leave  
+ 549:	c3                   	ret    
+ 54a:	90                   	nop
+ 54b:	90                   	nop

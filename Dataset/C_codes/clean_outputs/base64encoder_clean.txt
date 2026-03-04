@@ -1,0 +1,110 @@
+base64encoder.o: file format pe-i386
+push %ebp
+mov %esp,%ebp
+sub $0x20,%esp
+movl $0x0,-0x4(%ebp)
+movl $0x0,-0x8(%ebp)
+mov -0x4(%ebp),%eax
+cmp 0xc(%ebp),%eax
+mov -0x4(%ebp),%eax
+lea 0x1(%eax),%edx
+mov %edx,-0x4(%ebp)
+mov %eax,%edx
+mov 0x8(%ebp),%eax
+%edx,%eax
+movzbl (%eax),%eax
+movzbl %al,%eax
+mov $0x0,%eax
+mov %eax,-0xc(%ebp)
+mov -0x4(%ebp),%eax
+cmp 0xc(%ebp),%eax
+mov -0x4(%ebp),%eax
+lea 0x1(%eax),%edx
+mov %edx,-0x4(%ebp)
+mov %eax,%edx
+mov 0x8(%ebp),%eax
+%edx,%eax
+movzbl (%eax),%eax
+movzbl %al,%eax
+mov $0x0,%eax
+mov %eax,-0x10(%ebp)
+mov -0x4(%ebp),%eax
+cmp 0xc(%ebp),%eax
+mov -0x4(%ebp),%eax
+lea 0x1(%eax),%edx
+mov %edx,-0x4(%ebp)
+mov %eax,%edx
+mov 0x8(%ebp),%eax
+%edx,%eax
+movzbl (%eax),%eax
+movzbl %al,%eax
+mov $0x0,%eax
+mov %eax,-0x14(%ebp)
+mov -0xc(%ebp),%eax
+shl $0x10,%eax
+mov %eax,%edx
+mov -0x10(%ebp),%eax
+shl $0x8,%eax
+or %edx,%eax
+or -0x14(%ebp),%eax
+mov %eax,-0x18(%ebp)
+mov -0x8(%ebp),%eax
+lea 0x1(%eax),%edx
+mov %edx,-0x8(%ebp)
+mov %eax,%edx
+mov 0x10(%ebp),%eax
+%eax,%edx
+mov -0x18(%ebp),%eax
+shr $0x12,%eax
+and $0x3f,%eax
+movzbl 0x0(%eax),%eax
+mov %al,(%edx)
+mov -0x8(%ebp),%eax
+lea 0x1(%eax),%edx
+mov %edx,-0x8(%ebp)
+mov %eax,%edx
+mov 0x10(%ebp),%eax
+%eax,%edx
+mov -0x18(%ebp),%eax
+shr $0xc,%eax
+and $0x3f,%eax
+movzbl 0x0(%eax),%eax
+mov %al,(%edx)
+mov -0x8(%ebp),%eax
+lea 0x1(%eax),%edx
+mov %edx,-0x8(%ebp)
+mov %eax,%edx
+mov 0x10(%ebp),%eax
+%eax,%edx
+mov 0xc(%ebp),%eax
+$0x1,%eax
+cmp -0x4(%ebp),%eax
+mov -0x18(%ebp),%eax
+shr $0x6,%eax
+and $0x3f,%eax
+movzbl 0x0(%eax),%eax
+mov $0x3d,%eax
+mov %al,(%edx)
+mov -0x8(%ebp),%eax
+lea 0x1(%eax),%edx
+mov %edx,-0x8(%ebp)
+mov %eax,%edx
+mov 0x10(%ebp),%eax
+%eax,%edx
+mov -0x4(%ebp),%eax
+cmp 0xc(%ebp),%eax
+mov -0x18(%ebp),%eax
+and $0x3f,%eax
+movzbl 0x0(%eax),%eax
+mov $0x3d,%eax
+mov %al,(%edx)
+mov -0x4(%ebp),%eax
+cmp 0xc(%ebp),%eax
+mov -0x8(%ebp),%edx
+mov 0x10(%ebp),%eax
+%edx,%eax
+movb $0x0,(%eax)
+nop
+leave
+ret
+nop
