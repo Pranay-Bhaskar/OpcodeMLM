@@ -20,9 +20,7 @@
 
 It is designed for low-level sequence learning tasks such as reverse engineering experiments, malware analysis, and compiler-behavior exploration.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Pranay-Bhaskar/opcode_mlm/main/assets/opcode_mlm_logo.png" alt="OpcodeMLM Logo" width="500"/>
-</p>
+
 
 </div>
 
