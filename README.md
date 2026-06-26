@@ -8,7 +8,8 @@
 | |__| | |_) | (_ | (_) | (_| |  __/  |  | | |____| |  | |
  \____/| .__/ \___ \___/ \__,_|\___ |_|  |_|______|_|  |_|      
        | |
-       |_|________________________________________
+       |_|
+  
 </pre> 
 
 [![HuggingFace Space](https://img.shields.io/badge/HuggingFace-Demo-yellow.svg)](https://huggingface.co/spaces/pb-b/opcode_model)
