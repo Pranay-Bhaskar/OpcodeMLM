@@ -1,29 +1,27 @@
 <div align="center">
 
 <pre>
-  ____                       _       __  __ _      __  __
- / __ \                     | |     |  \/  | |    |  \/  |
-| |  | |_ __   ___  ___   __| | ___ | \  / | |    | \  / |
-| |  | | '_ \ / __ / _ \ / _  |/ _ \| |\/| | |    | |\/| |
-| |__| | |_) | (_ | (_) | (_| |  __/  |  | | |____| |  | |
- \____/| .__/ \___ \___/ \__,_|\___ |_|  |_|______|_|  |_|      
-       | |
-       |_|
-  
-</pre> 
+  ____                     _       __  __ _      __  __ 
+ / __ \                   | |     |  \/  | |    |  \/  |
+| |  | |_ __   ___ ___  __| | ___ | \  / | |    | \  / |
+| |  | | '_ \ / __/ _ \/ _` |/ _ \| |\/| | |    | |\/| |
+| |__| | |_) | (_| (_) | (_| |  __/ |  | | |____| |  | |
+ \____/| .__/ \___\___/ \__,_|\___|_|  |_|______|_|  |_|
+       | |                                              
+       |_|                                              
+</pre>
 
-[![HuggingFace Space](https://img.shields.io/badge/HuggingFace-Demo-yellow.svg)](https://huggingface.co/spaces/pb-b/opcode_model)
-[![Python versions](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-gray?logo=github)](https://github.com/Pranay-Bhaskar/opcode_mlm)
+  [![HuggingFace Space](https://img.shields.io/badge/HuggingFace-Model-yellow.svg)](https://huggingface.co/spaces/pb-b/opcode_model)
+  [![Python versions](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+  [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-gray?logo=github)](https://github.com/Pranay-Bhaskar/OpcodeMLM)
 
-**OpcodeMLM** is a masked language model trained on structured assembly instructions to predict missing tokens in opcode sequences.
+  **OpcodeMLM** is a masked language model trained on structured assembly instructions (opcodes) to predict low-level program semantics, enabling advanced sequence prediction for reverse engineering and malware analysis.
 
-It is designed for low-level sequence learning tasks such as reverse engineering experiments, malware analysis, and compiler-behavior exploration.
+  By understanding the contextual relationship between instructions like `push %ebp` and `mov %esp,%ebp`, this model assists in generating micro-programs, deobfuscating code, and optimizing compilers.
 
+</div> 
 
-
-</div>
 
 ## Features
 
