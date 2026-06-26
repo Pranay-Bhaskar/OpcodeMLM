@@ -6,10 +6,11 @@
 | |  | |_ __   ___  ___   __| | ___ | \  / | |    | \  / |
 | |  | | '_ \ / __ / _ \ / _  |/ _ \| |\/| | |    | |\/| |
 | |__| | |_) | (_ | (_) | (_| |  __/  |  | | |____| |  | |
- \____/| .__/ \___ \___/ \__,_|\___ |_|  |_|______|_|  |_|
+ \____/| .__/ \___ \___/ \__,_|\___ |_|  |_|______|_|  |_|      
+ </pre> 
        | |
        |_|
-</pre>
+
 
 [![HuggingFace Space](https://img.shields.io/badge/HuggingFace-Demo-yellow.svg)](https://huggingface.co/spaces/pb-b/opcode_model)
 [![Python versions](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
